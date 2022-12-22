@@ -1,0 +1,284 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/open/space/basic,
+/area/space)
+"c" = (
+/obj/structure/shuttle/engine/propulsion/burst/right,
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plating/airless,
+/area/space)
+"e" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/structure/shuttle/engine/heater,
+/turf/open/floor/plating,
+/area/space)
+"h" = (
+/obj/effect/turf_decal/tile/brown,
+/obj/effect/turf_decal/tile/brown{
+	dir = 1
+	},
+/obj/effect/turf_decal,
+/turf/open/floor/mineral/titanium/yellow,
+/area/space)
+"i" = (
+/obj/effect/turf_decal/tile/brown,
+/obj/effect/turf_decal/tile/brown{
+	dir = 1
+	},
+/obj/effect/turf_decal{
+	dir = 6
+	},
+/turf/open/floor/mineral/titanium/yellow,
+/area/space)
+"k" = (
+/obj/structure/shuttle/engine/propulsion/burst/left,
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plating/airless,
+/area/space)
+"m" = (
+/obj/effect/turf_decal/tile/brown,
+/obj/effect/turf_decal/tile/brown{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/yellow,
+/area/space)
+"r" = (
+/obj/structure/shuttle/engine/propulsion,
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plating/airless,
+/area/space)
+"s" = (
+/obj/effect/turf_decal/tile/brown,
+/obj/effect/turf_decal/tile/brown{
+	dir = 1
+	},
+/obj/effect/turf_decal{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium/yellow,
+/area/space)
+"v" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/shuttle{
+	name = "Supply Shuttle Airlock";
+	req_one_access_txt = "31;69"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/space)
+"y" = (
+/obj/effect/turf_decal/tile/brown,
+/obj/effect/turf_decal/tile/brown{
+	dir = 1
+	},
+/obj/effect/turf_decal{
+	dir = 9
+	},
+/turf/open/floor/mineral/titanium/yellow,
+/area/space)
+"C" = (
+/obj/effect/turf_decal{
+	dir = 8
+	},
+/obj/effect/turf_decal{
+	dir = 4
+	},
+/obj/effect/turf_decal,
+/turf/open/floor/mineral/plastitanium,
+/area/space)
+"D" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/shuttle{
+	name = "Supply Shuttle Airlock";
+	req_one_access_txt = "31;69"
+	},
+/obj/docking_port/mobile/supply{
+	dir = 4;
+	dwidth = 4;
+	name = "Supply Shuttle";
+	width = 13;
+	id = "supply_home"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/space)
+"F" = (
+/obj/effect/turf_decal/tile/brown,
+/obj/effect/turf_decal/tile/brown{
+	dir = 1
+	},
+/obj/effect/turf_decal{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/yellow,
+/area/space)
+"H" = (
+/obj/machinery/door/airlock/shuttle{
+	name = "Supply Shuttle Airlock";
+	req_one_access_txt = "31;69"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/mineral/plastitanium,
+/area/space)
+"I" = (
+/obj/effect/turf_decal{
+	dir = 8
+	},
+/obj/effect/turf_decal{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/space)
+"J" = (
+/obj/effect/turf_decal/tile/brown,
+/obj/effect/turf_decal/tile/brown{
+	dir = 1
+	},
+/obj/effect/turf_decal{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/yellow,
+/area/space)
+"O" = (
+/obj/effect/turf_decal/tile/brown,
+/obj/effect/turf_decal/tile/brown{
+	dir = 1
+	},
+/obj/effect/turf_decal{
+	dir = 5
+	},
+/turf/open/floor/mineral/titanium/yellow,
+/area/space)
+"P" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/space)
+"T" = (
+/turf/closed/wall/mineral/titanium,
+/area/space)
+"W" = (
+/obj/effect/turf_decal/tile/brown,
+/obj/effect/turf_decal/tile/brown{
+	dir = 1
+	},
+/obj/effect/turf_decal{
+	dir = 10
+	},
+/turf/open/floor/mineral/titanium/yellow,
+/area/space)
+"Z" = (
+/obj/effect/turf_decal{
+	dir = 8
+	},
+/obj/effect/turf_decal{
+	dir = 4
+	},
+/obj/effect/turf_decal{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/space)
+
+(1,1,1) = {"
+T
+T
+v
+D
+T
+H
+H
+T
+H
+H
+T
+T
+a
+"}
+(2,1,1) = {"
+T
+y
+s
+s
+s
+s
+s
+s
+s
+s
+W
+T
+k
+"}
+(3,1,1) = {"
+P
+F
+m
+m
+m
+m
+m
+m
+m
+m
+h
+e
+r
+"}
+(4,1,1) = {"
+P
+F
+m
+Z
+I
+I
+I
+I
+C
+m
+h
+e
+r
+"}
+(5,1,1) = {"
+P
+F
+m
+m
+m
+m
+m
+m
+m
+m
+h
+e
+r
+"}
+(6,1,1) = {"
+T
+O
+J
+J
+J
+J
+J
+J
+J
+J
+i
+T
+c
+"}
+(7,1,1) = {"
+T
+T
+T
+T
+P
+P
+P
+P
+T
+T
+T
+T
+a
+"}
