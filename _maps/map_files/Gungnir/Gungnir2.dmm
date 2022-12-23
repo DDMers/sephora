@@ -5964,6 +5964,13 @@
 	dir = 8
 	},
 /obj/structure/flora/ausbushes/leafybush,
+/obj/docking_port/stationary{
+	dir = 2;
+	dwidth = 2;
+	height = 7;
+	id = "supply_home";
+	width = 13
+	},
 /turf/open/floor/grass,
 /area/quartermaster/lobby)
 "aqw" = (
@@ -24513,7 +24520,7 @@
 "ehr" = (
 /obj/docking_port/stationary{
 	dir = 2;
-	dwidth = 2;
+	dwidth = 3;
 	height = 7;
 	id = "supply_home";
 	width = 13
@@ -24559,11 +24566,15 @@
 /turf/open/floor/plasteel,
 /area/science/lab)
 "eyR" = (
-/obj/structure/cable{
-	icon_state = "8-16"
+/obj/docking_port/stationary{
+	dir = 2;
+	dwidth = 2;
+	height = 7;
+	id = "supply_home";
+	width = 13
 	},
-/turf/open/floor/plating,
-/area/maintenance/department/electrical)
+/turf/open/floor/plasteel,
+/area/quartermaster/lobby)
 "ezO" = (
 /obj/structure/window/reinforced,
 /turf/open/floor/plasteel,
@@ -65935,7 +65946,7 @@ aKh
 abR
 avB
 abS
-abS
+eyR
 abS
 apD
 asO
@@ -71354,7 +71365,7 @@ glO
 glO
 aav
 aXW
-eyR
+ahr
 aen
 agY
 abQ

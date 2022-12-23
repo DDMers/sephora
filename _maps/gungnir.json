@@ -1,0 +1,15 @@
+{
+	"map_name": "NSV Gungnir",
+	"map_link": "Gungnir",
+    "map_path": "map_files/Gungnir",
+    "map_file": ["gungnir2.dmm", "gungnir1.dmm"],
+	"traits": [{"Up": 1, "Linkage": "Self"}, {"Down": -1, "Linkage": "Self"}],
+	"space_ruin_levels": -1,
+	"space_empty_levels": 0,
+	"shuttles": {
+		"cargo": "cargo_gungnir",
+		"ferry": "ferry_kilo",
+	    "emergency": "emergency_donut"},
+    "mine_disable": 1,
+	"ship_type": "/obj/structure/overmap/nanotrasen/heavy_battlecruiser/starter"
+}

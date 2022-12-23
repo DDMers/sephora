@@ -93,7 +93,7 @@
 	},
 /obj/docking_port/mobile/supply{
 	dir = 4;
-	dwidth = 4;
+	dwidth = 3;
 	name = "Supply Shuttle";
 	width = 13;
 	id = "supply_home"
