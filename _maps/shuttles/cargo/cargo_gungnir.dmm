@@ -93,10 +93,12 @@
 	},
 /obj/docking_port/mobile/supply{
 	dir = 4;
-	dwidth = 3;
+	dwidth = 0;
 	name = "Supply Shuttle";
-	width = 13;
-	id = "supply_home"
+	width = 7;
+	id = "supply_home";
+	dheight = 9;
+	height = 13
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/space)
