@@ -9902,6 +9902,7 @@
 	dir = 8
 	},
 /obj/structure/closet/emcloset/anchored,
+/obj/item/grenade/chem_grenade/smart_metal_foam,
 /turf/open/floor/monotile/dark,
 /area/nsv/weapons/artillery)
 "azc" = (
@@ -10187,6 +10188,10 @@
 "azS" = (
 /obj/effect/turf_decal/box/white,
 /obj/effect/decal/cleanable/blood/old,
+/obj/structure/window/reinforced{
+	layer = 2.89
+	},
+/turf/open/floor/monotile/dark,
 /area/medical/morgue)
 "azT" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
@@ -15854,6 +15859,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/turf/open/floor/plasteel,
 /area/science/xenobiology)
 "aNd" = (
 /obj/structure/cable{
@@ -24453,6 +24459,11 @@
 	},
 /turf/open/floor/plasteel/ameridiner,
 /area/quartermaster/sorting)
+"dQb" = (
+/obj/structure/closet/emcloset/anchored,
+/obj/item/grenade/chem_grenade/smart_metal_foam,
+/turf/open/floor/monotile/dark,
+/area/nsv/weapons/artillery)
 "dSD" = (
 /obj/structure/disposalpipe/segment{
 	dir = 6
@@ -70834,7 +70845,7 @@ abq
 aXl
 aAX
 azb
-cTi
+dQb
 cBa
 abB
 abB

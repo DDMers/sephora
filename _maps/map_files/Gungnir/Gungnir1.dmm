@@ -38,8 +38,12 @@
 /turf/open/floor/monotile/dark/airless,
 /area/space/nearstation)
 "aak" = (
-/turf/open/floor/plating,
-/area/space)
+/obj/machinery/armour_plating_nanorepair_pump/forward_starboard,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel,
+/area/engine/armor)
 "aal" = (
 /obj/machinery/door/airlock/ship/external/glass{
 	req_one_access_txt = "101"
@@ -1542,6 +1546,8 @@
 /area/maintenance/port/central)
 "adK" = (
 /obj/structure/closet/secure_closet/hos,
+/obj/item/grenade/chem_grenade/armor_destruction,
+/obj/item/grenade/chem_grenade/armor_destruction,
 /turf/open/floor/noslip/blue,
 /area/crew_quarters/heads/hos)
 "adL" = (
@@ -5513,11 +5519,10 @@
 /turf/open/floor/plating,
 /area/maintenance/department/security)
 "ant" = (
-/obj/machinery/camera/autoname{
-	dir = 9
-	},
-/turf/closed/wall/r_wall/ship,
-/area/security/execution)
+/obj/structure/closet/emcloset/anchored,
+/obj/item/grenade/chem_grenade/smart_metal_foam,
+/turf/open/floor/plasteel,
+/area/space)
 "anu" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -8058,6 +8063,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/item/grenade/chem_grenade/smart_metal_foam,
 /turf/open/floor/plasteel,
 /area/nsv/hanger/storage)
 "atP" = (
@@ -8550,13 +8556,13 @@
 /area/crew_quarters/toilet)
 "ave" = (
 /obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
-/obj/structure/cable/yellow{
 	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel,
 /area/engine/armor)
@@ -8755,17 +8761,11 @@
 /turf/open/floor/monotile/steel,
 /area/hallway/nsv/deck1/hallway)
 "avz" = (
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
+/mob/living/simple_animal/hostile/retaliate/goose{
+	name = "Goose"
 	},
 /turf/open/floor/plasteel,
-/area/engine/armor)
+/area/nsv/hanger/storage)
 "avA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/monotile/steel,
@@ -9409,13 +9409,10 @@
 /turf/open/floor/plasteel,
 /area/nsv/engine/corridor)
 "awX" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/obj/machinery/armour_plating_nanorepair_pump/aft_port,
-/turf/open/floor/plasteel,
-/area/engine/armor)
+/obj/structure/closet/emcloset/anchored,
+/obj/item/grenade/chem_grenade/smart_metal_foam,
+/turf/open/floor/plasteel/dark,
+/area/security/main)
 "awY" = (
 /obj/machinery/camera/autoname{
 	network = list("ss13","labor")
@@ -9901,12 +9898,14 @@
 /turf/open/floor/plasteel,
 /area/engine/engine_room)
 "ayk" = (
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
 	},
-/obj/machinery/armour_plating_nanorepair_pump/forward_port,
+/mob/living/simple_animal/hostile/retaliate/goose{
+	name = "Mavrick"
+	},
 /turf/open/floor/plasteel,
-/area/engine/armor)
+/area/nsv/hanger/storage)
 "ayl" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -9943,16 +9942,21 @@
 /area/engine/armor)
 "ayo" = (
 /obj/structure/cable/yellow{
-	icon_state = "0-4"
+	icon_state = "1-2"
 	},
-/obj/machinery/armour_plating_nanorepair_pump/aft_starboard,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel,
 /area/engine/armor)
 "ayp" = (
+/obj/machinery/armour_plating_nanorepair_pump/aft_starboard,
 /obj/structure/cable/yellow{
-	icon_state = "0-8"
+	icon_state = "0-4"
 	},
-/obj/machinery/armour_plating_nanorepair_pump/forward_starboard,
 /turf/open/floor/plasteel,
 /area/engine/armor)
 "ayq" = (
@@ -10706,6 +10710,9 @@
 	dir = 4
 	},
 /obj/structure/rack,
+/obj/item/grenade/chem_grenade/armor_destruction,
+/obj/item/grenade/chem_grenade/armor_destruction,
+/obj/item/grenade/chem_grenade/armor_destruction,
 /turf/open/floor/plasteel/grid/steel,
 /area/security/main)
 "aAc" = (
@@ -13730,15 +13737,9 @@
 /turf/open/floor/plasteel,
 /area/engine/armor)
 "aGS" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/engine/armor)
+/obj/vehicle/sealed/car/realistic/fighter_tug,
+/turf/open/floor/monotile/dark/airless,
+/area/nsv/hanger/notkmcstupidhanger/launchtube)
 "aGT" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -16416,6 +16417,8 @@
 /area/security/warden)
 "aMT" = (
 /obj/structure/closet/secure_closet/warden,
+/obj/item/grenade/chem_grenade/armor_destruction,
+/obj/item/grenade/chem_grenade/armor_destruction,
 /turf/open/floor/plasteel,
 /area/security/warden)
 "aMU" = (
@@ -23335,7 +23338,7 @@
 "bbf" = (
 /obj/structure/table,
 /obj/item/storage/fancy/donut_box,
-/turf/open/floor/monotile/steel,
+/turf/open/floor/carpet/black,
 /area/maintenance/port/central)
 "bbg" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -23686,15 +23689,15 @@
 "bbT" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/snacks/waffles,
-/turf/open/floor/monotile/steel,
+/turf/open/floor/carpet/black,
 /area/maintenance/port/central)
 "bbU" = (
 /obj/structure/closet/secure_closet/freezer/meat,
-/turf/open/floor/monotile/steel,
+/turf/open/floor/carpet/black,
 /area/maintenance/port/central)
 "bbV" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
-/turf/open/floor/monotile/steel,
+/turf/open/floor/carpet/black,
 /area/maintenance/port/central)
 "bbW" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -24236,6 +24239,7 @@
 /area/ai_monitored/turret_protected/ai_upload)
 "bdd" = (
 /obj/structure/closet/emcloset/anchored,
+/obj/item/grenade/chem_grenade/smart_metal_foam,
 /turf/open/floor/plasteel/techmaint,
 /area/ai_monitored/turret_protected/ai_upload)
 "bde" = (
@@ -24997,6 +25001,7 @@
 /area/security/main)
 "erO" = (
 /obj/structure/closet/emcloset/anchored,
+/obj/item/grenade/chem_grenade/smart_metal_foam,
 /turf/open/floor/plasteel,
 /area/nsv/hanger/notkmcstupidhanger/hangar)
 "evK" = (
@@ -25465,6 +25470,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/storage/tools)
+"hqu" = (
+/obj/machinery/armour_plating_nanorepair_pump/aft_port,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel,
+/area/engine/armor)
 "hqL" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -26692,6 +26704,10 @@
 	},
 /turf/open/floor/monotile/steel,
 /area/hallway/nsv/deck1/hallway)
+"qdn" = (
+/obj/machinery/armour_plating_nanorepair_pump/forward_port,
+/turf/open/floor/plasteel,
+/area/engine/armor)
 "qeO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -26790,6 +26806,16 @@
 /obj/effect/landmark/start/shaft_miner,
 /turf/open/floor/plasteel,
 /area/nsv/hanger/mining)
+"qDY" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/engine/armor)
 "qEO" = (
 /obj/structure/table,
 /obj/item/hand_labeler,
@@ -27656,6 +27682,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/grenade/chem_grenade/smart_metal_foam,
 /turf/open/floor/plasteel/techmaint,
 /area/ai_monitored/turret_protected/ai_upload)
 "wui" = (
@@ -43002,13 +43029,13 @@ akY
 acZ
 rek
 akZ
-awX
+ald
 ald
 alm
 avo
 ahn
 ahn
-ayo
+ahn
 ahn
 aGV
 aGX
@@ -43259,13 +43286,13 @@ aID
 acZ
 ahn
 ahn
-alr
 ahn
+hqu
 ahn
 avp
 ahn
+ayp
 ahn
-alr
 ahn
 aFr
 aGY
@@ -43516,13 +43543,13 @@ acZ
 acZ
 cHC
 ahn
-alr
 ahn
+alr
 ahn
 ams
 aFp
+qDY
 aGR
-aGS
 aGT
 aGW
 aGY
@@ -43773,13 +43800,13 @@ aya
 acV
 ixq
 alp
-ave
 avg
+ayo
 avg
 aym
 aJJ
+ave
 avg
-avz
 aGU
 avg
 aGZ
@@ -44030,13 +44057,13 @@ aya
 acV
 avu
 awL
-alr
 ahn
+alr
 ahn
 alq
 aFr
-ahn
 alr
+ahn
 alr
 pKN
 kaL
@@ -44287,13 +44314,13 @@ xrU
 acV
 ayn
 alr
-alr
 ahn
+qdn
 ahn
 alq
 aFr
+aak
 ahn
-alr
 alr
 aip
 kaL
@@ -44544,13 +44571,13 @@ aya
 acV
 ahn
 alr
-ayk
+ahn
 ahn
 ahn
 alq
 aFr
 ahn
-ayp
+ahn
 alr
 ahn
 kaL
@@ -50934,8 +50961,8 @@ aaa
 aaa
 aaa
 aaa
-aak
-aak
+aaa
+aaa
 abU
 aaL
 aaG
@@ -64049,7 +64076,7 @@ abT
 any
 ajU
 aiL
-ant
+aYq
 asJ
 azX
 aws
@@ -67436,7 +67463,7 @@ afL
 aLt
 afT
 ayO
-afT
+aGS
 afT
 afT
 afT
@@ -67912,7 +67939,7 @@ aos
 aoH
 aPx
 aog
-aOW
+awX
 art
 ast
 axB
@@ -68967,7 +68994,7 @@ foT
 afq
 aRb
 apk
-apB
+ayk
 apB
 apB
 apC
@@ -69481,7 +69508,7 @@ jtX
 afq
 aWN
 aft
-aft
+avz
 aft
 apy
 apE
@@ -71285,7 +71312,7 @@ akB
 akB
 bSz
 wOJ
-wPX
+ant
 xlt
 aLG
 aLg
@@ -74097,7 +74124,7 @@ aMC
 oZu
 aaj
 aaj
-aaj
+aan
 aan
 aan
 aan
