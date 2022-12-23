@@ -2642,6 +2642,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-32"
 	},
+/obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plating,
 /area/maintenance/department/electrical)
 "ahb" = (
@@ -2896,6 +2897,7 @@
 /obj/structure/cable{
 	icon_state = "8-32"
 	},
+/obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plating,
 /area/maintenance/port/central)
 "ahH" = (
@@ -3072,6 +3074,7 @@
 /obj/structure/cable{
 	icon_state = "8-32"
 	},
+/obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plating,
 /area/maintenance/department/electrical)
 "aie" = (
@@ -5457,6 +5460,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/structure/disposalpipe/junction/flip{
+	dir = 2
 	},
 /turf/open/floor/plasteel,
 /area/ai_monitored/turret_protected/aisat/hallway)
@@ -9662,6 +9668,9 @@
 	icon_state = "2-8"
 	},
 /obj/effect/landmark/start/bridge,
+/obj/structure/chair/fancy/shuttle{
+	dir = 4
+	},
 /turf/open/floor/plasteel/grid/techfloor,
 /area/bridge/cic)
 "axH" = (
@@ -19179,6 +19188,7 @@
 /area/nsv/briefingroom)
 "aSg" = (
 /obj/effect/turf_decal/tile/ship/full/purple,
+/obj/structure/chair/fancy/corp,
 /turf/open/floor/monotile/dark,
 /area/nsv/briefingroom)
 "aSh" = (
@@ -19210,6 +19220,7 @@
 "aSl" = (
 /obj/effect/turf_decal/tile/ship/full/brown,
 /obj/effect/turf_decal/tile/ship/full/brown,
+/obj/structure/chair/fancy/corp,
 /turf/open/floor/monotile/dark,
 /area/nsv/briefingroom)
 "aSm" = (
@@ -19267,25 +19278,31 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/ship/full/blue,
+/obj/structure/chair/fancy/corp,
 /turf/open/floor/monotile/dark,
 /area/nsv/briefingroom)
 "aSt" = (
 /obj/effect/turf_decal/tile/ship/full/yellow,
+/obj/structure/chair/fancy/corp,
 /turf/open/floor/monotile/dark,
 /area/nsv/briefingroom)
 "aSu" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/chair/fancy/corp,
 /turf/open/floor/carpet/royalblue,
 /area/nsv/briefingroom)
 "aSv" = (
+/obj/structure/chair/fancy/corp,
 /turf/open/floor/carpet/royalblue,
 /area/nsv/briefingroom)
 "aSw" = (
 /obj/effect/turf_decal/tile/ship/full/red,
+/obj/structure/chair/fancy/corp,
 /turf/open/floor/monotile/dark,
 /area/nsv/briefingroom)
 "aSx" = (
 /obj/effect/turf_decal/tile/ship/full/orange,
+/obj/structure/chair/fancy/corp,
 /turf/open/floor/monotile/dark,
 /area/nsv/briefingroom)
 "aSy" = (
@@ -19499,17 +19516,26 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
+/obj/structure/chair/fancy/shuttle{
+	dir = 1
+	},
 /turf/open/floor/monotile/steel,
 /area/nsv/briefingroom)
 "aTb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/chair/fancy/shuttle{
+	dir = 1
+	},
 /turf/open/floor/monotile/steel,
 /area/nsv/briefingroom)
 "aTc" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
+	},
+/obj/structure/chair/fancy/shuttle{
+	dir = 1
 	},
 /turf/open/floor/monotile/steel,
 /area/nsv/briefingroom)
@@ -20840,11 +20866,12 @@
 	dir = 8
 	},
 /obj/structure/cable{
-	icon_state = "0-8"
+	icon_state = "8-32"
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plating,
 /area/maintenance/starboard/central)
 "aVQ" = (
@@ -21038,6 +21065,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/landmark/start/air_traffic_controller,
+/obj/structure/chair/fancy/shuttle{
+	dir = 8
+	},
 /turf/open/floor/plasteel/grid/techfloor,
 /area/bridge/cic)
 "aWi" = (
@@ -21106,6 +21136,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/landmark/start/captain,
+/obj/structure/chair/fancy/shuttle{
+	dir = 4
+	},
 /turf/open/floor/plasteel/grid/techfloor,
 /area/bridge/cic)
 "aWn" = (
@@ -21292,6 +21325,9 @@
 	icon_state = "1-8"
 	},
 /obj/effect/landmark/start/bridge,
+/obj/structure/chair/fancy/shuttle{
+	dir = 4
+	},
 /turf/open/floor/plasteel/grid/techfloor,
 /area/bridge/cic)
 "aWI" = (
@@ -24846,6 +24882,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-32"
 	},
+/obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plating,
 /area/maintenance/department/electrical)
 "ean" = (
@@ -25154,6 +25191,12 @@
 /obj/effect/landmark/zebra_interlock_point,
 /turf/open/floor/monotile/steel,
 /area/hallway/nsv/deck1/hallway)
+"fqs" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/engine/storage_shared)
 "fqF" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -25331,6 +25374,12 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/dark,
 /area/security/locker_room)
+"gBX" = (
+/obj/structure/chair/fancy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/monotile/steel,
+/area/nsv/briefingroom)
 "gEY" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -25521,6 +25570,13 @@
 	},
 /turf/open/floor/monotile/steel,
 /area/hallway/nsv/deck1/aft)
+"hZu" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/chair/fancy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/monotile/steel,
+/area/nsv/briefingroom)
 "icv" = (
 /obj/machinery/light{
 	dir = 4
@@ -25790,6 +25846,7 @@
 /obj/structure/cable{
 	icon_state = "8-32"
 	},
+/obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plating,
 /area/maintenance/nsv/deck1/port/fore)
 "jJe" = (
@@ -26869,6 +26926,15 @@
 "rxB" = (
 /turf/closed/wall/r_wall/ship,
 /area/shuttle/turbolift/quaternary)
+"rEu" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/chair/fancy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/monotile/steel,
+/area/nsv/briefingroom)
 "rJc" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -44247,7 +44313,7 @@ aga
 aDm
 aga
 bdo
-aga
+fqs
 aHX
 bdo
 aaj
@@ -59144,11 +59210,11 @@ aSo
 aSs
 aSz
 aSH
+rEu
 aSH
-aSH
-aSH
+rEu
 aSS
-aSG
+gBX
 aSG
 aTa
 aSG
@@ -59401,11 +59467,11 @@ aSk
 aSt
 aSA
 aSG
+gBX
 aSG
-aSG
-aSG
+gBX
 aDf
-aSG
+gBX
 aSG
 aTb
 aSG
@@ -59658,11 +59724,11 @@ aSp
 aSu
 aSB
 aSI
+hZu
 aSI
-aSI
-aSI
+hZu
 aST
-aSI
+hZu
 aSI
 aTc
 aSG
@@ -59915,13 +59981,13 @@ aSq
 aSv
 aSC
 aSG
+gBX
 aSG
-aSG
-aSG
+gBX
 aDf
+gBX
 aSG
-aSG
-aSG
+gBX
 aSG
 atZ
 auo
@@ -60172,13 +60238,13 @@ aSr
 aSw
 aSA
 aSJ
+rEu
 aSH
-aSH
-aSH
+rEu
 aSU
+gBX
 aSG
-aSG
-aSG
+gBX
 aSG
 atZ
 auo
@@ -60429,13 +60495,13 @@ aSk
 aSx
 aSD
 aSG
+gBX
 aSG
+gBX
 aSG
+gBX
 aSG
-aSG
-aSG
-aSG
-aSG
+gBX
 aSG
 atZ
 auo
