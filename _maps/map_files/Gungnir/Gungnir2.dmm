@@ -1800,8 +1800,8 @@
 /area/shuttle/turbolift/quinary)
 "agc" = (
 /turf/open/floor/engine/air/light{
-	initial_temperature = 40;
-	initial_gas_mix = "o2=1000;n2=4000;TEMP=40.15"
+	initial_gas_mix = "o2=1000;n2=4000;TEMP=40.15";
+	initial_temperature = 40
 	},
 /area/medical/virology)
 "agd" = (
@@ -15900,10 +15900,10 @@
 	pixel_y = -2
 	},
 /obj/machinery/button/door{
+	id = "xenopurgerelease";
 	name = "Purge Release/Step 1";
 	pixel_x = 22;
-	pixel_y = 6;
-	id = "xenopurgerelease"
+	pixel_y = 6
 	},
 /obj/machinery/button/door{
 	id = "xenopurgeend";
@@ -16858,8 +16858,8 @@
 	},
 /obj/machinery/airalarm/all_access{
 	name = "Cloning Chamber Air Alarm";
-	pixel_y = 1;
-	pixel_x = -30
+	pixel_x = -30;
+	pixel_y = 1
 	},
 /turf/open/floor/noslip/dark,
 /area/medical/genetics/cloning)
@@ -17322,10 +17322,10 @@
 	pixel_y = -30
 	},
 /obj/machinery/button/door{
+	id = "viropurge";
 	name = "Purge Release/Step 1";
 	pixel_x = -8;
-	pixel_y = -22;
-	id = "viropurge"
+	pixel_y = -22
 	},
 /obj/machinery/button/door{
 	id = "virovent";
@@ -23690,11 +23690,11 @@
 /area/quartermaster/qm)
 "bdn" = (
 /obj/machinery/button/door{
-	req_one_access_txt = ""1;
 	 = 70"";
 	id = "beepsky";
 	name = "Security Bot Release";
-	pixel_y = -26
+	pixel_y = -26;
+	req_one_access_txt = ""1
 	},
 /turf/open/floor/monotile/dark,
 /area/hallway/nsv/deck2/aft)
@@ -24650,10 +24650,11 @@
 "ehr" = (
 /obj/docking_port/stationary{
 	dir = 2;
-	height = 13;
+	dwidth = 3;
+	height = 7;
 	id = "supply_home";
-	width = 7;
-	dheight = 9
+	name = "Cargo Bay";
+	width = 13
 	},
 /turf/open/space/basic,
 /area/space/nearstation)
@@ -26855,8 +26856,8 @@
 /area/crew_quarters/lounge)
 "qlb" = (
 /turf/open/floor/engine/air/light{
-	initial_temperature = 40;
-	initial_gas_mix = "o2=1000;n2=4000;TEMP=40.15"
+	initial_gas_mix = "o2=1000;n2=4000;TEMP=40.15";
+	initial_temperature = 40
 	},
 /area/science/xenobiology)
 "qmu" = (
