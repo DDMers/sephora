@@ -9,6 +9,7 @@
 	"shuttles": {
 		"cargo": "cargo_gungnir",
 		"ferry": "ferry_kilo",
+        "arrival": "arrival_aetherwhisp",
 	    "emergency": "emergency_donut"},
     "mine_disable": 1,
 	"ship_type": "/obj/structure/overmap/nanotrasen/heavy_battlecruiser/starter"
