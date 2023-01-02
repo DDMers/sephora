@@ -231,12 +231,15 @@
 /turf/closed/wall/ship,
 /area/medical/genetics)
 "aaR" = (
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
 /obj/machinery/navbeacon{
-	codes_txt = "patrol;next_patrol=cassssssssssssssp";
-	location = "ap"
+	codes_txt = "patrol;next_patrol=m22";
+	location = "m21"
 	},
 /turf/open/floor/monotile/steel,
-/area/maintenance/department/medical)
+/area/hallway/nsv/deck2/aft)
 "aaS" = (
 /turf/closed/wall/ship,
 /area/medical/storage)
@@ -465,7 +468,7 @@
 /obj/structure/lattice/catwalk,
 /obj/structure/grille,
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "abL" = (
 /turf/closed/wall/ship,
 /area/engine/atmos)
@@ -1290,6 +1293,7 @@
 /area/engine/atmos/starboard_atmos)
 "aex" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
+/obj/structure/lattice/catwalk,
 /turf/open/space/basic,
 /area/maintenance/department/medical)
 "aey" = (
@@ -2358,7 +2362,7 @@
 /area/maintenance/department/science)
 "ahu" = (
 /turf/open/floor/plating,
-/area/nsv/weapons/fore)
+/area/space/nearstation)
 "ahv" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
@@ -12300,9 +12304,11 @@
 /obj/machinery/door/airlock/ship/external/glass{
 	req_one_access_txt = "24"
 	},
-/obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/engine/atmos)
 "aFC" = (
@@ -13775,7 +13781,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/navbeacon{
 	location = "c2";
-	codes_txt = "patrol;next_patrol=c3"
+	codes_txt = "patrol;next_patrol=c3"sssssssssssssssssssssssssssssssssssssssssssss
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/nsv/clinic)
@@ -14016,21 +14022,9 @@
 /turf/open/floor/monotile/steel,
 /area/hallway/nsv/deck2/aft)
 "aIN" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/navbeacon{
-	codes_txt = "patrol;next_patrol=cas";
-	location = "aft"
-	},
-/turf/open/floor/monotile/steel,
-/area/hallway/nsv/deck2/aft)
+/obj/structure/lattice/catwalk,
+/turf/open/space/basic,
+/area/space/nearstation)
 "aIO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -21706,7 +21700,8 @@
 /obj/effect/landmark/start/medical_doctor,
 /obj/machinery/navbeacon{
 	location = "c3";
-	codes_txt = ""patrol;next_patrol=c4""
+	codes_txt = ""patrol;
+	next_patrol = c4""
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/nsv/clinic)
@@ -24462,6 +24457,18 @@
 /obj/effect/landmark/zebra_interlock_point,
 /turf/open/floor/monotile/steel,
 /area/hallway/secondary/entry)
+"czX" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe"
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/brown,
+/obj/structure/bot_elevator,
+/turf/open/floor/monotile/dark,
+/area/hallway/nsv/deck2/forward)
 "cBa" = (
 /obj/machinery/button{
 	id = "MuniLoad";
@@ -24652,6 +24659,22 @@
 	},
 /turf/open/floor/engine,
 /area/medical/virology)
+"dGE" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/navbeacon{
+	codes_txt = "patrol;next_patrol=m6";
+	location = "m5"
+	},
+/turf/open/floor/monotile/steel,
+/area/hallway/nsv/deck2/forward)
 "dIC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -24890,8 +24913,8 @@
 /area/shuttle/turbolift/secondary)
 "eQB" = (
 /obj/machinery/navbeacon{
-	codes_txt = "patrol;next_patrol=cfs";
-	location = "as"
+	codes_txt = "patrol;next_patrol=m8";
+	location = "m7"
 	},
 /turf/open/floor/monotile/steel,
 /area/hallway/secondary/exit/departure_lounge)
@@ -25202,11 +25225,8 @@
 /area/nsv/weapons/artillery)
 "gIc" = (
 /obj/machinery/navbeacon{
-	codes_txt = "patrol;next_patrol=fwd";
-	location = "cfs"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
+	codes_txt = "patrol;next_patrol=m1";
+	location = "m22"
 	},
 /turf/open/floor/monotile/steel,
 /area/hallway/nsv/deck2/primary)
@@ -25626,6 +25646,13 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/cargo)
+"iDf" = (
+/obj/machinery/navbeacon{
+	codes_txt = "patrol;next_patrol=m3";
+	location = "m2"
+	},
+/turf/open/floor/monotile/steel,
+/area/maintenance/department/medical)
 "iFH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -26230,6 +26257,10 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/navbeacon{
+	codes_txt = "patrol;next_patrol=m5";
+	location = "m4"
+	},
 /turf/open/floor/monotile/steel,
 /area/hallway/nsv/deck2/primary)
 "lDZ" = (
@@ -26486,6 +26517,16 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/monotile/steel,
 /area/nsv/weapons/gauss/battery/deck2/starboard)
+"mLc" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/navbeacon{
+	codes_txt = "patrol;next_patrol=m9";
+	location = "m8"
+	},
+/turf/open/floor/monotile/steel,
+/area/hallway/nsv/deck2/primary)
 "mSj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -26722,6 +26763,16 @@
 /obj/structure/window/reinforced,
 /turf/open/floor/plasteel,
 /area/quartermaster/warehouse)
+"nZJ" = (
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
+/obj/machinery/navbeacon{
+	codes_txt = "patrol;next_patrol=m11";
+	location = "m10"
+	},
+/turf/open/floor/monotile/steel,
+/area/hallway/nsv/deck2/aft)
 "nZV" = (
 /obj/structure/closet/emcloset/anchored,
 /turf/open/floor/monotile/steel,
@@ -27774,6 +27825,13 @@
 	},
 /turf/open/floor/plasteel/ameridiner,
 /area/quartermaster/sorting)
+"tJs" = (
+/obj/machinery/navbeacon{
+	codes_txt = "patrol;next_patrol=m10";
+	location = "m9"
+	},
+/turf/open/floor/monotile/steel,
+/area/hallway/nsv/deck2/primary)
 "tKQ" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -27916,6 +27974,15 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/engine/atmos)
+"uke" = (
+/obj/machinery/door/airlock/ship/external/glass{
+	req_one_access_txt = "24"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plating,
+/area/nsv/weapons/fore)
 "ulU" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -27971,6 +28038,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/monotile/steel,
 /area/hallway/nsv/deck2/primary)
+"uKC" = (
+/obj/machinery/navbeacon{
+	codes_txt = "patrol;next_patrol=m2";
+	location = "m1"
+	},
+/turf/open/floor/monotile/steel,
+/area/maintenance/department/medical)
 "uNy" = (
 /obj/machinery/lazylift_button{
 	lift_id = "miner";
@@ -28236,6 +28310,17 @@
 /obj/effect/spawner/structure/window,
 /turf/open/floor/monotile/steel,
 /area/crew_quarters/fitness/recreation)
+"wnP" = (
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/navbeacon{
+	codes_txt = "patrol;next_patrol=m7";
+	location = "m6"
+	},
+/turf/open/floor/monotile/steel,
+/area/hallway/nsv/deck2/primary)
 "wpx" = (
 /obj/machinery/light{
 	dir = 4
@@ -28261,6 +28346,13 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/grass,
 /area/maintenance/department/medical)
+"wzc" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/bot_elevator,
+/turf/open/floor/monotile/steel,
+/area/hallway/nsv/deck2/aft)
 "wzW" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -28397,6 +28489,16 @@
 /obj/machinery/light,
 /turf/open/floor/monotile/dark,
 /area/engine/engineering/reactor_control)
+"xnE" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/navbeacon{
+	codes_txt = "patrol;next_patrol=m4";
+	location = "m3"
+	},
+/turf/open/floor/monotile/steel,
+/area/hallway/nsv/deck2/primary)
 "xpy" = (
 /turf/open/floor/monotile/steel,
 /area/shuttle/turbolift/secondary)
@@ -38979,27 +39081,27 @@ aaa
 aaa
 aaa
 aaa
-aci
-aci
-aci
+aaa
+aaa
+aaa
 adj
 aci
 aci
 aci
 adj
-aci
-aci
-aci
-aci
-aci
-aci
-aci
-aci
-aci
-aci
-aci
-aci
-aci
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
 aci
 aci
 aaL
@@ -39011,19 +39113,19 @@ adj
 aci
 aci
 aaL
-aci
-aci
-aci
-aci
-aci
-aci
-aci
-aci
-aci
-aci
-aci
-aci
-aci
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
 adj
 aci
 aci
@@ -39247,16 +39349,16 @@ adj
 aci
 aci
 aaL
-aci
-aci
-aci
+aaa
+aaa
+aaa
 aci
 aci
 aaL
-aci
-aci
-aci
-aci
+aaa
+aaa
+aaa
+aaa
 aci
 aci
 aci
@@ -39268,16 +39370,16 @@ adj
 aci
 aci
 aci
-aci
-aci
-aci
-aci
+aaa
+aaa
+aaa
+aaa
 aci
 aci
 aaL
-aci
-aci
-aci
+aaa
+aaa
+aaa
 aci
 aci
 aaL
@@ -39510,9 +39612,9 @@ aEq
 aci
 aci
 aci
-aci
-aci
-aci
+aaa
+aaa
+aaa
 adj
 aci
 aci
@@ -39526,15 +39628,15 @@ aci
 aci
 aci
 adj
+aaa
+aaa
+aaa
 aci
 aci
 aci
-aci
-aci
-aci
-aEq
-aEq
-aEq
+abK
+abK
+abK
 aci
 aci
 aci
@@ -39768,8 +39870,8 @@ aci
 aci
 aci
 adj
-aci
-aci
+aaa
+aaa
 adj
 aDp
 aDp
@@ -39783,8 +39885,8 @@ aDp
 aDp
 aDp
 adj
-aci
-aci
+aaa
+aaa
 adj
 aci
 aci
@@ -42314,7 +42416,7 @@ aaa
 aaa
 aaa
 aaa
-aci
+aIN
 adj
 adj
 adj
@@ -42378,7 +42480,7 @@ adj
 adj
 adj
 adj
-aci
+aIN
 aaa
 aaa
 aaa
@@ -42571,7 +42673,7 @@ aaa
 aaa
 aaa
 aaa
-aci
+aIN
 awE
 azC
 azT
@@ -42635,7 +42737,7 @@ aFB
 azC
 azT
 aBw
-aci
+aIN
 aaa
 aaa
 aaa
@@ -42828,7 +42930,7 @@ aaa
 aaa
 aaa
 aaa
-aci
+aIN
 adj
 adj
 adj
@@ -42892,7 +42994,7 @@ adj
 adj
 adj
 adj
-aci
+aIN
 aaa
 aaa
 aaa
@@ -43150,8 +43252,8 @@ aFD
 aFE
 aFD
 aFG
-aci
-aci
+aaI
+aaI
 aaa
 aaa
 aaa
@@ -49249,7 +49351,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+aIN
 aeH
 aeH
 aeH
@@ -49321,7 +49423,7 @@ vdb
 bdy
 bdy
 bdy
-aaa
+aIN
 aaa
 aaa
 aaa
@@ -49506,7 +49608,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+aIN
 aan
 abM
 aev
@@ -49578,7 +49680,7 @@ bdV
 aDT
 aDU
 aDV
-aaa
+aIN
 aaa
 aaa
 aaa
@@ -49763,7 +49865,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+aIN
 aaX
 aaX
 aaX
@@ -49835,7 +49937,7 @@ bdW
 bdy
 bdy
 bdy
-aaa
+aIN
 aaa
 aaa
 aaa
@@ -51341,7 +51443,7 @@ afc
 afc
 afc
 aIK
-aIN
+ajC
 afe
 afc
 afc
@@ -52885,7 +52987,7 @@ dqG
 afe
 ajC
 aIK
-dqG
+wzc
 afe
 afe
 aFQ
@@ -53138,11 +53240,11 @@ ayZ
 aSI
 aJJ
 aJJ
-aJJ
+aaR
 aJJ
 aIO
 aJS
-aIX
+nZJ
 afe
 afe
 xMI
@@ -55164,7 +55266,7 @@ aYv
 aYv
 aYG
 adu
-abk
+uKC
 abk
 wpx
 abk
@@ -55227,7 +55329,7 @@ aGh
 agH
 ard
 bdO
-eQB
+agH
 agH
 bdQ
 aYM
@@ -55422,7 +55524,7 @@ aYE
 aYI
 agd
 abk
-aaR
+abk
 adm
 fPC
 abk
@@ -55970,7 +56072,7 @@ aff
 aHq
 aJa
 aKc
-aff
+tJs
 qiF
 aff
 aff
@@ -56475,7 +56577,7 @@ awq
 awq
 aNP
 aSf
-aff
+gIc
 aff
 aXJ
 eea
@@ -57026,7 +57128,7 @@ aGl
 agH
 agH
 agH
-agH
+eQB
 agH
 agH
 aYQ
@@ -57515,7 +57617,7 @@ lxE
 sNW
 aXy
 aff
-aoB
+mLc
 lsB
 adR
 adX
@@ -58248,7 +58350,7 @@ aYw
 aYE
 aYI
 agd
-abk
+iDf
 abk
 abk
 akb
@@ -58788,7 +58890,7 @@ aeZ
 aeZ
 nSA
 auu
-aoB
+xnE
 aff
 igW
 lQk
@@ -60341,7 +60443,7 @@ aXy
 aXy
 aXJ
 aXJ
-gIc
+aJa
 mtC
 aFV
 asy
@@ -60854,7 +60956,7 @@ cEZ
 sAb
 cPH
 hQE
-cPH
+wnP
 cPH
 ieT
 aFS
@@ -70617,7 +70719,7 @@ aPP
 abh
 aXA
 akx
-xsF
+czX
 abT
 abT
 abT
@@ -71608,7 +71710,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+aIN
 acj
 acj
 acj
@@ -71680,7 +71782,7 @@ aaB
 acj
 acj
 acj
-aaa
+aIN
 aaa
 aaa
 aaa
@@ -71865,7 +71967,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+aIN
 nGA
 aZa
 aBL
@@ -71937,7 +72039,7 @@ wOm
 aaz
 adf
 aiw
-aaa
+aIN
 aaa
 aaa
 aaa
@@ -72122,7 +72224,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+aIN
 acj
 acj
 aav
@@ -72194,7 +72296,7 @@ aaB
 acj
 acj
 acj
-aaa
+aIN
 aaa
 aaa
 aaa
@@ -72415,7 +72517,7 @@ abq
 abq
 abq
 jKI
-akx
+dGE
 vBP
 abq
 abq
@@ -81399,7 +81501,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+aIN
 agh
 agh
 agh
@@ -81421,7 +81523,7 @@ agh
 agh
 agh
 agh
-aaa
+aIN
 aaa
 aaa
 aaa
@@ -81656,7 +81758,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+aIN
 ahu
 aCS
 aCV
@@ -81673,12 +81775,12 @@ aVY
 aVY
 aVY
 aVV
-aCS
+uke
 aCV
 aCX
 aCZ
 ahu
-aaa
+aIN
 aaa
 aaa
 aaa
@@ -81913,7 +82015,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+aIN
 agh
 agh
 agh
@@ -81935,7 +82037,7 @@ agh
 agh
 agh
 agh
-aaa
+aIN
 aaa
 aaa
 aaa
