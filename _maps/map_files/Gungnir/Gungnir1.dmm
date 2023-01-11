@@ -20,14 +20,14 @@
 	req_one_access_txt = "101"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating,
 /area/bridge/meeting_room/council)
 "aah" = (
 /turf/closed/wall/r_wall/ship,
 /area/engine/storage_shared)
 "aai" = (
+/obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/plating,
 /area/nsv/weapons/main_passageway)
 "aaj" = (
@@ -46,10 +46,11 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/bridge/meeting_room/council)
 "aam" = (
@@ -7260,9 +7261,9 @@
 /turf/open/floor/plasteel,
 /area/crew_quarters/bar/atrium)
 "asR" = (
-/obj/structure/grille,
-/turf/open/floor/monotile/dark,
-/area/nsv/weapons/equipment_room)
+/obj/structure/lattice/catwalk,
+/turf/open/space/basic,
+/area/space/nearstation)
 "asU" = (
 /obj/effect/turf_decal/tile/ship/half/red{
 	dir = 4
@@ -9577,7 +9578,7 @@
 "ayC" = (
 /obj/structure/grille,
 /obj/structure/grille,
-/turf/open/floor/monotile/dark,
+/turf/open/floor/plating/airless,
 /area/nsv/weapons/equipment_room)
 "ayD" = (
 /obj/structure/table,
@@ -16589,10 +16590,6 @@
 /obj/effect/spawner/room/tenxfive,
 /turf/template_noop,
 /area/maintenance/nsv/hangar)
-"aOm" = (
-/obj/structure/grille,
-/turf/open/floor/monotile/dark/airless,
-/area/nsv/weapons/equipment_room)
 "aOn" = (
 /obj/structure/closet/firecloset/full,
 /turf/open/floor/plating,
@@ -49148,7 +49145,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+cji
 bcg
 bcg
 bcg
@@ -49220,7 +49217,7 @@ aae
 bcg
 bcg
 bcg
-aaa
+cji
 aaa
 aaa
 aaa
@@ -49405,7 +49402,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+cji
 ads
 age
 ajl
@@ -49477,7 +49474,7 @@ bby
 goW
 age
 ajl
-aaf
+asR
 aaa
 aaa
 aaa
@@ -49662,7 +49659,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+cji
 bcg
 bcg
 bcg
@@ -49734,7 +49731,7 @@ aae
 bcg
 bcg
 bcg
-aaa
+cji
 aaa
 aaa
 aaa
@@ -56600,7 +56597,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+abP
 abD
 akH
 ack
@@ -56857,7 +56854,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+abP
 abD
 amH
 ack
@@ -57114,7 +57111,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+abP
 abD
 anP
 apd
@@ -57371,7 +57368,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+abP
 abD
 anS
 aaQ
@@ -57628,7 +57625,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+abP
 abD
 ack
 aaQ
@@ -57885,7 +57882,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+abP
 abD
 ack
 abG
@@ -58142,7 +58139,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+abP
 aaA
 aaA
 aaA
@@ -71507,7 +71504,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+cji
 aeF
 aeF
 aeF
@@ -71579,7 +71576,7 @@ rmr
 bdk
 bdk
 bdk
-aaa
+cji
 aaa
 aaa
 aaa
@@ -71764,7 +71761,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+cji
 afl
 sUj
 akx
@@ -71836,7 +71833,7 @@ vhq
 aFP
 aFQ
 aFR
-aaa
+cji
 aaa
 aaa
 aaa
@@ -72021,7 +72018,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+cji
 xXr
 xXr
 xXr
@@ -72093,7 +72090,7 @@ asH
 bdk
 bdk
 bdk
-aaa
+cji
 aaa
 aaa
 aaa
@@ -74602,8 +74599,8 @@ aaa
 xXr
 bdr
 hYV
-rjl
-rjl
+bdr
+bdr
 rjl
 rjl
 aXZ
@@ -74860,8 +74857,8 @@ aaa
 bdr
 hYV
 hYV
-rjl
-rjl
+bdr
+bdr
 rjl
 amV
 axi
@@ -75118,8 +75115,8 @@ bdr
 bdr
 hYV
 hYV
-rjl
-rjl
+bdr
+bdr
 vXo
 xlt
 aLa
@@ -75376,8 +75373,8 @@ bdr
 bdr
 hYV
 hYV
-rjl
-rjl
+bdr
+bdr
 xlt
 bdr
 aLl
@@ -75634,8 +75631,8 @@ bdr
 bdr
 hYV
 hYV
-rjl
-rjl
+bdr
+bdr
 bdr
 aPG
 aTg
@@ -75891,8 +75888,8 @@ aaa
 bdr
 bdr
 hYV
-hYV
-rjl
+ayC
+bdr
 bdr
 aQz
 aMm
@@ -76149,7 +76146,7 @@ aaa
 bdr
 bdr
 hYV
-rjl
+bdr
 bdr
 aQU
 aTh
@@ -76406,7 +76403,7 @@ aaa
 aaa
 bdr
 hYV
-asR
+hYV
 bdr
 bdr
 bdr
@@ -76663,13 +76660,13 @@ aaa
 aaa
 bdr
 bdr
-ayC
-asR
-asR
-asR
-asR
-rjl
-rjl
+hYV
+hYV
+hYV
+hYV
+hYV
+bdr
+bdr
 aMD
 icv
 aLf
@@ -76924,12 +76921,12 @@ bdr
 bdr
 bdr
 bdr
-asR
-asR
-rjl
-rjl
-rjl
-rjl
+hYV
+hYV
+bdr
+bdr
+bdr
+bdr
 bdr
 bdr
 bdr
@@ -77182,12 +77179,12 @@ aan
 aaj
 bdr
 bdr
-aOm
-aOm
-aOm
-aOm
-aOm
-aOm
+hYV
+hYV
+hYV
+hYV
+hYV
+hYV
 bdr
 bdr
 aaj

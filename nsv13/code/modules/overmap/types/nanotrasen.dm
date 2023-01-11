@@ -131,7 +131,6 @@
 	bound_height = 96
 	bound_width = 96
 	armor = list("overmap_light" = 95, "overmap_medium" = 75, "overmap_heavy" = 50)
-	
 
 //Instanced Versions
 
@@ -208,7 +207,9 @@
 	overmap_deletion_traits = DAMAGE_STARTS_COUNTDOWN
 	broadside = TRUE
 
-/obj/structure/overmap/nanotrasen/heavy_cruiser/starter //NOT IN CYCLE
+/obj/structure/overmap/nanotrasen/heavy_cruiser/starter //Currently assigned to Hammerhead
+	icon = 'nsv13/icons/overmap/new/nanotrasen/heavy_cruiser.dmi'
+	icon_state = "heavy_cruiser"
 	role = MAIN_OVERMAP
 	obj_integrity = 1400
 	max_integrity = 1400
@@ -238,14 +239,14 @@
 	starting_system = "Staging" //Required for all player ships
 	armor = list("overmap_light" = 95, "overmap_medium" = 60, "overmap_heavy" = 20)
 	overmap_deletion_traits = DAMAGE_STARTS_COUNTDOWN
-
-/obj/structure/overmap/nanotrasen/heavy_battlecruiser/starter //Gungnir
+	
+/obj/structure/overmap/nanotrasen/heavy_battlecruiser/starter //Assigned to Gungnir
 	role = MAIN_OVERMAP
-	obj_integrity = 1700
-	max_integrity = 1700
-	integrity_failure = 1700
+	obj_integrity = 1750
+	max_integrity = 1750
+	integrity_failure = 1750
 	starting_system = "Staging" //Required for all player ships
-	armor = list("overmap_light" = 95, "overmap_medium" = 65, "overmap_heavy" = 20)
+	armor = list("overmap_light" = 95, "overmap_medium" = 70, "overmap_heavy" = 20)
 	overmap_deletion_traits = DAMAGE_STARTS_COUNTDOWN
 
 /obj/structure/overmap/nanotrasen/battleship/starter //Galactica
