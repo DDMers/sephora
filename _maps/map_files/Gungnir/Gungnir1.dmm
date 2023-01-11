@@ -451,7 +451,6 @@
 /turf/open/floor/plating,
 /area/maintenance/department/security)
 "abo" = (
-/obj/structure/lattice/catwalk,
 /turf/closed/wall/r_wall/ship,
 /area/bridge/meeting_room/council)
 "abp" = (
@@ -9576,7 +9575,6 @@
 /turf/open/floor/plasteel,
 /area/engine/atmospherics_engine)
 "ayC" = (
-/obj/structure/grille,
 /obj/structure/grille,
 /turf/open/floor/plating/airless,
 /area/nsv/weapons/equipment_room)
