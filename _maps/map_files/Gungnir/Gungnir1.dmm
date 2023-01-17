@@ -162,8 +162,11 @@
 /turf/open/floor/plating,
 /area/maintenance/department/security)
 "aaA" = (
-/turf/closed/wall/r_wall/ship,
-/area/bridge/meeting_room/council)
+/obj/structure/table/reinforced,
+/obj/item/stack/sheet/duranium/fifty,
+/obj/item/stack/sheet/duranium/fifty,
+/turf/open/floor/plasteel,
+/area/engine/armour_pump)
 "aaB" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable{
@@ -352,8 +355,25 @@
 /turf/open/floor/circuit/green,
 /area/ai_monitored/turret_protected/aisat)
 "aaX" = (
-/turf/open/floor/monotile/dark/airless,
-/area/space)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel,
+/area/engine/armour_pump)
 "aaY" = (
 /obj/structure/grille,
 /turf/open/floor/monotile/dark,
@@ -3538,7 +3558,7 @@
 	name = "critical-priority department power storage unit";
 	output_level = 80000
 	},
-/obj/structure/cable{
+/obj/structure/cable/white{
 	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel,
@@ -4299,7 +4319,7 @@
 /area/security/prison)
 "alh" = (
 /obj/machinery/power/terminal,
-/obj/structure/cable/white{
+/obj/structure/cable{
 	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel,
@@ -8278,8 +8298,8 @@
 /obj/machinery/power/terminal{
 	dir = 1
 	},
-/obj/structure/cable/yellow{
-	icon_state = "2-32"
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel,
 /area/engine/armour_pump)
@@ -8836,14 +8856,9 @@
 /turf/open/floor/plasteel,
 /area/engine/armour_pump)
 "awL" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plasteel,
-/area/engine/armour_pump)
+/obj/structure/grille,
+/turf/open/floor/plating/airless,
+/area/engine/engineering/ftl_room)
 "awM" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -9562,6 +9577,9 @@
 /area/engine/atmospherics_engine)
 "ayA" = (
 /obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/white{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
@@ -13578,6 +13596,9 @@
 /area/engine/engineering)
 "aHJ" = (
 /obj/machinery/airalarm/directional/north,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/engine/armour_pump)
 "aHK" = (
@@ -19671,6 +19692,9 @@
 /area/hallway/nsv/deck1/hallway)
 "aUf" = (
 /obj/machinery/status_display/ai/north,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/engine/armour_pump)
 "aUg" = (
@@ -25403,9 +25427,11 @@
 /turf/open/floor/engine/vacuum,
 /area/engine/atmospherics_engine)
 "hYV" = (
-/obj/structure/grille,
-/turf/open/floor/plating/airless,
-/area/nsv/weapons/equipment_room)
+/obj/structure/shuttle/engine/heater{
+	dir = 8
+	},
+/turf/closed/wall/r_wall/ship,
+/area/space/nearstation)
 "icv" = (
 /obj/machinery/light{
 	dir = 4
@@ -39154,11 +39180,11 @@ aaa
 aaf
 aaf
 aaf
-aaj
-aaj
-aaj
-aaj
-aaj
+ahg
+ahg
+ahg
+ahg
+ahg
 aaf
 aaf
 aaf
@@ -39411,11 +39437,11 @@ aaj
 aaf
 aaf
 aaf
-aaj
-aaj
-aaj
-aaj
-aaj
+ahg
+aan
+aan
+aan
+ahg
 aaf
 aaf
 aaf
@@ -39647,11 +39673,11 @@ aaj
 aaf
 aaf
 aaf
-aaj
-aaj
-aaj
-aaj
-aaj
+ahg
+ahg
+ahg
+ahg
+ahg
 aaf
 aaf
 aaf
@@ -39662,8 +39688,8 @@ aaf
 aaf
 aaf
 aaj
-aaa
-aaa
+aaP
+aaP
 aiv
 aiv
 aiv
@@ -39904,21 +39930,21 @@ aaj
 awc
 awc
 awc
-aaj
-aaj
-aaj
-aaj
-aaj
-awc
-awc
-awc
-aaj
-aaj
-aaj
-awc
-awc
-awc
-aaj
+ahg
+agL
+agL
+agL
+ahg
+hYV
+hYV
+hYV
+ahg
+ahg
+ahg
+hYV
+hYV
+hYV
+ahg
 eMT
 eMT
 aiv
@@ -39936,10 +39962,10 @@ aML
 aiv
 pMt
 pMt
-aaj
-awc
-awc
-awc
+ahg
+hYV
+hYV
+hYV
 aaj
 aaj
 aaj
@@ -40161,8 +40187,8 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+agL
 ahg
 ahg
 eMT
@@ -40196,16 +40222,16 @@ pMt
 pMt
 pMt
 pMt
-aaj
-aaj
-aaj
-aaj
-aaj
-aaj
-aaj
-aaj
-aaj
-aaj
+ahg
+ahg
+ahg
+ahg
+ahg
+ahg
+ahg
+ahg
+ahg
+ahg
 aaj
 aaj
 aaj
@@ -40418,8 +40444,8 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+agL
 ahg
 aan
 acZ
@@ -40436,8 +40462,8 @@ acZ
 arZ
 acZ
 aiv
-dFy
-dFy
+awL
+aiv
 aCO
 eDV
 dFy
@@ -40445,24 +40471,24 @@ dFy
 cuW
 dFy
 aCO
-dFy
-dFy
+aiv
+awL
 aiv
 aCt
 aFT
 kAG
 aGb
 pMt
-aaj
-aaj
-aaj
-aaj
-aaj
-aaj
-aaj
-aaj
-aaj
-aaj
+ahg
+agL
+agL
+agL
+agL
+agL
+agL
+agL
+agL
+ahg
 aaj
 aaj
 aaj
@@ -40675,8 +40701,8 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+agL
 ahg
 aan
 eMT
@@ -40693,7 +40719,8 @@ eMT
 eMT
 eMT
 aiv
-hIj
+aiv
+aiv
 dFy
 dFy
 dFy
@@ -40701,9 +40728,8 @@ dFy
 dFy
 dFy
 dFy
-dFy
-dFy
-dFy
+aiv
+aiv
 aiv
 aCt
 aFU
@@ -40718,8 +40744,8 @@ pMt
 pMt
 pMt
 pMt
-aaj
-aaj
+agL
+ahg
 aaj
 aaj
 aaj
@@ -40928,12 +40954,12 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
-aaj
-aaj
-aaj
-aaj
+ahg
+ahg
+ahg
+ahg
+ahg
+agL
 ahg
 aan
 eMT
@@ -40975,8 +41001,8 @@ aGx
 aGx
 aGx
 pMt
-aaj
-aaj
+agL
+ahg
 aaj
 aaj
 aaj
@@ -41185,12 +41211,12 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
-aaj
-aaj
-aaj
-aaj
+ahg
+agL
+agL
+agL
+agL
+agL
 ahg
 aan
 eMT
@@ -41232,8 +41258,8 @@ aKq
 aKq
 aGx
 pMt
-aaj
-aaj
+agL
+ahg
 aaj
 aaj
 aaj
@@ -41442,8 +41468,8 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+agL
 ahg
 ahg
 ahg
@@ -41489,12 +41515,12 @@ aKr
 aKq
 aGx
 pMt
-aaj
-aaj
-aaj
-aaj
-aaj
-aaj
+agL
+ahg
+ahg
+ahg
+ahg
+ahg
 aaj
 aaj
 aaj
@@ -41699,8 +41725,8 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+agL
 ahg
 aan
 aan
@@ -41746,12 +41772,12 @@ aGx
 aGx
 aGx
 pMt
-aaj
-aaj
-aaj
-aaj
-aaj
-aaj
+agL
+agL
+agL
+agL
+agL
+ahg
 aaj
 aaj
 aaj
@@ -41956,8 +41982,8 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+agL
 aAJ
 aib
 aAJ
@@ -42007,8 +42033,8 @@ aAJ
 aAJ
 aAJ
 aAJ
-aaj
-aaj
+agL
+ahg
 aaj
 aaj
 aaj
@@ -42213,8 +42239,8 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+agL
 aAJ
 aib
 aAJ
@@ -42264,8 +42290,8 @@ dUB
 dUB
 aKw
 aAJ
-aaj
-aaj
+agL
+ahg
 aaj
 aaj
 aaj
@@ -42470,8 +42496,8 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+agL
 aAJ
 aib
 aAJ
@@ -42521,8 +42547,8 @@ dUB
 awJ
 aKx
 aAJ
-aaj
-aaj
+agL
+ahg
 aaj
 aaj
 aaj
@@ -42727,8 +42753,8 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+agL
 aAJ
 aib
 aAJ
@@ -42778,8 +42804,8 @@ avH
 axb
 aKy
 aAJ
-aaj
-aaj
+agL
+ahg
 aaj
 aaj
 aaj
@@ -42984,8 +43010,8 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+agL
 aAJ
 aib
 aAJ
@@ -43035,8 +43061,8 @@ aFL
 anL
 aKz
 aAJ
-aaj
-aaj
+agL
+ahg
 aaj
 aaj
 aaj
@@ -43241,8 +43267,8 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+agL
 aAJ
 aib
 aAJ
@@ -43273,7 +43299,7 @@ avv
 auf
 wAU
 tkm
-fFT
+aaA
 ucN
 ucN
 eNx
@@ -43292,8 +43318,8 @@ aFL
 anL
 aKA
 aAJ
-aaj
-aaj
+agL
+ahg
 aaj
 aaj
 aaj
@@ -43498,8 +43524,8 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+agL
 aAJ
 aib
 aAJ
@@ -43549,8 +43575,8 @@ aFM
 anL
 aKw
 aAJ
-aaj
-aaj
+agL
+ahg
 aaj
 aaj
 aaj
@@ -43755,8 +43781,8 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+agL
 aAJ
 aib
 aAJ
@@ -43806,8 +43832,8 @@ dUB
 anL
 aKB
 aAJ
-aaj
-aaj
+agL
+ahg
 aaj
 aaj
 aaj
@@ -44011,9 +44037,9 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
-aaj
+ahg
+ahg
+agL
 aAJ
 aib
 aAJ
@@ -44063,10 +44089,10 @@ dUB
 gqf
 aKC
 aAJ
-aaj
-aaj
-aaj
-aaj
+agL
+ahg
+ahg
+ahg
 aaj
 aaj
 aaj
@@ -44268,9 +44294,9 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
-aaj
+ahg
+agL
+agL
 aAJ
 aib
 aAJ
@@ -44320,10 +44346,10 @@ swC
 dUB
 aKA
 aAJ
-aaj
-aaj
-aaj
-aaj
+agL
+agL
+agL
+ahg
 aaj
 aaj
 aaj
@@ -44525,8 +44551,8 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+agL
 aAJ
 aAJ
 aAJ
@@ -44549,7 +44575,7 @@ axZ
 aya
 afY
 avu
-awL
+alF
 fFT
 alF
 fFT
@@ -44579,8 +44605,8 @@ aah
 aah
 aah
 aah
-aaj
-aaj
+agL
+ahg
 aaj
 aaj
 aaj
@@ -44782,8 +44808,8 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+agL
 bcg
 aae
 aae
@@ -44836,8 +44862,8 @@ aah
 njS
 aHX
 aah
-aaj
-aaj
+agL
+ahg
 aaj
 aaj
 aaj
@@ -45039,8 +45065,8 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+agL
 bcg
 aae
 aae
@@ -45062,7 +45088,7 @@ axX
 axZ
 aya
 afY
-fFT
+tRM
 alF
 fFT
 fFT
@@ -45093,8 +45119,8 @@ aah
 amh
 aHY
 aah
-aaj
-aaj
+agL
+ahg
 aaj
 aaj
 aaj
@@ -45296,8 +45322,8 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+agL
 bcg
 aae
 aae
@@ -45350,8 +45376,8 @@ aah
 amh
 aHZ
 aah
-aaj
-aaj
+agL
+ahg
 aaj
 aaj
 aaj
@@ -45553,8 +45579,8 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+agL
 bcg
 aae
 aae
@@ -45576,7 +45602,7 @@ awN
 awN
 ahE
 afY
-fFT
+tRM
 alF
 aET
 fFT
@@ -45608,7 +45634,7 @@ byo
 aah
 aah
 aah
-aaj
+ahg
 aaj
 aaj
 aaj
@@ -45810,7 +45836,7 @@ aaj
 aaj
 aaj
 aaj
-aaj
+ahg
 bcg
 bcg
 aae
@@ -45833,7 +45859,7 @@ dUB
 dUB
 dUB
 gAr
-fFT
+tRM
 alF
 fFT
 fFT
@@ -46067,7 +46093,7 @@ aaj
 aaj
 aaj
 aaj
-aaj
+ahg
 bcg
 aae
 aae
@@ -46090,7 +46116,7 @@ ayh
 ayh
 ayh
 tLy
-avw
+aaX
 awS
 axm
 fPS
@@ -46324,7 +46350,7 @@ aaj
 aaj
 aaj
 aaj
-aaj
+ahg
 bcg
 aae
 aae
@@ -46581,7 +46607,7 @@ aaj
 aaj
 aaj
 aaj
-aaj
+ahg
 bcg
 aae
 aae
@@ -47106,8 +47132,8 @@ rOI
 ajS
 rOI
 akG
-ayA
 aak
+rOI
 qcR
 anC
 apa
@@ -47363,8 +47389,8 @@ oip
 ajT
 akd
 akJ
+ayA
 akO
-xTb
 qcR
 anD
 apg
@@ -47620,8 +47646,8 @@ aeQ
 acf
 avr
 uiw
-ale
 xTb
+ale
 qcR
 gak
 gak
@@ -51970,9 +51996,9 @@ aaa
 aaa
 aaf
 aBS
-aaA
-aaA
-aaA
+abo
+abo
+abo
 abU
 aaN
 bbZ
@@ -52482,9 +52508,9 @@ aaa
 aaa
 aaa
 aaa
-aaA
-aaA
-aaA
+abo
+abo
+abo
 aas
 gYS
 abU
@@ -52996,9 +53022,9 @@ aaa
 aaa
 aaa
 aaa
-aaA
-aaA
-aaA
+abo
+abo
+abo
 aem
 aqS
 abU
@@ -53255,9 +53281,9 @@ aaa
 aaa
 aBS
 abo
-aaA
+abo
 aau
-aaA
+abo
 abU
 abU
 abU
@@ -54545,7 +54571,7 @@ akb
 anT
 ait
 aqS
-aaA
+abo
 aaS
 bcf
 aex
@@ -55059,7 +55085,7 @@ aaQ
 anV
 azp
 aqS
-aaA
+abo
 abl
 bcf
 aex
@@ -55316,7 +55342,7 @@ aaQ
 ael
 azp
 gYS
-aaA
+abo
 aat
 abU
 abU
@@ -55573,7 +55599,7 @@ aaQ
 agG
 azp
 aqS
-aaA
+abo
 aaH
 arg
 acq
@@ -55830,8 +55856,8 @@ oeV
 aqS
 azp
 aqS
-aaA
-aaA
+abo
+abo
 abL
 aaN
 agh
@@ -56081,14 +56107,14 @@ aaa
 aaa
 aaa
 aBS
-aaA
-aaA
-aaA
-aaA
+abo
+abo
+abo
+abo
 aaD
-aaA
-aaA
-aaA
+abo
+abo
+abo
 abL
 aaN
 agh
@@ -56345,7 +56371,7 @@ aoo
 azE
 aqS
 aqS
-aaA
+abo
 abL
 aaN
 agh
@@ -56602,7 +56628,7 @@ ack
 aDF
 aqS
 gYS
-aaA
+abo
 arB
 aaN
 agh
@@ -56859,7 +56885,7 @@ ack
 baj
 bbX
 bca
-aaA
+abo
 arB
 aaN
 agh
@@ -57116,7 +57142,7 @@ apd
 abG
 aqS
 bcb
-aaA
+abo
 abL
 aaN
 agh
@@ -57370,10 +57396,10 @@ abP
 abD
 anS
 aaQ
-aaA
+abo
 aaE
-aaA
-aaA
+abo
+abo
 abL
 aaN
 agh
@@ -57627,10 +57653,10 @@ abP
 abD
 ack
 aaQ
-aaA
+abo
 bcc
 bcc
-aaA
+abo
 abL
 aaN
 agh
@@ -57884,10 +57910,10 @@ abP
 abD
 ack
 abG
-aaA
+abo
 fjn
 bcd
-aaA
+abo
 abL
 aaN
 abU
@@ -58138,12 +58164,12 @@ aaa
 aaa
 aaa
 abP
-aaA
-aaA
-aaA
-aaA
-aaA
-aaA
+abo
+abo
+abo
+abo
+abo
+abo
 abU
 aap
 ahT
@@ -58395,11 +58421,11 @@ aaa
 aaa
 aaa
 aaa
-aaA
+abo
 abr
 abL
 abL
-aaA
+abo
 aap
 abp
 acV
@@ -58652,11 +58678,11 @@ aaa
 aaa
 aaa
 aaa
-aaA
+abo
 abI
 abL
 abL
-aaA
+abo
 aat
 ahx
 ahx
@@ -74596,7 +74622,7 @@ aaa
 aaa
 xXr
 bdr
-hYV
+ayC
 bdr
 bdr
 rjl
@@ -74853,8 +74879,8 @@ aaa
 aaa
 aaa
 bdr
-hYV
-hYV
+ayC
+ayC
 bdr
 bdr
 rjl
@@ -75111,8 +75137,8 @@ aaa
 aaa
 bdr
 bdr
-hYV
-hYV
+ayC
+ayC
 bdr
 bdr
 vXo
@@ -75369,8 +75395,8 @@ aaa
 aaa
 bdr
 bdr
-hYV
-hYV
+ayC
+ayC
 bdr
 bdr
 xlt
@@ -75627,8 +75653,8 @@ aaa
 aaa
 bdr
 bdr
-hYV
-hYV
+ayC
+ayC
 bdr
 bdr
 bdr
@@ -75885,7 +75911,7 @@ aaa
 aaa
 bdr
 bdr
-hYV
+ayC
 ayC
 bdr
 bdr
@@ -76143,7 +76169,7 @@ aaa
 aaa
 bdr
 bdr
-hYV
+ayC
 bdr
 bdr
 aQU
@@ -76400,8 +76426,8 @@ aaa
 aaa
 aaa
 bdr
-hYV
-hYV
+ayC
+ayC
 bdr
 bdr
 bdr
@@ -76658,11 +76684,11 @@ aaa
 aaa
 bdr
 bdr
-hYV
-hYV
-hYV
-hYV
-hYV
+ayC
+ayC
+ayC
+ayC
+ayC
 bdr
 bdr
 aMD
@@ -76919,8 +76945,8 @@ bdr
 bdr
 bdr
 bdr
-hYV
-hYV
+ayC
+ayC
 bdr
 bdr
 bdr
@@ -77172,17 +77198,17 @@ aaa
 aaa
 aaR
 aaR
-aaj
+ahg
 aan
-aaj
+aan
 bdr
 bdr
-hYV
-hYV
-hYV
-hYV
-hYV
-hYV
+ayC
+ayC
+ayC
+ayC
+ayC
+ayC
 bdr
 bdr
 aaj
@@ -77429,10 +77455,10 @@ aaa
 aaa
 aaa
 aaR
-aaR
-aaR
-aaR
-aaR
+ahg
+aaY
+aaY
+aaY
 bdr
 bdr
 bdr
@@ -77686,11 +77712,11 @@ aaa
 aaa
 aaa
 aaa
-aaj
-aaj
+ahg
+ahg
 aan
 aan
-aaj
+ahg
 aaj
 aaj
 aaj
@@ -77722,11 +77748,11 @@ aaj
 aaj
 aaj
 aaj
-aaj
+ahg
 aan
 aan
-aaj
-aaj
+ahg
+ahg
 aaa
 aaa
 aaa
@@ -77944,10 +77970,10 @@ aaa
 aaa
 aaa
 aaa
-aaj
-aaj
+ahg
+ahg
 aan
-aaj
+ahg
 aaj
 aaj
 aaj
@@ -77979,10 +78005,10 @@ aaj
 aaj
 aaj
 aaj
-aaj
+ahg
 aan
-aaj
-aaj
+ahg
+ahg
 aaa
 aaa
 aaa
@@ -78202,10 +78228,10 @@ aaa
 aaa
 aaa
 aaa
-aaj
+ahg
 aan
-aaj
-aaj
+ahg
+ahg
 aaj
 aaj
 aaj
@@ -78235,10 +78261,10 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+ahg
 aan
-aaj
+ahg
 aaa
 aaa
 aaa
@@ -78459,11 +78485,11 @@ aaa
 aaa
 aaa
 aaa
-aaj
+ahg
 aan
 aan
-aaj
-aaj
+ahg
+ahg
 aaj
 aaj
 aaj
@@ -78491,11 +78517,11 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+ahg
 aan
 aan
-aaj
+ahg
 aaa
 aaa
 aaa
@@ -78716,17 +78742,17 @@ aaa
 aaa
 aaa
 aaa
-aaj
-aaj
+ahg
+ahg
 aan
 aan
+ahg
+ahg
 aaj
 aaj
 aaj
 aaj
 aaj
-aaj
-aaj
 aaR
 aaR
 aaR
@@ -78747,12 +78773,12 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
+ahg
+ahg
 aan
 aan
-aaj
-aaj
+ahg
+ahg
 aaa
 aaa
 aaa
@@ -78974,11 +79000,11 @@ aaa
 aaa
 aaa
 aaa
-aaj
-aaj
+ahg
+ahg
 aan
 aan
-aaj
+ahg
 aaj
 aaj
 aaj
@@ -79004,11 +79030,11 @@ aaj
 aaj
 aaj
 aaj
-aaj
+ahg
 aan
 aan
-aaj
-aaj
+ahg
+ahg
 aaa
 aaa
 aaa
@@ -79232,10 +79258,10 @@ aaa
 aaa
 aaa
 aaa
-aaX
-aaj
-aaj
-aaj
+aaP
+ahg
+ahg
+ahg
 aaj
 aaj
 aaj
@@ -79261,10 +79287,10 @@ aaj
 aaj
 aaj
 aaj
-aaj
-aaj
-aaj
-aaj
+ahg
+ahg
+ahg
+ahg
 aaa
 aaa
 aaa
@@ -79519,8 +79545,8 @@ aaj
 aaj
 aan
 aan
-aaj
-aaj
+ahg
+ahg
 aaa
 aaa
 aaa
