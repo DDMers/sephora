@@ -98,5 +98,5 @@ map shrike
 endmap
 
 map gungnir
-
+	votable
 endmap
