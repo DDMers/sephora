@@ -27116,7 +27116,6 @@
 /turf/open/floor/monotile/steel,
 /area/hallway/nsv/deck2/primary)
 "qjc" = (
-/obj/structure/lattice/catwalk,
 /turf/closed/wall/r_wall/ship,
 /area/space/nearstation)
 "qjL" = (
