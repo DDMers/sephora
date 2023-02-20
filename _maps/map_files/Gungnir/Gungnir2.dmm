@@ -1241,7 +1241,7 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/ameridiner,
-/area/quartermaster/miningoffice)
+/area/quartermaster/sorting)
 "aes" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/light{
@@ -3293,7 +3293,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/ameridiner,
-/area/quartermaster/miningoffice)
+/area/quartermaster/sorting)
 "ajv" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -4576,6 +4576,11 @@
 /obj/machinery/door/airlock/ship/public/glass{
 	name = "Medical Clinic";
 	req_one_access_txt = "5"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/monotile/dark,
 /area/medical/morgue)
@@ -5918,7 +5923,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
-/area/quartermaster/storage)
+/area/maintenance/nsv/weapons)
 "aqd" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -5940,7 +5945,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
-/area/quartermaster/storage)
+/area/maintenance/nsv/weapons)
 "aqg" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
@@ -8202,10 +8207,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
-"auX" = (
-/obj/structure/closet/crate,
-/turf/open/floor/plasteel/ameridiner,
-/area/quartermaster/miningoffice)
 "auY" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -8767,7 +8768,7 @@
 	tag = ""
 	},
 /turf/open/floor/plasteel,
-/area/quartermaster/storage)
+/area/maintenance/nsv/weapons)
 "awd" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -12388,8 +12389,11 @@
 /turf/open/floor/plating/airless,
 /area/engine/atmos)
 "aFF" = (
-/turf/open/floor/plasteel/ameridiner,
-/area/quartermaster/miningoffice)
+/obj/machinery/conveyor/inverted{
+	id = s
+	},
+/turf/open/floor/monotile/dark,
+/area/nsv/weapons/artillery)
 "aFG" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/components/unary/passive_vent{
@@ -19828,8 +19832,7 @@
 /area/nsv/weapons/artillery)
 "aUV" = (
 /obj/machinery/conveyor/inverted{
-	id = "Gun1";
-	operating = 1
+	id = "Gun3Ammo"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -24276,8 +24279,8 @@
 /area/maintenance/department/engine)
 "bFC" = (
 /obj/machinery/mineral/ore_redemption{
-	input_dir = 2;
-	output_dir = 1
+	input_dir = 4;
+	output_dir = 8
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -26270,6 +26273,9 @@
 /area/engine/atmos)
 "kCF" = (
 /obj/effect/landmark/zebra_interlock_point,
+/obj/machinery/door/airlock/ship/cargo{
+	req_one_access_txt = "31"
+	},
 /turf/open/floor/plasteel/grid/steel,
 /area/quartermaster/meeting_room)
 "kJw" = (
@@ -27264,14 +27270,12 @@
 /turf/open/floor/monotile/steel,
 /area/engine/atmos)
 "pqd" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/layer4{
-	dir = 8
+/obj/structure/lattice/catwalk,
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/monotile/steel,
-/area/engine/engineering/reactor_core)
+/turf/open/space/basic,
+/area/space/nearstation)
 "ptM" = (
 /turf/open/space/basic,
 /area/science/xenobiology)
@@ -28920,12 +28924,9 @@
 /turf/open/floor/monotile/steel,
 /area/engine/atmos)
 "xhN" = (
-/obj/machinery/conveyor/inverted{
-	id = "Gun1Ammo";
-	operating = 1
-	},
-/turf/open/floor/monotile/dark,
-/area/nsv/weapons/artillery)
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/quartermaster/miningoffice)
 "xje" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -40352,14 +40353,6 @@ aci
 aci
 aci
 adj
-bdn
-bdn
-adj
-aDp
-aDp
-aDp
-adj
-adj
 adj
 adj
 adj
@@ -40367,14 +40360,22 @@ aDp
 aDp
 aDp
 adj
-bdn
-bdn
+adj
+adj
+adj
+adj
+aDp
+aDp
+aDp
+adj
+adj
+adj
 adj
 aci
 aci
 aci
 adj
-sqv
+pqd
 adj
 aci
 aci
@@ -44977,7 +44978,7 @@ acB
 wVn
 aEG
 acB
-pqd
+auv
 auv
 acB
 acB
@@ -61952,9 +61953,9 @@ aJP
 xsF
 agC
 agC
-agC
-agC
-agC
+xhN
+xhN
+xhN
 agC
 arp
 ats
@@ -62214,14 +62215,14 @@ agR
 agR
 agR
 asz
-auX
-auX
-auX
-aFF
+aZZ
+aZZ
+aZZ
+asR
 aju
 aeq
-aFF
-aFF
+asR
+asR
 asR
 bah
 baz
@@ -76865,7 +76866,7 @@ aUT
 aUY
 abB
 aVf
-tnc
+aFF
 aUV
 tnc
 hBa
@@ -77123,7 +77124,7 @@ aUY
 abB
 aVg
 aVk
-xhN
+vTm
 vTm
 aVq
 aVB
