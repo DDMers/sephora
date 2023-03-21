@@ -184,9 +184,6 @@
 /area/maintenance/department/medical/morgue)
 "aaH" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -436,9 +433,6 @@
 /area/medical/nsv/clinic)
 "abF" = (
 /obj/machinery/power/apc/auto_name/east,
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
@@ -776,7 +770,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/engineering/reactor_core)
 "acR" = (
-/obj/machinery/atmospherics/components/unary/portables_connector{
+/obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -803,6 +797,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/visible{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2,
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/engineering/reactor_core)
 "acV" = (
@@ -1617,9 +1612,6 @@
 /area/maintenance/nsv/weapons)
 "afC" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -1965,9 +1957,6 @@
 /area/engine/atmos)
 "agw" = (
 /obj/machinery/power/apc/auto_name/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable,
 /turf/open/floor/monotile/dark,
 /area/maintenance/department/medical)
@@ -2055,10 +2044,8 @@
 /turf/open/floor/monotile/steel,
 /area/hallway/secondary/exit/departure_lounge)
 "agI" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible{
-	dir = 4
-	},
 /obj/structure/railing/corner,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/visible,
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/engineering/reactor_core)
 "agJ" = (
@@ -2179,10 +2166,10 @@
 /turf/open/floor/plating,
 /area/maintenance/department/electrical)
 "agX" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
 /obj/structure/railing,
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/engineering/reactor_core)
 "agY" = (
@@ -2352,6 +2339,11 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/multiz/layer4{
+	dir = 8;
+	name = "PDSR Coolant Outlet"
+	},
+/obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/engineering/reactor_core)
 "aht" = (
@@ -2470,7 +2462,11 @@
 /turf/open/floor/plasteel,
 /area/science/robotics/lab)
 "ahF" = (
-/obj/machinery/atmospherics/pipe/multiz,
+/obj/machinery/atmospherics/pipe/multiz{
+	dir = 8;
+	name = "Nucleum Tank Inlet"
+	},
+/obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/engineering/reactor_core)
 "ahG" = (
@@ -2542,16 +2538,11 @@
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
 "ahP" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plating,
-/area/maintenance/department/electrical)
+/turf/open/floor/plasteel/ridged/steel,
+/area/engine/engineering/reactor_core)
 "ahQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -2563,15 +2554,8 @@
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
 "ahR" = (
-/obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating,
-/area/maintenance/department/electrical)
+/turf/closed/wall/ship,
+/area/nsv/weapons/gauss/battery/deck2/starboard)
 "ahS" = (
 /obj/machinery/door/window/brigdoor{
 	dir = 4;
@@ -2938,12 +2922,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 1
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/engineering/reactor_core)
 "aiG" = (
@@ -3081,6 +3063,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2,
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/engineering/reactor_core)
 "aiT" = (
@@ -3148,6 +3131,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/engineering/reactor_core)
 "ajc" = (
@@ -3159,6 +3145,9 @@
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/engineering/reactor_core)
@@ -3202,9 +3191,6 @@
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable{
 	icon_state = "0-4"
-	},
-/obj/machinery/power/terminal{
-	dir = 1
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/engine/atmos)
@@ -3565,9 +3551,6 @@
 /area/medical/morgue)
 "akh" = (
 /obj/machinery/power/apc/auto_name/east,
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -3612,9 +3595,6 @@
 /area/medical/storage)
 "akn" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -3641,9 +3621,6 @@
 /area/medical/storage)
 "akr" = (
 /obj/machinery/power/apc/auto_name/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -3862,9 +3839,6 @@
 /area/science)
 "akT" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -4096,9 +4070,6 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /turf/open/floor/plasteel/white,
 /area/medical/genetics/cloning)
 "alA" = (
@@ -4468,9 +4439,6 @@
 /area/science/robotics/lab)
 "amz" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -4622,9 +4590,6 @@
 /area/medical/nsv/clinic)
 "amT" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -4675,9 +4640,6 @@
 /area/medical/storage)
 "ana" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -5410,7 +5372,9 @@
 	},
 /area/science/xenobiology)
 "aoX" = (
-/obj/machinery/atmospherics/pipe/multiz,
+/obj/machinery/atmospherics/pipe/multiz{
+	dir = 1
+	},
 /turf/open/floor/monotile/steel,
 /area/engine/atmos/starboard_atmos)
 "aoY" = (
@@ -5841,6 +5805,11 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/multiz/layer2{
+	dir = 8;
+	name = "PDSR Coolant Inlet"
+	},
+/obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/engineering/reactor_core)
 "apV" = (
@@ -5849,9 +5818,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/power/apc/auto_name/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/railing/corner{
 	dir = 1
 	},
@@ -5881,9 +5847,6 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /turf/open/floor/plasteel,
 /area/quartermaster/sorting)
 "apY" = (
@@ -6246,7 +6209,9 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/engineering/reactor_core)
 "aqM" = (
@@ -6306,9 +6271,6 @@
 /area/quartermaster/sorting)
 "aqU" = (
 /obj/machinery/power/apc/auto_name/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -6497,8 +6459,9 @@
 /turf/open/floor/plating,
 /area/medical/genetics)
 "arp" = (
-/turf/closed/wall/r_wall/ship,
-/area/quartermaster/sorting)
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/turf/open/floor/plasteel/ridged/steel,
+/area/engine/engineering/reactor_core)
 "arq" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -6965,9 +6928,6 @@
 /area/hallway/secondary/exit)
 "asx" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -6984,8 +6944,17 @@
 /turf/open/floor/plating,
 /area/quartermaster/sorting)
 "asz" = (
-/turf/closed/wall/r_wall/ship,
-/area/quartermaster/miningoffice)
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/engine/engineering/reactor_core)
 "asA" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -7238,9 +7207,6 @@
 /area/quartermaster/sorting)
 "ata" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -7504,9 +7470,6 @@
 /area/crew_quarters/cryopods)
 "aty" = (
 /obj/machinery/power/apc/auto_name/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -7514,9 +7477,6 @@
 /area/nsv/weapons/ordnance)
 "atz" = (
 /obj/machinery/power/apc/auto_name/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -7524,9 +7484,6 @@
 /area/science/robotics/lab)
 "atA" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -7569,9 +7526,6 @@
 /area/nsv/weapons/ordnance)
 "atG" = (
 /obj/machinery/power/apc/auto_name/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -7634,9 +7588,6 @@
 /area/maintenance/nsv/weapons)
 "atM" = (
 /obj/machinery/power/apc/auto_name/east,
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -7672,9 +7623,6 @@
 /area/science/robotics/lab)
 "atQ" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -7682,9 +7630,6 @@
 /area/medical/nsv/clinic)
 "atR" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -7703,9 +7648,6 @@
 /area/medical/patients_rooms/room_a)
 "atT" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -8033,9 +7975,6 @@
 /area/medical/chemistry)
 "auG" = (
 /obj/machinery/power/apc/auto_name/east,
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -8043,9 +7982,6 @@
 /area/medical/chemistry)
 "auH" = (
 /obj/machinery/power/apc/auto_name/east,
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -8215,7 +8151,6 @@
 /area/nsv/weapons/artillery)
 "auZ" = (
 /obj/machinery/power/apc/auto_name/south,
-/obj/machinery/power/terminal,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -8237,13 +8172,17 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/engineering/reactor_core)
 "avc" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/cyan/visible{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/engineering/reactor_core)
@@ -8257,13 +8196,13 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/engineering/reactor_core)
 "ave" = (
 /obj/machinery/power/apc/auto_name/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -8448,9 +8387,6 @@
 /area/maintenance/department/engine)
 "avy" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -8477,9 +8413,6 @@
 /area/quartermaster/miningoffice)
 "avB" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -8507,9 +8440,6 @@
 /area/quartermaster/lobby)
 "avE" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -8538,7 +8468,6 @@
 /area/quartermaster/storage)
 "avH" = (
 /obj/machinery/power/apc/auto_name/south,
-/obj/machinery/power/terminal,
 /obj/structure/cable/yellow,
 /turf/open/floor/plasteel/ridged/steel,
 /area/engine/engineering/reactor_core)
@@ -8565,9 +8494,6 @@
 /area/quartermaster/lobby)
 "avJ" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -8575,9 +8501,6 @@
 /area/science)
 "avK" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -8598,7 +8521,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/turf/closed/wall/r_wall/ship,
+/turf/closed/wall/ship,
 /area/quartermaster/sorting)
 "avN" = (
 /obj/structure/disposalpipe/trunk{
@@ -8797,7 +8720,6 @@
 /area/maintenance/department/engine/atmos)
 "awg" = (
 /obj/machinery/power/apc/auto_name/south,
-/obj/machinery/power/terminal,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -9041,9 +8963,6 @@
 /area/nsv/weapons/gauss/battery/deck2/starboard)
 "awC" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -9129,13 +9048,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/electrical)
@@ -9933,9 +9845,6 @@
 /area/shuttle/turbolift/quinary)
 "ayM" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -10267,9 +10176,6 @@
 /area/quartermaster/sorting)
 "azF" = (
 /obj/machinery/power/apc/auto_name/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -10847,9 +10753,6 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/east,
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /turf/open/floor/plasteel,
 /area/quartermaster/sorting)
 "aBf" = (
@@ -11028,7 +10931,7 @@
 	dir = 4;
 	icon_state = "pipe"
 	},
-/turf/closed/wall/r_wall/ship,
+/turf/closed/wall/ship,
 /area/quartermaster/sorting)
 "aBB" = (
 /obj/structure/sign/directions/security{
@@ -12558,9 +12461,6 @@
 /area/science/robotics/mechbay)
 "aGa" = (
 /obj/machinery/power/apc/auto_name/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -12659,9 +12559,6 @@
 /area/hallway/secondary/exit/departure_lounge)
 "aGj" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -13793,10 +13690,12 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/power/apc/auto_name/south,
-/obj/machinery/power/terminal,
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
@@ -14762,7 +14661,6 @@
 /area/hallway/nsv/deck2/forward)
 "aKj" = (
 /obj/machinery/power/apc/auto_name/south,
-/obj/machinery/power/terminal,
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -15724,9 +15622,6 @@
 /area/nsv/weapons/artillery)
 "aMc" = (
 /obj/machinery/power/apc/auto_name/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -16656,9 +16551,6 @@
 /area/science/xenobiology)
 "aOu" = (
 /obj/machinery/power/apc/auto_name/east,
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/structure/cable,
 /obj/item/storage/box/beakers,
 /obj/item/storage/box/syringes{
@@ -16875,9 +16767,6 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/east,
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /turf/open/floor/plasteel/white,
 /area/medical/genetics)
 "aOT" = (
@@ -18259,9 +18148,6 @@
 /area/medical/medbay/lobby)
 "aRL" = (
 /obj/machinery/power/apc/auto_name/east,
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -18470,9 +18356,6 @@
 /area/hallway/nsv/deck2/primary)
 "aSl" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -20170,7 +20053,6 @@
 /area/nsv/magazine/starboard)
 "aVC" = (
 /obj/machinery/power/apc/auto_name/south,
-/obj/machinery/power/terminal,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -21158,9 +21040,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/machinery/power/terminal{
-	dir = 1
 	},
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable{
@@ -22794,8 +22673,15 @@
 /turf/open/floor/plasteel/ameridiner,
 /area/quartermaster/sorting)
 "bbh" = (
-/turf/closed/wall/r_wall/ship,
-/area/maintenance/disposal)
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/turf/open/floor/plasteel/tech/grid,
+/area/engine/engineering/reactor_control)
 "bbi" = (
 /obj/machinery/mineral/stacking_unit_console,
 /turf/closed/wall/ship,
@@ -22866,9 +22752,6 @@
 /area/engine/atmos)
 "bbs" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -24020,9 +23903,6 @@
 /area/maintenance/department/cargo)
 "bdG" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -25010,9 +24890,6 @@
 "eLF" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/power/apc/auto_name/east,
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -26203,9 +26080,6 @@
 /area/quartermaster/meeting_room)
 "knB" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -26264,6 +26138,9 @@
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/engineering/reactor_core)
@@ -27805,6 +27682,16 @@
 	},
 /turf/open/floor/monotile/dark,
 /area/hallway/nsv/deck2/aft)
+"rUI" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2{
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/engine/engineering/reactor_core)
 "rVZ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -28046,6 +27933,9 @@
 /obj/structure/railing/corner{
 	dir = 4;
 	pixel_y = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer2{
+	dir = 5
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/engineering/reactor_core)
@@ -46270,7 +46160,7 @@ agk
 ayh
 ahX
 ahF
-kxL
+asz
 bJW
 adr
 bJW
@@ -47298,7 +47188,7 @@ bCT
 acE
 aiE
 agI
-aiS
+rUI
 aiS
 acU
 aiS
@@ -47552,7 +47442,7 @@ aeK
 aeK
 aeK
 acz
-acD
+arp
 aiF
 agX
 adh
@@ -47562,7 +47452,7 @@ adI
 adh
 aqL
 avb
-acD
+ahP
 acz
 aeK
 aeK
@@ -49101,7 +48991,7 @@ ajd
 ajd
 ang
 ajd
-ajd
+bbh
 apV
 aoj
 aIu
@@ -59407,7 +59297,7 @@ aXn
 aXo
 bbp
 aXq
-bbp
+ahR
 aGh
 agH
 agH
@@ -59664,7 +59554,7 @@ aqH
 agj
 azI
 aYa
-bbp
+ahR
 kbf
 deL
 aGr
@@ -59901,27 +59791,27 @@ aXJ
 aJa
 wIm
 mTH
-arp
-arp
+abW
+abW
 avM
 avM
 aBA
 aBA
 aBA
 aBA
-arp
+abW
 arw
 arw
 arw
-arp
-arp
+abW
+abW
 bbp
 awC
 aTr
 xXT
 lEC
 aYK
-bbp
+ahR
 abQ
 abQ
 abQ
@@ -60119,7 +60009,7 @@ acX
 adn
 acf
 agx
-ahP
+agy
 agy
 agS
 adH
@@ -60158,7 +60048,7 @@ aXy
 aJa
 iXt
 aFT
-arp
+abW
 tIO
 avN
 azo
@@ -60178,7 +60068,7 @@ aqI
 agj
 agj
 aZi
-bbp
+ahR
 asF
 agy
 agy
@@ -60376,7 +60266,7 @@ adn
 adn
 adn
 abQ
-ahR
+aem
 aem
 agT
 adH
@@ -60435,7 +60325,7 @@ aqH
 agj
 agj
 aZi
-bbp
+ahR
 awP
 aem
 aem
@@ -60692,7 +60582,7 @@ mch
 agj
 agj
 egg
-bbp
+ahR
 aZn
 ahb
 ajr
@@ -61206,7 +61096,7 @@ aqH
 agj
 agj
 aXr
-bbp
+ahR
 aZp
 aen
 agV
@@ -61443,7 +61333,7 @@ wnP
 cPH
 ieT
 aFS
-arp
+abW
 ata
 aGc
 azx
@@ -61463,7 +61353,7 @@ jCC
 agj
 agj
 aXr
-bbp
+ahR
 aZq
 aem
 agV
@@ -61700,7 +61590,7 @@ xCJ
 xCJ
 xCJ
 gWQ
-arp
+abW
 gyY
 avZ
 azE
@@ -61720,7 +61610,7 @@ lzi
 bJy
 noq
 agj
-bbp
+ahR
 aZr
 ahc
 ajs
@@ -61957,7 +61847,7 @@ xhN
 xhN
 xhN
 agC
-arp
+abW
 ats
 awa
 awa
@@ -61977,7 +61867,7 @@ bbN
 agj
 agj
 agj
-bbp
+ahR
 aZs
 agP
 asS
@@ -62214,7 +62104,7 @@ agD
 agR
 agR
 agR
-asz
+agC
 aZZ
 aZZ
 aZZ
@@ -62227,14 +62117,14 @@ asR
 bah
 baz
 asR
-arp
+abW
 bbp
 bbp
 bbp
 bcb
 bcb
 bcb
-bbp
+ahR
 abQ
 abQ
 bdo
@@ -62471,20 +62361,20 @@ agD
 nRf
 apx
 aJE
-asz
+agC
 bFC
-asz
-rqp
+agC
 anQ
-rqp
-rqp
+anQ
+anQ
+anQ
 aZF
 rqp
 qQz
 ckW
 baz
 asR
-bbh
+agt
 bbq
 cQL
 bbB
@@ -62737,11 +62627,11 @@ duT
 tTO
 fEU
 rqp
-arp
+abW
 bai
 baA
 baR
-bbh
+agt
 bbE
 bbC
 bbP
