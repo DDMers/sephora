@@ -605,8 +605,8 @@
 	beakers += B2
 
 /obj/item/grenade/chem_grenade/armor_destruction //NSV 13
-	name = "Zaun Armaments- Armor Deterioration Grenade Mk3"
-	desc = "Certified non-lethal. WARNING: Do not use near vital equipment or machinery."
+	name = "Starlight Armaments- Armor Deterioration Grenade Mk3"
+	desc = "SAAD Grenades are certified non-lethal. WARNING: Do not use near vital equipment or machinery."
 	icon_state= "armor_destruction"
 	stage = GRENADE_READY
 
