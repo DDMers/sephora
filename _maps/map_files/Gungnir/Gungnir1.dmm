@@ -32165,6 +32165,9 @@
 	},
 /turf/open/floor/wood,
 /area/security/detectives_office)
+"xAk" = (
+/turf/open/floor/plasteel,
+/area/maintenance/department/science)
 "xBI" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/ship/preopen,
@@ -61368,7 +61371,7 @@ aRY
 atq
 xap
 aEh
-cEG
+xAk
 cEG
 atq
 atL
