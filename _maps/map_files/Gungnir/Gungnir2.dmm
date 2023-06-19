@@ -21018,7 +21018,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/effect/landmark/zebra_interlock_point,
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe"
@@ -22234,7 +22233,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/effect/landmark/zebra_interlock_point,
 /obj/effect/turf_decal/tile/orange{
 	dir = 1
 	},
@@ -22259,7 +22257,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/effect/landmark/zebra_interlock_point,
 /turf/open/floor/monotile/dark,
 /area/nsv/weapons/artillery)
 "aWQ" = (
@@ -26066,6 +26063,13 @@
 /obj/effect/landmark/zebra_interlock_point,
 /turf/open/floor/plasteel,
 /area/quartermaster/miningoffice)
+"bIl" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/closet/radiation,
+/turf/open/floor/plasteel,
+/area/science/lab)
 "bJd" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -26534,7 +26538,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/effect/landmark/zebra_interlock_point,
 /obj/effect/turf_decal/tile/orange{
 	dir = 8
 	},
@@ -27274,6 +27277,21 @@
 /obj/effect/spawner/structure/window/plasma,
 /turf/open/floor/plating,
 /area/engine/engineering/reactor_control)
+"eGI" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/orange{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/orange{
+	dir = 8
+	},
+/turf/open/floor/monotile/dark,
+/area/nsv/weapons/artillery)
 "eHA" = (
 /obj/machinery/camera/autoname{
 	dir = 4
@@ -28183,6 +28201,10 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/monotile/dark,
 /area/nsv/weapons/artillery)
+"hzb" = (
+/obj/structure/closet/firecloset/full,
+/turf/open/floor/plasteel,
+/area/science/lab)
 "hzp" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -28560,6 +28582,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/monotile/dark,
 /area/nsv/weapons/artillery)
+"iHT" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/effect/turf_decal/ship/borderfloor/gunmetal,
+/obj/effect/turf_decal/ship/borderfloor/gunmetal,
+/turf/open/floor/monotile/steel,
+/area/hallway/secondary/exit/departure_lounge)
 "iIY" = (
 /turf/closed/wall/r_wall/ship,
 /area/science/lab)
@@ -30388,6 +30418,10 @@
 	},
 /turf/open/floor/plasteel/ameridiner,
 /area/quartermaster/sorting)
+"mXQ" = (
+/obj/structure/closet/radiation,
+/turf/open/floor/plasteel,
+/area/science/lab)
 "mYu" = (
 /obj/docking_port/stationary{
 	dwidth = 1;
@@ -31143,6 +31177,10 @@
 	},
 /turf/open/floor/durasteel/techfloor_grid,
 /area/nsv/weapons/artillery)
+"piW" = (
+/obj/structure/closet/emcloset/anchored,
+/turf/open/floor/plasteel,
+/area/science/lab)
 "plz" = (
 /obj/effect/landmark/start/cargo_technician,
 /turf/open/floor/plasteel/ameridiner,
@@ -31979,6 +32017,10 @@
 	initial_gas_mix = "o2=20000;TEMP=293.15"
 	},
 /area/medical/virology)
+"rpw" = (
+/obj/machinery/vending/tool,
+/turf/open/floor/plasteel,
+/area/science/lab)
 "rpW" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -32982,6 +33024,18 @@
 	},
 /turf/open/floor/monotile/steel,
 /area/crew_quarters/fitness/recreation)
+"tZs" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/orange{
+	dir = 1
+	},
+/turf/open/floor/monotile/dark,
+/area/nsv/weapons/artillery)
 "uaB" = (
 /obj/structure/sign/directions/plaque/ladder{
 	dir = 8;
@@ -61443,8 +61497,8 @@ jvB
 soY
 lus
 aLz
-lus
-lus
+piW
+piW
 aaX
 apJ
 apJ
@@ -61717,7 +61771,7 @@ arT
 agG
 mHT
 agH
-dDg
+iHT
 bdQ
 bdU
 agH
@@ -63753,11 +63807,11 @@ aff
 mLc
 lsB
 adR
-lus
-lus
-aOl
-lus
-lus
+rpw
+mXQ
+bIl
+hzb
+hzb
 iIY
 lus
 aOl
@@ -80699,10 +80753,10 @@ aeE
 aeE
 aWN
 cHx
-gcO
-gcO
-gcO
-wmH
+eGI
+eGI
+eGI
+tZs
 aWP
 aWP
 aWP
@@ -80711,8 +80765,8 @@ aWP
 aWP
 aWP
 cHx
-gcO
-gcO
+eGI
+eGI
 gcO
 wmH
 aWZ
