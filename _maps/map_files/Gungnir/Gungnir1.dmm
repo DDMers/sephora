@@ -681,7 +681,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark,
 /area/security/prison)
 "abI" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -697,8 +697,13 @@
 /turf/open/floor/monotile/dark,
 /area/ai_monitored/turret_protected/aisat)
 "abL" = (
-/turf/open/floor/plating,
-/area/bridge/meeting_room/council)
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/dark/side{
+	dir = 1
+	},
+/area/security/prison)
 "abM" = (
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/aisat)
@@ -1499,7 +1504,9 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side{
+	dir = 1
+	},
 /area/security/prison)
 "adA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1533,7 +1540,9 @@
 	dir = 1;
 	icon_state = "tube"
 	},
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side{
+	dir = 1
+	},
 /area/security/prison)
 "adG" = (
 /obj/machinery/porta_turret/ai,
@@ -1677,7 +1686,9 @@
 	network = list("warden");
 	c_tag = "Torp Gulag"
 	},
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side{
+	dir = 1
+	},
 /area/security/prison)
 "aeb" = (
 /obj/structure/cable{
@@ -1696,7 +1707,9 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side{
+	dir = 1
+	},
 /area/security/prison)
 "aef" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -1872,7 +1885,10 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/plasteel/grid/steel,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/side,
 /area/security/prison)
 "aeF" = (
 /turf/closed/wall/r_wall/ship,
@@ -1898,7 +1914,7 @@
 /area/maintenance/department/security)
 "aeL" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/corner,
 /area/security/prison)
 "aeM" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1918,7 +1934,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side,
 /area/security/prison)
 "aeS" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
@@ -1934,7 +1950,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side,
 /area/security/prison)
 "aeU" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2023,7 +2039,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side{
+	dir = 6
+	},
 /area/security/prison)
 "afl" = (
 /obj/machinery/door/airlock/ship/external/glass{
@@ -2077,11 +2095,8 @@
 /turf/open/floor/plasteel,
 /area/shuttle/turbolift/quinary)
 "afw" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 4
-	},
-/turf/open/floor/plasteel/grid/steel,
-/area/security/prison)
+/turf/open/floor/monotile/dark,
+/area/nsv/weapons/weapons_secure_storage)
 "afx" = (
 /obj/machinery/camera/autoname{
 	dir = 8;
@@ -2091,24 +2106,25 @@
 /turf/open/floor/monotile/dark,
 /area/nsv/hanger/mining)
 "afy" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+/obj/effect/turf_decal/tile/ship/half/orange{
+	dir = 8
 	},
-/turf/open/floor/plasteel/grid/steel,
-/area/security/prison)
+/turf/open/floor/durasteel/techfloor_grid,
+/area/nsv/weapons/weapons_secure_storage)
 "afz" = (
 /turf/closed/wall/ship,
 /area/nsv/briefingroom)
 "afA" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
 	},
 /turf/open/floor/plasteel/grid/steel,
 /area/security/prison)
 "afB" = (
+/obj/machinery/missile_builder/wirer,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -2264,7 +2280,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side{
+	dir = 8
+	},
 /area/security/prison)
 "afW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2705,6 +2723,14 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/port/central)
+"ahm" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark/side{
+	dir = 1
+	},
+/area/security/prison)
 "aho" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -3104,11 +3130,18 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
 /area/security/main)
 "aik" = (
-/obj/machinery/missile_builder/wirer,
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side{
+	dir = 10
+	},
 /area/security/prison)
 "ail" = (
 /obj/machinery/atmospherics/pipe/multiz/layer2{
@@ -3148,7 +3181,9 @@
 /obj/item/ship_weapon/parts/missile/guidance_system,
 /obj/item/ship_weapon/parts/missile/guidance_system,
 /obj/item/ship_weapon/parts/missile/guidance_system,
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side{
+	dir = 9
+	},
 /area/security/prison)
 "aio" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -3425,7 +3460,9 @@
 /obj/item/ship_weapon/parts/missile/iff_card,
 /obj/item/ship_weapon/parts/missile/iff_card,
 /obj/item/ship_weapon/parts/missile/iff_card,
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side{
+	dir = 8
+	},
 /area/security/prison)
 "aiR" = (
 /obj/machinery/atmospherics/pipe/multiz/layer4{
@@ -3627,7 +3664,9 @@
 /obj/item/ship_weapon/parts/missile/propulsion_system,
 /obj/item/ship_weapon/parts/missile/propulsion_system,
 /obj/item/ship_weapon/parts/missile/propulsion_system,
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side{
+	dir = 8
+	},
 /area/security/prison)
 "ajl" = (
 /obj/machinery/door/airlock/ship/external/glass{
@@ -3683,7 +3722,9 @@
 	dir = 1;
 	icon_state = "tube"
 	},
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side{
+	dir = 5
+	},
 /area/security/prison)
 "ajr" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -3692,7 +3733,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side{
+	dir = 10
+	},
 /area/security/prison)
 "ajs" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -3701,7 +3744,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side,
 /area/security/prison)
 "ajt" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -3713,7 +3756,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side,
 /area/security/prison)
 "aju" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -3725,7 +3768,9 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side{
+	dir = 6
+	},
 /area/security/prison)
 "ajv" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -3827,7 +3872,9 @@
 /obj/item/ship_weapon/parts/missile/warhead/torpedo,
 /obj/item/ship_weapon/parts/missile/warhead/torpedo,
 /obj/item/ship_weapon/parts/missile/warhead/torpedo,
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side{
+	dir = 10
+	},
 /area/security/prison)
 "ajF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -6229,6 +6276,9 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/security/main)
 "apA" = (
@@ -6355,7 +6405,9 @@
 /area/nsv/hanger/notkmcstupidhanger/hangar)
 "apP" = (
 /obj/machinery/vending/sustenance,
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side{
+	dir = 9
+	},
 /area/security/prison)
 "apQ" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -7011,7 +7063,7 @@
 "arB" = (
 /obj/structure/closet/radiation,
 /turf/open/floor/plating,
-/area/bridge/meeting_room/council)
+/area/maintenance/port/central)
 "arC" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/wood,
@@ -8020,7 +8072,6 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/green/flat_full,
 /turf/open/floor/plasteel,
 /area/crew_quarters/cafeteria)
 "atV" = (
@@ -11954,6 +12005,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/central)
@@ -17111,7 +17165,10 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/tile/ship/half/orange{
+	dir = 8
+	},
+/turf/open/floor/durasteel/techfloor_grid,
 /area/nsv/weapons/weapons_secure_storage)
 "aNI" = (
 /obj/structure/cable{
@@ -17121,14 +17178,14 @@
 /obj/item/ship_weapon/parts/missile/warhead/hellfire,
 /obj/item/ship_weapon/parts/missile/warhead/hellfire,
 /obj/item/ship_weapon/parts/missile/warhead/hellfire,
-/turf/open/floor/plasteel,
+/turf/open/floor/monotile/dark,
 /area/nsv/weapons/weapons_secure_storage)
 "aNJ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/structure/rack,
-/turf/open/floor/plasteel,
+/turf/open/floor/monotile/dark,
 /area/nsv/weapons/weapons_secure_storage)
 "aNK" = (
 /turf/open/floor/plasteel,
@@ -17183,13 +17240,13 @@
 /obj/item/circuitboard/machine/gauss_turret,
 /obj/item/circuitboard/machine/gauss_turret,
 /obj/item/circuitboard/machine/gauss_turret,
-/turf/open/floor/plasteel,
+/turf/open/floor/monotile/dark,
 /area/nsv/weapons/weapons_secure_storage)
 "aNP" = (
 /obj/structure/rack,
 /obj/item/circuitboard/machine/pdc_mount,
 /obj/item/circuitboard/machine/pdc_mount,
-/turf/open/floor/plasteel,
+/turf/open/floor/monotile/dark,
 /area/nsv/weapons/weapons_secure_storage)
 "aNQ" = (
 /obj/structure/rack,
@@ -17197,7 +17254,7 @@
 /obj/item/circuitboard/machine/vls,
 /obj/item/circuitboard/machine/vls,
 /obj/item/circuitboard/machine/vls,
-/turf/open/floor/plasteel,
+/turf/open/floor/monotile/dark,
 /area/nsv/weapons/weapons_secure_storage)
 "aNS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -19083,6 +19140,7 @@
 	dir = 1
 	},
 /obj/item/melee/baton,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
 "aQT" = (
@@ -21163,6 +21221,7 @@
 	dir = 8
 	},
 /obj/machinery/camera/autoname,
+/mob/living/carbon/monkey/punpun,
 /turf/open/floor/wood,
 /area/crew_quarters/bar)
 "aVf" = (
@@ -25440,6 +25499,17 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel/tech/grid,
 /area/ai_monitored/records)
+"boq" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/side{
+	dir = 5
+	},
+/area/security/prison)
 "boT" = (
 /obj/structure/closet/emcloset/anchored,
 /obj/structure/window/reinforced{
@@ -25650,7 +25720,7 @@
 	c_tag = "Torp Gulag";
 	dir = 4
 	},
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark,
 /area/security/prison)
 "bMz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -25734,7 +25804,7 @@
 	pixel_y = 31
 	},
 /turf/open/floor/plating,
-/area/bridge/meeting_room/council)
+/area/maintenance/port/central)
 "bUX" = (
 /turf/open/floor/plasteel/dark/side{
 	dir = 8
@@ -25783,6 +25853,15 @@
 /obj/effect/landmark/start/chaplain,
 /turf/open/floor/carpet/ship,
 /area/chapel/office)
+"ceC" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/side,
+/area/security/prison)
 "cfp" = (
 /obj/machinery/light,
 /obj/effect/turf_decal/tile/yellow/flat_side,
@@ -25972,9 +26051,6 @@
 /obj/structure/bed/dogbed{
 	name = "Antonio's Bed"
 	},
-/obj/machinery/camera/autoname{
-	dir = 1
-	},
 /obj/machinery/light{
 	dir = 1;
 	icon_state = "tube"
@@ -26140,7 +26216,10 @@
 /obj/machinery/camera/autoname{
 	dir = 9
 	},
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/tile/ship/half/orange{
+	dir = 4
+	},
+/turf/open/floor/durasteel/techfloor_grid,
 /area/nsv/weapons/weapons_secure_storage)
 "dhr" = (
 /obj/structure/cable/yellow{
@@ -26230,6 +26309,18 @@
 "drD" = (
 /turf/open/floor/plating,
 /area/space/nearstation)
+"dso" = (
+/obj/effect/turf_decal/tile/ship/orange{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/ship/orange{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/ship/orange{
+	dir = 1
+	},
+/turf/open/floor/durasteel/techfloor_grid,
+/area/nsv/weapons/weapons_secure_storage)
 "dth" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -26286,6 +26377,11 @@
 	},
 /turf/open/floor/monotile/dark,
 /area/hallway/nsv/deck1/aft)
+"dzt" = (
+/turf/open/floor/plasteel/dark/side{
+	dir = 8
+	},
+/area/security/prison)
 "dDF" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -26443,7 +26539,14 @@
 /turf/open/floor/monotile/dark,
 /area/hallway/nsv/deck1/hallway)
 "eak" = (
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/tile/ship/orange{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/ship/orange{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/ship/orange,
+/turf/open/floor/durasteel/techfloor_grid,
 /area/nsv/weapons/weapons_secure_storage)
 "ean" = (
 /obj/machinery/camera/autoname,
@@ -26591,7 +26694,10 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/tile/ship/half/orange{
+	dir = 8
+	},
+/turf/open/floor/durasteel/techfloor_grid,
 /area/nsv/weapons/weapons_secure_storage)
 "enm" = (
 /obj/machinery/atmospherics/pipe/multiz/layer4{
@@ -26670,6 +26776,10 @@
 /obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/plasteel,
 /area/security/brig)
+"ezo" = (
+/obj/structure/rack,
+/turf/open/floor/monotile/dark,
+/area/nsv/weapons/weapons_secure_storage)
 "eCF" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -27023,6 +27133,9 @@
 /obj/machinery/camera/autoname,
 /turf/open/floor/plasteel/dark/side,
 /area/crew_quarters/cafeteria)
+"flY" = (
+/turf/open/floor/plasteel/dark/side,
+/area/security/prison)
 "fnR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/tile/yellow{
@@ -27076,7 +27189,9 @@
 	dir = 1;
 	icon_state = "tube"
 	},
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side{
+	dir = 1
+	},
 /area/security/prison)
 "frr" = (
 /obj/structure/closet/secure_closet/personal,
@@ -28203,6 +28318,11 @@
 	},
 /turf/open/floor/plasteel/techmaint,
 /area/engine/armour_pump)
+"iow" = (
+/turf/open/floor/plasteel/dark/side{
+	dir = 4
+	},
+/area/security/prison)
 "ipD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -28465,7 +28585,9 @@
 	name = "Warden Intercom";
 	pixel_x = -29
 	},
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side{
+	dir = 9
+	},
 /area/security/prison)
 "iXP" = (
 /obj/machinery/camera/autoname{
@@ -28596,7 +28718,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/tile/ship/half/orange{
+	dir = 1
+	},
+/turf/open/floor/durasteel/techfloor_grid,
 /area/nsv/weapons/weapons_secure_storage)
 "jlS" = (
 /obj/machinery/light{
@@ -28661,6 +28786,12 @@
 "jue" = (
 /turf/closed/wall/r_wall/ship,
 /area/nsv/weapons/observation_deck)
+"juJ" = (
+/obj/effect/turf_decal/tile/ship/half/orange{
+	dir = 4
+	},
+/turf/open/floor/durasteel/techfloor_grid,
+/area/nsv/weapons/weapons_secure_storage)
 "jwO" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -29141,6 +29272,12 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/armour_pump)
+"kmL" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/monotile/dark,
+/area/space/nearstation)
 "kpS" = (
 /obj/machinery/camera/autoname,
 /turf/open/floor/plasteel/chapel{
@@ -29383,6 +29520,18 @@
 	},
 /turf/open/floor/monotile/dark,
 /area/nsv/hanger/mining)
+"lbD" = (
+/obj/structure/rack,
+/obj/item/ship_weapon/parts/missile/warhead/torpedo,
+/obj/item/ship_weapon/parts/missile/warhead/torpedo,
+/obj/item/ship_weapon/parts/missile/warhead/torpedo,
+/obj/item/ship_weapon/parts/missile/warhead/torpedo,
+/obj/item/ship_weapon/parts/missile/warhead/torpedo,
+/obj/item/ship_weapon/parts/missile/warhead/torpedo,
+/turf/open/floor/plasteel/dark/side{
+	dir = 6
+	},
+/area/security/prison)
 "lck" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -29497,6 +29646,11 @@
 "lkg" = (
 /turf/closed/wall/r_wall/ship,
 /area/hallway/nsv/deck1/hallway)
+"lkL" = (
+/turf/open/floor/plasteel/dark/side{
+	dir = 1
+	},
+/area/security/prison)
 "lkW" = (
 /obj/structure/hull_plate,
 /obj/machinery/camera/autoname{
@@ -29681,6 +29835,10 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/prison)
+"lGg" = (
+/obj/effect/turf_decal/tile/ship/half/orange,
+/turf/open/floor/durasteel/techfloor_grid,
+/area/nsv/weapons/weapons_secure_storage)
 "lGY" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
@@ -29953,6 +30111,16 @@
 	},
 /turf/open/floor/plasteel/techmaint,
 /area/engine/gravity_generator)
+"mdV" = (
+/obj/effect/turf_decal/tile/ship/orange{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/ship/orange{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/ship/orange,
+/turf/open/floor/durasteel/techfloor_grid,
+/area/nsv/weapons/weapons_secure_storage)
 "meq" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -31019,6 +31187,12 @@
 	},
 /turf/open/floor/engine,
 /area/storage/tools)
+"ozZ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark/side,
+/area/security/prison)
 "oEp" = (
 /obj/structure/table,
 /obj/machinery/reagentgrinder{
@@ -31272,6 +31446,11 @@
 	},
 /turf/open/floor/plating,
 /area/engine/armour_pump)
+"ptp" = (
+/mob/living/simple_animal/pet/dog/bullterrier/walter,
+/obj/structure/bed/dogbed/walter,
+/turf/open/floor/wood,
+/area/crew_quarters/heads/hos)
 "pxd" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -31381,6 +31560,10 @@
 	},
 /turf/open/floor/engine,
 /area/storage/tools)
+"pCu" = (
+/mob/living/simple_animal/pet/dog/bullterrier/walter,
+/turf/open/floor/carpet/red,
+/area/crew_quarters/heads/hos)
 "pCH" = (
 /obj/machinery/light{
 	dir = 1;
@@ -31639,6 +31822,11 @@
 	},
 /turf/open/floor/monotile/dark,
 /area/hallway/nsv/deck1/hallway)
+"qew" = (
+/turf/open/floor/plasteel/dark/side{
+	dir = 5
+	},
+/area/security/prison)
 "qeJ" = (
 /obj/effect/turf_decal/tile/darkblue{
 	dir = 1
@@ -31770,7 +31958,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/monotile/dark,
 /area/nsv/weapons/weapons_secure_storage)
 "qoZ" = (
 /obj/structure/closet/firecloset/full,
@@ -32527,6 +32715,12 @@
 	dir = 6
 	},
 /area/crew_quarters/cafeteria)
+"slh" = (
+/mob/living/simple_animal/hostile/retaliate/goat{
+	name = "Technical debt"
+	},
+/turf/open/floor/plasteel/freezer,
+/area/crew_quarters/kitchen/coldroom)
 "slr" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
@@ -32963,7 +33157,9 @@
 	c_tag = "Torp Gulag";
 	dir = 9
 	},
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side{
+	dir = 4
+	},
 /area/security/prison)
 "tvV" = (
 /obj/effect/turf_decal/tile/orange,
@@ -33130,6 +33326,12 @@
 	},
 /turf/open/floor/plasteel/techmaint,
 /area/engineering/hallway)
+"tPB" = (
+/obj/effect/turf_decal/tile/ship/half/orange{
+	dir = 1
+	},
+/turf/open/floor/durasteel/techfloor_grid,
+/area/nsv/weapons/weapons_secure_storage)
 "tPD" = (
 /obj/machinery/light{
 	dir = 1
@@ -33241,6 +33443,12 @@
 	},
 /turf/open/floor/monotile/dark,
 /area/nsv/weapons/observation_deck)
+"uaJ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/monotile/dark,
+/area/space/nearstation)
 "uaW" = (
 /turf/open/floor/monotile/dark,
 /area/space)
@@ -33347,6 +33555,11 @@
 /obj/effect/landmark/zebra_interlock_point,
 /turf/open/floor/wood,
 /area/nsv/crew_quarters/heads/maa)
+"uqA" = (
+/turf/open/floor/plasteel/dark/side{
+	dir = 6
+	},
+/area/security/prison)
 "urk" = (
 /obj/machinery/door/poddoor/ship/preopen{
 	id = "minner";
@@ -33827,6 +34040,14 @@
 	dir = 8
 	},
 /area/janitor)
+"vzm" = (
+/turf/open/floor/plasteel/dark/corner{
+	dir = 4
+	},
+/area/security/prison)
+"vzE" = (
+/turf/open/floor/plasteel/dark,
+/area/security/prison)
 "vzL" = (
 /obj/machinery/light{
 	dir = 8
@@ -34101,6 +34322,12 @@
 	},
 /turf/open/floor/plasteel/techmaint,
 /area/engine/gravity_generator)
+"wkA" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/dark/side,
+/area/security/prison)
 "wkT" = (
 /obj/machinery/light{
 	dir = 4
@@ -34166,6 +34393,16 @@
 /obj/item/grenade/chem_grenade/smart_metal_foam,
 /turf/open/floor/plasteel/tech/grid,
 /area/ai_monitored/records)
+"wsz" = (
+/obj/effect/turf_decal/tile/ship/orange{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/ship/orange{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/ship/orange,
+/turf/open/floor/durasteel/techfloor_grid,
+/area/nsv/weapons/weapons_secure_storage)
 "wtd" = (
 /obj/structure/tank_dispenser,
 /obj/structure/window/reinforced{
@@ -34507,7 +34744,7 @@
 	name = "Warden Intercom";
 	pixel_y = -30
 	},
-/turf/open/floor/plasteel/grid/steel,
+/turf/open/floor/plasteel/dark/side,
 /area/security/prison)
 "xjH" = (
 /obj/machinery/holopad,
@@ -34529,7 +34766,10 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/tile/ship/half/orange{
+	dir = 4
+	},
+/turf/open/floor/durasteel/techfloor_grid,
 /area/nsv/weapons/weapons_secure_storage)
 "xlt" = (
 /obj/effect/turf_decal/tile/ship/orange,
@@ -34597,6 +34837,11 @@
 	dir = 1
 	},
 /area/janitor)
+"xuq" = (
+/turf/open/floor/plasteel/dark/side{
+	dir = 9
+	},
+/area/security/prison)
 "xwo" = (
 /obj/machinery/vending/coffee,
 /obj/effect/turf_decal/tile/red{
@@ -55949,7 +56194,7 @@ aae
 aUt
 vVT
 aPf
-bqG
+slh
 aYs
 aYA
 aYR
@@ -56943,7 +57188,7 @@ abM
 acA
 abM
 abj
-aBa
+ijE
 ijE
 abk
 qEO
@@ -62326,7 +62571,7 @@ pVb
 aqS
 abo
 abo
-abL
+aaG
 aaN
 agh
 rVi
@@ -62583,7 +62828,7 @@ aaD
 abo
 abo
 abo
-abL
+aaG
 aaN
 agh
 aaI
@@ -63611,7 +63856,7 @@ abG
 aqS
 bcb
 abo
-abL
+aaG
 aaN
 agh
 afu
@@ -63868,7 +64113,7 @@ abo
 aaE
 abo
 abo
-abL
+aaG
 aaN
 agh
 agk
@@ -64125,7 +64370,7 @@ abo
 bcc
 bcc
 abo
-abL
+aaG
 aaN
 agh
 agh
@@ -64382,7 +64627,7 @@ abo
 fjn
 bcd
 abo
-abL
+aaG
 aaN
 abU
 abU
@@ -69009,7 +69254,7 @@ aiP
 amO
 ajn
 tLp
-ajn
+ptp
 ajn
 amZ
 any
@@ -69521,7 +69766,7 @@ cpH
 any
 ajz
 ahf
-ahf
+pCu
 llK
 qbQ
 aqX
@@ -72347,10 +72592,10 @@ aac
 aaJ
 afd
 aav
-aaJ
-aaJ
-aaJ
-aaJ
+qew
+iow
+vzm
+flY
 aav
 aod
 aki
@@ -72600,14 +72845,14 @@ aaR
 aaR
 aaY
 aaB
-aaJ
-aaJ
-aaJ
+xuq
+dzt
+aik
 aav
 aav
 aav
 ajq
-ajE
+lbD
 aav
 aof
 aav
@@ -73115,11 +73360,11 @@ aaR
 aaY
 aav
 adF
-adx
-aaJ
+wkA
 agN
 iBo
 glD
+lkL
 ajs
 aav
 aav
@@ -73376,7 +73621,7 @@ aeR
 aaJ
 aaJ
 aaJ
-aaJ
+lkL
 ajs
 akl
 les
@@ -73628,12 +73873,12 @@ aaR
 aaR
 aaY
 aaB
-aaJ
+lkL
 aeR
-aaJ
 agU
 iBo
 glD
+lkL
 ajs
 aav
 aav
@@ -73885,12 +74130,12 @@ aaa
 aaR
 aaY
 aeg
-aeb
+ahm
 aeT
 aeb
 aeb
 aeb
-aeb
+ahm
 ajt
 akn
 thI
@@ -74142,12 +74387,12 @@ aaa
 aaR
 aaY
 aek
-aaJ
+lkL
 aeR
-aaJ
 ahi
 iBo
 glD
+lkL
 ajs
 aek
 alY
@@ -74400,11 +74645,11 @@ aaR
 aaY
 aav
 frn
-aeR
-afw
+ceC
 aaJ
 aaJ
 aaJ
+lkL
 xgH
 aav
 aav
@@ -74658,10 +74903,10 @@ aaY
 aav
 aee
 aeE
-afy
 ahM
 iBo
 glD
+lkL
 ajs
 alg
 amq
@@ -74913,12 +75158,12 @@ aaa
 aaa
 aaY
 aey
-aeE
-aaJ
+abL
+ozZ
 afA
 aih
 aih
-aih
+boq
 aju
 alt
 amU
@@ -75170,12 +75415,12 @@ aaa
 aaa
 aaY
 aek
-aaJ
-aaJ
+qew
+uqA
 afB
-aik
 iBo
 glD
+vzE
 uCI
 aav
 aav
@@ -75430,9 +75675,9 @@ aav
 aav
 apP
 afV
-aaJ
-aaJ
-aaJ
+dzt
+dzt
+aik
 dDF
 aQS
 pgq
@@ -75683,13 +75928,13 @@ aaa
 aaa
 aaa
 aaa
-aaR
+uaJ
 aav
-aaJ
-aaJ
-aaJ
+qew
+iow
+iow
 tvy
-aaJ
+uqA
 abI
 xyr
 lnA
@@ -75940,7 +76185,7 @@ aaa
 aaa
 aaa
 aaa
-aaR
+kmL
 aav
 aeW
 aeW
@@ -78823,10 +79068,10 @@ ahk
 vms
 ahk
 rxB
-eak
+dso
 aNH
 enb
-eak
+afy
 eak
 oZu
 aOs
@@ -79080,11 +79325,11 @@ rxB
 rxB
 rxB
 rxB
-eak
+tPB
 aNI
-eak
+afw
 aNO
-eak
+lGg
 oZu
 aOt
 agz
@@ -79337,11 +79582,11 @@ aLw
 aLw
 qpn
 dww
-eak
+tPB
 aNJ
-eak
+afw
 aNP
-eak
+lGg
 oZu
 aOu
 asH
@@ -79596,9 +79841,9 @@ vXr
 mVA
 jlq
 qor
-eak
+afw
 aNQ
-eak
+lGg
 oZu
 aOu
 asH
@@ -79851,11 +80096,11 @@ nBs
 aOe
 uzn
 dww
-eak
-eak
-eak
-eak
-eak
+tPB
+ezo
+afw
+ezo
+lGg
 oZu
 aOu
 asH
@@ -80108,11 +80353,11 @@ iIa
 aOf
 daj
 oZu
-eak
+wsz
 dhi
 xjT
-eak
-eak
+juJ
+mdV
 oZu
 aOu
 asH
