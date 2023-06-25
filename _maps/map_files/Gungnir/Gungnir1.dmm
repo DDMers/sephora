@@ -5723,12 +5723,6 @@
 /area/engineering/hallway)
 "aol" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/effect/turf_decal/tile/darkblue{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/darkblue{
-	dir = 4
-	},
 /turf/open/floor/monotile/dark,
 /area/hallway/nsv/deck1/aft)
 "aom" = (
@@ -11361,10 +11355,11 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "1-8"
 	},
 /obj/structure/cable{
-	icon_state = "1-8"
+	icon_state = "2-8";
+	tag = ""
 	},
 /turf/open/floor/monotile/steel,
 /area/hallway/nsv/deck1/aft)
@@ -19645,10 +19640,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/green{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/green,
 /turf/open/floor/monotile/dark,
 /area/hallway/nsv/deck1/aft)
 "aRU" = (
@@ -27347,7 +27338,7 @@
 	input_tag = "nuclear_mix_in_3";
 	name = "Nucleum Tank Control Console";
 	output_tag = "nuclear_min_out_3";
-	sensors = list("nuclear_mix_sensor_3"="Nucleum Tank");
+	sensors = list("nuclear_mix_sensor_3"="Nucleum  Tank");
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -28916,17 +28907,6 @@
 /turf/open/floor/plasteel/techmaint,
 /area/engine/engineering/ftl_room)
 "jFO" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/turf_decal/tile/darkblue{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/darkblue,
 /turf/open/floor/monotile/dark,
 /area/hallway/nsv/deck1/aft)
 "jHx" = (
@@ -31340,6 +31320,18 @@
 	},
 /turf/open/floor/monotile/dark,
 /area/hallway/nsv/deck1/hallway)
+"oYk" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/monotile/dark,
+/area/hallway/nsv/deck1/aft)
 "oYF" = (
 /turf/closed/wall/ship,
 /area/engine/storage_shared)
@@ -34277,6 +34269,12 @@
 /obj/structure/hull_plate,
 /turf/open/floor/monotile/dark/airless,
 /area/space/nearstation)
+"wam" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/turf/open/floor/monotile/dark,
+/area/hallway/nsv/deck1/aft)
 "wcm" = (
 /turf/open/floor/durasteel/techfloor_grid,
 /area/nsv/hanger/notkmcstupidhanger/pilot)
@@ -60284,13 +60282,13 @@ aIE
 aIJ
 aIQ
 aJk
-jFO
 idK
+ajo
 ajo
 aop
 aCq
+ajo
 ydT
-nxO
 aqB
 nxO
 aDV
@@ -60541,13 +60539,13 @@ vWk
 vWk
 vWk
 vWk
-vWk
 lLV
+aeN
 aeN
 aMJ
 aCw
+aeN
 dkV
-eHZ
 eHZ
 eHZ
 eHZ
@@ -60797,15 +60795,15 @@ vWk
 rmS
 rmS
 rmS
-rmS
 vWk
 uxX
-aeN
-aMJ
-aCw
+jFO
+jFO
+oYk
+wam
+jFO
 oJJ
 eHZ
-wfc
 wfc
 wfc
 wfc
@@ -61054,15 +61052,15 @@ vWk
 rmS
 rmS
 rmS
-rmS
 aeY
 uTz
+jFO
 aeN
 aMJ
 aCw
+jFO
 dkV
 wRh
-wfc
 wfc
 wfc
 wfc
@@ -61311,15 +61309,15 @@ vWk
 rmS
 rmS
 rmS
-rmS
 aeY
+uTz
 aol
 aME
 aon
 aCB
 aRT
+dkV
 wRh
-wfc
 wfc
 wfc
 wfc
@@ -61568,15 +61566,15 @@ vWk
 rmS
 rmS
 rmS
-rmS
 vWk
 dxA
+jFO
 aeN
 aMJ
 aCw
+jFO
 app
 eHZ
-wfc
 wfc
 wfc
 wfc
@@ -61826,13 +61824,13 @@ vWk
 vWk
 vWk
 vWk
-vWk
 aUn
-aeN
-aMJ
-aCw
+jFO
+jFO
+oYk
+wam
+jFO
 gjK
-eHZ
 eHZ
 eHZ
 eHZ
@@ -62083,13 +62081,13 @@ dMI
 pjV
 pjV
 pjV
-pjV
 hVO
+aeN
 aeN
 aMJ
 aCw
+aeN
 hKD
-quU
 aRR
 quU
 quU
