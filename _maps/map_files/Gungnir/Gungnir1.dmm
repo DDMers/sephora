@@ -20827,6 +20827,7 @@
 /obj/effect/turf_decal/tile/orange{
 	dir = 1
 	},
+/obj/structure/bot_elevator,
 /turf/open/floor/monotile/dark,
 /area/hallway/nsv/deck1/hallway)
 "aUk" = (
@@ -28724,15 +28725,11 @@
 /turf/open/floor/plasteel/techmaint,
 /area/ai_monitored/records)
 "jjE" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8
+/obj/machinery/navbeacon{
+	codes_txt = "patrol;next_patrol=m21";
+	location = "m20"
 	},
-/obj/effect/turf_decal/tile/orange,
-/obj/effect/turf_decal/tile/orange{
-	dir = 8
-	},
-/obj/structure/bot_elevator,
-/turf/open/floor/monotile/dark,
+/turf/open/floor/monotile/steel,
 /area/hallway/nsv/deck1/hallway)
 "jkr" = (
 /obj/structure/sign/ship/pods/north{
@@ -35065,10 +35062,6 @@
 	},
 /obj/effect/turf_decal/tile/green{
 	dir = 8
-	},
-/obj/machinery/navbeacon{
-	codes_txt = "patrol;next_patrol=m21";
-	location = "m20"
 	},
 /turf/open/floor/monotile/dark,
 /area/hallway/nsv/deck1/aft)
@@ -65222,7 +65215,7 @@ akB
 rPm
 akB
 akB
-akB
+jjE
 akB
 aqg
 akB
@@ -77314,7 +77307,7 @@ asf
 asf
 aQu
 aBh
-jjE
+jtX
 afq
 afq
 afq

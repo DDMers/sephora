@@ -238,7 +238,8 @@
 	},
 /obj/machinery/navbeacon{
 	codes_txt = "patrol;next_patrol=m22";
-	location = "m21"
+	location = "m21";
+	name = "m21"
 	},
 /turf/open/floor/monotile/steel,
 /area/hallway/nsv/deck2/aft)
@@ -6767,7 +6768,6 @@
 /turf/open/floor/plasteel/ameridiner,
 /area/quartermaster/sorting)
 "aqC" = (
-/obj/machinery/navbeacon,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -7006,7 +7006,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/navbeacon,
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
 	dir = 1;
@@ -20193,7 +20192,6 @@
 /turf/open/floor/plasteel/white,
 /area/medical/nsv/clinic)
 "aSC" = (
-/obj/machinery/navbeacon,
 /obj/structure/closet/crate/freezer/surplus_limbs,
 /turf/open/floor/plasteel/white,
 /area/medical/nsv/clinic)
@@ -22627,7 +22625,6 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/navbeacon,
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
@@ -26647,18 +26644,6 @@
 	dir = 6
 	},
 /area/medical/chemistry)
-"czX" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe"
-	},
-/obj/effect/turf_decal/tile/brown{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/brown,
-/obj/structure/bot_elevator,
-/turf/open/floor/monotile/dark,
-/area/hallway/nsv/deck2/forward)
 "cBa" = (
 /obj/machinery/button{
 	id = "MuniLoad";
@@ -27629,7 +27614,8 @@
 "eQB" = (
 /obj/machinery/navbeacon{
 	codes_txt = "patrol;next_patrol=m8";
-	location = "m7"
+	location = "m7";
+	name = "m7"
 	},
 /obj/structure/chair,
 /obj/effect/turf_decal/ship/borderfloor/gunmetal{
@@ -28308,7 +28294,8 @@
 "gIc" = (
 /obj/machinery/navbeacon{
 	codes_txt = "patrol;next_patrol=m1";
-	location = "m22"
+	location = "m22";
+	name = "m22"
 	},
 /turf/open/floor/monotile/steel,
 /area/hallway/nsv/deck2/primary)
@@ -31598,7 +31585,8 @@
 "nZJ" = (
 /obj/machinery/navbeacon{
 	codes_txt = "patrol;next_patrol=m11";
-	location = "m10"
+	location = "m10";
+	name = "m10"
 	},
 /turf/open/floor/monotile/steel,
 /area/hallway/nsv/deck2/aft)
@@ -33773,7 +33761,8 @@
 "tJs" = (
 /obj/machinery/navbeacon{
 	codes_txt = "patrol;next_patrol=m10";
-	location = "m9"
+	location = "m9";
+	name = "m9"
 	},
 /obj/structure/sign/directions/plaque/ladder{
 	dir = 8;
@@ -33887,6 +33876,7 @@
 /obj/effect/turf_decal/tile/orange{
 	dir = 4
 	},
+/obj/structure/bot_elevator,
 /turf/open/floor/monotile/dark,
 /area/hallway/nsv/deck2/forward)
 "tVj" = (
@@ -60509,8 +60499,8 @@ awp
 ayZ
 aSI
 aJJ
-aJJ
 aaR
+aJJ
 aIX
 ajC
 aIK
@@ -77989,7 +77979,7 @@ aPP
 abh
 aWJ
 akx
-czX
+xsF
 abT
 abT
 abT
@@ -78759,7 +78749,7 @@ nBY
 nBY
 nBY
 aKe
-akx
+dGE
 azM
 nBY
 nBY
@@ -79787,7 +79777,7 @@ abq
 abq
 abq
 jKI
-dGE
+akx
 vBP
 abq
 abq
