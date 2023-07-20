@@ -21961,6 +21961,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/landmark/observer_start,
+/obj/machinery/holopad,
 /turf/open/floor/plasteel/ridged/steel,
 /area/bridge/cic)
 "aWl" = (
@@ -22013,7 +22014,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/machinery/holopad,
+/obj/machinery/conquest_beacon/nanotrasen,
 /turf/open/floor/monotile/dark,
 /area/bridge/cic)
 "aWp" = (
