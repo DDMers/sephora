@@ -32879,9 +32879,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/nanite)
-"rqp" = (
-/turf/closed/wall/r_wall/ship,
-/area/quartermaster/meeting_room)
 "rqJ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -69256,7 +69253,7 @@ anQ
 anQ
 anQ
 aZF
-rqp
+anQ
 qQz
 ckW
 baz
@@ -69513,7 +69510,7 @@ aXb
 duT
 tTO
 fEU
-rqp
+anQ
 abW
 bai
 baA
