@@ -18313,6 +18313,7 @@
 "aPe" = (
 /obj/structure/table/wood/bar,
 /obj/effect/spawner/lootdrop/donkpockets,
+/obj/item/storage/box/coffeepack,
 /turf/open/floor/carpet/green,
 /area/medical/medbay/lobby)
 "aPf" = (
@@ -18399,6 +18400,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/machinery/coffeemaker,
+/obj/item/reagent_containers/glass/coffeepot,
 /turf/open/floor/wood,
 /area/medical/medbay/lobby)
 "aPp" = (
@@ -27043,6 +27046,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/coffeemaker,
 /turf/open/floor/wood,
 /area/quartermaster/meeting_room)
 "dAa" = (
@@ -32482,6 +32486,11 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating,
 /area/maintenance/department/medical)
+"qHk" = (
+/obj/structure/table/wood/bar,
+/obj/item/storage/box/coffeepack,
+/turf/open/floor/wood,
+/area/quartermaster/meeting_room)
 "qIB" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -71048,7 +71057,7 @@ uRY
 aqR
 aze
 lnX
-aXb
+qHk
 tTO
 aYu
 fEU
