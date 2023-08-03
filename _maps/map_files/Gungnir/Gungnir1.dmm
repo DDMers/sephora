@@ -10784,6 +10784,7 @@
 /obj/machinery/camera/autoname{
 	dir = 9
 	},
+/obj/machinery/jukebox,
 /turf/open/floor/plasteel/showroomfloor,
 /area/crew_quarters/cafeteria)
 "azQ" = (
