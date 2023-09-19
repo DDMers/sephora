@@ -778,3 +778,7 @@
 /area/nsv/weapons/main_passageway
     name = "Munitions Access Corridor"
     icon_state = "hallF"
+
+/area/nsv/engine/dcc
+	name = "Damage Control Central"
+	icon_state = "dc_central"
