@@ -15,11 +15,11 @@
 	"ship_type": "/obj/structure/overmap/nanotrasen/heavy_battlecruiser/starter",
 	"starmap_path": "config/starmap/starmap.json",
 
-	"map_description": "Gungnir-Class Battlecruisers were designed from the ground up as a counter to the Kadesh-Class cruiser in cooperation with Ethereal engineers from the Dominion of Light. While budget constraints have prevented all of its intended armament from being installed, early reports indicate that the battlecruisers remain functional even after losing 90% of their atmospheric integrity",
+	"map_description": "Gungnir-Class Battlecruisers were designed from the ground up as a counter to the Kadesh-Class cruiser in cooperation with Ethereal engineers formerly of the Dominion of Light. While budget constraints have prevented all of its intended armament from being installed, early reports indicate that the battlecruisers remain functional even after losing 90% of their atmospheric integrity",
 	"manufacturer": "Starlight Drive Yards",
 	"mapper": "Seryn",
 	"commission_date": "Jun 7, 2262",
-	"strengths": ["Heavy Gun Armament, Heavy Armor, Prototype Screen Defense, Redundant Atmospherics and Power"],
+	"strengths": ["Heavy Gun Armament, Heavy Armor, Redundant Atmospherics and Power"],
 	"weaknesses": ["Small Missile Armament", "Manning Dependant", "Small Fighter Complement"],
 	"equipment": [
 		"4 M4-15 'Hood' deck turret",
@@ -27,7 +27,6 @@
 		"8 M14 VLS loaders",
 		"2 Heavy Fighters",
 		"1 Light Fighter",
-		"1 Point Defense Screen Array",
 		"1 Advanced Gas-Cooled Nuclear Reactor"
 	]
 }
