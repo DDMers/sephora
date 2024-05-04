@@ -6430,6 +6430,12 @@
 /obj/effect/turf_decal/tile/yellow/flat_side{
 	dir = 6
 	},
+/obj/item/radio/intercom/directional/west{
+	name = "Engineering Channel";
+	frequency = 1357;
+	pixel_x = 30;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/techmaint,
 /area/engine/engineering/reactor_core)
 "apV" = (
@@ -32296,12 +32302,6 @@
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
-	},
-/obj/item/radio/intercom/directional/west{
-	name = "Engineering Channel";
-	frequency = 1357;
-	pixel_x = 30;
-	pixel_y = -5
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/engineering/reactor_core)
@@ -65044,7 +65044,7 @@ acq
 aKD
 aKD
 aKD
-aad
+acq
 acq
 acq
 aSh
