@@ -2483,9 +2483,6 @@
 "agz" = (
 /turf/closed/wall/ship,
 /area/maintenance/department/electrical)
-"agA" = (
-/turf/closed/wall/ship,
-/area/chapel/main)
 "agB" = (
 /turf/open/floor/plasteel/chapel,
 /area/chapel/main)
@@ -24557,7 +24554,7 @@
 	},
 /obj/effect/landmark/zebra_interlock_point,
 /turf/open/floor/plasteel/dark/side,
-/area/chapel/main)
+/area/crew_quarters/cafeteria)
 "bbj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -24643,7 +24640,7 @@
 /turf/open/floor/plasteel/dark/side{
 	dir = 1
 	},
-/area/chapel)
+/area/crew_quarters/cafeteria)
 "bbs" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -30116,7 +30113,7 @@
 	},
 /obj/effect/landmark/zebra_interlock_point,
 /turf/open/floor/plasteel/dark/snowdin,
-/area/chapel/main)
+/area/crew_quarters/cafeteria)
 "jQs" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/firstaid{
@@ -62916,11 +62913,11 @@ atI
 atI
 atI
 atI
-atq
-atq
-atq
-atq
-agA
+atl
+atl
+atl
+atl
+atl
 bbi
 jQm
 bbr
