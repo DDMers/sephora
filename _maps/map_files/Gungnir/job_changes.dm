@@ -8,12 +8,6 @@ MAP_REMOVE_JOB(virologist)
     minimal_access = list(ACCESS_MUNITIONS, ACCESS_HANGAR, ACCESS_HEADS)
 
 //Munitions Job Changes
-/datum/job/air_traffic_controller/New()
-    ..()
-    MAP_JOB_CHECK
-    total_positions = 1
-    spawn_positions = 1
-
 /datum/job/fighter_pilot/New()
     ..()
     MAP_JOB_CHECK
@@ -25,3 +19,22 @@ MAP_REMOVE_JOB(virologist)
     MAP_JOB_CHECK
     total_positions = 9
     spawn_positions = 9
+
+//Service Job Changes
+/datum/job/cook/New()
+	..()
+	MAP_JOB_CHECK
+	total_positions = 1
+	spawn_positions = 1
+
+/datum/job/botanist/New()
+	..()
+	MAP_JOB_CHECK
+	total_positions = 1
+	spawn_positions = 1
+
+/datum/job/janitor/New()
+    ..()
+	MAP_JOB_CHECK
+	total_positions = 1
+	spawn_positions = 1
