@@ -629,9 +629,14 @@
 /turf/open/floor/monotile/steel,
 /area/science/lab)
 "acm" = (
-/obj/effect/spawner/structure/window/reinforced/ship,
-/turf/open/floor/plating,
-/area/maintenance/department/engine/atmos)
+/obj/structure/table/reinforced,
+/obj/machinery/camera{
+	c_tag = "MiniSat - Antechamber";
+	dir = 8;
+	network = list("minisat")
+	},
+/turf/open/floor/plasteel/techmaint,
+/area/engine/atmos)
 "acn" = (
 /turf/closed/wall/ship,
 /area/science/nanite)
@@ -1245,6 +1250,9 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
+/obj/machinery/camera/autoname{
+	dir = 10
+	},
 /turf/open/floor/plasteel/white/corner{
 	dir = 4
 	},
@@ -1656,6 +1664,9 @@
 	},
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
+	},
+/obj/machinery/camera/autoname{
+	dir = 6
 	},
 /turf/open/floor/plasteel,
 /area/science/robotics/lab)
@@ -2754,6 +2765,9 @@
 	},
 /obj/effect/turf_decal/tile/blue/flat_side{
 	dir = 4
+	},
+/obj/machinery/camera/autoname{
+	dir = 5
 	},
 /turf/open/floor/plasteel/white/side{
 	dir = 4
@@ -7280,7 +7294,6 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input{
 	dir = 8;
 	icon_state = "inje_map-1";
-	id = "air_in_alt";
 	piping_layer = 1
 	},
 /turf/open/floor/engine/air/light,
@@ -8564,8 +8577,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/conveyor{
-	id = "Gun4";
-	operating = 1
+	id = "Gun4"
 	},
 /turf/open/floor/durasteel/techfloor_grid,
 /area/nsv/magazine/port)
@@ -10763,9 +10775,11 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/ship/engineering/glass{
-	name = "Atmospherics";
-	req_one_access_txt = "24;10"
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/airlock/maintenance_hatch{
+	req_one_access_txt = "12"
 	},
 /turf/open/floor/monotile/steel,
 /area/maintenance/department/engine/atmos)
@@ -11279,17 +11293,12 @@
 /turf/open/floor/plasteel/techmaint,
 /area/engine/atmos/starboard_atmos)
 "azK" = (
+/obj/effect/landmark/start/atmospheric_technician,
 /obj/machinery/camera/autoname{
 	dir = 10
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating,
-/area/maintenance/department/engine/atmos)
+/turf/open/floor/plasteel/techmaint,
+/area/engine/atmos)
 "azL" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -20995,13 +21004,12 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/conveyor{
-	id = "Gun4";
-	operating = 1
-	},
 /obj/machinery/door/poddoor/ship{
 	id = "PORTpowder";
 	name = "Port Propellant Storage"
+	},
+/obj/machinery/conveyor{
+	id = "Gun4"
 	},
 /turf/open/floor/durasteel/techfloor_grid,
 /area/nsv/magazine/port)
@@ -21038,8 +21046,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/conveyor{
-	id = "Gun4";
-	operating = 1
+	id = "Gun4"
 	},
 /turf/open/floor/monotile/dark,
 /area/nsv/weapons/artillery)
@@ -26277,6 +26284,18 @@
 /obj/effect/landmark/zebra_interlock_point,
 /turf/open/floor/monotile/dark,
 /area/hallway/secondary/exit)
+"bpf" = (
+/obj/effect/turf_decal/tile/orange{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/orange{
+	dir = 8
+	},
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
+/turf/open/floor/durasteel/techfloor_grid,
+/area/nsv/weapons/ordnance)
 "bql" = (
 /obj/effect/turf_decal/tile/blue/flat_side{
 	dir = 1
@@ -27677,6 +27696,17 @@
 /obj/machinery/door/window/northleft,
 /turf/open/floor/grass,
 /area/crew_quarters/fitness/recreation)
+"edf" = (
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/obj/machinery/camera{
+	c_tag = "MiniSat - Antechamber";
+	dir = 8;
+	network = list("minisat")
+	},
+/turf/open/floor/plasteel/techmaint,
+/area/engine/atmos)
 "edK" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/plating,
@@ -27985,6 +28015,12 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/techmaint,
 /area/engine/atmos)
+"eDO" = (
+/obj/machinery/camera/autoname{
+	dir = 5
+	},
+/turf/open/floor/monotile/dark,
+/area/hallway/nsv/deck2/primary)
 "eEu" = (
 /obj/structure/closet/radiation,
 /turf/open/floor/plating,
@@ -32586,7 +32622,6 @@
 /obj/machinery/door/airlock/ship/external/glass{
 	req_one_access_txt = "24"
 	},
-/obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
@@ -35694,6 +35729,11 @@
 	dir = 8;
 	pixel_x = 32
 	},
+/obj/machinery/camera{
+	c_tag = "MiniSat - Antechamber";
+	dir = 8;
+	network = list("minisat")
+	},
 /turf/open/floor/monotile/steel,
 /area/hallway/nsv/deck2/primary)
 "ubd" = (
@@ -35722,8 +35762,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/conveyor{
-	id = "Gun4";
-	operating = 1
+	id = "Gun4"
 	},
 /turf/open/floor/monotile/dark,
 /area/nsv/weapons/artillery)
@@ -35807,6 +35846,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/monotile/steel,
 /area/hallway/nsv/deck2/primary)
 "usj" = (
@@ -36016,15 +36056,14 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/conveyor{
-	id = "Gun4";
-	operating = 1
-	},
 /obj/effect/turf_decal/tile/orange{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/orange{
 	dir = 4
+	},
+/obj/machinery/conveyor{
+	id = "Gun4"
 	},
 /turf/open/floor/durasteel/techfloor_grid,
 /area/nsv/weapons/artillery)
@@ -36602,6 +36641,15 @@
 	},
 /turf/open/floor/monotile/steel,
 /area/hallway/secondary/exit/departure_lounge)
+"vRw" = (
+/obj/structure/table/reinforced,
+/obj/machinery/camera{
+	c_tag = "Telecomms - Server Room - Aft";
+	dir = 1;
+	network = list("ss13","tcomms")
+	},
+/turf/open/floor/plasteel/techmaint,
+/area/engine/atmos)
 "vSd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -36774,7 +36822,9 @@
 /turf/open/floor/plasteel/ameridiner,
 /area/quartermaster/warehouse)
 "wgf" = (
-/obj/item/radio/intercom/directional/north,
+/obj/machinery/camera/autoname{
+	dir = 6
+	},
 /turf/open/floor/monotile/steel,
 /area/hallway/nsv/deck2/primary)
 "wgR" = (
@@ -37008,7 +37058,6 @@
 /obj/machinery/door/airlock/ship/external/glass{
 	req_one_access_txt = "24"
 	},
-/obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
@@ -48445,9 +48494,9 @@ aci
 aci
 aaL
 adj
-aDp
-aDp
-aDp
+adj
+adj
+adj
 adj
 aci
 aci
@@ -48681,9 +48730,9 @@ aci
 aci
 aaL
 adj
-aDp
-aDp
-aDp
+adj
+adj
+adj
 adj
 aci
 aci
@@ -48723,9 +48772,9 @@ aci
 aci
 aaL
 adj
-aDp
-aDp
-aDp
+adj
+adj
+adj
 adj
 aci
 aci
@@ -49212,17 +49261,17 @@ adj
 adj
 adj
 adj
-aDp
-aDp
-aDp
 adj
 adj
 adj
 adj
 adj
-aDp
-aDp
-aDp
+adj
+adj
+adj
+adj
+adj
+adj
 adj
 adj
 adj
@@ -49448,23 +49497,23 @@ aci
 aci
 aaL
 adj
-aDp
-aDp
-aDp
+adj
+adj
+adj
 adj
 aEq
 aEq
 aEq
 adj
-aDp
-aDp
-aDp
+adj
+adj
+adj
 adj
 eYT
 adj
-aDp
-aDp
-aDp
+adj
+adj
+adj
 adj
 adj
 adj
@@ -49484,23 +49533,23 @@ adj
 adj
 adj
 adj
-aDp
-aDp
-aDp
+adj
+adj
+adj
 adj
 npG
 adj
-aDp
-aDp
-aDp
+adj
+adj
+adj
 adj
 aEq
 aEq
 aEq
 adj
-aDp
-aDp
-aDp
+adj
+adj
+adj
 adj
 aci
 aci
@@ -50215,9 +50264,9 @@ aaa
 aaa
 aaa
 adj
-aDp
-aDp
-aDp
+adj
+adj
+adj
 adj
 aEq
 adj
@@ -50273,9 +50322,9 @@ qpp
 adj
 aHw
 adj
-aDp
-aDp
-aDp
+adj
+adj
+adj
 adj
 aaa
 aaa
@@ -50739,7 +50788,7 @@ aPs
 wGg
 aOp
 aHs
-cjE
+vRw
 abL
 avw
 aOp
@@ -50783,7 +50832,7 @@ aDw
 qkX
 alK
 aOp
-aDw
+azK
 adj
 aHw
 adj
@@ -51550,7 +51599,7 @@ aDZ
 aOp
 lMm
 abL
-cjE
+acm
 aDo
 qUd
 aEK
@@ -52022,7 +52071,7 @@ aGV
 abL
 awh
 pmJ
-pmJ
+edf
 aEf
 azA
 abL
@@ -53295,9 +53344,9 @@ aaa
 aaa
 aaa
 adj
-aDp
-aDp
-aDp
+adj
+adj
+adj
 adj
 aEq
 adj
@@ -54334,7 +54383,7 @@ aas
 aas
 aas
 ayG
-acm
+acy
 aeg
 aeM
 aeR
@@ -54591,7 +54640,7 @@ aas
 aBE
 aCy
 ayR
-acm
+acy
 aeK
 aeK
 aeK
@@ -54848,7 +54897,7 @@ aas
 aBQ
 aCF
 fcR
-acm
+acy
 aeK
 aeK
 aeK
@@ -55361,7 +55410,7 @@ abH
 aas
 aBQ
 aCF
-azK
+fcR
 acy
 aeK
 aeK
@@ -55876,7 +55925,7 @@ ajn
 aBQ
 aas
 fcR
-acm
+acy
 aeK
 aeK
 aeK
@@ -56133,7 +56182,7 @@ bKb
 aBQ
 aas
 fcR
-acm
+acy
 aeK
 aeK
 aeK
@@ -56390,7 +56439,7 @@ ajl
 aBQ
 aas
 fcR
-acm
+acy
 aeK
 aeK
 aeK
@@ -57418,7 +57467,7 @@ aDA
 aCk
 aas
 ayV
-acm
+acy
 aeK
 aeK
 aeK
@@ -57675,7 +57724,7 @@ bKb
 aas
 aas
 ayV
-acm
+acy
 aeK
 aeK
 aeK
@@ -57932,7 +57981,7 @@ aiH
 aGW
 awV
 azL
-acm
+acy
 aeL
 aeN
 aeN
@@ -64896,7 +64945,7 @@ nrf
 agl
 aFr
 lOR
-dTH
+eDO
 dTH
 nYx
 dTH
@@ -81324,7 +81373,7 @@ aaM
 kpq
 abJ
 bxg
-bxg
+bpf
 hQb
 bxg
 bxg

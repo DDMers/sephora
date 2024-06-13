@@ -11825,6 +11825,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/red,
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
 /turf/open/floor/plasteel/grid/steel,
 /area/ai_monitored/security/armory)
 "aBB" = (
@@ -16213,6 +16216,9 @@
 /obj/effect/turf_decal/tile/ship/half/orange{
 	dir = 8
 	},
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
 /turf/open/floor/durasteel/techfloor_grid,
 /area/nsv/weapons/equipment_room)
 "aKT" = (
@@ -16227,15 +16233,11 @@
 /turf/open/floor/plating,
 /area/nsv/weapons/munitions_lounge)
 "aKU" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 1
+/obj/structure/chair/fancy/sofa/old/left{
+	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/monotile/dark,
-/area/nsv/weapons/main_passageway)
+/turf/open/floor/wood,
+/area/nsv/weapons/munitions_lounge)
 "aKV" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/monotile/dark/airless,
@@ -16264,6 +16266,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 10
 	},
 /turf/open/floor/monotile/dark,
 /area/nsv/weapons/main_passageway)
@@ -16602,10 +16607,10 @@
 /turf/open/floor/durasteel/techfloor_grid,
 /area/nsv/weapons/munitions_lounge)
 "aLI" = (
+/obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
-/obj/machinery/disposal/bin,
 /turf/open/floor/wood,
 /area/nsv/weapons/munitions_lounge)
 "aLJ" = (
@@ -16638,12 +16643,11 @@
 /turf/open/floor/durasteel/techfloor_grid,
 /area/nsv/weapons/equipment_room)
 "aLQ" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe"
+/obj/machinery/camera/autoname{
+	dir = 6
 	},
-/turf/open/floor/wood,
-/area/nsv/weapons/munitions_lounge)
+/turf/open/floor/plasteel/techmaint,
+/area/engine/storage_shared)
 "aLR" = (
 /obj/structure/disposalpipe/segment{
 	dir = 10
@@ -16655,7 +16659,8 @@
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment{
-	dir = 5
+	dir = 4;
+	icon_state = "pipe"
 	},
 /turf/open/floor/wood,
 /area/nsv/weapons/munitions_lounge)
@@ -16708,16 +16713,21 @@
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment{
-	dir = 10
+	dir = 4;
+	icon_state = "pipe"
 	},
 /turf/open/floor/monotile/dark,
 /area/nsv/weapons/main_passageway)
 "aMa" = (
-/obj/structure/disposalpipe/segment{
-	dir = 1
+/obj/effect/turf_decal/tile/orange{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/orange,
+/obj/machinery/camera/autoname{
+	dir = 6
 	},
 /turf/open/floor/monotile/dark,
-/area/nsv/weapons/main_passageway)
+/area/nsv/hanger/notkmcstupidhanger/hangar)
 "aMb" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
@@ -16737,11 +16747,12 @@
 /turf/open/floor/durasteel/techfloor_grid,
 /area/nsv/weapons/equipment_room)
 "aMd" = (
-/obj/structure/disposalpipe/segment{
-	dir = 5
+/obj/machinery/firealarm/directional/west,
+/obj/structure/chair/fancy/sofa/old/corner/concave{
+	dir = 1
 	},
-/turf/open/floor/monotile/dark,
-/area/nsv/weapons/main_passageway)
+/turf/open/floor/wood,
+/area/nsv/weapons/munitions_lounge)
 "aMe" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -16752,7 +16763,9 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/structure/disposalpipe/junction/yjunction,
+/obj/structure/disposalpipe/junction/flip{
+	dir = 2
+	},
 /turf/open/floor/monotile/dark,
 /area/nsv/weapons/main_passageway)
 "aMf" = (
@@ -16927,6 +16940,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
 /turf/open/floor/wood,
 /area/nsv/weapons/munitions_lounge)
 "aMw" = (
@@ -17024,6 +17040,9 @@
 "aMG" = (
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/structure/chair/fancy/sofa/old{
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/nsv/weapons/munitions_lounge)
@@ -18715,6 +18734,7 @@
 /obj/effect/turf_decal/tile/ship/orange{
 	dir = 8
 	},
+/obj/machinery/camera/autoname,
 /turf/open/floor/durasteel/techfloor_grid,
 /area/nsv/weapons/equipment_room)
 "aPH" = (
@@ -18860,6 +18880,10 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe"
 	},
 /turf/open/floor/plasteel,
 /area/nsv/weapons/munitions_lounge)
@@ -26850,6 +26874,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/nsv/weapons/weapons_secure_storage)
+"dxi" = (
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/side{
+	dir = 8
+	},
+/area/crew_quarters/cafeteria)
 "dxA" = (
 /obj/effect/turf_decal/tile/darkblue{
 	dir = 1
@@ -27180,6 +27212,9 @@
 	req_access_txt = "3"
 	},
 /obj/item/storage/box/prisoner,
+/obj/machinery/camera/autoname{
+	dir = 6
+	},
 /turf/open/floor/wood,
 /area/security/warden)
 "egk" = (
@@ -28427,6 +28462,16 @@
 	},
 /turf/open/floor/plasteel/techmaint,
 /area/ai_monitored/turret_protected/ai_upload)
+"gwI" = (
+/obj/structure/closet/secure_closet/armory2,
+/obj/effect/turf_decal/tile/ship/half/red{
+	dir = 1
+	},
+/obj/machinery/camera/autoname{
+	dir = 6
+	},
+/turf/open/floor/plasteel/grid/steel,
+/area/ai_monitored/security/armory)
 "gAr" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -28439,6 +28484,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/armour_pump)
+"gAU" = (
+/obj/structure/chair/fancy/sofa/old/right{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/nsv/weapons/munitions_lounge)
 "gCM" = (
 /obj/effect/turf_decal/tile/yellow/flat_side,
 /obj/machinery/camera/autoname{
@@ -28968,6 +29019,12 @@
 /obj/effect/turf_decal/tile/yellow/flat_side,
 /turf/open/floor/plasteel/techmaint,
 /area/engine/engineering/ftl_room)
+"hRO" = (
+/obj/structure/chair/fancy/sofa/old{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/nsv/weapons/munitions_lounge)
 "hSu" = (
 /obj/effect/turf_decal/arrows/red{
 	dir = 1
@@ -29121,6 +29178,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/camera/autoname{
+	dir = 6
 	},
 /turf/open/floor/plasteel/dark/side,
 /area/crew_quarters/cafeteria)
@@ -37887,7 +37947,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -54514,7 +54573,7 @@ aHO
 aHR
 dpz
 aah
-amh
+aLQ
 aHY
 aah
 gUk
@@ -66329,7 +66388,7 @@ atf
 atq
 bMz
 sHk
-bUX
+dxi
 bUX
 aXQ
 aYH
@@ -78115,7 +78174,7 @@ pao
 aim
 aKD
 agj
-ast
+gwI
 axB
 aAh
 agj
@@ -79430,7 +79489,7 @@ lZq
 apy
 apE
 afq
-dSW
+aMa
 vLL
 lJm
 bdj
@@ -80950,9 +81009,9 @@ aLU
 aMq
 aLI
 aVy
-aqA
+aKU
 aMG
-kor
+aMd
 bGN
 qda
 akB
@@ -81205,11 +81264,11 @@ aLz
 aLz
 aqA
 aqA
-aLQ
+aLR
 aMv
 aMF
 aMF
-aqA
+hRO
 bGN
 kzn
 akB
@@ -81462,11 +81521,11 @@ aLM
 aLz
 hHq
 xIQ
-aLR
+aqA
 aLS
 aMF
 aMF
-aqA
+gAU
 bGN
 cHE
 aPy
@@ -82235,8 +82294,8 @@ aqA
 pbx
 jff
 aLZ
-aMa
-aMd
+ami
+ami
 aKW
 ami
 fFN
@@ -82492,7 +82551,7 @@ aMo
 aKT
 nzT
 aKY
-aKU
+qfr
 aMe
 aNh
 qfr
