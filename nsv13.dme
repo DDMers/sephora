@@ -3842,6 +3842,7 @@
 #include "nsv13\code\game\objects\items\storage_items.dm"
 #include "nsv13\code\game\objects\items\colorizers\fighters.dm"
 #include "nsv13\code\game\objects\items\devices\radio\gulagpack.dm"
+#include "nsv13\code\game\objects\items\grenades\chem_grenade.dm"
 #include "nsv13\code\game\objects\items\robot\hypo.dm"
 #include "nsv13\code\game\objects\items\stacks\tiles\tile_types.dm"
 #include "nsv13\code\game\objects\structures\barricade.dm"
