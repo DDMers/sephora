@@ -243,10 +243,10 @@
 /obj/structure/overmap/nanotrasen/heavy_battlecruiser/starter //Assigned to Gungnir
 	role = MAIN_OVERMAP
 	obj_integrity = 1750
-	max_integrity = 1750
+	max_integrity = 1750 //Slightly more health than the Tycoon
 	integrity_failure = 1750
 	starting_system = "Staging" //Required for all player ships
-	armor = list("overmap_light" = 95, "overmap_medium" = 70, "overmap_heavy" = 20)
+	armor = list("overmap_light" = 95, "overmap_medium" = 80, "overmap_heavy" = 55) //Slightly heavier armor than the Tycoon
 	overmap_deletion_traits = DAMAGE_STARTS_COUNTDOWN
 
 /obj/structure/overmap/nanotrasen/battleship/starter //Galactica
