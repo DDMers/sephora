@@ -14624,7 +14624,6 @@
 /obj/structure/lattice/catwalk,
 /obj/structure/grille,
 /turf/open/space/basic,
-/turf/open/space/basic,
 /area/engine/atmos)
 "aHx" = (
 /obj/structure/disposalpipe/segment{
