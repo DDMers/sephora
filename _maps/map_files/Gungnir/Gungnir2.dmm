@@ -11883,6 +11883,7 @@
 	c_tag = "Atmos - Airlock #2";
 	dir = 8
 	},
+/obj/machinery/recharge_station,
 /turf/open/floor/monotile/dark,
 /area/hallway/secondary/entry/arrivals)
 "aAW" = (
@@ -13065,10 +13066,16 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/engine/atmos)
 "aEq" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/grille,
-/turf/open/space/basic,
-/area/engine/atmos)
+/obj/effect/turf_decal/tile/orange,
+/obj/effect/turf_decal/tile/orange{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/orange{
+	dir = 4
+	},
+/obj/machinery/recharge_station,
+/turf/open/floor/durasteel/techfloor_grid,
+/area/nsv/weapons/ordnance)
 "aEs" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
@@ -13919,6 +13926,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/recharge_station,
 /turf/open/floor/monotile/dark,
 /area/hallway/secondary/exit/departure_lounge)
 "aGj" = (
@@ -29808,6 +29816,16 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/science/xenobiology)
+"iwA" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/tile/yellow/flat_side{
+	dir = 4
+	},
+/obj/machinery/recharge_station,
+/turf/open/floor/plasteel/techmaint,
+/area/engine/atmos)
 "iyL" = (
 /obj/structure/closet/emcloset/anchored,
 /turf/open/floor/plating,
@@ -34661,6 +34679,13 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/nsv/weapons)
+"rxP" = (
+/obj/effect/turf_decal/tile/brown/flat_side{
+	dir = 8
+	},
+/obj/machinery/recharge_station,
+/turf/open/floor/plasteel/ameridiner,
+/area/quartermaster/storage)
 "ryG" = (
 /obj/effect/turf_decal/tile/orange,
 /obj/effect/turf_decal/tile/orange{
@@ -34722,6 +34747,10 @@
 	},
 /turf/open/floor/plasteel/techmaint,
 /area/engine/atmos)
+"rDK" = (
+/obj/machinery/recharge_station,
+/turf/open/floor/plating,
+/area/maintenance/department/engine)
 "rFg" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1
@@ -35636,6 +35665,10 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/monotile/steel,
 /area/hallway/nsv/deck2/primary)
+"tuc" = (
+/obj/machinery/recharge_station,
+/turf/open/floor/wood,
+/area/medical/medbay/lobby)
 "tuk" = (
 /obj/structure/disposalpipe/junction/flip,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -35779,7 +35812,7 @@
 /turf/open/floor/grass,
 /area/crew_quarters/fitness/recreation)
 "tLj" = (
-/obj/structure/bookcase/random,
+/obj/machinery/recharge_station,
 /turf/open/floor/wood,
 /area/crew_quarters/fitness/recreation)
 "tNb" = (
@@ -49000,9 +49033,9 @@ aci
 aci
 aci
 adj
-aEq
-aEq
-aEq
+aHw
+aHw
+aHw
 adj
 aci
 aci
@@ -49236,16 +49269,16 @@ aci
 aci
 aci
 adj
-aEq
-aEq
-aEq
+aHw
+aHw
+aHw
 adj
 aci
 aci
 aci
-aEq
-aEq
-aEq
+aHw
+aHw
+aHw
 aci
 aci
 aci
@@ -49257,9 +49290,9 @@ aci
 aci
 aci
 adj
-aEq
-aEq
-aEq
+aHw
+aHw
+aHw
 adj
 aci
 aci
@@ -49278,9 +49311,9 @@ aci
 aci
 aci
 adj
-aEq
-aEq
-aEq
+aHw
+aHw
+aHw
 adj
 aci
 aci
@@ -49750,9 +49783,9 @@ adj
 adj
 adj
 adj
-aEq
-aEq
-aEq
+aHw
+aHw
+aHw
 adj
 adj
 adj
@@ -49771,9 +49804,9 @@ adj
 adj
 adj
 adj
-aEq
-aEq
-aEq
+aHw
+aHw
+aHw
 adj
 adj
 adj
@@ -49792,9 +49825,9 @@ adj
 adj
 adj
 adj
-aEq
-aEq
-aEq
+aHw
+aHw
+aHw
 adj
 adj
 adj
@@ -50006,53 +50039,53 @@ adj
 adj
 adj
 adj
-aEq
-aEq
-aEq
-aEq
-aEq
+aHw
+aHw
+aHw
+aHw
+aHw
 adj
 adj
 adj
-aEq
+aHw
 lDw
-aEq
+aHw
 adj
 adj
 adj
-aEq
-aEq
-aEq
-aEq
-aEq
-aEq
-aEq
-aEq
-aEq
-aEq
-aEq
-aEq
-aEq
-aEq
-aEq
-aEq
-aEq
-aEq
-aEq
+aHw
+aHw
+aHw
+aHw
+aHw
+aHw
+aHw
+aHw
+aHw
+aHw
+aHw
+aHw
+aHw
+aHw
+aHw
+aHw
+aHw
+aHw
+aHw
 adj
 adj
 adj
-aEq
+aHw
 vBR
-aEq
+aHw
 adj
 adj
 adj
-aEq
-aEq
-aEq
-aEq
-aEq
+aHw
+aHw
+aHw
+aHw
+aHw
 adj
 adj
 adj
@@ -50260,7 +50293,7 @@ aci
 aci
 aci
 adj
-aEq
+aHw
 adj
 adj
 adj
@@ -50517,7 +50550,7 @@ adj
 adj
 adj
 adj
-aEq
+aHw
 adj
 aCx
 aCx
@@ -50770,11 +50803,11 @@ aaa
 aaa
 aaa
 adj
-aEq
-aEq
-aEq
+aHw
+aHw
+aHw
 adj
-aEq
+aHw
 adj
 aCA
 oJV
@@ -50828,9 +50861,9 @@ aDv
 adj
 aHw
 adj
-aEq
-aEq
-aEq
+aHw
+aHw
+aHw
 adj
 aaa
 aaa
@@ -51027,11 +51060,11 @@ aaa
 aaa
 aaa
 adj
-aEq
-aEq
-aEq
+aHw
+aHw
+aHw
 adj
-aEq
+aHw
 adj
 aPs
 wGg
@@ -51085,9 +51118,9 @@ azK
 adj
 aHw
 adj
-aEq
-aEq
-aEq
+aHw
+aHw
+aHw
 adj
 aaa
 aaa
@@ -51284,11 +51317,11 @@ aaa
 aaa
 aaa
 adj
-aEq
-aEq
-aEq
+aHw
+aHw
+aHw
 adj
-aEq
+aHw
 adj
 bad
 uXH
@@ -51342,9 +51375,9 @@ oFe
 adj
 aHw
 adj
-aEq
-aEq
-aEq
+aHw
+aHw
+aHw
 adj
 aaa
 aaa
@@ -51545,7 +51578,7 @@ adj
 adj
 adj
 adj
-aEq
+aHw
 adj
 bfp
 pqa
@@ -51798,11 +51831,11 @@ aaa
 aaa
 aaa
 adj
-aEq
-aEq
-aEq
-aEq
-aEq
+aHw
+aHw
+aHw
+aHw
+aHw
 adj
 atY
 aOp
@@ -52826,7 +52859,7 @@ aci
 aci
 aaL
 adj
-aEq
+aHw
 adj
 aZu
 kUz
@@ -53083,7 +53116,7 @@ aci
 aci
 aci
 adj
-aEq
+aHw
 adj
 fix
 aOp
@@ -53143,7 +53176,7 @@ aOp
 jwt
 awi
 adj
-aEq
+aHw
 adj
 aci
 aci
@@ -53340,7 +53373,7 @@ aci
 aci
 aci
 adj
-aEq
+aHw
 adj
 avw
 aOp
@@ -53400,7 +53433,7 @@ aEQ
 aEX
 aAy
 adj
-aEq
+aHw
 adj
 aci
 aci
@@ -53597,7 +53630,7 @@ adj
 adj
 adj
 adj
-aEq
+aHw
 adj
 fix
 aOp
@@ -53657,7 +53690,7 @@ aOp
 aOp
 bbM
 adj
-aEq
+aHw
 adj
 aci
 aci
@@ -53850,11 +53883,11 @@ aaa
 aaa
 aaa
 adj
-aEq
-aEq
+aHw
+aHw
 adj
-aEq
-aEq
+aHw
+aHw
 adj
 fix
 aOp
@@ -53914,7 +53947,7 @@ aOp
 aOp
 awi
 adj
-aEq
+aHw
 adj
 aDp
 aDp
@@ -54108,9 +54141,9 @@ aaa
 aaa
 adj
 adj
-aEq
+aHw
 adj
-aEq
+aHw
 adj
 abL
 bbb
@@ -54141,7 +54174,7 @@ auI
 aIx
 acB
 aob
-acB
+iwA
 ams
 arZ
 aJk
@@ -54171,11 +54204,11 @@ mcu
 axy
 wKG
 adj
-aEq
-aEq
+aHw
+aHw
 adj
-aEq
-aEq
+aHw
+aHw
 adj
 aaa
 aaa
@@ -54365,9 +54398,9 @@ aaa
 aaa
 aaa
 adj
-aEq
+aHw
 adj
-aEq
+aHw
 acy
 abH
 abH
@@ -54429,9 +54462,9 @@ abL
 abL
 adj
 adj
-aEq
+aHw
 adj
-aEq
+aHw
 adj
 abL
 aaa
@@ -54624,7 +54657,7 @@ aaa
 adj
 adj
 adj
-aEq
+aHw
 acy
 fvH
 aas
@@ -54686,9 +54719,9 @@ aDC
 aDC
 aDC
 adj
-aEq
+aHw
 adj
-aEq
+aHw
 adj
 aaa
 aaa
@@ -54881,7 +54914,7 @@ aaa
 aaa
 adj
 adj
-aEq
+aHw
 acy
 aas
 aas
@@ -54943,7 +54976,7 @@ cCS
 cCS
 aDD
 adj
-aEq
+aHw
 adj
 adj
 adj
@@ -55138,7 +55171,7 @@ aaa
 aaa
 adj
 adj
-aEq
+aHw
 acy
 abH
 abH
@@ -55200,7 +55233,7 @@ aDE
 aDE
 oNq
 adj
-aEq
+aHw
 adj
 adj
 aaa
@@ -55457,7 +55490,7 @@ aDF
 aDF
 iPg
 adj
-aEq
+aHw
 adj
 adj
 aaa
@@ -59292,7 +59325,7 @@ aiq
 ahx
 agp
 aiR
-aae
+rDK
 aeH
 aEM
 aJu
@@ -68769,7 +68802,7 @@ rkb
 cOa
 jpG
 adH
-onE
+tuc
 aJE
 onE
 afk
@@ -79078,7 +79111,7 @@ iJf
 iJf
 aqO
 hKY
-kEQ
+rxP
 tSX
 vnW
 abT
@@ -83934,7 +83967,7 @@ mPE
 mNy
 aWo
 aaM
-wSj
+aEq
 mKh
 axE
 mKh

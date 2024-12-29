@@ -7457,9 +7457,6 @@
 /turf/template_noop,
 /area/maintenance/department/engine)
 "arT" = (
-/obj/structure/toilet{
-	pixel_y = 8
-	},
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -7470,6 +7467,7 @@
 	pixel_x = -25;
 	specialfunctions = 4
 	},
+/obj/machinery/recharge_station,
 /turf/open/floor/plasteel/freezer,
 /area/crew_quarters/toilet)
 "arU" = (
@@ -12223,6 +12221,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/tile/ship/half/red,
+/obj/machinery/recharge_station,
 /turf/open/floor/plasteel/dark,
 /area/security/locker_room)
 "aCk" = (
@@ -13952,6 +13951,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/recharge_station,
 /turf/open/floor/wood,
 /area/engine/break_room)
 "aGl" = (
@@ -28956,6 +28956,7 @@
 "hxB" = (
 /obj/machinery/camera/autoname,
 /obj/item/radio/intercom/directional/north,
+/obj/machinery/recharge_station,
 /turf/open/floor/plasteel/tech/grid,
 /area/ai_monitored/records)
 "hxU" = (
@@ -32471,6 +32472,10 @@
 	dir = 1
 	},
 /area/crew_quarters/bar/atrium)
+"nGT" = (
+/obj/machinery/recharge_station,
+/turf/open/floor/plasteel/rockvault,
+/area/storage/tools)
 "nHn" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -36086,6 +36091,7 @@
 /obj/effect/turf_decal/tile/orange{
 	dir = 1
 	},
+/obj/machinery/recharge_station,
 /turf/open/floor/monotile/dark,
 /area/hallway/nsv/deck1/hallway)
 "uAL" = (
@@ -37129,6 +37135,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/recharge_station,
 /turf/open/floor/plasteel/tech/grid,
 /area/ai_monitored/records)
 "wui" = (
@@ -71237,7 +71244,7 @@ aIg
 aAn
 aKD
 njs
-ari
+nGT
 ari
 fsB
 ant
