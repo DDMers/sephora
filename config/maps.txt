@@ -10,33 +10,42 @@ Format:
 	default (The last map with this defined will get all votes of players who have not explicitly voted for a map)
 	voteweight [number] (How much to count each player vote as, defaults to 1, setting to 0.5 counts each vote as half a vote, 2 as double, etc, Setting to 0 disables the map but allows players to still pick it)
 	disabled (disables the map)
-
-map aetherwhisp
-	votable
+	votable (THIS IS REQUIRED!!!!!)
 endmap
 
 map tycoon
-	votable
-	voteweight 1.5
-endmap
-
-map Atlas
+	default
+	minplayers 12
 	votable
 endmap
 
-map gladius
+map atlas
 	votable
-	voteweight 1.5
+endmap
+
+map aetherwhisp
+	minplayers 12
+	voteweight 0.5
+	votable
+endmap
+
+map eclipse
+	maxplayers 10
+	votable
 endmap
 
 map galactica
+	minplayers 27
 	votable
-	voteweight 1.5
 endmap
 
-map Eclipse
 map gladius
 	minplayers 17
+	votable
+endmap
+
+map gungnir
+	minplayers 15
 	votable
 endmap
 
@@ -54,27 +63,23 @@ map shrike
 	votable
 endmap
 
-#map pegasus
 map snake
 	maxplayers 30
 	votable
-	voteweight 1.5
 endmap
+
+#--------------
+# EVENT MAPS
+#--------------
 
 map Vago
-	votable
+#	votable
 endmap
 
-map snake
 #BEGIN DEBUG MAPS
 
-#map jollysausage
-	votable
-	voteweight 1.5
-endmap
-
-#map jeppison
-	votable
+#map testship
+	disabled
 endmap
 
 #map runtimestation
@@ -83,20 +88,4 @@ endmap
 
 #map multiz_debug
 	disabled
-endmap
-
-#map destroyer
-	votable
-endmap
-
-#map testship
-	votable
-endmap
-
-map shrike
-
-endmap
-
-map gungnir
-	votable
 endmap
