@@ -721,10 +721,13 @@ Control Rods
 		return FALSE
 
 /obj/machinery/atmospherics/components/binary/stormdrive_reactor/proc/handle_control_rod_efficiency()
-	var/control_rod_effectiveness_total = 0
-	for(var/obj/item/control_rod/cr in contents)
-		control_rod_effectiveness_total += cr.rod_effectiveness
-	control_rod_modifier = control_rod_effectiveness_total / control_rods.len
+	if(control_rods.len > 0)
+		var/control_rod_effectiveness_total = 0
+		for(var/obj/item/control_rod/cr in contents)
+			control_rod_effectiveness_total += cr.rod_effectiveness
+		control_rod_modifier = control_rod_effectiveness_total / control_rods.len
+	else
+		control_rod_modifier = 1
 
 /obj/machinery/atmospherics/components/binary/stormdrive_reactor/proc/handle_control_rod_integrity()
 	if(control_rods.len > 0)

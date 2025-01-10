@@ -38,7 +38,7 @@
 	if(!isliving(user))
 		return FALSE
 	if(istype(A, /obj/structure/closet))
-		if(!LAZYFIND(A.contents, /obj/item/ship_weapon/ammunition/gauss))
+		if(!locate(/obj/item/ship_weapon/ammunition/gauss) in A.contents)
 			to_chat(user, "<span class='warning'>There's nothing in [A] that can be loaded into [src]...</span>")
 			return FALSE
 		if(length(ammo) >= max_ammo)
@@ -467,7 +467,7 @@
 	if(!isliving(user))
 		return
 	if(istype(A, /obj/structure/closet))
-		if(!LAZYFIND(A.contents, /obj/item/ship_weapon/ammunition/gauss))
+		if(!locate(/obj/item/ship_weapon/ammunition/gauss) in A.contents)
 			to_chat(user, "<span class='warning'>There's nothing in [A] that can be loaded into [src]...</span>")
 			return FALSE
 		to_chat(user, "<span class='notice'>You start to load [src] with the contents of [A]...</span>")

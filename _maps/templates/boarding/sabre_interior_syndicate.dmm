@@ -8,32 +8,32 @@
 	},
 /area/dropship/generic)
 "bn" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "96"
 	},
 /area/dropship/generic)
 "cy" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_rearwing_rt"
 	},
 /area/dropship/generic)
 "cM" = (
-/turf/closed/wall/indestructible/dropship/entry{
+/turf/closed/indestructible/dropship/entry{
 	icon_state = "60"
 	},
 /area/dropship/generic)
 "dt" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "79"
 	},
 /area/dropship/generic)
 "eJ" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "89"
 	},
 /area/dropship/generic)
 "fa" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_fr"
 	},
 /area/dropship/generic)
@@ -49,12 +49,12 @@
 	},
 /area/dropship/generic)
 "fZ" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_fl"
 	},
 /area/dropship/generic)
 "iv" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "12"
 	},
 /area/dropship/generic)
@@ -70,27 +70,27 @@
 	},
 /area/dropship/generic)
 "jN" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "66"
 	},
 /area/dropship/generic)
 "jP" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_cockpit_fr"
 	},
 /area/dropship/generic)
 "mI" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_rearwing_lllb"
 	},
 /area/dropship/generic)
 "mM" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "19"
 	},
 /area/dropship/generic)
 "oV" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_rearwing_lb"
 	},
 /area/dropship/generic)
@@ -114,27 +114,27 @@
 	},
 /area/dropship/generic)
 "rz" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_front"
 	},
 /area/dropship/generic)
 "rL" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_rearwing_rrb"
 	},
 /area/dropship/generic)
 "sC" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_wing_rt"
 	},
 /area/dropship/generic)
 "ud" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_rearwing_rb"
 	},
 /area/dropship/generic)
 "yU" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_wing_lt"
 	},
 /area/dropship/generic)
@@ -151,7 +151,7 @@
 	},
 /area/dropship/generic)
 "zC" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "13"
 	},
 /area/dropship/generic)
@@ -159,7 +159,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "70"
 	},
 /area/dropship/generic)
@@ -174,7 +174,7 @@
 	},
 /area/dropship/generic)
 "Cb" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "11"
 	},
 /area/dropship/generic)
@@ -193,7 +193,7 @@
 	},
 /area/dropship/generic)
 "Dt" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "97"
 	},
 /area/dropship/generic)
@@ -204,22 +204,22 @@
 	},
 /area/dropship/generic)
 "EC" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_rearwing_rrrb"
 	},
 /area/dropship/generic)
 "EG" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "98"
 	},
 /area/dropship/generic)
 "HD" = (
-/turf/closed/wall/indestructible/dropship/entry{
+/turf/closed/indestructible/dropship/entry{
 	icon_state = "57"
 	},
 /area/dropship/generic)
 "Ja" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_wing_lb"
 	},
 /area/dropship/generic)
@@ -260,12 +260,12 @@
 	},
 /area/dropship/generic)
 "QC" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_rearwing_lt"
 	},
 /area/dropship/generic)
 "SR" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_rearwing_llb"
 	},
 /area/dropship/generic)
@@ -285,12 +285,12 @@
 	},
 /area/dropship/generic)
 "Vv" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "18"
 	},
 /area/dropship/generic)
 "VW" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_cockpit_fl"
 	},
 /area/dropship/generic)
@@ -300,7 +300,7 @@
 	},
 /area/dropship/generic)
 "WQ" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "70"
 	},
 /area/dropship/generic)
@@ -316,12 +316,12 @@
 	},
 /area/dropship/generic)
 "Zh" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "86"
 	},
 /area/dropship/generic)
 "Zt" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_wing_rb"
 	},
 /area/dropship/generic)

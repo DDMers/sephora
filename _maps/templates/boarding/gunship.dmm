@@ -1,21 +1,21 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "al" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "94"
 	},
 /area/dropship/generic)
 "aE" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "75"
 	},
 /area/dropship/generic)
 "bG" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_rearwing_rrb"
 	},
 /area/dropship/generic)
 "bK" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "13"
 	},
 /area/dropship/generic)
@@ -26,12 +26,12 @@
 	},
 /area/dropship/generic)
 "cf" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_rearwing_lb"
 	},
 /area/dropship/generic)
 "cp" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "34"
 	},
 /area/dropship/generic)
@@ -91,7 +91,7 @@
 	},
 /area/dropship/generic)
 "eo" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "67";
 	opacity = 0
 	},
@@ -100,7 +100,7 @@
 /obj/structure/sign/ship/smoking{
 	dir = 4
 	},
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "72";
 	opacity = 0
 	},
@@ -110,7 +110,7 @@
 	dir = 8;
 	name = "FLAMMABLE"
 	},
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "22"
 	},
 /area/dropship/generic)
@@ -127,7 +127,7 @@
 	},
 /area/dropship/generic)
 "eU" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_wing_rb"
 	},
 /area/dropship/generic)
@@ -176,17 +176,17 @@
 	},
 /area/dropship/generic)
 "iE" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_rearwing_rrrb"
 	},
 /area/dropship/generic)
 "iK" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "80"
 	},
 /area/dropship/generic)
 "iX" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "47"
 	},
 /area/dropship/generic)
@@ -199,12 +199,12 @@
 	},
 /area/dropship/generic)
 "jb" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "96"
 	},
 /area/dropship/generic)
 "jK" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "81"
 	},
 /area/dropship/generic)
@@ -222,7 +222,7 @@
 	},
 /area/dropship/generic)
 "kZ" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_fl"
 	},
 /area/dropship/generic)
@@ -254,17 +254,17 @@
 	},
 /area/dropship/generic)
 "mC" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_fr"
 	},
 /area/dropship/generic)
 "mV" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "32"
 	},
 /area/dropship/generic)
 "nB" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_wing_rt"
 	},
 /area/dropship/generic)
@@ -297,7 +297,7 @@
 	},
 /area/dropship/generic)
 "on" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_weapon_lr"
 	},
 /area/dropship/generic)
@@ -326,12 +326,12 @@
 	},
 /area/dropship/generic)
 "pe" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_rearwing_llb"
 	},
 /area/dropship/generic)
 "px" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "62"
 	},
 /area/dropship/generic)
@@ -346,7 +346,7 @@
 	},
 /area/dropship/generic)
 "rx" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_weapon_ll"
 	},
 /area/dropship/generic)
@@ -366,7 +366,7 @@
 /obj/structure/sign/ship/plaque/dark{
 	pixel_y = -4
 	},
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "81"
 	},
 /area/dropship/generic)
@@ -374,7 +374,7 @@
 /obj/structure/sign/ship/smoking{
 	dir = 8
 	},
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "69";
 	opacity = 0
 	},
@@ -389,7 +389,7 @@
 	},
 /area/dropship/generic)
 "tg" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_engine_rt"
 	},
 /area/dropship/generic)
@@ -406,27 +406,27 @@
 	},
 /area/dropship/generic)
 "vC" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "10"
 	},
 /area/dropship/generic)
 "wn" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_cockpit_fr"
 	},
 /area/dropship/generic)
 "wp" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "11"
 	},
 /area/dropship/generic)
 "wu" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "28"
 	},
 /area/dropship/generic)
 "wJ" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "73";
 	opacity = 0
 	},
@@ -436,12 +436,12 @@
 	dir = 4;
 	name = "CAUTION: EAR PROTECTION MANDATORY"
 	},
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "18"
 	},
 /area/dropship/generic)
 "xK" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "64"
 	},
 /area/dropship/generic)
@@ -453,7 +453,7 @@
 	},
 /area/dropship/generic)
 "yh" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_wing_lt"
 	},
 /area/dropship/generic)
@@ -461,12 +461,12 @@
 /obj/structure/sign/ship/nosmoking{
 	dir = 8
 	},
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "19"
 	},
 /area/dropship/generic)
 "yA" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "39"
 	},
 /area/dropship/generic)
@@ -480,7 +480,7 @@
 	},
 /area/dropship/generic)
 "zj" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "98"
 	},
 /area/dropship/generic)
@@ -494,12 +494,12 @@
 /obj/machinery/telecomms/relay/preset/station{
 	alpha = 0
 	},
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "12"
 	},
 /area/dropship/generic)
 "zX" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_engine_lb"
 	},
 /area/dropship/generic)
@@ -507,7 +507,7 @@
 /turf/open/indestructible/dropship,
 /area/dropship/generic)
 "Ap" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "23"
 	},
 /area/dropship/generic)
@@ -551,7 +551,7 @@
 /obj/structure/sign/ship/nosmoking{
 	dir = 4
 	},
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "18"
 	},
 /area/dropship/generic)
@@ -559,7 +559,7 @@
 /obj/machinery/computer/ship/dradis/console{
 	dir = 4
 	},
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "86"
 	},
 /area/dropship/generic)
@@ -568,37 +568,37 @@
 	dir = 8;
 	name = "CAUTION: EAR PROTECTION MANDATORY"
 	},
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "19"
 	},
 /area/dropship/generic)
 "DV" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_rearwing_lllb"
 	},
 /area/dropship/generic)
 "EJ" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "97"
 	},
 /area/dropship/generic)
 "Fj" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_rearwing_rt"
 	},
 /area/dropship/generic)
 "FF" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_front"
 	},
 /area/dropship/generic)
 "Gu" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_middle_lc"
 	},
 /area/dropship/generic)
 "GN" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "35"
 	},
 /area/dropship/generic)
@@ -617,12 +617,12 @@
 	},
 /area/dropship/generic)
 "Hz" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "66"
 	},
 /area/dropship/generic)
 "HC" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "83"
 	},
 /area/dropship/generic)
@@ -640,12 +640,12 @@
 	},
 /area/dropship/generic)
 "Jf" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "78"
 	},
 /area/dropship/generic)
 "Jx" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_engine_rb"
 	},
 /area/dropship/generic)
@@ -660,22 +660,22 @@
 	},
 /area/dropship/generic)
 "Jz" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_middle_rc"
 	},
 /area/dropship/generic)
 "Kl" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "19"
 	},
 /area/dropship/generic)
 "LK" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "82"
 	},
 /area/dropship/generic)
 "LM" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "92"
 	},
 /area/dropship/generic)
@@ -701,7 +701,7 @@
 /obj/machinery/vending/wallmed{
 	products = list(/obj/item/reagent_containers/syringe = 3, /obj/item/stack/medical/gauze = 3, /obj/item/reagent_containers/food/drinks/bottle/vodka = 3, /obj/item/reagent_containers/medspray/sterilizine = 3)
 	},
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "18"
 	},
 /area/dropship/generic)
@@ -732,7 +732,7 @@
 	},
 /area/dropship/generic)
 "Nn" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "70"
 	},
 /area/dropship/generic)
@@ -741,7 +741,7 @@
 	dir = 8;
 	name = "FLAMMABLE"
 	},
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "31"
 	},
 /area/dropship/generic)
@@ -756,7 +756,7 @@
 	dir = 4;
 	name = "FLAMMABLE"
 	},
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "27"
 	},
 /area/dropship/generic)
@@ -782,25 +782,25 @@
 	},
 /area/dropship/generic)
 "OT" = (
-/turf/closed/wall/indestructible/dropship/entry,
+/turf/closed/indestructible/dropship/entry,
 /area/dropship/generic)
 "Pd" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "29"
 	},
 /area/dropship/generic)
 "Pm" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "33"
 	},
 /area/dropship/generic)
 "QI" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "25"
 	},
 /area/dropship/generic)
 "QY" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "48"
 	},
 /area/dropship/generic)
@@ -815,7 +815,7 @@
 	},
 /area/dropship/generic)
 "RC" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "38"
 	},
 /area/dropship/generic)
@@ -839,7 +839,7 @@
 	},
 /area/dropship/generic)
 "Sa" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "76"
 	},
 /area/dropship/generic)
@@ -873,12 +873,12 @@
 	},
 /area/dropship/generic)
 "SP" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_cockpit_fl"
 	},
 /area/dropship/generic)
 "SY" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_rearwing_rb"
 	},
 /area/dropship/generic)
@@ -904,12 +904,12 @@
 /obj/structure/sign/ship/shock{
 	dir = 4
 	},
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "24"
 	},
 /area/dropship/generic)
 "Uq" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_wing_lb"
 	},
 /area/dropship/generic)
@@ -933,7 +933,7 @@
 	},
 /area/dropship/generic)
 "Ve" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "69"
 	},
 /area/dropship/generic)
@@ -974,12 +974,12 @@
 	},
 /area/space/instanced)
 "Wd" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_engine_lt"
 	},
 /area/dropship/generic)
 "We" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "67"
 	},
 /area/dropship/generic)
@@ -1010,7 +1010,7 @@
 	dir = 4;
 	name = "FLAMMABLE"
 	},
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "30"
 	},
 /area/dropship/generic)
@@ -1022,17 +1022,17 @@
 	},
 /area/dropship/generic)
 "XT" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_rearwing_lt"
 	},
 /area/dropship/generic)
 "Ya" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "26"
 	},
 /area/dropship/generic)
 "Zh" = (
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "blue_weapon_rr"
 	},
 /area/dropship/generic)
@@ -1040,7 +1040,7 @@
 /obj/machinery/computer/ship/salvage/console{
 	dir = 8
 	},
-/turf/closed/wall/indestructible/dropship{
+/turf/closed/indestructible/dropship{
 	icon_state = "89"
 	},
 /area/dropship/generic)

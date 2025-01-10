@@ -1,6 +1,6 @@
 //FULL CREDIT FOR THE DROPSHIP INTERIORS GOES TO CM.
 
-/turf/closed/wall/indestructible/dropship
+/turf/closed/indestructible/dropship
 	name = "dropship"
 	desc = "A piece of a mighty spaceship."
 	icon = 'nsv13/icons/turf/dropship.dmi'
@@ -16,12 +16,12 @@
 	name = "dropship entry point"
 	var/linked = FALSE
 
-/turf/closed/wall/indestructible/dropship/entry
+/turf/closed/indestructible/dropship/entry
 	name = "Hangar Bay Doors"
 	desc = "Heavyset doors that lock mid-flight."
 	icon_state = "79"
 
-/turf/closed/wall/indestructible/dropship/entry/Bumped(atom/movable/AM)
+/turf/closed/indestructible/dropship/entry/Bumped(atom/movable/AM)
 	. = ..()
 	var/obj/structure/overmap/small_craft/transport/OM = get_overmap()
 	if(OM && istype(OM) && !(SSmapping.level_trait(OM.z, ZTRAIT_OVERMAP)))

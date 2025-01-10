@@ -396,11 +396,14 @@ MASSIVE THANKS TO MONSTER860 FOR HELP WITH THIS. HE EXPLAINED PHYSICS AND MATH T
 	internal_tank = new /obj/machinery/portable_atmospherics/canister/air(src)
 
 
-/obj/vehicle/sealed/car/realistic/return_air()
-	return cabin_air
-
 /obj/vehicle/sealed/car/realistic/remove_air(amount)
 	return cabin_air.remove(amount)
+
+/obj/vehicle/sealed/car/realistic/remove_air_ratio(ratio)
+	return cabin_air.remove_ratio(ratio)
+
+/obj/vehicle/sealed/car/realistic/return_air()
+	return cabin_air
 
 /obj/vehicle/sealed/car/realistic/return_analyzable_air()
 	return cabin_air
@@ -432,8 +435,7 @@ MASSIVE THANKS TO MONSTER860 FOR HELP WITH THIS. HE EXPLAINED PHYSICS AND MATH T
 		if(pressure_delta > 0) //cabin pressure lower than release pressure
 			if(tank_air.return_temperature() > 0)
 				transfer_moles = pressure_delta*cabin_air.return_volume()/(cabin_air.return_temperature() * R_IDEAL_GAS_EQUATION)
-				var/datum/gas_mixture/removed = tank_air.remove(transfer_moles)
-				cabin_air.merge(removed)
+				tank_air.transfer_to(cabin_air,transfer_moles)
 		else if(pressure_delta < 0) //cabin pressure higher than release pressure
 			var/turf/T = get_turf(src)
 			var/datum/gas_mixture/t_air = T.return_air()
@@ -442,8 +444,4 @@ MASSIVE THANKS TO MONSTER860 FOR HELP WITH THIS. HE EXPLAINED PHYSICS AND MATH T
 				pressure_delta = min(cabin_pressure - t_air.return_pressure(), pressure_delta)
 			if(pressure_delta > 0) //if location pressure is lower than cabin pressure
 				transfer_moles = pressure_delta*cabin_air.return_volume()/(cabin_air.return_temperature() * R_IDEAL_GAS_EQUATION)
-				var/datum/gas_mixture/removed = cabin_air.remove(transfer_moles)
-				if(T)
-					T.assume_air(removed)
-				else //just delete the cabin gas, we're in space or some shit
-					qdel(removed)
+				cabin_air.transfer_to(t_air, transfer_moles)
