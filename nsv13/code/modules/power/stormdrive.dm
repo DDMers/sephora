@@ -152,6 +152,23 @@ Control Rods
 	var/reactor_end_times = FALSE //This is the end times for this reactor, we know this because the third error has been made
 	var/repairing = FALSE //Flag for SD repairs to stop duplicate actions
 
+	//Gas Variables Here
+	var/gas_modifier = 5 //Initially % modifier
+	var/constricted_plasma_modifier = 1
+	var/plasma_modifier = 1
+	var/tritium_modifier = 1
+	var/o2_modifier = 1
+	var/n2_modifier = 1
+	var/co2_modifier = 1
+	var/h2o_modifier = 1
+	var/nob_modifier = 1
+	var/n2o_modifier = 1
+	var/no2_modifier = 1
+	var/bz_modifier = 1
+	var/stim_modifier = 1
+	var/pluoxium_modifier = 1
+	var/nucleium_modifier = 1
+
 ///////// REACTOR SUBTYPES ////////
 
 /obj/machinery/atmospherics/components/binary/stormdrive_reactor/syndicate
@@ -486,6 +503,7 @@ Control Rods
 	gas_records["stim"] = list()
 	gas_records["pluoxium"] = list()
 	gas_records["nucleium"] = list()
+	handle_gas_modifiers()
 
 /////// REACTOR START PROCS ////////
 
@@ -545,6 +563,22 @@ Control Rods
 	var/datum/gas_mixture/air1 = airs[1]
 	air1.adjust_moles(juice.id, quantity)
 
+/obj/machinery/atmospherics/components/binary/stormdrive_reactor/proc/handle_gas_modifiers() //Sets up the minor differences in each instance of Stormdrive
+	constricted_plasma_modifier = (rand((100 - gas_modifier), (100 + gas_modifier))) / 100
+	plasma_modifier = (rand((100 - gas_modifier), (100 + gas_modifier))) / 100
+	tritium_modifier = (rand((100 - gas_modifier), (100 + gas_modifier))) / 100
+	o2_modifier = (rand((100 - gas_modifier), (100 + gas_modifier))) / 100
+	n2_modifier = (rand((100 - gas_modifier), (100 + gas_modifier))) / 100
+	co2_modifier = (rand((100 - gas_modifier), (100 + gas_modifier))) / 100
+	h2o_modifier = (rand((100 - gas_modifier), (100 + gas_modifier))) / 100
+	nob_modifier = (rand((100 - gas_modifier), (100 + gas_modifier))) / 100
+	n2o_modifier = (rand((100 - gas_modifier), (100 + gas_modifier))) / 100
+	no2_modifier = (rand((100 - gas_modifier), (100 + gas_modifier))) / 100
+	bz_modifier = (rand((100 - gas_modifier), (100 + gas_modifier))) / 100
+	stim_modifier = (rand((100 - gas_modifier), (100 + gas_modifier))) / 100
+	pluoxium_modifier = (rand((100 - gas_modifier), (100 + gas_modifier))) / 100
+	nucleium_modifier = (rand((100 - gas_modifier), (100 + gas_modifier))) / 100
+
 /////// REACTOR PROCESSING ////////
 
 /obj/machinery/atmospherics/components/binary/stormdrive_reactor/process()
@@ -592,52 +626,52 @@ Control Rods
 		var/datum/gas_mixture/reaction_chamber_gases = air1.remove(reaction_rate)
 
 		//calculate the actual fuel mix
-		var/chamber_ror_total = reaction_chamber_gases.get_moles(GAS_PLASMA) * LOW_ROR + \
-								reaction_chamber_gases.get_moles(GAS_CONSTRICTED_PLASMA) * NORMAL_ROR + \
-								reaction_chamber_gases.get_moles(GAS_TRITIUM) * HIGH_ROR + \
-								reaction_chamber_gases.get_moles(GAS_N2) * HINDER_ROR + \
-								reaction_chamber_gases.get_moles(GAS_H2O) * HINDER_ROR + \
-								reaction_chamber_gases.get_moles(GAS_HYPERNOB) * REALLY_HINDER_ROR
+		var/chamber_ror_total = reaction_chamber_gases.get_moles(GAS_PLASMA) * (LOW_ROR * plasma_modifier) + \
+								reaction_chamber_gases.get_moles(GAS_CONSTRICTED_PLASMA) * (NORMAL_ROR * constricted_plasma_modifier) + \
+								reaction_chamber_gases.get_moles(GAS_TRITIUM) * (HIGH_ROR * tritium_modifier) + \
+								reaction_chamber_gases.get_moles(GAS_N2) * (HINDER_ROR * n2_modifier) + \
+								reaction_chamber_gases.get_moles(GAS_H2O) * (HINDER_ROR * h2o_modifier) + \
+								reaction_chamber_gases.get_moles(GAS_HYPERNOB) * (REALLY_HINDER_ROR * nob_modifier)
 		reaction_rate_modifier = chamber_ror_total / reaction_rate
 
 		//checking for gas modifiers
-		var/chamber_ipm_total = reaction_rate + reaction_chamber_gases.get_moles(GAS_TRITIUM) * HIGH_IPM + \
-												reaction_chamber_gases.get_moles(GAS_O2) * HIGH_IPM + \
-												reaction_chamber_gases.get_moles(GAS_PLUOXIUM) * HIGH_IPM + \
-												reaction_chamber_gases.get_moles(GAS_STIMULUM) * VERY_HIGH_IPM - \
-												reaction_chamber_gases.get_moles(GAS_PLASMA) * MEDIOCRE_IPM - \
-												reaction_chamber_gases.get_moles(GAS_CO2) * LOW_IPM - \
-												reaction_chamber_gases.get_moles(GAS_HYPERNOB) * LOW_IPM
+		var/chamber_ipm_total = reaction_rate + reaction_chamber_gases.get_moles(GAS_TRITIUM) * (HIGH_IPM * tritium_modifier) + \
+												reaction_chamber_gases.get_moles(GAS_O2) * (HIGH_IPM * o2_modifier) + \
+												reaction_chamber_gases.get_moles(GAS_PLUOXIUM) * (HIGH_IPM * pluoxium_modifier) + \
+												reaction_chamber_gases.get_moles(GAS_STIMULUM) * (VERY_HIGH_IPM * stim_modifier) - \
+												reaction_chamber_gases.get_moles(GAS_PLASMA) * (MEDIOCRE_IPM * plasma_modifier) - \
+												reaction_chamber_gases.get_moles(GAS_CO2) * (LOW_IPM * co2_modifier) - \
+												reaction_chamber_gases.get_moles(GAS_HYPERNOB) * (LOW_IPM * nob_modifier)
 		input_power_modifier = chamber_ipm_total / reaction_rate
 
-		var/chamber_cooling_total = reaction_rate + reaction_chamber_gases.get_moles(GAS_HYPERNOB) * VERY_HIGH_COOLING + \
-													reaction_chamber_gases.get_moles(GAS_NITRYL) * HIGH_COOLING + \
-													reaction_chamber_gases.get_moles(GAS_N2) * HIGH_COOLING + \
-													reaction_chamber_gases.get_moles(GAS_CO2) * HIGH_COOLING - \
-													reaction_chamber_gases.get_moles(GAS_TRITIUM) * LOW_COOLING - \
-													reaction_chamber_gases.get_moles(GAS_NUCLEIUM) * LOW_COOLING - \
-													reaction_chamber_gases.get_moles(GAS_STIMULUM) * LOW_COOLING
+		var/chamber_cooling_total = reaction_rate + reaction_chamber_gases.get_moles(GAS_HYPERNOB) * (VERY_HIGH_COOLING * nob_modifier) + \
+													reaction_chamber_gases.get_moles(GAS_NITRYL) * (HIGH_COOLING * no2_modifier) + \
+													reaction_chamber_gases.get_moles(GAS_N2) * (HIGH_COOLING * n2_modifier) + \
+													reaction_chamber_gases.get_moles(GAS_CO2) * (HIGH_COOLING * co2_modifier) - \
+													reaction_chamber_gases.get_moles(GAS_TRITIUM) * (LOW_COOLING * tritium_modifier) - \
+													reaction_chamber_gases.get_moles(GAS_NUCLEIUM) * (LOW_COOLING * nucleium_modifier) - \
+													reaction_chamber_gases.get_moles(GAS_STIMULUM) * (LOW_COOLING * stim_modifier)
 		cooling_power_modifier = chamber_cooling_total / reaction_rate
 
-		var/chamber_radiation_total = reaction_rate + reaction_chamber_gases.get_moles(GAS_TRITIUM) * VERY_HIGH_RADIATION + \
-													reaction_chamber_gases.get_moles(GAS_PLASMA) * HIGH_RADIATION + \
-													reaction_chamber_gases.get_moles(GAS_NUCLEIUM) * HIGH_RADIATION + \
-													reaction_chamber_gases.get_moles(GAS_BZ) * HIGH_RADIATION - \
-													reaction_chamber_gases.get_moles(GAS_STIMULUM) * LOW_RADIATION - \
-													reaction_chamber_gases.get_moles(GAS_NITRYL) * LOW_RADIATION
+		var/chamber_radiation_total = reaction_rate + reaction_chamber_gases.get_moles(GAS_TRITIUM) * (VERY_HIGH_RADIATION * tritium_modifier) + \
+													reaction_chamber_gases.get_moles(GAS_PLASMA) * (HIGH_RADIATION * plasma_modifier) + \
+													reaction_chamber_gases.get_moles(GAS_NUCLEIUM) * (HIGH_RADIATION * nucleium_modifier) + \
+													reaction_chamber_gases.get_moles(GAS_BZ) * (HIGH_RADIATION * bz_modifier) - \
+													reaction_chamber_gases.get_moles(GAS_STIMULUM) * (LOW_RADIATION * stim_modifier) - \
+													reaction_chamber_gases.get_moles(GAS_NITRYL) * (LOW_RADIATION * no2_modifier)
 		radiation_modifier = chamber_radiation_total / reaction_rate
 
-		var/chamber_reinforcement_total = reaction_rate + reaction_chamber_gases.get_moles(GAS_PLUOXIUM) * VERY_HIGH_REINFORCEMENT + \
-														reaction_chamber_gases.get_moles(GAS_TRITIUM) * HIGH_REINFORCEMENT + \
-														reaction_chamber_gases.get_moles(GAS_NITROUS) * HIGH_REINFORCEMENT - \
-														reaction_chamber_gases.get_moles(GAS_NUCLEIUM) * LOW_REINFORCEMENT - \
-														reaction_chamber_gases.get_moles(GAS_STIMULUM) * LOW_REINFORCEMENT - \
-														reaction_chamber_gases.get_moles(GAS_BZ) * LOW_REINFORCEMENT
+		var/chamber_reinforcement_total = reaction_rate + reaction_chamber_gases.get_moles(GAS_PLUOXIUM) * (VERY_HIGH_REINFORCEMENT * pluoxium_modifier) + \
+														reaction_chamber_gases.get_moles(GAS_TRITIUM) * (HIGH_REINFORCEMENT * tritium_modifier) + \
+														reaction_chamber_gases.get_moles(GAS_NITROUS) * (HIGH_REINFORCEMENT * no2_modifier) - \
+														reaction_chamber_gases.get_moles(GAS_NUCLEIUM) * (LOW_REINFORCEMENT * nucleium_modifier) - \
+														reaction_chamber_gases.get_moles(GAS_STIMULUM) * (LOW_REINFORCEMENT * stim_modifier) - \
+														reaction_chamber_gases.get_moles(GAS_BZ) * (LOW_REINFORCEMENT * bz_modifier)
 		reactor_temperature_modifier = chamber_reinforcement_total / reaction_rate
 
-		var/chamber_degradation_total = reaction_rate + reaction_chamber_gases.get_moles(GAS_NITROUS) * HIGH_DEG_PROTECTION + \
-														reaction_chamber_gases.get_moles(GAS_HYPERNOB) * VERY_HIGH_DEG_PROTECTION + \
-														reaction_chamber_gases.get_moles(GAS_PLUOXIUM) * HIGH_DEG_PROTECTION
+		var/chamber_degradation_total = reaction_rate + reaction_chamber_gases.get_moles(GAS_NITROUS) * (HIGH_DEG_PROTECTION * no2_modifier) + \
+														reaction_chamber_gases.get_moles(GAS_HYPERNOB) * (VERY_HIGH_DEG_PROTECTION * nob_modifier) + \
+														reaction_chamber_gases.get_moles(GAS_PLUOXIUM) * (HIGH_DEG_PROTECTION * pluoxium_modifier)
 		control_rod_degradation_modifier = chamber_degradation_total / reaction_rate
 
 		nucleium_power_reduction = reaction_chamber_gases.get_moles(GAS_NUCLEIUM) * 1000 //nucleium
@@ -721,10 +755,13 @@ Control Rods
 		return FALSE
 
 /obj/machinery/atmospherics/components/binary/stormdrive_reactor/proc/handle_control_rod_efficiency()
-	var/control_rod_effectiveness_total = 0
-	for(var/obj/item/control_rod/cr in contents)
-		control_rod_effectiveness_total += cr.rod_effectiveness
-	control_rod_modifier = control_rod_effectiveness_total / control_rods.len
+	if(control_rods.len > 0)
+		var/control_rod_effectiveness_total = 0
+		for(var/obj/item/control_rod/cr in contents)
+			control_rod_effectiveness_total += cr.rod_effectiveness
+		control_rod_modifier = control_rod_effectiveness_total / control_rods.len
+	else
+		control_rod_modifier = 1
 
 /obj/machinery/atmospherics/components/binary/stormdrive_reactor/proc/handle_control_rod_integrity()
 	if(control_rods.len > 0)
