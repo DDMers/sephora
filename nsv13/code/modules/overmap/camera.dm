@@ -74,6 +74,11 @@
 	if(M.client)
 		M.client.view_size.resetToDefault()
 		M.client.overmap_zoomout = 0
+		for(var/V in M.actions) //Reset action buttons to stop the screen from staying large
+			var/datum/action/A = V
+			var/atom/movable/screen/movable/action_button/B = A.button
+			B.moved = FALSE
+		M.update_action_buttons(TRUE)
 	var/mob/camera/ai_eye/remote/overmap_observer/eyeobj = M.remote_control
 	M.cancel_camera()
 	if(M.client) //Reset px, y
