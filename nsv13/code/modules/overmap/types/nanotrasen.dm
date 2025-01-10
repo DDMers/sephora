@@ -226,18 +226,18 @@
 
 /obj/structure/overmap/nanotrasen/battlecruiser/starter //Currently assigned to Tycoon and Gladius
 	role = MAIN_OVERMAP
-	obj_integrity = 1400
-	max_integrity = 1400
+	obj_integrity = 1600
+	max_integrity = 1600
 	starting_system = "Staging" //Required for all player ships
-	armor = list("overmap_light" = 95, "overmap_medium" = 60, "overmap_heavy" = 20)
+	armor = list("overmap_light" = 95, "overmap_medium" = 75, "overmap_heavy" = 50) //Cruisers should be able to take substantially more damage than Frigates and destroyers
 	overmap_deletion_traits = DAMAGE_STARTS_COUNTDOWN
 
 /obj/structure/overmap/nanotrasen/battleship/starter //Galactica
 	role = MAIN_OVERMAP //Player controlled variant
-	obj_integrity = 2150
-	max_integrity = 2150
+	obj_integrity = 2400
+	max_integrity = 2400
 	starting_system = "Staging" //Required for all player ships
-	armor = list("overmap_light" = 95, "overmap_medium" = 75, "overmap_heavy" = 25)
+	armor = list("overmap_light" = 98, "overmap_medium" = 95, "overmap_heavy" = 65) //This ship is a dreadnaught, is armored accordingly and should largely not care about lighter munitions.
 	overmap_deletion_traits = DAMAGE_STARTS_COUNTDOWN
 
 /obj/structure/overmap/nanotrasen/serendipity/starter
