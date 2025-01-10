@@ -23,6 +23,10 @@
 /datum/map_template/shuttle/cargo/shrike
 	suffix = "shrike"
 	name = "\[NSV\] cargo ferry (Shrike)"
+	
+/datum/map_template/shuttle/cargo/gungnir
+	suffix = "gungnir"
+	name = "\[NSV\] cargo ferry (Gungnir)"
 
 /datum/map_template/shuttle/cargo/serendipity
 	suffix = "serendipity"

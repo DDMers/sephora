@@ -1,0 +1,32 @@
+{
+	"map_name": "NSV Gungnir",
+	"map_link": "Gungnir",
+    "map_path": "map_files/Gungnir",
+    "map_file": ["Gungnir2.dmm", "Gungnir1.dmm"],
+	"traits": [{"Up": 1, "Linkage": "Self"}, {"Down": -1, "Linkage": "Self"}],
+	"space_ruin_levels": -1,
+	"space_empty_levels": 0,
+	"shuttles": {
+		"cargo": "cargo_hammerhead",
+		"ferry": "ferry_kilo",
+        "arrival": "arrival_aetherwhisp",
+	    "emergency": "emergency_donut"},
+    "mine_disable": 1,
+	"ship_type": "/obj/structure/overmap/nanotrasen/heavy_battlecruiser/starter",
+	"starmap_path": "config/starmap/starmap.json",
+
+	"map_description": "Gungnir-Class Battlecruisers were designed from the ground up as a counter to the Kadesh-Class cruiser in cooperation with Ethereal engineers formerly of the Dominion of Light. While budget constraints have prevented all of its intended armament from being installed, early reports indicate that the battlecruisers remain functional even after losing 90% of their atmospheric integrity",
+	"manufacturer": "Starlight Drive Yards",
+	"mapper": "Seryn",
+	"commission_date": "Jun 7, 2262",
+	"strengths": ["Heavy Gun Armament, Heavy Armor, Redundant Atmospherics and Power"],
+	"weaknesses": ["Small Missile Armament", "Manning Dependant", "Small Fighter Complement"],
+	"equipment": [
+		"4 M4-15 'Hood' deck turret",
+		"6 NT-BSG gauss turrets",
+		"8 M14 VLS loaders",
+		"2 Heavy Fighters",
+		"1 Light Fighter",
+		"1 Advanced Gas-Cooled Nuclear Reactor"
+	]
+}

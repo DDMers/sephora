@@ -44,6 +44,11 @@ map gladius
 	votable
 endmap
 
+map gungnir
+	minplayers 15
+	votable
+endmap
+
 map hammerhead
 	votable
 endmap
