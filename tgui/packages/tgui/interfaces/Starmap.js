@@ -212,6 +212,7 @@ export const Starmap = (props, context) => {
                 <Button
                   content="Jump"
                   icon="arrow-right"
+                  color={data.ftl_safety_override ? "red" : "default"}
                   disabled={!data.can_jump}
                   onClick={() =>
                     act('jump')} />

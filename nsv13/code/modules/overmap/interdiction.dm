@@ -19,7 +19,7 @@ Welcome to the gardens of kadesh. You shall never leave.
     if(owner.faction == interdicted.faction)
         return
     owner.on_interdict()
-    return BEING_INTERDICTED
+    return WEAK_INTERDICT
 
 
 /*

@@ -3,6 +3,9 @@ GLOBAL_DATUM_INIT(keycard_events, /datum/events, new)
 #define KEYCARD_RED_ALERT "Red Alert"
 #define KEYCARD_EMERGENCY_MAINTENANCE_ACCESS "Emergency Maintenance Access"
 #define KEYCARD_BSA_UNLOCK "Bluespace Artillery Unlock"
+//NSV13
+#define KEYCARD_FTL_SAFETY_OVERRIDE "FTL Safety Override"
+//NSV13 end.
 
 /obj/machinery/keycard_auth
 	name = "Keycard Authentication Device"
@@ -52,6 +55,13 @@ GLOBAL_DATUM_INIT(keycard_events, /datum/events, new)
 	data["red_alert"] = (seclevel2num(get_security_level()) >= SEC_LEVEL_RED) ? 1 : 0
 	data["emergency_maint"] = GLOB.emergency_access
 	data["bsa_unlock"] = GLOB.bsa_unlock
+	//NSV13 - emergency FTL
+	var/ftl_state = -1 // -1 = not overmap; 0 = Safe; 1 = Unsafe.
+	var/obj/structure/overmap/current_overmap = get_overmap()
+	if(current_overmap)
+		ftl_state = current_overmap.ftl_safety_override
+	data["ftl_safety_override"] = ftl_state
+	//NSV13 end
 	return data
 
 /obj/machinery/keycard_auth/ui_status(mob/user)
@@ -76,6 +86,12 @@ GLOBAL_DATUM_INIT(keycard_events, /datum/events, new)
 				. = TRUE
 		if("auth_swipe")
 			if(event_source)
+				//NSV13 - cross overmap safety even if the other things don't have it (we can have a subtype for syndi vessels that doesn't have the other options?).
+				var/overmap1 = event_source.get_overmap()
+				var/overmap2 = get_overmap()
+				if(overmap1 != overmap2)
+					return TRUE
+				//NSV13 end.
 				event_source.trigger_event(usr)
 				event_source = null
 				. = TRUE
@@ -83,6 +99,11 @@ GLOBAL_DATUM_INIT(keycard_events, /datum/events, new)
 			if(!event_source)
 				sendEvent(KEYCARD_BSA_UNLOCK)
 				. = TRUE
+		if("ftl_safety_override")
+			if(!event_source)
+				sendEvent(KEYCARD_FTL_SAFETY_OVERRIDE)
+				. = TRUE
+
 
 /obj/machinery/keycard_auth/proc/sendEvent(event_type)
 	triggerer = usr
@@ -121,6 +142,8 @@ GLOBAL_DATUM_INIT(keycard_events, /datum/events, new)
 			make_maint_all_access()
 		if(KEYCARD_BSA_UNLOCK)
 			toggle_bluespace_artillery()
+		if(KEYCARD_FTL_SAFETY_OVERRIDE)
+			toggle_ftl_drive_safety(get_overmap())
 
 GLOBAL_VAR_INIT(emergency_access, FALSE)
 /proc/make_maint_all_access()
@@ -148,6 +171,18 @@ GLOBAL_VAR_INIT(emergency_access, FALSE)
 	minor_announce("Bluespace Artillery firing protocols have been [GLOB.bsa_unlock? "unlocked" : "locked"]", "Weapons Systems Update:")
 	SSblackbox.record_feedback("nested tally", "keycard_auths", 1, list("bluespace artillery", GLOB.bsa_unlock? "unlocked" : "locked"))
 
+///NSV13 - toggles FTL safety mode of a passed vessel.
+/proc/toggle_ftl_drive_safety(obj/structure/overmap/target)
+	if(QDELETED(target))
+		return
+	target.ftl_safety_override = !target.ftl_safety_override
+	if(target.ftl_safety_override) //Safety disengaged.
+		target.relay('nsv13/sound/misc/triple_boop_alert.ogg',"<h1 class='alert'>FTL Drive System Notice</h1><span class='alert'>FTL Drive Safeties disengaged. Drive reverting to manual control.</span><br>")
+	else //Safety reengaged.
+		target.relay('sound/misc/notice2.ogg', "<h1 class='alert'>FTL Drive System Notice</h1><span class='alert'>FTL Drive Safeties restored.</span><br>")
+//NSV13 end.
+
 #undef KEYCARD_RED_ALERT
 #undef KEYCARD_EMERGENCY_MAINTENANCE_ACCESS
 #undef KEYCARD_BSA_UNLOCK
+#undef KEYCARD_FTL_SAFETY_OVERRIDE

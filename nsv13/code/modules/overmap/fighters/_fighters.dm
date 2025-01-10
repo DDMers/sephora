@@ -407,7 +407,7 @@ Been a mess since 2018, we'll fix it someday (probably)
 	name = "Peregrine class attack fighter"
 	desc = "A Peregrine class attack fighter, solgov's only premiere fighter, mounting minature capital grade phasers and a tiny shield generator."
 	icon = 'nsv13/icons/overmap/new/solgov/playablefighter.dmi'
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 30, "bomb" = 30, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 80, "overmap_light" = 5, "overmap_medium" = 0, "overmap_heavy" = 10) 
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 30, "bomb" = 30, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 80, "overmap_light" = 5, "overmap_medium" = 0, "overmap_heavy" = 10)
 	sprite_size = 32
 	damage_states = FALSE //temp
 	max_integrity = 25 //shields.
@@ -770,7 +770,7 @@ Been a mess since 2018, we'll fix it someday (probably)
 	return ..()
 
 
-/obj/structure/overmap/small_craft/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, bypasses_shields = FALSE)
+/obj/structure/overmap/small_craft/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, bypasses_shields = FALSE, nsv_damagesound = TRUE)
 	var/obj/item/fighter_component/armour_plating/A = loadout.get_slot(HARDPOINT_SLOT_ARMOUR)
 	if(A && istype(A))
 		A.take_damage(damage_amount, damage_type, damage_flag, sound_effect)

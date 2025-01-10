@@ -81,7 +81,7 @@ Bullet reactions
 /obj/structure/overmap/small_craft/relay_damage(proj_type)
 	return
 
-/obj/structure/overmap/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, bypasses_shields = FALSE)
+/obj/structure/overmap/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, bypasses_shields = FALSE, nsv_damagesound = TRUE)
 	var/blocked = FALSE
 	var/damage_sound = pick(GLOB.overmap_impact_sounds)
 	if(!bypasses_shields && shields && shields.absorb_hit(damage_amount))
@@ -89,7 +89,7 @@ Bullet reactions
 		damage_sound = pick('nsv13/sound/effects/ship/damage/shield_hit.ogg', 'nsv13/sound/effects/ship/damage/shield_hit2.ogg')
 		if(!impact_sound_cooldown)
 			add_overlay(new /obj/effect/temp_visual/overmap_shield_hit(get_turf(src), src))
-	if(!impact_sound_cooldown && damage_sound)
+	if(nsv_damagesound && !impact_sound_cooldown && damage_sound)
 		relay(damage_sound)
 		if(damage_amount >= 15) //Flak begone
 			shake_everyone(5)

@@ -28,6 +28,9 @@
 	var/overmap_deletion_traits = DAMAGE_DELETES_UNOCCUPIED | DAMAGE_STARTS_COUNTDOWN
 	var/deletion_teleports_occupants = FALSE
 
+	///Should sound be relayed & the destruction overlay be created on destruction?
+	var/destruction_effects = TRUE
+
 	var/sprite_size = 64 //Pixels. This represents 64x64 and allows for the bullets that you fire to align properly.
 	var/area_type = null //Set the type of the desired area you want a ship to link to, assuming it's not the main player ship.
 	var/impact_sound_cooldown = FALSE //Avoids infinite spamming of the ship taking damage.
@@ -189,6 +192,11 @@
 	// Large/Modern ships will use the modular FTL core. But the proc names and args are aligned so BYOND lets us use either object as just one object path
 	// It's terrible I know, but until we decide/are bothered enough to throw out the legacy drive (or subtype it), this'll have to do
 	var/obj/machinery/computer/ship/ftl_core/ftl_drive
+
+	///FTL safety state
+	var/ftl_safety_override = FALSE
+	///FTL emergency jump cooldown; Only available once every 25 minutes.
+	var/next_emergency_jump = 0
 
 	//Misc variables
 	var/list/scanned = list() //list of scanned overmap anomalies
@@ -518,15 +526,17 @@ Proc to spool up a new Z-level for a player ship and assign it a treadmill.
 	for(var/mob/living/M in operators)
 		stop_piloting(M)
 	GLOB.overmap_objects -= src
-	relay('nsv13/sound/effects/ship/damage/ship_explode.ogg')
-	relay_to_nearby('nsv13/sound/effects/ship/damage/disable.ogg') //Kaboom.
-	new /obj/effect/temp_visual/fading_overmap(get_turf(src), name, icon, icon_state)
+	if(destruction_effects)
+		relay('nsv13/sound/effects/ship/damage/ship_explode.ogg')
+		relay_to_nearby('nsv13/sound/effects/ship/damage/disable.ogg') //Kaboom.
+		new /obj/effect/temp_visual/fading_overmap(get_turf(src), name, icon, icon_state)
 	for(var/obj/structure/overmap/OM in enemies) //If target's in enemies, return
 		var/sound = pick('nsv13/sound/effects/computer/alarm.ogg','nsv13/sound/effects/computer/alarm_2.ogg')
 		var/message = "<span class='warning'>ATTENTION: [src]'s reactor is going supercritical. Destruction imminent.</span>"
 		OM?.tactical?.relay_sound(sound, message)
 		OM.enemies -= src //Stops AI from spamming ships that are already dead
-	overmap_explode(linked_areas)
+	if(length(linked_areas))
+		overmap_explode(linked_areas)
 	if(role == MAIN_OVERMAP)
 		priority_announce("WARNING: ([rand(10,100)]) Attempts to establish DRADIS uplink with [station_name()] have failed. Unable to ascertain operational status. Presumed status: TERMINATED","Central Intelligence Unit", 'nsv13/sound/effects/ship/reactor/explode.ogg')
 		Cinematic(CINEMATIC_NSV_SHIP_KABOOM,world)
@@ -841,9 +851,9 @@ Proc to spool up a new Z-level for a player ship and assign it a treadmill.
 	progress = round(((progress / goal) * 100), 25)//Round it down to 20%. We now apply visual damage
 	icon_state = "[initial(icon_state)]-[progress]"
 
-/obj/structure/overmap/proc/relay(S, var/message=null, loop = FALSE, channel = null) //Sends a sound + text message to the crew of a ship
+/obj/structure/overmap/proc/relay(S, var/message=null, loop = FALSE, channel = null) //Sends a sound and / or text message to the crew of a ship
 	for(var/mob/M as() in mobs_in_ship)
-		if(M.can_hear())
+		if(S && M.can_hear())
 			if(channel) //Doing this forbids overlapping of sounds
 				SEND_SOUND(M, sound(S, repeat = loop, wait = 0, volume = 100, channel = channel))
 			else

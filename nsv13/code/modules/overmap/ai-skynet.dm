@@ -228,7 +228,8 @@ Adding tasks is easy! Just define a datum for it.
 		if(world.time < last_encounter_time + combat_move_delay) //So that fleets don't leave mid combat.
 			return FALSE
 
-		if(SEND_GLOBAL_SIGNAL(COMSIG_GLOB_CHECK_INTERDICT, pick(all_ships)) & BEING_INTERDICTED)	//Hypothesis: All ships within a fleet should have the same faction.
+		var/interdict_return = SEND_GLOBAL_SIGNAL(COMSIG_GLOB_CHECK_INTERDICT, pick(all_ships)) //Hypothesis: All ships within a fleet should have the same faction.
+		if((interdict_return & (WEAK_INTERDICT|STRONG_INTERDICT)))
 			return FALSE
 
 	current_system.fleets -= src

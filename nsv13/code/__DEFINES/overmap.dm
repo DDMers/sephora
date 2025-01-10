@@ -125,5 +125,10 @@ GLOBAL_LIST_INIT(overmap_impact_sounds, list('nsv13/sound/effects/ship/freespace
 #define SHIELD_FORCE_DEFLECT 2 //!Shield absorbed hit and is redirecting projectile with slightly turned vector.
 #define SHIELD_FORCE_REFLECT 3 //!Shield absorbed hit and is redirecting projectile in reverse direction.
 
+//Emergency FTL stuff.
+
+#define EMERGENCY_FTL_RANGE 120 //! Range of Emergency FTL jump (uncontrolled)
+#define EMERGENCY_FTL_COOLDOWN 35 MINUTES //!Cooldown of FTL drives between emergency jumps.
+
 //Interior instancing comsig, aka cursed things.
 #define COMSIG_INTERIOR_DONE_LOADING "interior_done_loading"

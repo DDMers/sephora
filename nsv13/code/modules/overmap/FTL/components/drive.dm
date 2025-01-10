@@ -48,6 +48,9 @@
 
 	var/ftl_state = FTL_STATE_IDLE
 
+	///world.time until which an user can confirm the emergency jump triggered by Nav.
+	var/await_emergency_ftl_confirm = 0
+
 /obj/machinery/computer/ship/ftl_core/Initialize(mapload)
 	. = ..()
 	add_overlay("screen")
@@ -202,6 +205,16 @@
 			jump_speed_factor = 5
 			max_range = initial(max_range) * 3
 
+///Requests emergency FTL, needs manual confirm at the machine itself.
+/obj/machinery/computer/ship/ftl_core/proc/request_emergency_ftl_confirm()
+	if(await_emergency_ftl_confirm - world.time > 0)
+		return
+	if(!linked.ftl_safety_override)
+		return
+	await_emergency_ftl_confirm = world.time + 15 SECONDS
+	say("Emergency FTL request signal received from Navigation system. Manual confirmation required.")
+	radio.talk_into(src, "Emergency FTL request signal received from Navigation system. Manual confirmation required.", radio_channel)
+
 /*
 Preset classes of FTL drive with pre-programmed behaviours
 */
@@ -292,6 +305,22 @@ Preset classes of FTL drive with pre-programmed behaviours
 				return
 			auto_spool_enabled = !auto_spool_enabled
 			. = TRUE
+		if("emergency_jump")
+			. = TRUE
+			if(!linked.ftl_safety_override)
+				return
+			if(world.time < linked.next_emergency_jump)
+				say("Failsafe Capacitor still recharging. Emergency transition unavailable.")
+				await_emergency_ftl_confirm = 0
+				return
+			if(world.time > await_emergency_ftl_confirm)
+				return
+			if(progress / req_charge < 0.25)
+				say("FTL not sufficiently spooled for emergency transition. 25% of full charge required.")
+				await_emergency_ftl_confirm = 0
+				return
+			await_emergency_ftl_confirm = 0
+			linked.emergency_jump()
 
 /obj/machinery/computer/ship/ftl_core/ui_data(mob/user)
 	var/list/data = list()
@@ -317,14 +346,15 @@ Preset classes of FTL drive with pre-programmed behaviours
 	data["pylons"] = all_pylon_info
 	data["can_auto_spool"] = auto_spool_capable
 	data["auto_spool_enabled"] = auto_spool_enabled
+	data["await_emergency_ftl_confirm"] = (await_emergency_ftl_confirm > world.time && linked.ftl_safety_override)
 	return data
 
-/obj/machinery/computer/ship/ftl_core/proc/jump(datum/star_system/target_system, force=FALSE)
+/obj/machinery/computer/ship/ftl_core/proc/jump(datum/star_system/target_system, force=FALSE, misjump = FALSE)
 	ftl_state = FTL_STATE_JUMPING
 	if(!target_system)
 		radio.talk_into(src, "ERROR. Specified star_system no longer exists.", radio_channel)
 		return
-	linked.begin_jump(target_system, force)
+	linked.begin_jump(target_system, force, misjump)
 	playsound(src, 'nsv13/sound/voice/ftl_start.wav', 100, FALSE)
 	radio.talk_into(src, "Initiating FTL translation.", radio_channel)
 	playsound(src, 'nsv13/sound/effects/ship/freespace2/computer/escape.wav', 100, 1)

@@ -74,7 +74,13 @@
 			if(linked.ftl_drive.lockout)
 				to_chat(usr, "<span class='warning'>[icon2html(src, viewers(src))] Unable to comply. Invalid authkey to unlock remove override code.</span>")
 				return
-			linked.ftl_drive.jump(selected_system)
+			if(linked.ftl_safety_override)
+				if(linked.next_emergency_jump > world.time)
+					say("Drive Emergency Capacitor is still recharging. Emergency jump unavailable.")
+					return TRUE
+				linked.ftl_drive.request_emergency_ftl_confirm()
+			else
+				linked.ftl_drive.jump(selected_system)
 			. = TRUE
 		if("cancel_jump")
 			if(linked.ftl_drive.lockout)
@@ -213,14 +219,15 @@
 			if(info["current_system"])
 				var/datum/star_system/curr = info["current_system"]
 				data["star_dist"] = curr.dist(selected_system)
-				data["can_jump"] = current_system.dist(selected_system) < linked.ftl_drive?.max_range && linked.ftl_drive.ftl_state == FTL_STATE_READY && LAZYFIND(current_system.adjacency_list, selected_system.name)
+				data["can_jump"] = (current_system.dist(selected_system) < linked.ftl_drive?.max_range && linked.ftl_drive.ftl_state == FTL_STATE_READY && LAZYFIND(current_system.adjacency_list, selected_system.name)) || (linked.ftl_safety_override && linked.ftl_drive && linked.ftl_drive.ftl_state != FTL_STATE_JUMPING)
 				if(return_jump_check(selected_system) && linked.ftl_drive.ftl_state == FTL_STATE_READY)
 					data["can_jump"] = TRUE
 				if(!can_control_ship) //For public consoles
 					data["can_jump"] = FALSE
 					data["can_cancel"] = FALSE
+	data["ftl_safety_override"] = linked?.ftl_safety_override
 	data["screen"] = screen
-	data["can_cancel"] = linked?.ftl_drive?.ftl_state == FTL_STATE_JUMPING && linked?.ftl_drive?.can_cancel_jump
+	data["can_cancel"] = linked?.ftl_drive?.ftl_state == FTL_STATE_JUMPING && linked?.ftl_drive?.can_cancel_jump && !linked?.ftl_safety_override
 	return data
 
 /obj/machinery/computer/ship/navigation/proc/is_in_range(datum/star_system/current_system, datum/star_system/system)

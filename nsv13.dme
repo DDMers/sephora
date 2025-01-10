@@ -4050,6 +4050,8 @@
 #include "nsv13\code\modules\overmap\FTL\ftl_legacy.dm"
 #include "nsv13\code\modules\overmap\FTL\components\drive.dm"
 #include "nsv13\code\modules\overmap\FTL\components\drive_pylon.dm"
+#include "nsv13\code\modules\overmap\FTL\ftl_jump_mishaps\jump_mishap_helpers.dm"
+#include "nsv13\code\modules\overmap\FTL\ftl_jump_mishaps\phase_ghost.dm"
 #include "nsv13\code\modules\overmap\ship_areas\badmiral.dm"
 #include "nsv13\code\modules\overmap\types\miningships.dm"
 #include "nsv13\code\modules\overmap\types\nanotrasen.dm"

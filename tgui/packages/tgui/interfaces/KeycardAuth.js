@@ -7,7 +7,7 @@ export const KeycardAuth = (props, context) => {
   return (
     <Window
       width={375}
-      height={125}>
+      height={150}>
       <Window.Content>
         <Section>
           <Box>
@@ -47,6 +47,12 @@ export const KeycardAuth = (props, context) => {
                       fluid
                       onClick={() => act('bsa_unlock')}
                       content="Bluespace Artillery Unlock" />
+                    {data.ftl_safety_override >= 0 && (
+                      <Button
+                        icon="exclamation-triangle"
+                        fluid
+                        onClick={() => act('ftl_safety_override')}
+                        content="FTL Drive Safety Override" />)}
                   </>
                 )}
               </>

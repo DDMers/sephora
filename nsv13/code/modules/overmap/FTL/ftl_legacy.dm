@@ -35,6 +35,9 @@
 	var/auto_spool_enabled = FALSE //For lazy admins
 	var/lockout = FALSE //Used for our end round shenanigains
 
+	///world.time until which an user can confirm the emergency jump triggered by Nav.
+	var/await_emergency_ftl_confirm = 0
+
 /obj/machinery/computer/ship/ftl_computer/attackby(obj/item/I, mob/user) //Allows you to upgrade dradis consoles to show asteroids, as well as revealing more valuable ones.
 	. = ..()
 	if(istype(I, /obj/item/ftl_slipstream_chip))
@@ -212,6 +215,22 @@ A way for syndies to track where the player ship is going in advance, so they ca
 					jump(S)
 					check_active(FALSE)
 					break
+		if("emergency_jump")
+			. = TRUE
+			if(!linked.ftl_safety_override)
+				return
+			if(world.time > await_emergency_ftl_confirm)
+				return
+			if(world.time < linked.next_emergency_jump)
+				say("Failsafe Capacitor still recharging. Emergency transition unavailable.")
+				await_emergency_ftl_confirm = 0
+				return
+			if(progress / spoolup_time < 0.25)
+				say("FTL not sufficiently spooled for emergency transition. 25% of full charge required.")
+				await_emergency_ftl_confirm = 0
+				return
+			await_emergency_ftl_confirm = 0
+			linked.emergency_jump()
 
 /obj/machinery/computer/ship/ftl_computer/ui_data(mob/user)
 	var/list/data = list()
@@ -232,6 +251,7 @@ A way for syndies to track where the player ship is going in advance, so they ca
 	for(var/datum/star_system/S in SSstar_system.systems)
 		if(S.visitable && S != linked.current_system)
 			data["systems"] += list(list("name" = S.name, "distance" = "2 minutes"))
+	data["await_emergency_ftl_confirm"] = (await_emergency_ftl_confirm > world.time && linked.ftl_safety_override)
 	return data
 
 /obj/machinery/computer/ship/ftl_computer/proc/check_active(state)
@@ -242,11 +262,11 @@ A way for syndies to track where the player ship is going in advance, so they ca
 		depower()
 		STOP_PROCESSING(SSmachines, src)
 
-/obj/machinery/computer/ship/ftl_computer/proc/jump(datum/star_system/target_system, force=FALSE)
+/obj/machinery/computer/ship/ftl_computer/proc/jump(datum/star_system/target_system, force=FALSE, misjump = FALSE)
 	if(!target_system)
 		radio.talk_into(src, "ERROR. Specified star_system no longer exists.", radio_channel)
 		return
-	linked?.begin_jump(target_system, force)
+	linked?.begin_jump(target_system, force, misjump)
 	playsound(src, 'nsv13/sound/voice/ftl_start.wav', 100, FALSE)
 	radio.talk_into(src, "Initiating FTL translation.", radio_channel)
 	playsound(src, 'nsv13/sound/effects/ship/freespace2/computer/escape.wav', 100, 1)
@@ -310,9 +330,22 @@ A way for syndies to track where the player ship is going in advance, so they ca
 		if(auto_spool_enabled)
 			active = TRUE
 			spoolup()
-			START_PROCESSING(SSmachines, src)
+			if(!(datum_flags & DF_ISPROCESSING))
+				START_PROCESSING(SSmachines, src)
+		else if(datum_flags & DF_ISPROCESSING)
+			STOP_PROCESSING(SSmachines, src)
 		return TRUE
 	return FALSE
 
 /obj/machinery/computer/ship/ftl_computer/proc/get_jump_speed()
 	return jump_speed_factor
+
+///Requests emergency FTL, needs manual confirm at the machine itself.
+/obj/machinery/computer/ship/ftl_computer/proc/request_emergency_ftl_confirm()
+	if(await_emergency_ftl_confirm - world.time > 0)
+		return
+	if(!linked.ftl_safety_override)
+		return
+	await_emergency_ftl_confirm = world.time + 15 SECONDS
+	say("Emergency FTL request signal received from Navigation system. Manual confirmation required.")
+	radio.talk_into(src, "Emergency FTL request signal received from Navigation system. Manual confirmation required.", radio_channel)
