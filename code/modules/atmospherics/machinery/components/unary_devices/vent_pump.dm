@@ -18,8 +18,6 @@
 	layer = GAS_SCRUBBER_LAYER
 	shift_underlay_only = FALSE
 
-	interacts_with_air = TRUE
-
 	var/pump_direction = RELEASING
 
 	var/pressure_checks = EXT_BOUND
@@ -58,7 +56,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/update_icon_nopipes()
 	cut_overlays()
 	if(showpipe)
-		var/image/cap = getpipeimage(icon, "vent_cap", initialize_directions)
+		var/image/cap = get_pipe_image(icon, "vent_cap", initialize_directions)
 		add_overlay(cap)
 	else
 		PIPING_LAYER_SHIFT(src, PIPING_LAYER_DEFAULT)
@@ -93,7 +91,6 @@
 		icon_state = "vent_in"
 
 /obj/machinery/atmospherics/components/unary/vent_pump/process_atmos()
-	..()
 	if(!is_operational || !isopenturf(loc))
 		return
 	if(!nodes[1])
@@ -104,7 +101,7 @@
 	var/datum/gas_mixture/air_contents = airs[1]
 	var/datum/gas_mixture/environment = loc.return_air()
 
-	if(environment == null)
+	if(!environment)
 		return
 
 	var/environment_pressure = environment.return_pressure()
@@ -122,7 +119,6 @@
 				var/transfer_moles = pressure_delta*environment.return_volume()/(air_contents.return_temperature() * R_IDEAL_GAS_EQUATION)
 
 				loc.assume_air_moles(air_contents, transfer_moles)
-				air_update_turf()
 
 	else // external -> internal
 		if(environment.return_pressure() > 0)
@@ -135,7 +131,6 @@
 
 			if(moles_delta > 0)
 				loc.transfer_air(air_contents, moles_delta)
-				air_update_turf()
 	update_parents()
 
 //Radio remote control
@@ -173,7 +168,7 @@
 	radio_connection.post_signal(src, signal, radio_filter_out)
 
 
-/obj/machinery/atmospherics/components/unary/vent_pump/atmosinit()
+/obj/machinery/atmospherics/components/unary/vent_pump/atmos_init()
 	//some vents work his own spesial way
 	radio_filter_in = frequency==FREQ_ATMOS_CONTROL?(RADIO_FROM_AIRALARM):null
 	radio_filter_out = frequency==FREQ_ATMOS_CONTROL?(RADIO_TO_AIRALARM):null

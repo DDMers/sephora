@@ -623,3 +623,5 @@ GHOST_ROLE_COOLDOWN 3000
 
 ## Once a typepath causes overrun from hard deletes this many times, stop hard deleting it on garbage collection failures. (set to 0 to disable)
 #HARD_DELETES_OVERRUN_LIMIT 0
+
+ATMOS_EQUALIZE_ENABLED

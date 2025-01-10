@@ -100,7 +100,7 @@
 	. = ..()
 	var/turf/local = get_turf(loc)
 	ADD_TRAIT(local, TRAIT_FIREDOOR_STOP, TRAIT_GENERIC)
-	air_update_turf(TRUE)
+	air_update_turf()
 
 /obj/structure/holosign/barrier/atmos/Destroy()
 	var/turf/local = get_turf(loc)

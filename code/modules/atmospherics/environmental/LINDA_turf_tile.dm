@@ -1,31 +1,49 @@
 /turf
 	//conductivity is divided by 10 when interacting with air for balance purposes
 	var/thermal_conductivity = 0.05
+	///Amount of heat necessary to activate some atmos processes (there is a weird usage of this var because is compared directly to the temperature instead of heat energy)
 	var/heat_capacity = 1
 
 	//list of open turfs adjacent to us
 	var/list/atmos_adjacent_turfs
-	//bitfield of dirs in which we thermal conductivity is blocked
+	///bitfield of dirs in which we thermal conductivity is blocked
 	var/conductivity_blocked_directions = NONE
 
-	//used for mapping and for breathing while in walls (because that's a thing that needs to be accounted for...)
-	//string parsed by /datum/gas/proc/copy_from_turf
+	/**
+	 * used for mapping and for breathing while in walls (because that's a thing that needs to be accounted for...)
+	 * string parsed by /datum/gas/proc/copy_from_turf
+	 * approximation of MOLES_O2STANDARD and MOLES_N2STANDARD pending byond allowing constant expressions to be embedded in constant strings
+	 * If someone will place 0 of some gas there, SHIT WILL BREAK. Do not do that.
+	**/
 	var/initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-	//approximation of MOLES_O2STANDARD and MOLES_N2STANDARD pending byond allowing constant expressions to be embedded in constant strings
-	// If someone will place 0 of some gas there, SHIT WILL BREAK. Do not do that.
 
 /turf/open
 	//used for spacewind
+	///Pressure difference between two turfs
 	var/pressure_difference = 0
+	///Where the difference come from (from higher pressure to lower pressure)
 	var/pressure_direction = 0
-	var/turf/pressure_specific_target
 
+	///Our gas mix
 	var/datum/gas_mixture/turf/air
 
+	///If there is an active hotspot on us store a reference to it here
 	var/obj/effect/hotspot/active_hotspot
-	var/planetary_atmos = FALSE //air will revert to initial_gas_mix over time
+	/// air will slowly revert to initial_gas_mix
+	var/planetary_atmos = FALSE
+	/// once our paired turfs are finished with all other shares, do one 100% share
+	/// exists so things like space can ask to take 100% of a tile's gas
+	var/run_later = FALSE
 
-	var/list/atmos_overlay_types //gas IDs of current active gas overlays
+	///gas IDs of current active gas overlays
+	var/list/atmos_overlay_types
+	/// How much fuel this open turf provides to turf fires, and how easily they can be ignited in the first place. Can be negative to make fires die out faster.
+	var/flammability = 0.3
+	var/obj/effect/abstract/turf_fire/turf_fire
+	var/turf/pressure_specific_target
+
+/turf/proc/should_conduct_to_space()
+	return get_z_base_turf() == /turf/open/space
 
 /turf/open/Initialize(mapload)
 	if(!blocks_air)
@@ -39,8 +57,6 @@
 		QDEL_NULL(active_hotspot)
 	return ..()
 
-/turf/proc/update_air_ref()
-
 /////////////////GAS MIXTURE PROCS///////////////////
 
 /turf/open/assume_air(datum/gas_mixture/giver) //use this for machines to adjust air
@@ -49,55 +65,34 @@
 /turf/open/assume_air_moles(datum/gas_mixture/giver, moles)
 	if(!giver)
 		return FALSE
-	if(SSair.thread_running())
-		var giver_moles = giver.total_moles()
-		if(giver_moles > 0)
-			SSair.deferred_airs += list(list(giver, air, moles / giver_moles))
-		else
-			SSair.deferred_airs += list(list(giver, air, 0))
-	else
-		giver.transfer_to(air, moles)
-		update_visuals()
+	giver.transfer_to(air, moles)
+	update_visuals()
 	return TRUE
 
 /turf/open/assume_air_ratio(datum/gas_mixture/giver, ratio)
 	if(!giver)
 		return FALSE
-	if(SSair.thread_running())
-		SSair.deferred_airs += list(list(giver, air, ratio))
-	else
-		giver.transfer_ratio_to(air, ratio)
-		update_visuals()
+	giver.transfer_ratio_to(air, ratio)
+	update_visuals()
 	return TRUE
 
 /turf/open/transfer_air(datum/gas_mixture/taker, moles)
 	if(!taker || !return_air()) // shouldn't transfer from space
 		return FALSE
-	if(SSair.thread_running())
-		var air_moles = air.total_moles()
-		if(air_moles > 0)
-			SSair.deferred_airs += list(list(air, taker, moles / air_moles))
-		else
-			SSair.deferred_airs += list(list(air, taker, 0))
-	else
-		air.transfer_to(taker, moles)
-		update_visuals()
+	air.transfer_to(taker, moles)
+	update_visuals()
 	return TRUE
 
 /turf/open/transfer_air_ratio(datum/gas_mixture/taker, ratio)
 	if(!taker || !return_air())
 		return FALSE
-	if(SSair.thread_running())
-		SSair.deferred_airs += list(list(air, taker, ratio))
-	else
-		air.transfer_ratio_to(taker, ratio)
-		update_visuals()
+	air.transfer_ratio_to(taker, ratio)
+	update_visuals()
 	return TRUE
 
 /turf/open/remove_air(amount)
 	var/datum/gas_mixture/ours = return_air()
 	var/datum/gas_mixture/removed = ours.remove(amount)
-	update_visuals()
 	return removed
 
 /turf/open/remove_air_ratio(ratio)
@@ -177,6 +172,7 @@
 	UNSETEMPTY(new_overlay_types)
 	src.atmos_overlay_types = new_overlay_types
 
+//called by auxmos, do not remove
 /turf/open/proc/set_visuals(list/new_overlay_types)
 	if (atmos_overlay_types)
 		for(var/overlay in atmos_overlay_types-new_overlay_types) //doesn't remove overlays that would only be added
@@ -203,25 +199,14 @@
 
 /turf/open/proc/equalize_pressure_in_zone(cyclenum)
 /turf/open/proc/consider_firelocks(turf/T2)
-	var/reconsider_adj = FALSE
 	for(var/obj/machinery/door/firedoor/FD in T2)
-		if((FD.flags_1 & ON_BORDER_1) && get_dir(T2, src) != FD.dir)
-			continue
 		FD.emergency_pressure_stop()
-		reconsider_adj = TRUE
 	for(var/obj/machinery/door/firedoor/FD in src)
-		if((FD.flags_1 & ON_BORDER_1) && get_dir(src, T2) != FD.dir)
-			continue
 		FD.emergency_pressure_stop()
-		reconsider_adj = TRUE
-	if(reconsider_adj)
-		T2.ImmediateCalculateAdjacentTurfs() // We want those firelocks closed yesterday.
 
 /turf/proc/handle_decompression_floor_rip()
-	return
-
 /turf/open/floor/handle_decompression_floor_rip(sum)
-	if(sum > 20 && prob(CLAMP(sum / 20, 0, 15)))
+	if(sum > 20 && prob(clamp(sum / 20, 0, 15)))
 		if(floor_tile)
 			new floor_tile(src)
 		make_plating()
@@ -256,18 +241,17 @@
 		M = thing
 		if (!M.anchored && !M.pulledby && M.last_high_pressure_movement_air_cycle < SSair.times_fired)
 			M.experience_pressure_difference(pressure_difference * multiplier, pressure_direction, 0, pressure_specific_target)
+	//if(pressure_difference > 100)
+	//	new /obj/effect/temp_visual/dir_setting/space_wind(src, pressure_direction, clamp(round(sqrt(pressure_difference) * 2), 10, 255))
 
 /atom/movable/var/pressure_resistance = 10
 /atom/movable/var/last_high_pressure_movement_air_cycle = 0
 
 /atom/movable/proc/experience_pressure_difference(pressure_difference, direction, pressure_resistance_prob_delta = 0, throw_target)
-	set waitfor = FALSE
-	if(SEND_SIGNAL(src, COMSIG_MOVABLE_PRE_PRESSURE_PUSH) & COMSIG_MOVABLE_BLOCKS_PRESSURE)
-		return
-
 	var/const/PROBABILITY_OFFSET = 40
 	var/const/PROBABILITY_BASE_PRECENT = 10
 	var/max_force = sqrt(pressure_difference)*(MOVE_FORCE_DEFAULT / 5)
+	set waitfor = 0
 	var/move_prob = 100
 	//NSV13 - depressurzation does not drag things upwards - caused infinite loops with objects being sucked out, then falling through openspace.
 	if(direction == UP)
@@ -277,14 +261,14 @@
 	if(pressure_resistance > 0)
 		move_prob = (pressure_difference/pressure_resistance*PROBABILITY_BASE_PRECENT)-PROBABILITY_OFFSET
 	move_prob += pressure_resistance_prob_delta
-	if(move_prob > PROBABILITY_OFFSET && prob(move_prob) && (move_resist != INFINITY) && (!anchored && (max_force >= (move_resist * MOVE_FORCE_PUSH_RATIO))) || (anchored && (max_force >= (move_resist * MOVE_FORCE_FORCEPUSH_RATIO))))
-		var/move_force = max_force * CLAMP(move_prob, 0, 100) / 100
+	if (move_prob > PROBABILITY_OFFSET && prob(move_prob) && (move_resist != INFINITY) && (!anchored && (max_force >= (move_resist * MOVE_FORCE_PUSH_RATIO))) || (anchored && (max_force >= (move_resist * MOVE_FORCE_FORCEPUSH_RATIO))))
+		var/move_force = max_force * clamp(move_prob, 0, 100) / 100
 		if(move_force > 6000)
 			// WALLSLAM HELL TIME OH BOY
 			var/turf/throw_turf = get_ranged_target_turf(get_turf(src), direction, round(move_force / 2000))
 			if(throw_target && (get_dir(src, throw_target) & direction))
 				throw_turf = get_turf(throw_target)
-			var/throw_speed = CLAMP(round(move_force / 3000), 1, 10)
+			var/throw_speed = clamp(round(move_force / 3000), 1, 10)
 			throw_at(throw_turf, move_force / 3000, throw_speed)
 		else
 			step(src, direction)

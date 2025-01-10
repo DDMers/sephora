@@ -80,7 +80,6 @@
 	if(!T)
 		return
 	T.assume_air(gasused)
-	T.air_update_turf()
 	if(!gasused)
 		to_chat(user, "<span class='warning'>\The [src]'s tank is empty!</span>")
 		force = (baseforce / 5)

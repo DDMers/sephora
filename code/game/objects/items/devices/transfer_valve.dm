@@ -132,7 +132,7 @@
 		target_self = TRUE
 	if(change_volume)
 		if(!target_self)
-			target.set_volume(target.return_volume() + tank_two.air_contents.return_volume())
+			target.set_volume(target.return_volume() + tank_two.volume)
 		target.set_volume(target.return_volume() + tank_one.air_contents.return_volume())
 	tank_one.air_contents.transfer_ratio_to(target, 1)
 	if(!target_self)

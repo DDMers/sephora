@@ -37,7 +37,7 @@ GLOBAL_LIST_INIT(typecache_powerfailure_safe_areas, typecacheof(list(
 			if(break_if_found[checkT.type] || break_if_found[checkT.loc.type])
 				return FALSE
 			var/static/list/cardinal_cache = list("[NORTH]"=TRUE, "[EAST]"=TRUE, "[SOUTH]"=TRUE, "[WEST]"=TRUE)
-			if(!cardinal_cache["[dir]"] || checkT.blocks_air || !CANATMOSPASS(sourceT, checkT))
+			if(!cardinal_cache["[dir]"] || checkT.blocks_air || !TURFS_CAN_SHARE(sourceT, checkT))
 				continue
 			found_turfs += checkT // Since checkT is connected, add it to the list to be processed
 
@@ -58,7 +58,7 @@ GLOBAL_LIST_INIT(typecache_powerfailure_safe_areas, typecacheof(list(
 	var/static/blacklisted_areas = typecacheof(list(
 		/area/space,
 		))
-	var/list/turfs = detect_room(get_turf(creator), area_or_turf_fail_types)
+	var/list/turf/turfs = detect_room(get_turf(creator), area_or_turf_fail_types)
 	if(!turfs)
 		to_chat(creator, "<span class='warning'>The new area must be completely airtight and not a part of a shuttle.</span>")
 		return
@@ -72,6 +72,8 @@ GLOBAL_LIST_INIT(typecache_powerfailure_safe_areas, typecacheof(list(
 			continue
 		if(!place.requires_power || place.teleport_restriction || place.area_flags & HIDDEN_AREA)
 			continue // No expanding powerless rooms etc
+		if(!TURF_SHARES(turfs[i])) // No expanding areas of walls/something blocking this turf because that defeats the whole point of them used to separate areas
+			continue
 		areas[place.name] = place
 	var/area_choice = input(creator, "Choose an area to expand or make a new area.", "Area Expansion") as null|anything in areas
 	area_choice = areas[area_choice]

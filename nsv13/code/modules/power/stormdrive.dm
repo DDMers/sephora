@@ -780,6 +780,12 @@ Control Rods
 		gas_records_next_interval = world.time + gas_records_interval
 
 		var/datum/gas_mixture/air1 = airs[1]
+		if (air1.total_moles() <= 0)
+			// Division by zero is bad
+			for (var/list/record_list in gas_records)
+				record_list += 0
+				record_list.Cut(1, 2)
+			return
 
 		var/list/constricted_plasma = gas_records["constricted_plasma"]
 		constricted_plasma += (air1.get_moles(GAS_CONSTRICTED_PLASMA) / air1.total_moles()) * 100
@@ -966,6 +972,11 @@ Control Rods
 		return
 	if(can_alert || override) //We have an override to ignore continuous alerts like control rod reports in favour of screaming that the reactor is about to go nuclear.
 		can_alert = FALSE
+		if(!radio) // Why does this keep happening?
+			radio = new(src)
+			radio.keyslot = new radio_key
+			radio.listening = 0
+			radio.recalculateChannels()
 		radio.talk_into(src, message, engineering_channel)
 		addtimer(VARSET_CALLBACK(src, can_alert, TRUE), alert_cooldown)
 
@@ -1362,48 +1373,48 @@ Control Rods
 
 /obj/machinery/computer/ship/reactor_control_computer/ui_data(mob/user)
 	var/list/data = list()
-	data["heat"] = reactor.heat
-	data["rod_integrity"] = reactor.control_rod_integrity
-	data["control_rod_percent"] = reactor.control_rod_percent
-	data["pipe_open"] = reactor.dumping_fuel
-	data["last_power_produced"] = reactor.last_power_produced
-	data["theoretical_maximum_power"] = reactor.theoretical_maximum_power
-	data["reaction_rate"] = reactor.reaction_rate
-	data["reactor_hot"] = reactor.reactor_temperature_hot
-	data["reactor_critical"] = reactor.reactor_temperature_critical
-	data["reactor_meltdown"] = reactor.reactor_temperature_meltdown
-	if(reactor.state == REACTOR_STATE_MAINTENANCE)
+	data["heat"] = reactor ? reactor.heat : 0
+	data["rod_integrity"] = reactor ? reactor.control_rod_integrity : 0
+	data["control_rod_percent"] = reactor ? reactor.control_rod_percent : 0
+	data["pipe_open"] = reactor ? reactor.dumping_fuel : 0
+	data["last_power_produced"] = reactor ? reactor.last_power_produced : 0
+	data["theoretical_maximum_power"] = reactor ? reactor.theoretical_maximum_power : 0
+	data["reaction_rate"] = reactor ? reactor.reaction_rate : 0
+	data["reactor_hot"] = reactor ? reactor.reactor_temperature_hot : 0
+	data["reactor_critical"] = reactor ? reactor.reactor_temperature_critical : 0
+	data["reactor_meltdown"] = reactor ? reactor.reactor_temperature_meltdown : 0
+	if(reactor?.state == REACTOR_STATE_MAINTENANCE)
 		data["reactor_maintenance"] = TRUE
 	else
 		data["reactor_maintenance"] = FALSE
 
-	var/datum/gas_mixture/air1 = reactor.airs[1]
+	var/datum/gas_mixture/air1 = reactor ? reactor.airs[1] : 0
 
-	data["fuel_mix"] = air1.get_moles(GAS_PLASMA) + air1.get_moles(GAS_CONSTRICTED_PLASMA) + air1.get_moles(GAS_TRITIUM)
-	if(reactor.state == REACTOR_STATE_RUNNING)
-		data["mole_threshold_very_high"] = (reactor.reaction_rate * 18) + 20
-		data["mole_threshold_high"] = (reactor.reaction_rate * 12) + 20
+	data["fuel_mix"] = air1 ? air1.get_moles(GAS_PLASMA) + air1.get_moles(GAS_CONSTRICTED_PLASMA) + air1.get_moles(GAS_TRITIUM) : 0
+	if(reactor?.state == REACTOR_STATE_RUNNING)
+		data["mole_threshold_very_high"] = reactor ? (reactor.reaction_rate * 18) + 20 : 0
+		data["mole_threshold_high"] = reactor ? (reactor.reaction_rate * 12) + 20 : 0
 	else
 		data["mole_threshold_very_high"] = 120 //Just need to avoid that inital orange
 		data["mole_threshold_high"] = 80
 
-	data["o2"] = air1.get_moles(GAS_O2)
-	data["n2"] = air1.get_moles(GAS_N2)
-	data["co2"] = air1.get_moles(GAS_CO2)
-	data["plasma"] = air1.get_moles(GAS_PLASMA)
-	data["water_vapour"] = air1.get_moles(GAS_H2O)
-	data["nob"] = air1.get_moles(GAS_HYPERNOB)
-	data["n2o"] = air1.get_moles(GAS_NITROUS)
-	data["no2"] = air1.get_moles(GAS_NITRYL)
-	data["tritium"] = air1.get_moles(GAS_TRITIUM)
-	data["bz"] = air1.get_moles(GAS_BZ)
-	data["stim"] = air1.get_moles(GAS_STIMULUM)
-	data["pluoxium"] = air1.get_moles(GAS_PLUOXIUM)
-	data["constricted_plasma"] = air1.get_moles(GAS_CONSTRICTED_PLASMA)
-	data["nucleium"] = air1.get_moles(GAS_NUCLEIUM)
-	data["total_moles"] = air1.total_moles()
+	data["o2"] = air1 ? air1.get_moles(GAS_O2) : 0
+	data["n2"] = air1 ? air1.get_moles(GAS_N2) : 0
+	data["co2"] = air1 ? air1.get_moles(GAS_CO2) : 0
+	data["plasma"] = air1 ? air1.get_moles(GAS_PLASMA) : 0
+	data["water_vapour"] = air1 ? air1.get_moles(GAS_H2O) : 0
+	data["nob"] = air1 ? air1.get_moles(GAS_HYPERNOB) : 0
+	data["n2o"] = air1 ? air1.get_moles(GAS_NITROUS) : 0
+	data["no2"] = air1 ? air1.get_moles(GAS_NITRYL) : 0
+	data["tritium"] = air1 ? air1.get_moles(GAS_TRITIUM) : 0
+	data["bz"] = air1 ? air1.get_moles(GAS_BZ) : 0
+	data["stim"] = air1 ? air1.get_moles(GAS_STIMULUM) : 0
+	data["pluoxium"] = air1 ? air1.get_moles(GAS_PLUOXIUM) : 0
+	data["constricted_plasma"] = air1 ? air1.get_moles(GAS_CONSTRICTED_PLASMA) : 0
+	data["nucleium"] = air1 ? air1.get_moles(GAS_NUCLEIUM) : 0
+	data["total_moles"] = air1 ? air1.total_moles() : 0
 
-	data["gas_records"] = reactor.gas_records
+	data["gas_records"] = reactor ? reactor.gas_records : list()
 
 	return data
 
@@ -1649,7 +1660,7 @@ Control Rods
 				var/atom/target = get_edge_target_turf(M, get_dir(src, get_step_away(M, src)))
 				M.throw_at(target, 4, 2)
 				continue
-			if(isobj(AM) && !AM.anchored)
+			if(!QDELETED(AM) && isobj(AM) && !AM.anchored)
 				var/atom/target = get_edge_target_turf(AM, get_dir(src, get_step_away(AM, src)))
 				AM.throw_at(target, 4, 2)
 
@@ -1675,7 +1686,7 @@ Control Rods
 /obj/effect/anomaly/stormdrive/squall/proc/equalise(mob/living/A)
 	var/list/throwlist = orange(6, A)
 	for(var/obj/O in throwlist)
-		if(!O.anchored)
+		if(!QDELETED(O) && !O.anchored)
 			O.throw_at(A, 6, 3)
 	for(var/mob/living/M in throwlist)
 		if(!M.mob_negates_gravity())
@@ -1707,7 +1718,7 @@ Control Rods
 			M.apply_damage(20)
 			var/atom/target = get_edge_target_turf(M, get_dir(src, get_step_away(M, src)))
 			M.throw_at(target, 6, 5)
-		if(isobj(AM) && !AM.anchored)
+		if(!QDELETED(AM) && isobj(AM) && !AM.anchored)
 			var/atom/target = get_edge_target_turf(AM, get_dir(src, get_step_away(AM, src)))
 			AM.throw_at(target, 6, 5)
 

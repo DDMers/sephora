@@ -130,7 +130,7 @@
 		if(end == start)
 			return TRUE
 		var/turf/Temp = get_step_towards(end, start)
-		if(!CANATMOSPASS(end, Temp))
+		if(!TURFS_CAN_SHARE(end, Temp))
 			return FALSE
 		end = Temp
 

@@ -6,7 +6,6 @@
 	can_unwrench = TRUE
 
 	level = 1
-	interacts_with_air = TRUE
 	layer = GAS_SCRUBBER_LAYER
 	shift_underlay_only = FALSE
 
@@ -15,7 +14,7 @@
 /obj/machinery/atmospherics/components/unary/passive_vent/update_icon_nopipes()
 	cut_overlays()
 	if(showpipe)
-		var/image/cap = getpipeimage(icon, "vent_cap", initialize_directions)
+		var/image/cap = get_pipe_image(icon, "vent_cap", initialize_directions)
 		add_overlay(cap)
 	icon_state = "passive_vent"
 
@@ -38,7 +37,6 @@
 	active = internal.temperature_share(external, OPEN_HEAT_TRANSFER_COEFFICIENT) || active
 
 	if(active)
-		air_update_turf()
 		update_parents()
 
 /obj/machinery/atmospherics/components/unary/passive_vent/can_crawl_through()

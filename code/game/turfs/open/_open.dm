@@ -149,10 +149,11 @@
 	baseturfs = /turf/open/indestructible/airblock
 
 /turf/open/Initalize_Atmos(times_fired)
-	if(!istype(air,/datum/gas_mixture/turf))
-		air = new(2500,src)
-	air.copy_from_turf(src)
-	update_air_ref(planetary_atmos ? 1 : 2)
+	if(!blocks_air)
+		if(!istype(air,/datum/gas_mixture/turf))
+			air = new(2500,src)
+		air.copy_from_turf(src)
+		update_air_ref(planetary_atmos ? 1 : 2)
 
 	update_visuals()
 
@@ -167,7 +168,6 @@
 
 /turf/open/proc/TakeTemperature(temp)
 	air.set_temperature(air.return_temperature() + temp)
-	air_update_turf()
 
 /turf/open/proc/freon_gas_act()
 	for(var/obj/I in contents)

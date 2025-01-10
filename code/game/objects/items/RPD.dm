@@ -390,7 +390,7 @@ GLOBAL_LIST_INIT(fluid_duct_recipes, list(
 		return
 
 	if(mode & PAINT_MODE)
-		var/obj/machinery/atmospherics/M = A
+		var/obj/machinery/atmospherics/pipe/M = A
 		if(istype(M) && M.paintable)
 			to_chat(user, "<span class='notice'>You start painting \the [M] [paint_color]...</span>")
 			playsound(get_turf(src), 'sound/machines/click.ogg', 50, 1)
@@ -441,7 +441,7 @@ GLOBAL_LIST_INIT(fluid_duct_recipes, list(
 
 						P.update()
 						P.add_fingerprint(usr)
-						P.setPipingLayer(piping_layer)
+						P.set_piping_layer(piping_layer)
 						if(findtext("[queued_p_type]", "/obj/machinery/atmospherics/pipe") && !findtext("[queued_p_type]", "layer_manifold"))
 							P.add_atom_colour(GLOB.pipe_paint_colors[paint_color], FIXED_COLOUR_PRIORITY)
 						if(mode&WRENCH_MODE)

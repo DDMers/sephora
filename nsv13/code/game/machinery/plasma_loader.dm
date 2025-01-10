@@ -75,7 +75,7 @@
 
 			var/transfer_moles = air1_pressure*environment.return_volume()/(air1.return_temperature() * R_IDEAL_GAS_EQUATION)
 			loc.assume_air_moles(air1, transfer_moles)
-			air_update_turf(1)
+			air_update_turf()
 
 			non_phoron = TRUE //Stop putting suggestive variables in my code BOBBANZ1!
 

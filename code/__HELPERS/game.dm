@@ -549,7 +549,7 @@
 	if(!istype(T))
 		return
 	var/datum/gas_mixture/environment = T.return_air()
-	if(!istype(environment))
+	if(!environment)
 		return
 	var/pressure = environment.return_pressure()
 	if(pressure <= MAXIMUM_LAVALAND_EQUIPMENT_EFFECT_PRESSURE) //NSV13 makes PKAs work in space again

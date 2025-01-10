@@ -1,20 +1,27 @@
-
+#define IGNITE_TURF_LOW_POWER 8
+#define IGNITE_TURF_HIGH_POWER 22
 
 /atom/proc/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	return null
 
-
+/turf/open/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+	//if(prob(flammability * 100))
+	//	ignite_turf(rand(IGNITE_TURF_LOW_POWER,IGNITE_TURF_HIGH_POWER))
+	return ..()
 
 /turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
 	return
+
 
 /turf/open/hotspot_expose(exposed_temperature, exposed_volume, soh)
 	if(!air)
 		return
 
-	if (air.get_oxidation_power(exposed_temperature) < 0.5)
+	if (air.get_moles(GAS_O2) < 0.5 || air.get_moles(GAS_HYPERNOB) > REACTION_OPPRESSION_THRESHOLD)
 		return
-	var/has_fuel = (air.get_moles(GAS_PLASMA) + air.get_moles(GAS_CONSTRICTED_PLASMA)) > 0.5 || air.get_moles(GAS_TRITIUM) > 0.5 || air.get_fuel_amount(exposed_temperature) > 0.5 //NSV13 - constricted plasma
+
+	var/has_fuel = (air.get_moles(GAS_PLASMA) + air.get_moles(GAS_CONSTRICTED_PLASMA)) > 0.5 || air.get_moles(GAS_TRITIUM) > 0.5
+
 	if(active_hotspot)
 		if(soh)
 			if(has_fuel)
@@ -42,10 +49,9 @@
 
 	var/volume = 125
 	var/temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST
+	var/just_spawned = TRUE
 	var/bypassing = FALSE
 	var/visual_update_tick = 0
-	var/first_cycle = TRUE
-
 
 /obj/effect/hotspot/Initialize(mapload, starting_volume, starting_temperature)
 	. = ..()
@@ -54,9 +60,9 @@
 		volume = starting_volume
 	if(!isnull(starting_temperature))
 		temperature = starting_temperature
-	perform_exposure()
+	if(!perform_exposure())
+		return INITIALIZE_HINT_QDEL
 	setDir(pick(GLOB.cardinals))
-	air_update_turf()
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
@@ -65,13 +71,17 @@
 /obj/effect/hotspot/proc/perform_exposure()
 	var/turf/open/location = loc
 	if(!istype(location) || !(location.air))
-		return
+		return FALSE
+
+	//if(SEND_SIGNAL(location, COMSIG_TURF_HOTSPOT_EXPOSE) & SUPPRESS_FIRE)
+	//	return FALSE
+
+	if(location.active_hotspot != src)
+		qdel(location.active_hotspot)
 
 	location.active_hotspot = src
 
-	bypassing = !first_cycle && volume > CELL_VOLUME*0.95 || location.air.return_temperature() > FUSION_TEMPERATURE_THRESHOLD
-	if(first_cycle)
-		first_cycle = FALSE
+	bypassing = !just_spawned && (volume > CELL_VOLUME*0.95)
 
 	if(bypassing)
 		volume = location.air.reaction_results["fire"]*FIRE_GROWTH_RATE
@@ -89,7 +99,7 @@
 		var/atom/AT = A
 		if(!QDELETED(AT) && AT != src) // It's possible that the item is deleted in temperature_expose
 			AT.fire_act(temperature, volume)
-	return
+	return TRUE
 
 /obj/effect/hotspot/proc/gauss_lerp(x, x1, x2)
 	var/b = (x1 + x2) * 0.5
@@ -151,6 +161,10 @@
 
 #define INSUFFICIENT(path) (location.air.get_moles(path) < 0.5)
 /obj/effect/hotspot/process()
+	if(just_spawned)
+		just_spawned = FALSE
+		return
+
 	var/turf/open/location = loc
 	if(!istype(location))
 		qdel(src)
@@ -161,11 +175,15 @@
 	if((temperature < FIRE_MINIMUM_TEMPERATURE_TO_EXIST) || (volume <= 1))
 		qdel(src)
 		return
-	if(!location.air || location.air.get_oxidation_power() < 0.5 || (INSUFFICIENT(GAS_PLASMA) && INSUFFICIENT(GAS_TRITIUM) && INSUFFICIENT(GAS_CONSTRICTED_PLASMA) && location.air.get_fuel_amount() < 0.5)) //NSV13 - constricted plasma
+
+	//Not enough / nothing to burn
+	if(!location.air || (INSUFFICIENT(GAS_PLASMA) && INSUFFICIENT(GAS_TRITIUM)) && INSUFFICIENT(GAS_CONSTRICTED_PLASMA) || INSUFFICIENT(GAS_O2))
 		qdel(src)
 		return
 
-	perform_exposure()
+	if(!perform_exposure())
+		qdel(src)
+		return
 
 	if(bypassing)
 		icon_state = "3"
@@ -234,3 +252,5 @@
 	light_range = LIGHT_RANGE_FIRE
 
 #undef INSUFFICIENT
+#undef IGNITE_TURF_LOW_POWER
+#undef IGNITE_TURF_HIGH_POWER

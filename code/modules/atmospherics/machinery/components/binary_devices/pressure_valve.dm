@@ -62,8 +62,10 @@
 		if(air1.release_gas_to(air2, air1.return_pressure()))
 			update_parents()
 			is_gas_flowing = TRUE
+		else
+			is_gas_flowing = FALSE //unable to release gas (valve mechanism underpressurized, or etc)
 	else
-		is_gas_flowing = FALSE
+		is_gas_flowing = FALSE //simply not enough pressure to activate
 	update_icon_nopipes()
 
 /obj/machinery/atmospherics/components/binary/pressure_valve/proc/set_frequency(new_frequency)
@@ -119,7 +121,7 @@
 				investigate_log("was set to [target_pressure] kPa by [key_name(usr)]", INVESTIGATE_ATMOS)
 	update_icon()
 
-/obj/machinery/atmospherics/components/binary/pressure_valve/atmosinit()
+/obj/machinery/atmospherics/components/binary/pressure_valve/atmos_init()
 	. = ..()
 	if(frequency)
 		set_frequency(frequency)

@@ -19,7 +19,6 @@
 	var/datum/radio_frequency/radio_connection
 
 	level = 1
-	interacts_with_air = TRUE
 	layer = GAS_SCRUBBER_LAYER
 
 	pipe_state = "injector"
@@ -50,7 +49,7 @@
 	cut_overlays()
 	if(showpipe)
 		// everything is already shifted so don't shift the cap
-		add_overlay(getpipeimage(icon, "inje_cap", initialize_directions))
+		add_overlay(get_pipe_image(icon, "inje_cap", initialize_directions))
 
 	if(!nodes[1] || !on || !is_operational)
 		icon_state = "inje_off"
@@ -64,8 +63,6 @@
 		update_icon()
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/process_atmos()
-	..()
-
 	injecting = 0
 
 	if(!on || !is_operational || !isopenturf(loc))
@@ -76,8 +73,6 @@
 	if(air_contents != null)
 		if(air_contents.return_temperature() > 0)
 			loc.assume_air_ratio(air_contents, volume_rate / air_contents.return_volume())
-			air_update_turf()
-
 			update_parents()
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/proc/inject()
@@ -116,7 +111,7 @@
 	))
 	radio_connection.post_signal(src, signal)
 
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmosinit()
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos_init()
 	set_frequency(frequency)
 	broadcast_status()
 	..()

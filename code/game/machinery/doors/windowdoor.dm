@@ -47,7 +47,6 @@
 
 /obj/machinery/door/window/Destroy()
 	density = FALSE
-	air_update_turf(1)
 	QDEL_LIST(debris)
 	if(obj_integrity == 0)
 		playsound(src, "shatter", 70, 1)
@@ -156,7 +155,7 @@
 	sleep(10)
 
 	density = FALSE
-	air_update_turf(1)
+	air_update_turf()
 	update_freelook_sight()
 
 	if(operating == 1) //emag again
@@ -178,7 +177,7 @@
 	icon_state = base_state
 
 	density = TRUE
-	air_update_turf(1)
+	air_update_turf()
 	update_freelook_sight()
 	sleep(10)
 

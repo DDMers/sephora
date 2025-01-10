@@ -200,7 +200,6 @@
 		else
 			environment.adjust_moles(GAS_N2, transfer_moles * 0.7885)
 			environment.adjust_moles(GAS_O2, transfer_moles * 0.2115)
-		air_update_turf()
 		new /obj/effect/temp_visual/vent_wind(get_turf(src))
 
 /mob/living/simple_animal/bot/atmosbot/proc/scrub_toxins()

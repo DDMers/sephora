@@ -18,8 +18,6 @@
 
 	level = 1
 
-	interacts_with_air = TRUE
-
 	var/frequency = 0
 	var/id = null
 	var/datum/radio_frequency/radio_connection
@@ -47,7 +45,7 @@
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/update_icon_nopipes()
 	cut_overlays()
 	if(showpipe)
-		var/image/cap = getpipeimage(icon, "dpvent_cap", dir, piping_layer = piping_layer)
+		var/image/cap = get_pipe_image(icon, "dpvent_cap", dir, piping_layer = piping_layer)
 		add_overlay(cap)
 
 	if(welded)
@@ -60,7 +58,6 @@
 		icon_state = pump_direction ? "vent_out" : "vent_in"
 
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/process_atmos()
-	..()
 	if(welded || !is_operational || !isopenturf(loc))
 		return FALSE
 	if(!on)
@@ -85,11 +82,9 @@
 
 				loc.assume_air_moles(air1, transfer_moles)
 
-				air_update_turf()
+				
 
 				var/datum/pipeline/parent1 = parents[1]
-				if(!parent1)
-					return
 				parent1.update = PIPENET_UPDATE_STATUS_RECONCILE_NEEDED
 
 	else //external -> output
@@ -103,13 +98,12 @@
 
 			if(moles_delta > 0)
 				loc.transfer_air(air2, moles_delta)
-				air_update_turf()
+				
 
 				var/datum/pipeline/parent2 = parents[2]
 				parent2.update = PIPENET_UPDATE_STATUS_RECONCILE_NEEDED
 
-	//Radio remote control
-
+//Radio remote control
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/proc/set_frequency(new_frequency)
 	SSradio.remove_object(src, frequency)
 	frequency = new_frequency
@@ -133,7 +127,7 @@
 	))
 	radio_connection.post_signal(src, signal, filter = RADIO_ATMOSIA)
 
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/atmosinit()
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/atmos_init()
 	..()
 	if(frequency)
 		set_frequency(frequency)

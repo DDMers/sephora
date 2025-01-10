@@ -55,7 +55,6 @@
 	icon_state = "pump_[on && is_operational ? "on" : "off"]-[set_overlay_offset(piping_layer)]"
 
 /obj/machinery/atmospherics/components/binary/pump/process_atmos()
-//	..()
 	if(!on || !is_operational)
 		return
 	var/datum/gas_mixture/air1 = airs[1]
@@ -132,7 +131,7 @@
 	if(.)
 		update_icon()
 
-/obj/machinery/atmospherics/components/binary/pump/atmosinit()
+/obj/machinery/atmospherics/components/binary/pump/atmos_init()
 	..()
 	if(frequency)
 		set_frequency(frequency)

@@ -39,13 +39,13 @@
 	for(var/direction in GLOB.cardinals)
 		if(!(direction & initialize_directions))
 			continue
-		var/obj/machinery/atmospherics/node = findConnecting(direction)
+		var/obj/machinery/atmospherics/node = find_connecting(direction)
 
 		var/image/cap
 		if(node)
-			cap = getpipeimage(icon, "cap", direction, node.pipe_color, piping_layer = piping_layer, trinary = TRUE)
+			cap = get_pipe_image(icon, "cap", direction, node.pipe_color, piping_layer = piping_layer, trinary = TRUE)
 		else
-			cap = getpipeimage(icon, "cap", direction, piping_layer = piping_layer, trinary = TRUE)
+			cap = get_pipe_image(icon, "cap", direction, piping_layer = piping_layer, trinary = TRUE)
 
 		add_overlay(cap)
 
@@ -68,7 +68,6 @@
 	airs[3] = air3
 
 /obj/machinery/atmospherics/components/trinary/mixer/process_atmos()
-	..()
 	if(!on || !(nodes[1] && nodes[2] && nodes[3]) && !is_operational)
 		return
 

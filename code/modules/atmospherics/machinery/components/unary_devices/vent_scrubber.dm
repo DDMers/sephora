@@ -15,8 +15,6 @@
 	layer = GAS_SCRUBBER_LAYER
 	shift_underlay_only = FALSE
 
-	interacts_with_air = TRUE
-
 	var/scrubbing = SCRUBBING //0 = siphoning, 1 = scrubbing
 
 	var/filter_types = list(GAS_CO2, GAS_BZ)
@@ -66,7 +64,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/update_icon_nopipes()
 	cut_overlays()
 	if(showpipe)
-		var/image/cap = getpipeimage(icon, "scrub_cap", initialize_directions)
+		var/image/cap = get_pipe_image(icon, "scrub_cap", initialize_directions)
 		add_overlay(cap)
 	else
 		PIPING_LAYER_SHIFT(src, PIPING_LAYER_DEFAULT)
@@ -122,7 +120,7 @@
 
 	return TRUE
 
-/obj/machinery/atmospherics/components/unary/vent_scrubber/atmosinit()
+/obj/machinery/atmospherics/components/unary/vent_scrubber/atmos_init()
 	radio_filter_in = frequency==initial(frequency)?(RADIO_FROM_AIRALARM):null
 	radio_filter_out = frequency==initial(frequency)?(RADIO_TO_AIRALARM):null
 	if(frequency)
@@ -132,7 +130,6 @@
 	..()
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/process_atmos()
-	..()
 	if(welded || !is_operational)
 		return FALSE
 	if(!nodes[1] || !on)
@@ -150,16 +147,17 @@
 	var/datum/gas_mixture/environment = tile.return_air()
 	var/datum/gas_mixture/air_contents = airs[1]
 
+	if(!environment)
+		return FALSE
+
 	if(air_contents.return_pressure() >= 50 * ONE_ATMOSPHERE || !islist(filter_types))
 		return FALSE
 
 	if(scrubbing & SCRUBBING)
 		environment.scrub_into(air_contents, volume_rate/environment.return_volume(), filter_types)
-		tile.air_update_turf()
 
 	else //Just siphoning all air
 		environment.transfer_ratio_to(air_contents, volume_rate/environment.return_volume())
-		tile.air_update_turf()
 
 	update_parents()
 
@@ -225,7 +223,7 @@
 	return
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/power_change()
-	..()
+	. = ..()
 	update_icon_nopipes()
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/welder_act(mob/living/user, obj/item/I)

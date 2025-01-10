@@ -79,6 +79,16 @@
 /obj/machinery/atmospherics/components/unary/cryo_cell/Destroy()
 	QDEL_NULL(radio)
 	QDEL_NULL(beaker)
+	///Take the turf the cryotube is on
+	var/turf/T = get_turf(src)
+	if(T)
+		///Take the air composition of the turf
+		var/datum/gas_mixture/env = T.return_air()
+		///Take the air composition inside the cryotube
+		var/datum/gas_mixture/air1 = airs[1]
+		env.merge(air1)
+		T.air_update_turf()
+
 	return ..()
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/contents_explosion(severity, target)
@@ -174,6 +184,8 @@
 	open_machine()
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/process(delta_time)
+	..()
+
 	if(!on)
 		return
 
@@ -228,8 +240,6 @@
 	return 1
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/process_atmos()
-	..()
-
 	if(!on)
 		return
 
@@ -476,17 +486,18 @@
 /obj/machinery/atmospherics/components/unary/cryo_cell/default_change_direction_wrench(mob/user, obj/item/wrench/W)
 	. = ..()
 	if(.)
-		SetInitDirections()
+		set_init_directions()
 		var/obj/machinery/atmospherics/node = nodes[1]
 		if(node)
 			node.disconnect(src)
 			nodes[1] = null
-		nullifyPipenet(parents[1])
-		atmosinit()
+		if(parents[1])
+			nullify_pipenet(parents[1])
+		atmos_init()
 		node = nodes[1]
 		if(node)
-			node.atmosinit()
-			node.addMember(src)
+			node.atmos_init()
+			node.add_member(src)
 		SSair.add_to_rebuild_queue(src)
 
 #undef CRYOMOBS

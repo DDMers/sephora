@@ -14,6 +14,8 @@ It's like a regular ol' straight pipe, but you can turn it on and off.
 	interaction_flags_machine = INTERACT_MACHINE_OFFLINE | INTERACT_MACHINE_OPEN //Intentionally no allow_silicon flag
 	pipe_flags = PIPING_CARDINAL_AUTONORMALIZE
 
+	custom_reconciliation = TRUE
+
 	var/frequency = 0
 	var/id = null
 
@@ -33,6 +35,15 @@ It's like a regular ol' straight pipe, but you can turn it on and off.
 		if(parents[2])
 			parents[2].update = PIPENET_UPDATE_STATUS_RECONCILE_NEEDED
 	. = ..()
+
+// This is what handles the actual functionality of combining 2 pipenets when the valve is open
+// Basically when a pipenet updates it will consider both sides to be the same for the purpose of the gas update
+/obj/machinery/atmospherics/components/binary/valve/return_pipenets_for_reconcilation(datum/pipeline/requester)
+	. = ..()
+	if(!on)
+		return
+	. |= parents[1]
+	. |= parents[2]
 
 /obj/machinery/atmospherics/components/binary/valve/update_icon_nopipes(animation = FALSE)
 	normalize_cardinal_directions()

@@ -96,7 +96,7 @@
 			return
 
 		var/heat_capacity = env.heat_capacity()
-		var/requiredPower = abs(env.return_temperature() - targetTemperature) * heat_capacity
+		var/requiredPower = abs(env.return_temperature() - targetTemperature)
 		requiredPower = min(requiredPower, heatingPower)
 
 		if(requiredPower < 1)
@@ -107,7 +107,6 @@
 			deltaTemperature *= -1
 		if(deltaTemperature)
 			env.set_temperature(env.return_temperature() + deltaTemperature)
-			air_update_turf()
 		cell.use(requiredPower / efficiency)
 	else
 		on = FALSE
@@ -189,13 +188,10 @@
 	data["minTemp"] = max(settableTemperatureMedian - settableTemperatureRange - T0C, TCMB)
 	data["maxTemp"] = settableTemperatureMedian + settableTemperatureRange - T0C
 
-	var/turf/L = get_turf(loc)
 	var/curTemp
-	if(istype(L))
-		var/datum/gas_mixture/env = L.return_air()
-		curTemp = env.return_temperature()
-	else if(isturf(L))
-		curTemp = L.return_temperature()
+	if(isopenturf(get_turf(src)))
+		var/datum/gas_mixture/env = return_air()
+		curTemp = env?.return_temperature()
 	if(isnull(curTemp))
 		data["currentTemp"] = "N/A"
 	else
@@ -212,7 +208,9 @@
 			usr.visible_message("<span class='notice'>[usr] switches [on ? "on" : "off"] \the [src].</span>", "<span class='notice'>You switch [on ? "on" : "off"] \the [src].</span>")
 			update_icon()
 			if (on)
-				SSair.atmos_air_machinery += src
+				SSair.start_processing_machine(src) //NSV13 - Citadel auxmos
+			else
+				SSair.stop_processing_machine(src)
 			. = TRUE
 		if("mode")
 			setMode = params["mode"]

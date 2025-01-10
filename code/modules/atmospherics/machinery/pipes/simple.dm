@@ -22,7 +22,7 @@
 		pipe_interference_group = "atmos-[piping_layer]"\
 	)
 
-/obj/machinery/atmospherics/pipe/simple/SetInitDirections()
+/obj/machinery/atmospherics/pipe/simple/set_init_directions()
 	if(dir in GLOB.diagonals)
 		initialize_directions = dir
 		return
@@ -33,6 +33,7 @@
 			initialize_directions = EAST|WEST
 
 /obj/machinery/atmospherics/pipe/simple/update_icon()
+	. = ..()
 	icon_state = "pipe[nodes[1] ? "1" : "0"][nodes[2] ? "1" : "0"]-[piping_layer]"
 	update_layer()
 	update_alpha()

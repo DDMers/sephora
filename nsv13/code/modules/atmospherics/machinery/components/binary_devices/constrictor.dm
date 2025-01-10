@@ -100,22 +100,22 @@
 		if(node2)
 			node2.disconnect(src)
 			nodes[2] = null
-			nullifyPipenet(parents[2])
+			nullify_pipenet(parents[2])
 		if(node1)
 			node1.disconnect(src)
 			nodes[1] = null
-			nullifyPipenet(parents[1])
+			nullify_pipenet(parents[1])
 
-		SetInitDirections()
-		atmosinit()
+		set_init_directions()
+		atmos_init()
 		node1 = nodes[1]
 		if(node1)
-			node1.atmosinit()
-			node1.addMember(src)
+			node1.atmos_init()
+			node1.add_member(src)
 		node2 = nodes[2]
 		if(node2)
-			node2.atmosinit()
-			node2.addMember(src)
+			node2.atmos_init()
+			node2.add_member(src)
 		SSair.add_to_rebuild_queue(src)
 		update_icon(TRUE)
 	return TRUE

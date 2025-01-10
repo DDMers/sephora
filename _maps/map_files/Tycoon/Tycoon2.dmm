@@ -41401,7 +41401,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	filter_types = list(/datum/gas/nucleium);
+	filter_types = list("nucleium");
 	name = "Nucleium FTL Fuel Scrubber #3"
 	},
 /turf/open/floor/monotile/steel,
@@ -42822,7 +42822,7 @@
 "gCM" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8;
-	filter_types = list(/datum/gas/nucleium);
+	filter_types = list("nucleium");
 	name = "Nucleium FTL Fuel Scrubber #1"
 	},
 /turf/open/floor/monotile/steel,
@@ -53163,7 +53163,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8;
-	filter_types = list(/datum/gas/nucleium);
+	filter_types = list("nucleium");
 	name = "Nucleium FTL Fuel Scrubber #2"
 	},
 /turf/open/floor/monotile/steel,

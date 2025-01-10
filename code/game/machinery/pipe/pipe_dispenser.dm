@@ -47,7 +47,7 @@
 				return
 			var/p_dir = text2num(href_list["dir"])
 			var/obj/item/pipe/P = new (loc, p_type, p_dir)
-			P.setPipingLayer(piping_layer)
+			P.set_piping_layer(piping_layer)
 			P.add_fingerprint(usr)
 			wait = world.time + 10
 	if(href_list["makemeter"])
@@ -95,7 +95,7 @@
 
 //Allow you to drag-drop disposal pipes and transit tubes into it
 /obj/machinery/pipedispenser/disposal/MouseDrop_T(obj/structure/pipe, mob/usr)
-	if(!usr.incapacitated())
+	if(usr.incapacitated())
 		return
 
 	if (!istype(pipe, /obj/structure/disposalconstruct) && !istype(pipe, /obj/structure/c_transit_tube) && !istype(pipe, /obj/structure/c_transit_tube_pod))

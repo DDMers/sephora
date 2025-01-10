@@ -8,10 +8,8 @@
 	greyscale_config = /datum/greyscale_config/canister/hazard
 	greyscale_colors = "#ffff00#000000"
 	density = TRUE
-
-	var/icon/canister_overlay_file = 'icons/obj/atmospherics/canisters.dmi'
-
 	var/valve_open = FALSE
+	var/obj/machinery/atmospherics/components/binary/passive_gate/pump
 	var/release_log = ""
 
 	volume = 1000
@@ -38,7 +36,9 @@
 	var/restricted = FALSE
 	req_access = list()
 
-	var/update = 0
+	var/icon/canister_overlay_file = 'icons/obj/atmospherics/canisters.dmi'
+
+	//list of canister types for relabeling
 	var/static/list/label2types = list(
 		"n2" = /obj/machinery/portable_atmospherics/canister/nitrogen,
 		"o2" = /obj/machinery/portable_atmospherics/canister/oxygen,
@@ -156,7 +156,6 @@
 	greyscale_config = /datum/greyscale_config/canister/double_stripe
 	greyscale_colors = "#4c4e4d#f7d5d3"
 
-
 /obj/machinery/portable_atmospherics/canister/proc/get_time_left()
 	if(timing)
 		. = round(max(0, valve_timer - world.time) / 10, 1)
@@ -200,24 +199,42 @@
 	if(href_list[VV_HK_MODIFY_CANISTER_GAS])
 		usr.client.modify_canister_gas(src)
 
-/obj/machinery/portable_atmospherics/canister/New(loc, datum/gas_mixture/existing_mixture)
+/obj/machinery/portable_atmospherics/canister/Initialize(mapload, datum/gas_mixture/existing_mixture)
 	. = ..()
 	if(existing_mixture)
 		air_contents.copy_from(existing_mixture)
 	else
 		create_gas()
+	pump = new(src, FALSE)
+	pump.on = TRUE
+	pump.machine_stat = 0
+	SSair.add_to_rebuild_queue(pump)
+
+/obj/machinery/portable_atmospherics/canister/Initialize(mapload)
+	. = ..()
 	update_icon()
 
+/obj/machinery/portable_atmospherics/canister/Destroy()
+	qdel(pump)
+	pump = null
+	return ..()
 
 /obj/machinery/portable_atmospherics/canister/proc/create_gas()
 	if(gas_type)
 		if(starter_temp)
 			air_contents.set_temperature(starter_temp)
-		if(!air_contents.return_volume())
-			CRASH("Auxtools is failing somehow! Gas with pointer [air_contents._extools_pointer_gasmixture] is not valid.")
-		air_contents.set_moles(gas_type, (maximum_pressure * filled) * air_contents.return_volume() / (R_IDEAL_GAS_EQUATION * air_contents.return_temperature()))
+		if(air_contents.return_volume() == 0)
+			CRASH("Air content volume is zero, this shouldn't be the case volume is: [volume]!")
+		if(air_contents.return_temperature() == 0)
+			CRASH("Air content temperature is zero, this shouldn't be the case!")
+		if (gas_type)
+			air_contents.set_moles(gas_type, (maximum_pressure * filled) * air_contents.return_volume() / (R_IDEAL_GAS_EQUATION * air_contents.return_temperature()))
 
 /obj/machinery/portable_atmospherics/canister/air/create_gas()
+	if(air_contents.return_volume() == 0)
+		CRASH("Air content volume is zero, this shouldn't be the case volume is: [volume]!")
+	if(air_contents.return_temperature() == 0)
+		CRASH("Air content temperature is zero, this shouldn't be the case!")
 	air_contents.set_temperature(starter_temp)
 	air_contents.set_moles(GAS_O2, (O2STANDARD * maximum_pressure * filled) * air_contents.return_volume() / (R_IDEAL_GAS_EQUATION * air_contents.return_temperature()))
 	air_contents.set_moles(GAS_N2, (N2STANDARD * maximum_pressure * filled) * air_contents.return_volume() / (R_IDEAL_GAS_EQUATION * air_contents.return_temperature()))
@@ -231,10 +248,6 @@
 	if(machine_stat & BROKEN)
 		. += mutable_appearance(canister_overlay_file, "broken")
 		return
-
-	var/last_update = update
-	update = 0
-
 	if(holding)
 		. += mutable_appearance(canister_overlay_file, "can-open")
 	if(connected_port)
@@ -247,16 +260,12 @@
 			. += mutable_appearance(canister_overlay_file, "can-2")
 		if((5 * ONE_ATMOSPHERE) to (10 * ONE_ATMOSPHERE))
 			. += mutable_appearance(canister_overlay_file, "can-1")
-		if((10) to (5 * ONE_ATMOSPHERE))
+		else
 			. += mutable_appearance(canister_overlay_file, "can-0")
-
-	if(update == last_update)
-		return
 
 /obj/machinery/portable_atmospherics/canister/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(exposed_temperature > temperature_resistance)
 		take_damage(5, BURN, 0)
-
 
 /obj/machinery/portable_atmospherics/canister/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -291,9 +300,9 @@
 
 /obj/machinery/portable_atmospherics/canister/proc/canister_break()
 	disconnect()
+	var/datum/gas_mixture/expelled_gas = air_contents.remove(air_contents.total_moles())
 	var/turf/T = get_turf(src)
-	T.assume_air(air_contents)
-	air_update_turf()
+	T.assume_air(expelled_gas)
 
 	set_machine_stat(machine_stat | BROKEN)
 	density = FALSE
@@ -331,8 +340,7 @@
 		var/turf/T = get_turf(src)
 		var/datum/gas_mixture/target_air = holding ? holding.air_contents : T.return_air()
 
-		if(air_contents.release_gas_to(target_air, release_pressure) && !holding)
-			air_update_turf()
+		air_contents.release_gas_to(target_air, release_pressure)
 	update_icon()
 
 /obj/machinery/portable_atmospherics/canister/ui_status(mob/user)
@@ -484,3 +492,48 @@
 				. = TRUE
 	if(.)
 		update_icon()
+
+
+/* yog- ADMEME CANISTERS */
+
+/// Canister 1 Kelvin below the fusion point. Is highly unoptimal, do not spawn to start fusion, only good for testing low instability mixes.
+/obj/machinery/portable_atmospherics/canister/fusion_test
+	name = "Fusion Test Canister"
+	desc = "This should never be spawned in game."
+	greyscale_config = /datum/greyscale_config/canister/hazard
+	greyscale_colors = "#0099ff#ff3300"
+
+/obj/machinery/portable_atmospherics/canister/fusion_test/create_gas()
+	air_contents.set_moles(GAS_TRITIUM, 10)
+	air_contents.set_moles(GAS_PLASMA, 500)
+	air_contents.set_moles(GAS_CO2, 500)
+	air_contents.set_moles(GAS_NITROUS, 100)
+	air_contents.set_temperature(FUSION_TEMPERATURE_THRESHOLD)
+
+/// Canister 1 Kelvin below the fusion point. Contains far too much plasma. Only good for adding more fuel to ongoing fusion reactions.
+ /obj/machinery/portable_atmospherics/canister/fusion_test_2
+	name = "Fusion Test Canister"
+	desc = "This should never be spawned in game."
+	greyscale_config = /datum/greyscale_config/canister/hazard
+	greyscale_colors = "#0099ff#ff3300"
+
+/obj/machinery/portable_atmospherics/canister/fusion_test_2/create_gas()
+	air_contents.set_moles(GAS_TRITIUM, 10)
+	air_contents.set_moles(GAS_PLASMA, 15000)
+	air_contents.set_moles(GAS_CO2, 1500)
+	air_contents.set_moles(GAS_NITROUS, 100)
+	air_contents.set_temperature(FUSION_TEMPERATURE_THRESHOLD - 1)
+
+/// Canister at the perfect conditions to start and continue fusion for a long time.
+/obj/machinery/portable_atmospherics/canister/fusion_test_3
+	name = "Fusion Test Canister"
+	desc = "This should never be spawned in game."
+	greyscale_config = /datum/greyscale_config/canister/hazard
+	greyscale_colors = "#0099ff#ff3300"
+
+/obj/machinery/portable_atmospherics/canister/fusion_test_3/create_gas()
+	air_contents.set_moles(GAS_TRITIUM, 1000)
+	air_contents.set_moles(GAS_PLASMA, 4500)
+	air_contents.set_moles(GAS_CO2, 1500)
+	air_contents.set_temperature(1000000)
+

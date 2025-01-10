@@ -14,16 +14,15 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 		qdel(thing, force=TRUE)
 
 	if(turf_type)
-		var/turf/newT = ChangeTurf(turf_type, baseturf_type, flags)
-		newT.ImmediateCalculateAdjacentTurfs()
+		ChangeTurf(turf_type, baseturf_type, flags)
 
-/turf/proc/copyTurf(turf/T)
+/turf/proc/copyTurf(turf/T, copy_air, flags)
 	if(T.type != type)
 		var/obj/O
 		if(underlays.len)	//we have underlays, which implies some sort of transparency, so we want to a snapshot of the previous turf as an underlay
 			O = new()
 			O.underlays.Add(T)
-		T.ChangeTurf(type)
+		T.ChangeTurf(type, null, flags)
 		if(underlays.len)
 			T.underlays = O.underlays
 	if(T.icon_state != icon_state)
@@ -151,6 +150,9 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	return W
 
 /turf/open/ChangeTurf(path, list/new_baseturfs, flags)
+	//don't
+	if(!SSair.initialized)
+		return ..()
 	if ((flags & CHANGETURF_INHERIT_AIR) && ispath(path, /turf/open))
 		var/datum/gas_mixture/stashed_air = new()
 		stashed_air.copy_from(air)
@@ -159,19 +161,19 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 			QDEL_NULL(stashed_air)
 			return
 		var/turf/open/newTurf = .
-		newTurf.air.copy_from(stashed_air)
-		newTurf.update_air_ref(planetary_atmos ? 1 : 2)
-		QDEL_NULL(stashed_air)
+		if (!istype(newTurf.air, /datum/gas_mixture/immutable/space))
+			QDEL_NULL(newTurf.air)
+			newTurf.air = stashed_air
+			update_air_ref(planetary_atmos ? 1 : 2)
 	else
-		flags |= CHANGETURF_RECALC_ADJACENT
 		if(ispath(path,/turf/closed))
+			flags |= CHANGETURF_RECALC_ADJACENT
+			update_air_ref(-1)
 			. = ..()
-			var/turf/open/newTurf = .
-			newTurf.update_air_ref(-1)
 		else
 			. = ..()
-			var/turf/open/newTurf = .
-			newTurf.Initalize_Atmos(0)
+			if(!istype(air,/datum/gas_mixture))
+				Initalize_Atmos(0)
 
 /turf/closed/ChangeTurf(path, list/new_baseturfs, flags)
 	if(ispath(path,/turf/open))
@@ -274,7 +276,7 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 
 // Copy an existing turf and put it on top
 // Returns the new turf
-/turf/proc/CopyOnTop(turf/copytarget, ignore_bottom=1, depth=INFINITY, copy_air = FALSE)
+/turf/proc/CopyOnTop(turf/copytarget, ignore_bottom=1, depth=INFINITY, copy_air = FALSE, flags)
 	var/list/new_baseturfs = list()
 	new_baseturfs += baseturfs
 	new_baseturfs += type
@@ -291,7 +293,7 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 			target_baseturfs -= new_baseturfs & GLOB.blacklisted_automated_baseturfs
 			new_baseturfs += target_baseturfs
 
-	var/turf/newT = copytarget.copyTurf(src, copy_air)
+	var/turf/newT = copytarget.copyTurf(src, copy_air, flags)
 	newT?.baseturfs = new_baseturfs
 	return newT
 

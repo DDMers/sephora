@@ -4,19 +4,26 @@
 	icon_state = "pscrubber:0"
 	density = TRUE
 
-
-
 	var/on = FALSE
 	var/volume_rate = 1000
 	var/overpressure_m = 80
 	volume = 1000
 
-	var/list/scrubbing = list(GAS_PLASMA, GAS_CO2, GAS_NITROUS, GAS_BZ, GAS_NITRYL, GAS_TRITIUM, GAS_HYPERNOB, GAS_H2O, GAS_CONSTRICTED_PLASMA, GAS_NUCLEIUM) //NSV13 - constricted plasma and nucleium
+	var/list/scrubbing = list(
+		GAS_PLASMA,
+		GAS_CO2,
+		GAS_NITROUS,
+		GAS_BZ,
+		GAS_NITRYL,
+		GAS_TRITIUM,
+		GAS_HYPERNOB,
+		GAS_H2O,
+		GAS_CONSTRICTED_PLASMA,
+		GAS_NUCLEIUM) //NSV13 - constricted plasma and nucleium
 
 /obj/machinery/portable_atmospherics/scrubber/Destroy()
 	var/turf/T = get_turf(src)
 	T.assume_air(air_contents)
-	air_update_turf()
 	return ..()
 
 /obj/machinery/portable_atmospherics/scrubber/update_icon()
@@ -39,13 +46,11 @@
 		var/turf/T = get_turf(src)
 		scrub(T.return_air())
 
-/obj/machinery/portable_atmospherics/scrubber/proc/scrub(var/datum/gas_mixture/mixture)
+/obj/machinery/portable_atmospherics/scrubber/proc/scrub(datum/gas_mixture/mixture)
 	if(air_contents.return_pressure() >= overpressure_m * ONE_ATMOSPHERE)
 		return
 
 	mixture.scrub_into(air_contents, volume_rate / mixture.return_volume(), scrubbing)
-	if(!holding)
-		air_update_turf()
 
 /obj/machinery/portable_atmospherics/scrubber/emp_act(severity)
 	. = ..()
@@ -150,5 +155,4 @@
 	if(default_unfasten_wrench(user, W))
 		if(!movable)
 			on = FALSE
-	else
-		return ..()
+	return ..()

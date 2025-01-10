@@ -75,10 +75,6 @@ All ShuttleMove procs go here
 	else
 		update_air_ref(-1)
 
-	//Air stuff
-	newT.air_update_turf(TRUE)
-	air_update_turf(TRUE)
-
 	return TRUE
 
 // Called on the new turf after everything has been moved
@@ -289,17 +285,17 @@ All ShuttleMove procs go here
 					break
 
 			if(!connected)
-				nullifyNode(i)
+				nullify_node(i)
 
 		if(!nodes[i])
 			missing_nodes = TRUE
 
 	if(missing_nodes)
-		atmosinit()
+		atmos_init()
 		for(var/obj/machinery/atmospherics/A in pipeline_expansion())
-			A.atmosinit()
-			if(A.returnPipenet())
-				A.addMember(src)
+			A.atmos_init()
+			if(A.return_pipenet())
+				A.add_member(src)
 		SSair.add_to_rebuild_queue(src)
 	else
 		// atmosinit() calls update_icon(), so we don't need to call it

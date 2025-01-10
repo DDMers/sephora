@@ -77,9 +77,9 @@
 
 	minor_alarms -= zone
 	priority_alarms -= zone
-	if(severity == "severe")
+	if(severity == ATMOS_ALARM_SEVERE)
 		priority_alarms += zone
-	else if (severity == "minor")
+	else if (severity == ATMOS_ALARM_MINOR)
 		minor_alarms += zone
 	update_icon()
 	ui_update()

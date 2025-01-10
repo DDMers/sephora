@@ -138,5 +138,3 @@
 	for(var/turf/T as() in RANGE_TURFS(1,user))
 		env = T.return_air()
 		env.set_temperature(env.return_temperature() + 5 )
-		T.air_update_turf()
-	L.air_update_turf()

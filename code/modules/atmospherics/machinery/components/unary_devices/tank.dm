@@ -14,23 +14,23 @@
 	var/volume = 10000 //in liters
 	var/gas_type = null
 
-/obj/machinery/atmospherics/components/unary/tank/New()
-	..()
+/obj/machinery/atmospherics/components/unary/tank/Initialize(mapload)
+	. = ..()
 	var/datum/gas_mixture/air_contents = airs[1]
 	air_contents.set_volume(volume)
 	air_contents.set_temperature(T20C)
 	if(gas_type)
 		air_contents.set_moles(gas_type, AIR_CONTENTS)
 		name = "[name] ([GLOB.gas_data.names[gas_type]])"
-	setPipingLayer(piping_layer)
+	set_piping_layer(piping_layer)
 
 
 /obj/machinery/atmospherics/components/unary/tank/air
 	icon_state = "grey"
 	name = "pressure tank (Air)"
 
-/obj/machinery/atmospherics/components/unary/tank/air/New()
-	..()
+/obj/machinery/atmospherics/components/unary/tank/air/Initialize(mapload)
+	. = ..()
 	var/datum/gas_mixture/air_contents = airs[1]
 	air_contents.set_moles(GAS_O2, AIR_CONTENTS * 0.2)
 	air_contents.set_moles(GAS_N2, AIR_CONTENTS * 0.8)

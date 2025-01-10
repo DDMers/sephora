@@ -82,12 +82,12 @@
 	else
 		icon_state = icon_state_off
 
-	add_overlay(getpipeimage(icon, "pipe", dir, , piping_layer))
+	add_overlay(get_pipe_image(icon, "pipe", dir, , piping_layer))
 
 /obj/machinery/atmospherics/components/unary/thermomachine/update_icon_nopipes()
 	cut_overlays()
 	if(showpipe)
-		add_overlay(getpipeimage(icon, "scrub_cap", initialize_directions))
+		add_overlay(get_pipe_image(icon, "scrub_cap", initialize_directions))
 
 /obj/machinery/atmospherics/components/unary/thermomachine/examine(mob/user)
 	. = ..()
@@ -108,7 +108,6 @@
 	balloon_alert(user, "You set the target temperature to [target_temperature] K.")
 
 /obj/machinery/atmospherics/components/unary/thermomachine/process_atmos()
-	..()
 	if(!is_operational || !on || !nodes[1])  //if it has no power or its switched off, dont process atmos
 		return
 	var/datum/gas_mixture/air_contents = airs[1]
@@ -136,6 +135,7 @@
 /obj/machinery/atmospherics/components/unary/thermomachine/attackby(obj/item/I, mob/user, params)
 	if(!on)
 		if(default_deconstruction_screwdriver(user, icon_state_open, icon_state_off, I))
+			change_pipe_connection(panel_open)
 			return
 	if(default_change_direction_wrench(user, I))
 		return
@@ -146,21 +146,8 @@
 /obj/machinery/atmospherics/components/unary/thermomachine/default_change_direction_wrench(mob/user, obj/item/I)
 	if(!..())
 		return FALSE
-	SetInitDirections()
-	var/obj/machinery/atmospherics/node = nodes[1]
-	if(node)
-		node.disconnect(src)
-		nodes[1] = null
-	//Sometimes this gets called more than once per atmos tick; i.e. before the incoming build_network call by SSAIR_REBUILD_PIPENETS, so we check this here.
-	if(parents[1])
-		nullifyPipenet(parents[1])
-
-	atmosinit()
-	node = nodes[1]
-	if(node)
-		node.atmosinit()
-		node.addMember(src)
-	SSair.add_to_rebuild_queue(src)
+	set_init_directions()
+	update_icon(UPDATE_ICON)
 	return TRUE
 
 /obj/machinery/atmospherics/components/unary/thermomachine/ui_status(mob/user)

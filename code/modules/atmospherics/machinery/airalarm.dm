@@ -277,7 +277,7 @@
 	var/datum/tlv/cur_tlv
 
 	data["environment_data"] = list()
-	var/pressure = environment.return_pressure()
+	var/pressure = environment?.return_pressure()
 	cur_tlv = TLV["pressure"]
 	data["environment_data"] += list(list(
 							"name" = "Pressure",
@@ -285,7 +285,7 @@
 							"unit" = "kPa",
 							"danger_level" = cur_tlv.get_danger_level(pressure)
 	))
-	var/temperature = environment.return_temperature()
+	var/temperature = environment?.return_temperature()
 	cur_tlv = TLV["temperature"]
 	data["environment_data"] += list(list(
 							"name" = "Temperature",
@@ -293,17 +293,17 @@
 							"unit" = "K ([round(temperature - T0C, 0.1)]C)",
 							"danger_level" = cur_tlv.get_danger_level(temperature)
 	))
-	var/total_moles = environment.total_moles()
-	var/partial_pressure = R_IDEAL_GAS_EQUATION * environment.return_temperature() / environment.return_volume()
-	for(var/gas_id in environment.get_gases())
+	var/total_moles = environment?.total_moles()
+	var/partial_pressure = R_IDEAL_GAS_EQUATION * environment?.return_temperature() / environment?.return_volume()
+	for(var/gas_id in environment?.get_gases())
 		if(!(gas_id in TLV)) // We're not interested in this gas, it seems.
 			continue
 		cur_tlv = TLV[gas_id]
 		data["environment_data"] += list(list(
 								"name" = GLOB.gas_data.names[gas_id],
-								"value" = environment.get_moles(gas_id) / total_moles * 100,
+								"value" = environment?.get_moles(gas_id) / total_moles * 100,
 								"unit" = "%",
-								"danger_level" = cur_tlv.get_danger_level(environment.get_moles(gas_id) * partial_pressure)
+								"danger_level" = cur_tlv.get_danger_level(environment?.get_moles(gas_id) * partial_pressure)
 		))
 
 	if(!locked || user.has_unlimited_silicon_privilege)
@@ -658,13 +658,15 @@
 	if((machine_stat & (NOPOWER|BROKEN)) || shorted)
 		return
 
-	var/turf/location = get_turf(src)
-	if(!location)
+	if(!isopenturf(get_turf(src)))
 		return
 
 	var/datum/tlv/cur_tlv
 
-	var/datum/gas_mixture/environment = location.return_air()
+	var/datum/gas_mixture/environment = return_air()
+	if(!environment)
+		return
+
 	var/partial_pressure = R_IDEAL_GAS_EQUATION * environment.return_temperature() / environment.return_volume()
 
 	cur_tlv = TLV["pressure"]
@@ -703,12 +705,12 @@
 	))
 	var/area/A = get_area(src)
 	if(alert_level==2)
-		alert_signal.data["alert"] = "severe"
+		alert_signal.data["alert"] = ATMOS_ALARM_SEVERE
 		A.set_vacuum_alarm_effect()
 	else if (alert_level==1)
-		alert_signal.data["alert"] = "minor"
+		alert_signal.data["alert"] = ATMOS_ALARM_MINOR
 	else if (alert_level==0)
-		alert_signal.data["alert"] = "clear"
+		alert_signal.data["alert"] = ATMOS_ALARM_CLEAR
 		A.unset_vacuum_alarm_effect()
 
 	frequency.post_signal(src, alert_signal, range = -1)

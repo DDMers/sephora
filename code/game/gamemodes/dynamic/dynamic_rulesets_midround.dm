@@ -414,7 +414,7 @@
 				continue // No parent vent
 			// Stops Aliens getting stuck in small networks.
 			// See: Security, Virology
-			if(length(temp_vent_parent.other_atmosmch) > 20)
+			if(length(temp_vent_parent.other_atmos_machines) > 20)
 				vents += temp_vent
 	if(!length(vents))
 		log_game("DYNAMIC: [ruletype] ruleset [name] execute failed due to no valid spawn locations.")

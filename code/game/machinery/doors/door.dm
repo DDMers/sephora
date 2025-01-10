@@ -62,7 +62,7 @@
 		flags_1 &= ~PREVENT_CLICK_UNDER_1
 	set_init_door_layer()
 	update_freelook_sight()
-	air_update_turf(1)
+	air_update_turf()
 	GLOB.airlocks += src
 	spark_system = new /datum/effect_system/spark_spread
 	spark_system.set_up(2, 1, src)
@@ -96,6 +96,7 @@
 	if(spark_system)
 		qdel(spark_system)
 		spark_system = null
+	air_update_turf()
 	return ..()
 
 /obj/machinery/door/Bumped(atom/movable/AM)
@@ -222,9 +223,9 @@
 	// okay this is a bit hacky. First, we set density to 0 and recalculate our adjacent turfs
 	density = FALSE
 	flags_1 &= ~PREVENT_CLICK_UNDER_1//NSV make it so prevent_click_under doesn't need density
-	T.ImmediateCalculateAdjacentTurfs()
+	var/list/adj_turfs = TURF_SHARES(T)
 	// then we use those adjacent turfs to figure out what the difference between the lowest and highest pressures we'd be holding is
-	for(var/turf/open/T2 in T.atmos_adjacent_turfs)
+	for(var/turf/open/T2 in adj_turfs)
 		if((flags_1 & ON_BORDER_1) && get_dir(src, T2) != dir)
 			continue
 		var/moles = T2.air.total_moles()
@@ -235,7 +236,6 @@
 	density = TRUE
 	if(!(flags_1 & ON_BORDER_1))//NSV but not border firelocks
 		flags_1 |= PREVENT_CLICK_UNDER_1//NSV make it so prevent_click_under doesn't need density
-	T.ImmediateCalculateAdjacentTurfs() // alright lets put it back
 	return max_moles - min_moles > 20
 
 /obj/machinery/door/attackby(obj/item/I, mob/user, params)
@@ -322,7 +322,7 @@
 	update_icon()
 	set_opacity(0)
 	operating = FALSE
-	air_update_turf(1)
+	air_update_turf()
 	update_freelook_sight()
 	if(autoclose)
 		spawn(autoclose)
@@ -358,7 +358,7 @@
 	if(visible && !glass)
 		set_opacity(1)
 	operating = FALSE
-	air_update_turf(1)
+	air_update_turf()
 	update_freelook_sight()
 	if(safe)
 		CheckForMobs()

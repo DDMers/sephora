@@ -147,8 +147,23 @@
 #define ATMOS_ADJACENT_ANY					(1<<0)
 #define ATMOS_ADJACENT_FIRELOCK				(1<<1)
 
-#define CANATMOSPASS(A, O) ( A.CanAtmosPass == ATMOS_PASS_PROC ? A.CanAtmosPass(O) : ( A.CanAtmosPass == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPass ) )
-#define CANVERTICALATMOSPASS(A, O) ( A.CanAtmosPassVertical == ATMOS_PASS_PROC ? A.CanAtmosPass(O, TRUE) : ( A.CanAtmosPassVertical == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPassVertical ) )
+#ifdef TESTING
+GLOBAL_LIST_INIT(atmos_adjacent_savings, list(0,0))
+#define CALCULATE_ADJACENT_TURFS(T, state) if (SSair.adjacent_rebuild[T]) { GLOB.atmos_adjacent_savings[1] += 1 } else { GLOB.atmos_adjacent_savings[2] += 1; SSair.adjacent_rebuild[T] = state}
+#else
+#define CALCULATE_ADJACENT_TURFS(T, state) SSair.adjacent_rebuild[T] = state
+#endif
+
+//If you're doing spreading things related to atmos, DO NOT USE CANATMOSPASS, IT IS NOT CHEAP. use this instead, the info is cached after all. it's tweaked just a bit to allow for circular checks
+#define TURFS_CAN_SHARE(T1, T2) (LAZYACCESS(T2.atmos_adjacent_turfs, T1) || LAZYLEN(T1.atmos_adjacent_turfs & T2.atmos_adjacent_turfs))
+//Use this to see if a turf is fully blocked or not, think windows or firelocks. Fails with 1x1 non full tile windows, but it's not worth the cost.
+#define TURF_SHARES(T) (LAZYLEN(T.atmos_adjacent_turfs))
+
+#define CANATMOSPASS(A, O, V) ( A.CanAtmosPass == ATMOS_PASS_PROC ? A.CanAtmosPass(O, V) : ( A.CanAtmosPass == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPass ) )
+
+///Used to define the temperature of a tile, arg is the temperature it should be at. Should always be put at the end of the atmos list.
+///This is solely to be used after compile-time.
+#define TURF_TEMPERATURE(temperature) "TEMP=[temperature]"
 
 //OPEN TURF ATMOS
 #define OPENTURF_DEFAULT_ATMOS		"o2=22;n2=82;TEMP=293.15" //the default air mix that open turfs spawn
@@ -164,6 +179,9 @@
 #define ATMOS_TANK_PLASMA			"plasma=70000;TEMP=293.15"
 #define ATMOS_TANK_O2				"o2=100000;TEMP=293.15"
 #define ATMOS_TANK_N2				"n2=100000;TEMP=293.15"
+#define ATMOS_TANK_BZ				"bz=100000;TEMP=293.15"
+#define ATMOS_TANK_PLUOXIUM			"pluox=100000;TEMP=293.15"
+#define ATMOS_TANK_TRITIUM			"tritium=100000;TEMP=293.15"
 #define ATMOS_TANK_AIRMIX			"o2=2644;n2=10580;TEMP=293.15"
 
 //LAVALAND
@@ -325,3 +343,8 @@ GLOBAL_LIST_INIT(pipe_paint_colors, sortList(list(
 #define PIPENET_UPDATE_STATUS_DORMANT 0
 #define PIPENET_UPDATE_STATUS_REACT_NEEDED 1
 #define PIPENET_UPDATE_STATUS_RECONCILE_NEEDED 2
+
+// NSV13 - auxmos
+#define ATMOS_ALARM_SEVERE "severe"
+#define ATMOS_ALARM_MINOR "minor"
+#define ATMOS_ALARM_CLEAR "clear"
