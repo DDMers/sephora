@@ -1,3 +1,5 @@
+MAP_REMOVE_JOB(virologist) //This job is being phased out of NSV
+
 /datum/job/pilot/New()
 	..()
 	MAP_JOB_CHECK

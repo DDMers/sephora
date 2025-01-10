@@ -27,7 +27,7 @@
 
 */
 
-//There's no viro on atlas :(
+//There's no viro on atlas =D
 MAP_REMOVE_JOB(virologist)
 //Civilian guys without an office
 MAP_REMOVE_JOB(curator)

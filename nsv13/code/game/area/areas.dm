@@ -758,3 +758,27 @@
 	icon_state = "bunker"
 	ambientsounds = list('nsv13/sound/ambience/leit_motif.ogg','nsv13/sound/ambience/wind.ogg','nsv13/sound/ambience/ship_damage/creak1.ogg','nsv13/sound/ambience/ship_damage/creak2.ogg','nsv13/sound/ambience/ship_damage/creak3.ogg','nsv13/sound/ambience/ship_damage/creak4.ogg','nsv13/sound/ambience/ship_damage/creak5.ogg','nsv13/sound/ambience/ship_damage/creak6.ogg','nsv13/sound/ambience/ship_damage/creak7.ogg')
 	light_color = "#e69602"
+
+/area/nsv/weapons/munitions_lounge
+    name = "Munitions Lounge"
+    icon_state = "hallF"
+
+/area/nsv/weapons/weapons_secure_storage
+    name = "Munitions Secure Storage"
+    icon_state = "hallF"
+
+/area/nsv/weapons/equipment_room
+    name = "Munitions Equipment Room"
+    icon_state = "hallF"
+
+/area/nsv/weapons/observation_deck
+    name = "Munitions Observation Deck"
+    icon_state = "hallF"
+
+/area/nsv/weapons/main_passageway
+    name = "Munitions Access Corridor"
+    icon_state = "hallF"
+
+/area/nsv/engine/dcc
+	name = "Damage Control Central"
+	icon_state = "dc_central"
