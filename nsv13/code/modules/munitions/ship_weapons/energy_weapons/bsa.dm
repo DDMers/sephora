@@ -246,3 +246,10 @@
 		var/mob/living/goodbye = target
 		goodbye.dust(TRUE, FALSE)
 	explosion(get_turf(target), 6, 8, 9, 12, ignorecap = TRUE, flame_range = 6) //I have to keep myself from letting it just truncate ships because thats a bit annoying to fix for the receiving side, even if accurate to appearance.
+
+
+/obj/machinery/ship_weapon/energy/beam/bsa/after_fire()  //NT gets to cheat and have no degadation or heating on their weapon because muni has enough to do and the BSA doesn't need buffs/nerfs
+	. = ..()
+	heat = 0
+	alignment = 100
+	freq = 100

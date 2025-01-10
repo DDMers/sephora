@@ -4003,6 +4003,7 @@
 #include "nsv13\code\modules\munitions\ship_weapons\energy_weapons\laser_ams.dm"
 #include "nsv13\code\modules\munitions\ship_weapons\energy_weapons\laser_pd.dm"
 #include "nsv13\code\modules\munitions\ship_weapons\energy_weapons\phaser.dm"
+#include "nsv13\code\modules\munitions\ship_weapons\energy_weapons\subspacecooling.dm"
 #include "nsv13\code\modules\munitions\ship_weapons\hybrid_weapons\hybrid_railgun.dm"
 #include "nsv13\code\modules\overmap\ai-skynet.dm"
 #include "nsv13\code\modules\overmap\ai_interiors.dm"

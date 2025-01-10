@@ -13,6 +13,10 @@ export const EnergyWeapons = (props, context) => {
   const goal = data.goal;
   const powerAlloc = data.powerAlloc;
   const maxPower = data.maxPower;
+  const maxheat = data.maxheat;
+  const heat = data.heat;
+  const alignment = data.alignment;
+  const frequency = data.frequency;
   return (
     <Window
       resizable
@@ -38,6 +42,20 @@ export const EnergyWeapons = (props, context) => {
             {(chargeRate / 1e+6) + ' mW'}
           </ProgressBar>
           <br />
+          Heat:
+          <ProgressBar
+            value={(heat / maxheat)}
+            ranges={{
+              good: [-Infinity, 0.2],
+              average: [0.2, 0.5],
+              bad: [0.5, Infinity],
+            }} />
+          <Button
+            width="150px"
+            content="Vent Heat"
+            icon="exclamation-triangle"
+            color={"bad"}
+            onClick={() => act('vent')} />
           Charge:
           <br />
           <ProgressBar
@@ -45,6 +63,24 @@ export const EnergyWeapons = (props, context) => {
             ranges={{
               good: [0.50, Infinity],
               average: [0.15, 0.50],
+              bad: [-Infinity, 0.15],
+            }} />
+        </Section>
+        <Section title="Lens Alignment:">
+          <ProgressBar
+            value={data.alignment* 0.01}
+            ranges={{
+              good: [0.5, Infinity],
+              average: [0.15, 0.5],
+              bad: [-Infinity, 0.15],
+            }} />
+        </Section>
+        <Section title="Frequency Alignment:">
+          <ProgressBar
+            value={data.frequency* 0.01}
+            ranges={{
+              good: [0.5, Infinity],
+              average: [0.15, 0.5],
               bad: [-Infinity, 0.15],
             }} />
         </Section>

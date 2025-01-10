@@ -792,10 +792,6 @@
 /obj/machinery/chem_heater,
 /turf/open/floor/carpet/ship/purple_carpet,
 /area/science/xenobiology)
-"aAA" = (
-/obj/item/kirbyplants/random,
-/turf/open/floor/carpet/ship/orange_carpet,
-/area/nsv/weapons/fore)
 "aAP" = (
 /obj/machinery/door/airlock/vault/ship{
 	name = "Hangar Storage";
@@ -895,6 +891,7 @@
 	layer = 2.79;
 	pixel_y = 26
 	},
+/obj/machinery/cooling/cooler,
 /turf/open/floor/carpet/ship/orange_carpet,
 /area/nsv/weapons/fore)
 "aDF" = (
@@ -1171,6 +1168,7 @@
 	layer = 2.79;
 	pixel_y = 26
 	},
+/obj/machinery/cooling/storage,
 /turf/open/floor/carpet/ship/orange_carpet,
 /area/nsv/weapons/fore)
 "aNh" = (
@@ -1627,18 +1625,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	layer = 2.89
-	},
-/obj/structure/table,
-/obj/item/multitool{
-	pixel_x = 4;
-	pixel_y = -1
-	},
-/obj/item/screwdriver,
+/obj/machinery/cooling/storage,
 /turf/open/floor/engine,
 /area/nsv/weapons/starboard)
 "bfj" = (
@@ -3376,6 +3363,7 @@
 /obj/structure/cable/white{
 	icon_state = "2-4"
 	},
+/obj/machinery/cooling/cooler,
 /turf/open/floor/carpet/ship/orange_carpet,
 /area/nsv/weapons/fore)
 "cnq" = (
@@ -4048,13 +4036,16 @@
 /turf/open/floor/plating,
 /area/maintenance/fore)
 "cFY" = (
-/obj/machinery/modular_computer/console/preset/engineering{
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/computer/cargo/request{
 	dir = 8
 	},
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/open/floor/carpet/ship/orange_carpet,
+/turf/open/floor/engine,
 /area/nsv/weapons/fore)
 "cGt" = (
 /obj/effect/turf_decal/arrows{
@@ -4656,11 +4647,21 @@
 /obj/structure/cable/white{
 	icon_state = "1-2"
 	},
-/obj/structure/cable/white{
-	icon_state = "2-4"
-	},
 /obj/structure/cable/yellow{
 	icon_state = "5-8"
+	},
+/obj/machinery/computer/monitor{
+	dir = 8;
+	name = "stormdrive power monitoring console"
+	},
+/obj/item/paper{
+	default_raw_text = "<p>Engineering notice: There are three wire colors used on the Aetherwhisp 6 ship model. White cable is wired to the Stormdrive MK-4 and the supermatter crystal near atmospherics. These lead to their own SMES located nearby. Yellow wires are department distribution wires, which deliver power from the engines SMES to deparment SMES. Red wires deliver power from department SMES to department APCs.</p>"
+	},
+/obj/structure/cable/white{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced{
+	dir = 4
 	},
 /turf/open/floor/engine,
 /area/nsv/weapons/fore)
@@ -5845,15 +5846,8 @@
 /turf/open/floor/plasteel/freezer,
 /area/crew_quarters/toilet/auxiliary)
 "ecq" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
 /obj/structure/cable/yellow{
 	icon_state = "0-10"
-	},
-/obj/machinery/computer/monitor{
-	dir = 8;
-	name = "department distribution monitoring console"
 	},
 /turf/open/floor/carpet/ship/orange_carpet,
 /area/nsv/weapons/fore)
@@ -5911,6 +5905,7 @@
 /obj/structure/cable/white{
 	icon_state = "2-4"
 	},
+/obj/machinery/cooling/cooler,
 /turf/open/floor/carpet/ship/orange_carpet,
 /area/nsv/weapons/fore)
 "eex" = (
@@ -6057,7 +6052,6 @@
 	},
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input{
 	dir = 8;
-	icon_state = "inje_map-3";
 	id = "o2_in_alt";
 	piping_layer = 4
 	},
@@ -6140,6 +6134,11 @@
 /obj/effect/landmark/start/cyborg,
 /turf/open/floor/plating,
 /area/quartermaster/warehouse)
+"emk" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
+/obj/machinery/cooling/storage,
+/turf/open/floor/carpet/ship/orange_carpet,
+/area/nsv/weapons/fore)
 "emS" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -6541,6 +6540,7 @@
 /obj/structure/cable/white{
 	icon_state = "1-4"
 	},
+/obj/machinery/cooling/cooler,
 /turf/open/floor/carpet/ship/orange_carpet,
 /area/nsv/weapons/fore)
 "ezz" = (
@@ -6981,6 +6981,12 @@
 	},
 /obj/structure/cable/white{
 	icon_state = "1-2"
+	},
+/obj/machinery/modular_computer/console/preset/engineering{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
 	},
 /turf/open/floor/engine,
 /area/nsv/weapons/fore)
@@ -7787,20 +7793,17 @@
 /turf/open/floor/plating,
 /area/science/server)
 "fmj" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/computer/ship/navigation/public{
+	dir = 8;
+	name = "starmap console"
+	},
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/cable/white{
-	icon_state = "0-8"
-	},
-/obj/machinery/computer/monitor{
-	dir = 8;
-	name = "stormdrive power monitoring console"
-	},
-/obj/item/paper{
-	default_raw_text = "<p>Engineering notice: There are three wire colors used on the Aetherwhisp 6 ship model. White cable is wired to the Stormdrive MK-4 and the supermatter crystal near atmospherics. These lead to their own SMES located nearby. Yellow wires are department distribution wires, which deliver power from the engines SMES to deparment SMES. Red wires deliver power from department SMES to department APCs.</p>"
-	},
-/turf/open/floor/carpet/ship/orange_carpet,
+/turf/open/floor/engine,
 /area/nsv/weapons/fore)
 "fms" = (
 /obj/machinery/dna_scannernew,
@@ -8611,6 +8614,7 @@
 /obj/structure/cable/white{
 	icon_state = "1-2"
 	},
+/obj/machinery/cooling/cooler,
 /turf/open/floor/carpet/ship/orange_carpet,
 /area/nsv/weapons/starboard)
 "fLO" = (
@@ -8806,6 +8810,7 @@
 /obj/structure/cable/white{
 	icon_state = "2-8"
 	},
+/obj/machinery/cooling/cooler,
 /turf/open/floor/carpet/ship/orange_carpet,
 /area/nsv/weapons/fore)
 "fTg" = (
@@ -10667,8 +10672,11 @@
 /turf/open/floor/plating,
 /area/maintenance/fore)
 "hgV" = (
-/obj/effect/landmark/event_spawn,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/chair/office/light{
+	dir = 4
+	},
+/obj/effect/landmark/start/munitions_tech,
 /turf/open/floor/engine,
 /area/nsv/weapons/fore)
 "hgZ" = (
@@ -13307,15 +13315,6 @@
 	},
 /turf/open/floor/engine,
 /area/gateway)
-"jaM" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/computer/cargo/request{
-	dir = 8
-	},
-/turf/open/floor/carpet/ship/orange_carpet,
-/area/nsv/weapons/fore)
 "jaQ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -14508,6 +14507,7 @@
 /obj/structure/cable/white{
 	icon_state = "1-8"
 	},
+/obj/machinery/cooling/cooler,
 /turf/open/floor/carpet/ship/orange_carpet,
 /area/nsv/weapons/starboard)
 "jNL" = (
@@ -19072,6 +19072,7 @@
 /obj/structure/sign/solgov_seal{
 	pixel_y = 26
 	},
+/obj/machinery/cooling/storage,
 /turf/open/floor/plating,
 /area/nsv/weapons/fore)
 "njC" = (
@@ -20477,6 +20478,16 @@
 	icon_state = "1-2"
 	},
 /obj/structure/chair/office/light,
+/obj/machinery/computer/monitor{
+	dir = 8;
+	name = "department distribution monitoring console"
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
 /turf/open/floor/engine,
 /area/nsv/weapons/fore)
 "nZu" = (
@@ -20570,6 +20581,10 @@
 /obj/machinery/vending/sustenance,
 /turf/open/floor/wood,
 /area/maintenance/fore)
+"ocW" = (
+/obj/effect/landmark/event_spawn,
+/turf/open/floor/engine,
+/area/nsv/weapons/fore)
 "odg" = (
 /obj/structure/cable/white{
 	icon_state = "4-8"
@@ -20581,16 +20596,6 @@
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/carpet/ship,
 /area/hallway/nsv/deck2/primary)
-"oec" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/computer/ship/navigation/public{
-	dir = 8;
-	name = "starmap console"
-	},
-/turf/open/floor/carpet/ship/orange_carpet,
-/area/nsv/weapons/fore)
 "ofC" = (
 /obj/machinery/camera/autoname{
 	dir = 8
@@ -20934,6 +20939,7 @@
 /obj/structure/cable/white{
 	icon_state = "1-4"
 	},
+/obj/machinery/cooling/cooler,
 /turf/open/floor/carpet/ship/orange_carpet,
 /area/nsv/weapons/fore)
 "otN" = (
@@ -20989,6 +20995,11 @@
 	pixel_y = 26
 	},
 /obj/structure/table,
+/obj/item/multitool{
+	pixel_x = 4;
+	pixel_y = -1
+	},
+/obj/item/screwdriver,
 /turf/open/floor/engine,
 /area/nsv/weapons/starboard)
 "ovd" = (
@@ -23707,6 +23718,10 @@
 /obj/effect/turf_decal/bot/left,
 /turf/open/floor/engine,
 /area/science/robotics/lab)
+"qjG" = (
+/obj/machinery/cooling/storage,
+/turf/open/floor/carpet/ship/orange_carpet,
+/area/nsv/weapons/fore)
 "qjS" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -25789,10 +25804,12 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/structure/chair/office/light{
+/obj/machinery/computer/ship/dradis/minor{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/effect/landmark/start/munitions_tech,
 /turf/open/floor/engine,
 /area/nsv/weapons/fore)
 "rxR" = (
@@ -27722,6 +27739,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/wood,
 /area/library)
+"sGF" = (
+/obj/machinery/cooling/storage,
+/turf/open/floor/carpet/ship/orange_carpet,
+/area/nsv/weapons/starboard)
 "sGH" = (
 /obj/machinery/chem_dispenser,
 /turf/open/floor/plating,
@@ -28296,15 +28317,6 @@
 /obj/machinery/light_switch/east,
 /turf/open/floor/carpet/ship/purple_carpet,
 /area/science/mixing)
-"tbQ" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/computer/ship/dradis/minor{
-	dir = 8
-	},
-/turf/open/floor/carpet/ship/orange_carpet,
-/area/nsv/weapons/fore)
 "tcI" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible,
 /obj/structure/disposalpipe/segment{
@@ -30294,6 +30306,10 @@
 /obj/effect/landmark/start/cyborg,
 /turf/open/floor/carpet/ship/purple_carpet,
 /area/science/robotics/lab)
+"uNg" = (
+/obj/machinery/cooling/cooler,
+/turf/open/floor/carpet/ship/orange_carpet,
+/area/nsv/weapons/starboard)
 "uNA" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -79168,7 +79184,7 @@ qqd
 iIw
 dnp
 oqH
-wsl
+ocW
 ccH
 ddg
 hWF
@@ -79683,8 +79699,8 @@ nZt
 dgj
 gdL
 rxx
-mNk
-mNk
+fmj
+cFY
 mNk
 pqG
 ozk
@@ -79933,15 +79949,15 @@ nZT
 aKK
 vnw
 aKK
-aAA
 fDP
-cFY
+fDP
+fDP
 ecq
-fmj
+fDP
 fQY
-tbQ
-oec
-jaM
+fDP
+fDP
+fDP
 fDP
 fDP
 fDP
@@ -80459,7 +80475,7 @@ fDP
 bnc
 fDP
 fDP
-fDP
+qjG
 hIh
 tXU
 xdB
@@ -80714,9 +80730,9 @@ imE
 fDP
 mUo
 fDP
+qjG
 fDP
-fDP
-fDP
+qjG
 hIh
 uhs
 xem
@@ -80746,7 +80762,7 @@ xjr
 ouM
 beV
 gKC
-gKC
+beV
 gKC
 iRW
 gKC
@@ -80964,7 +80980,7 @@ aKK
 aQt
 kJD
 cGU
-kJD
+emk
 cII
 hfr
 aKK
@@ -81514,13 +81530,13 @@ nZT
 nZT
 hbT
 xjr
+uNg
 wrq
 wrq
 wrq
 wrq
 wrq
-wrq
-wrq
+sGF
 seW
 iyw
 xMP
