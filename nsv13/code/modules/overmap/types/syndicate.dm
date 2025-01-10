@@ -396,7 +396,7 @@
 	weapon_types[FIRE_MODE_MISSILE] = new/datum/ship_weapon/missile_launcher(src)
 
 /obj/structure/overmap/syndicate/ai/submarine //A big box of tank which is hard to take down, and lethal up close.
-	name = "Aspala Class Sub-spacemarine"
+	name = "Aspala class sub-spacemarine"
 	desc = "A highly advanced Syndicate cruiser which can mask its sensor signature drastically."
 	icon = 'nsv13/icons/overmap/new/syndicate/cruiser.dmi'
 	icon_state = "aspala"
@@ -428,6 +428,31 @@
 	weapon_types[FIRE_MODE_FLAK] = new/datum/ship_weapon/flak(src)
 	weapon_types[FIRE_MODE_GAUSS] = new /datum/ship_weapon/gauss(src) //AI ships want to be able to use gauss too. I say let them...
 	weapon_types[FIRE_MODE_MISSILE] = new/datum/ship_weapon/missile_launcher(src)
+
+/obj/structure/overmap/syndicate/ai/submarine/elite
+	name = "Stalker class sub-spacemarine"
+	icon_state = "aspala_elite"
+	obj_integrity = 1000
+	max_integrity = 1000 //Max health
+	integrity_failure = 200 //At this integrity it will start phase 2
+	armor = list("overmap_light" = 90, "overmap_medium" = 65, "overmap_heavy" = 35)
+	shots_left = 35
+	torpedoes = 20 //Many torps 4u
+	missiles = 15
+	bounty = 3500
+	ai_flags = AI_FLAG_DESTROYER | AI_FLAG_ELITE
+	cloak_factor = 80 //Harder to see
+	combat_dice_type = /datum/combat_dice/destroyer
+	torpedo_type = /obj/item/projectile/guided_munition/torpedo/disruptor
+
+/obj/structure/overmap/syndicate/ai/submarine/elite/try_repair(amount)
+	. = ..()
+	if(obj_integrity > integrity_failure) //Reset our torp type if we have been healed
+		torpedo_type = initial(torpedo_type)
+
+/obj/structure/overmap/syndicate/ai/submarine/elite/obj_break() //Unused for overmaps, so we just steal it to make damage phases :3c
+	torpedo_type = /obj/item/projectile/guided_munition/torpedo/viscerator
+	torpedoes = CLAMP((torpedoes),2 , 3) //This is their secret weapon, they only have a few of these
 
 /obj/structure/overmap/syndicate/ai/kadesh	//I sure wonder what this one does....
 	name = "Kadesh class advanced cruiser"
@@ -469,7 +494,7 @@
 	add_sensor_profile_penalty(150, 10 SECONDS)
 
 /obj/structure/overmap/syndicate/ai/fistofsol
-	name = "\improper SSV Fist of Sol"
+	name = "SSV Fist of Sol"
 	icon = 'nsv13/icons/overmap/syndicate/tuningfork.dmi'
 	icon_state = "tuningfork"
 	desc = "A terrifying vessel packing every inch of the Syndicate's abhorrent arsenal."

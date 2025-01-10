@@ -16,6 +16,8 @@
 	var/tickets = 0 //How many victory tickets has this faction accrued? Factions other than NT can win!
 	var/list/fleet_types = list()
 	var/list/randomspawn_only_fleet_types = list()	//These fleets only get spawned randomly, not by say, missions.
+	var/list/elite_fleet_types = list() //These fleets are only spawned if the difficulty is high enough.
+	var/elite_difficulty_threshold = 3 //The minimum difficulty for elite fleets to spawn for this faction.
 	var/next_fleet_spawn = 0 //Factions spawn fleets more frequently when they're doing well with tickets.
 	var/fleet_spawn_rate = 10 MINUTES //By default, 1 / 5 minutes.
 	var/spawn_rate_jitter = 3 MINUTES
@@ -91,6 +93,8 @@ Set up relationships.
 	possible_types += fleet_types
 	if(!force)
 		possible_types += randomspawn_only_fleet_types
+	if(custom_difficulty >= elite_difficulty_threshold || SSovermap_mode.mode.difficulty >= elite_difficulty_threshold)
+		possible_types += elite_fleet_types
 	var/fleet_type = pickweight(possible_types)
 	var/datum/fleet/F = new fleet_type
 	F.current_system = starsys
@@ -125,6 +129,7 @@ Set up relationships.
 	preset_allies = list(FACTION_ID_SOLGOV, FACTION_ID_UNATHI)
 	preset_enemies = list(FACTION_ID_SYNDICATE, FACTION_ID_PIRATES)
 	fleet_types = list(/datum/fleet/nanotrasen/light = 1)
+	elite_fleet_types = list(/datum/fleet/nanotrasen = 1)
 	fleet_spawn_rate = 40 MINUTES
 	id = FACTION_ID_NT
 
@@ -149,6 +154,7 @@ Set up relationships.
 	preset_enemies = list(FACTION_ID_NT)
 	fleet_types = list(/datum/fleet/neutral = 5, /datum/fleet/boarding = 5, /datum/fleet/wolfpack = 5, /datum/fleet/conflagration = 5)
 	randomspawn_only_fleet_types = list(/datum/fleet/interdiction/light = 1)
+	elite_fleet_types = list(/datum/fleet/wolfpack/elite = 2, /datum/fleet/elite = 2)
 	fleet_spawn_rate = 30 MINUTES
 	id = FACTION_ID_SYNDICATE
 

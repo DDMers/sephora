@@ -752,6 +752,7 @@ Adding tasks is easy! Just define a datum for it.
 	supply_types = list(/obj/structure/overmap/syndicate/ai/carrier, /obj/structure/overmap/syndicate/ai/carrier/elite)
 	fleet_trait = FLEET_TRAIT_BORDER_PATROL
 	hide_movements = TRUE
+	size = FLEET_DIFFICULTY_HARD //Border patrol is stronger
 
 /datum/fleet/boarding
 	name = "\improper Syndicate commando taskforce"
@@ -762,25 +763,31 @@ Adding tasks is easy! Just define a datum for it.
 /datum/fleet/wolfpack
 	name = "\improper unidentified Syndicate fleet"
 	destroyer_types = list(/obj/structure/overmap/syndicate/ai/submarine)
-	battleship_types = list(/obj/structure/overmap/syndicate/ai/cruiser, /obj/structure/overmap/syndicate/ai/cruiser/elite, /obj/structure/overmap/syndicate/ai/mako_flak, /obj/structure/overmap/syndicate/ai/destroyer)
+	battleship_types = list(/obj/structure/overmap/syndicate/ai/cruiser, /obj/structure/overmap/syndicate/ai/cruiser/elite, /obj/structure/overmap/syndicate/ai/mako_flak, /obj/structure/overmap/syndicate/ai/destroyer, /obj/structure/overmap/syndicate/ai/submarine/elite)
 	audio_cues = list()
 	hide_movements = TRUE
 	taunts = list("....", "*static*")
 	fleet_trait = FLEET_TRAIT_NEUTRAL_ZONE
+
+/datum/fleet/wolfpack/elite
+	name = "\improper unidentified Syndicate taskforce"
+	destroyer_types = list(/obj/structure/overmap/syndicate/ai/submarine, /obj/structure/overmap/syndicate/ai/submarine/elite)
+	battleship_types = list(/obj/structure/overmap/syndicate/ai/submarine/elite, /obj/structure/overmap/syndicate/ai/cruiser/elite)
+	taunts = list(".....", "*loud microphone feedback*", "You've got nowhere to run, and nowhere to hide...")
 
 /datum/fleet/conflagration
 	name = "\improper Syndicate conflagration deterrent"
 	taunts = list("Enemy ship, surrender now. This vessel is armed with hellfire weapons and eager to test them.")
 	audio_cues = list()
 	destroyer_types = list(/obj/structure/overmap/syndicate/ai/conflagration, /obj/structure/overmap/syndicate/ai/conflagration/elite)
-	size = 2
+	size = FLEET_DIFFICULTY_EASY
 	fleet_trait = FLEET_TRAIT_NEUTRAL_ZONE
 
 /datum/fleet/elite
 	name = "\improper elite Syndicate taskforce"
 	taunts = list("Enemy ship, surrender immediately or face destruction.", "Excellent, a worthwhile target. Arm all batteries.")
 	supply_types = list(/obj/structure/overmap/syndicate/ai/carrier/elite)
-	destroyer_types = list(/obj/structure/overmap/syndicate/ai/destroyer/elite)
+	destroyer_types = list(/obj/structure/overmap/syndicate/ai/destroyer/elite, /obj/structure/overmap/syndicate/ai/submarine/elite)
 	battleship_types = list(/obj/structure/overmap/syndicate/ai/cruiser/elite)
 
 //Space Pirate Fleets
@@ -845,7 +852,7 @@ Adding tasks is easy! Just define a datum for it.
 /datum/fleet/earthbuster
 	name = "\proper Syndicate Armada" //Fleet spawned if the players are too inactive. Set course...FOR EARTH.
 	destroyer_types = list(/obj/structure/overmap/syndicate/ai, /obj/structure/overmap/syndicate/ai/conflagration, /obj/structure/overmap/syndicate/ai/assault_cruiser, /obj/structure/overmap/syndicate/ai/gunboat, /obj/structure/overmap/syndicate/ai/submarine, /obj/structure/overmap/syndicate/ai/assault_cruiser/boarding_frigate)
-	size = FLEET_DIFFICULTY_VERY_HARD
+	size = FLEET_DIFFICULTY_INSANE
 	allow_difficulty_scaling = FALSE
 	taunts = list("We're coming for Sol, and you can't stop us. All batteries fire at will.", "Lay down your arms now, you're outnumbered.", "All hands, assume assault formation. Begin bombardment.")
 	audio_cues = list()
