@@ -63,6 +63,11 @@ map snake
 	votable
 endmap
 
+map vonneumann
+	maxplayers 30
+	votable
+endmap
+
 #--------------
 # EVENT MAPS
 #--------------
