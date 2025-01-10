@@ -65,7 +65,9 @@
 		idle_power_usage = 0 //reset power use
 		var/weight_class = OM.mass
 		if(weight_class >= MASS_TITAN)
-			weight_class = 10 //Because someone changed how mass classes work
+			weight_class = 90 //Because someone changed how mass classes work //Undoing this because a repair rate of .13% is aweful. maths out instead to .5% per pump per secondish
+		if(weight_class >= MASS_LARGE)
+			weight_class = 50  //Copying above because a repair rate of .19% Feels aweful as an engineer. maths out to .5% per pump per secondish
 		if(armour_allocation)
 			if(OM.armour_quadrants[quadrant]["current_armour"] < OM.armour_quadrants[quadrant]["max_armour"]) //Armour Check
 				var/armour_integrity = (OM.armour_quadrants[quadrant]["current_armour"] / OM.armour_quadrants[quadrant]["max_armour"]) * 100
@@ -84,6 +86,7 @@
 					return
 				structure_repair_amount = delta_time * ((2 + (weight_class / 10)) * apnw.repair_efficiency * structure_allocation) / 200
 				if(apnw.repair_resources >= (structure_repair_amount * weight_class) * 1.5)
+					//message_admins("repaired [structure_repair_amount]") // Admeme message for mathing help
 					OM.obj_integrity += structure_repair_amount
 					if(OM.obj_integrity > OM.max_integrity)
 						OM.obj_integrity = OM.max_integrity
