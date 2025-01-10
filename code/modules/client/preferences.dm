@@ -687,8 +687,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			dat += "<b>Ambient Occlusion:</b> <a href='?_src_=prefs;preference=ambientocclusion'>[toggles2 & PREFTOGGLE_2_AMBIENT_OCCLUSION ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<b>Fit Viewport:</b> <a href='?_src_=prefs;preference=auto_fit_viewport'>[toggles2 & PREFTOGGLE_2_AUTO_FIT_VIEWPORT ? "Auto" : "Manual"]</a><br>"
-			if (CONFIG_GET(flag/widescreen)) //Nsv13 - widescreen
+			if (CONFIG_GET(flag/widescreen)) //NSV13 - widescreen
 				dat += "<b>Widescreen:</b> <a href='?_src_=prefs;preference=widescreenpref'>[toggles2 & PREFTOGGLE_2_WIDESCREEN ? "Enabled" : "Disabled"]</a><br>"
+			dat += "<b>Fullscreen:</b> <a href='?_src_=prefs;preference=fullscreenpref'>[toggles2 & PREFTOGGLE_2_FULLSCREEN ? "Enabled" : "Disabled"]</a><br>"
+			//NSV13 - fullscreen
 
 			button_name = pixel_size
 			dat += "<b>Pixel Scaling:</b> <a href='?_src_=prefs;preference=pixel_size'>[(button_name) ? "Pixel Perfect [button_name]x" : "Stretch to fit"]</a><br>"
@@ -2200,10 +2202,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						parent.fit_viewport()
 
 				if("widescreenpref")//Nsv13 - Widescreen
-					var/client/C = (istype(user, /client)) ? user : user.client
 					toggles2 ^= PREFTOGGLE_2_WIDESCREEN
-					C.change_view(getScreenSize(toggles2 & PREFTOGGLE_2_WIDESCREEN))
-					C.view_size.default = (toggles2 & PREFTOGGLE_2_WIDESCREEN) ? CONFIG_GET(string/default_view) : "15x15" // This view size wrapper is extremely inconsistent and we need to finagle it a bit.
+					parent.change_view(getScreenSize(toggles2 & PREFTOGGLE_2_WIDESCREEN))
+					parent.view_size.default = (toggles2 & PREFTOGGLE_2_WIDESCREEN) ? CONFIG_GET(string/default_view) : "15x15" // This view size wrapper is extremely inconsistent and we need to finagle it a bit.
+
+				if("fullscreenpref") //NSV13 - Fullscreen
+					toggles2 ^= PREFTOGGLE_2_FULLSCREEN
+					parent.toggle_fullscreen(toggles2 & PREFTOGGLE_2_FULLSCREEN)
 
 				if("pixel_size")
 					switch(pixel_size)

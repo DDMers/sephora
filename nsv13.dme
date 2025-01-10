@@ -3878,6 +3878,7 @@
 #include "nsv13\code\modules\cargo\space_catalog.dm"
 #include "nsv13\code\modules\cargo\exports\engineering.dm"
 #include "nsv13\code\modules\cargo\exports\syndie.dm"
+#include "nsv13\code\modules\client\fullscreen.dm"
 #include "nsv13\code\modules\client\zoom.dm"
 #include "nsv13\code\modules\client\loadout\loadout_colorizers.dm"
 #include "nsv13\code\modules\client\loadout\loadout_donator.dm"

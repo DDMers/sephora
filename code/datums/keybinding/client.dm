@@ -63,3 +63,19 @@
 
 /datum/keybinding/client/zoomin/up(client/user)
 	winset(user, "mapwindow.map", "zoom=[user.prefs.pixel_size]")
+
+//NSV13 - different relative to upstream because of prefs
+/datum/keybinding/client/fullscreen
+	key = "F11"
+	name = "fullscreen"
+	full_name = "Toggle Fullscreen"
+	description = "Switch between windowed and fullscreen mode."
+	keybind_signal = COMSIG_KB_CLIENT_FULLSCREEN_DOWN
+
+/datum/keybinding/client/fullscreen/down(client/user)
+	. = ..()
+	if(.)
+		return
+	user.prefs.toggles2 ^= PREFTOGGLE_2_FULLSCREEN
+	user.toggle_fullscreen(user.prefs.toggles2 & PREFTOGGLE_2_FULLSCREEN)
+	return TRUE
