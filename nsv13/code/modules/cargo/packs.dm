@@ -53,6 +53,18 @@
 	crate_type = /obj/structure/closet/crate/wooden
 	crate_name = "Captain Plasmasalt's finest gunpowder"
 
+/datum/supply_pack/munitions/muni_pointer
+	name = "Munitions Pinpointer"
+	desc = "Clown spaced your turrets? MAA slipped and threw their pointer into the recycler? This is the solution to your problems!"
+	cost = 5000 //Don't lose yours, MAA.
+	contains = list(/obj/item/pinpointer/munitions)
+
+/datum/supply_pack/munitions/muni_pointer/fill(obj/structure/closet/crate/C)
+	if(prob(1))
+		new /obj/item/pinpointer/munitions/not_puce(C)
+	else
+		new /obj/item/pinpointer/munitions(C)
+
 /datum/supply_pack/munitions/pdc_ammo
 	name = "PDC mount rounds (x5)"
 	desc = "5 boxes of PDC rounds, ideal for repelling torpedoes and missiles."

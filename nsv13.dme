@@ -3963,6 +3963,7 @@
 #include "nsv13\code\modules\mob\living\simple_animal\bot\secbot.dm"
 #include "nsv13\code\modules\mob\living\simple_animal\hostile\dioclown.dm"
 #include "nsv13\code\modules\modular_computer\wiki_uplink.dm"
+#include "nsv13\code\modules\munitions\muni_pointer.dm"
 #include "nsv13\code\modules\munitions\munitions_trolley.dm"
 #include "nsv13\code\modules\munitions\ammunition\broadside_ammo.dm"
 #include "nsv13\code\modules\munitions\ammunition\cannon_ammo.dm"

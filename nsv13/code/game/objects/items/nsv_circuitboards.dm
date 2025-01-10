@@ -71,9 +71,14 @@
 	build_path = /obj/machinery/computer/ams
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 
+/obj/item/circuitboard/computer/ams/Initialize(mapload)
+	. = ..()
+	GLOB.critical_muni_items += src
+
 /obj/item/circuitboard/computer/ams/Destroy(force=FALSE)
 	if(!force)
 		return QDEL_HINT_LETMELIVE
+	GLOB.critical_muni_items -= src
 	return ..()
 
 /obj/item/circuitboard/computer/anti_air
@@ -81,9 +86,14 @@
 	build_path = /obj/machinery/computer/anti_air
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 
+/obj/item/circuitboard/computer/anti_air/Initialize(mapload)
+	. = ..()
+	GLOB.critical_muni_items += src
+
 /obj/item/circuitboard/computer/anti_air/Destroy(force=FALSE)
 	if(!force)
 		return QDEL_HINT_LETMELIVE
+	GLOB.critical_muni_items -= src
 	return ..()
 
 /obj/item/circuitboard/computer/ship/fighter_controller
@@ -108,9 +118,14 @@
 	build_path = /obj/machinery/ship_weapon/anti_air
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 
+/obj/item/circuitboard/machine/anti_air/Initialize(mapload)
+	. = ..()
+	GLOB.critical_muni_items += src
+
 /obj/item/circuitboard/machine/anti_air/Destroy(force=FALSE)
 	if(!force)
 		return QDEL_HINT_LETMELIVE
+	GLOB.critical_muni_items -= src
 	return ..()
 
 /obj/item/circuitboard/machine/anti_air/heavy
@@ -150,9 +165,14 @@
 			build_path = PATH_FLAK
 */
 
+/obj/item/circuitboard/machine/pdc_mount/Initialize(mapload)
+	. = ..()
+	GLOB.critical_muni_items += src
+
 /obj/item/circuitboard/machine/pdc_mount/Destroy(force=FALSE)
 	if(!force)
 		return QDEL_HINT_LETMELIVE
+	GLOB.critical_muni_items -= src
 	return ..()
 
 /* Flak isn't used right now
@@ -191,9 +211,14 @@
 /obj/item/circuitboard/machine/deck_turret/apply_default_parts()
 	//dont
 
+/obj/item/circuitboard/machine/deck_turret/Initialize(mapload)
+	. = ..()
+	GLOB.critical_muni_items += src
+
 /obj/item/circuitboard/machine/deck_turret/Destroy(force=FALSE)
 	if(!force)
 		return QDEL_HINT_LETMELIVE
+	GLOB.critical_muni_items -= src
 	return ..()
 
 /obj/item/circuitboard/computer/deckgun
@@ -297,9 +322,14 @@
 		/obj/item/stack/cable_coil = 10)
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 
+/obj/item/circuitboard/machine/vls/Initialize(mapload)
+	. = ..()
+	GLOB.critical_muni_items += src
+
 /obj/item/circuitboard/machine/vls/Destroy(force=FALSE)
 	if(!force)
 		return QDEL_HINT_LETMELIVE
+	GLOB.critical_muni_items -= src
 	return ..()
 
 //Gauss guns
@@ -309,9 +339,14 @@
 	req_components = list()
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 
+/obj/item/circuitboard/machine/gauss_turret/Initialize(mapload)
+	. = ..()
+	GLOB.critical_muni_items += src
+
 /obj/item/circuitboard/machine/gauss_turret/Destroy(force=FALSE)
 	if(!force)
 		return QDEL_HINT_LETMELIVE
+	GLOB.critical_muni_items -= src
 	return ..()
 
 /obj/item/circuitboard/computer/iff
@@ -384,9 +419,14 @@
 	build_path = /obj/machinery/computer/laser_pd
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 
+/obj/item/circuitboard/computer/laser_pd/Initialize(mapload)
+	. = ..()
+	GLOB.critical_muni_items += src
+
 /obj/item/circuitboard/computer/laser_pd/Destroy(force=FALSE)
 	if(!force)
 		return QDEL_HINT_LETMELIVE
+	GLOB.critical_muni_items -= src
 	return ..()
 
 // Laser PD

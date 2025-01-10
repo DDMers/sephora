@@ -16,9 +16,14 @@
 		/obj/item/ship_weapon/parts/loading_tray = 1)
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 
+/obj/item/circuitboard/machine/gauss_dispenser/Initialize(mapload)
+	. = ..()
+	GLOB.critical_muni_items += src
+
 /obj/item/circuitboard/machine/gauss_dispenser/Destroy(force=FALSE)
 	if(!force)
 		return QDEL_HINT_LETMELIVE
+	GLOB.critical_muni_items -= src
 	return ..()
 
 /obj/machinery/gauss_dispenser

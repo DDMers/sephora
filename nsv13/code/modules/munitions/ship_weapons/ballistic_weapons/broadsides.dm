@@ -52,9 +52,14 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 	build_path = /obj/machinery/ship_weapon/broadside
 
+/obj/item/circuitboard/machine/broadside/Initialize(mapload)
+	. = ..()
+	GLOB.critical_muni_items += src
+
 /obj/item/circuitboard/machine/broadside/Destroy(force=FALSE)
 	if(!force)
 		return QDEL_HINT_LETMELIVE
+	GLOB.critical_muni_items -= src
 	return ..()
 
 /datum/ship_weapon/broadside
