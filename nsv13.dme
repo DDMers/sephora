@@ -4128,3 +4128,7 @@
 #ifdef DONATOR_ITEMS
 #include "nsv13\code\modules\donator\donator.dm"
 #endif
+
+#ifdef MACROTEST
+#include "code\modules\admin\verbs\macro_debug.dm"
+#endif

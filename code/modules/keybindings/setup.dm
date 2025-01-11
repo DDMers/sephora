@@ -36,6 +36,11 @@
 
 	erase_all_macros()
 
+	/// Is this client using Chat Relay/Legacy input mode. If so,
+	/// we need to be **VERY CAREFUL** about what keys we bind,
+	/// and we can't bind anything printable. -Francinum
+	var/using_chat_relay = !(prefs.toggles2 & PREFTOGGLE_2_HOTKEYS)
+
 	var/list/macro_sets = SSinput.macro_sets
 	var/use_tgui_say = !prefs || (prefs.toggles2 & PREFTOGGLE_2_TGUI_SAY)
 	var/say = use_tgui_say ? tgui_say_create_open_command(SAY_CHANNEL) : "\".winset \\\"command=\\\".start_typing say\\\";command=.init_say;saywindow.is-visible=true;saywindow.input.focus=true\\\"\""
@@ -52,13 +57,16 @@
 			var/key = macro_set[k]
 			var/command = macro_set[key]
 			winset(src, "[setname]-[REF(key)]", "parent=[setname];name=[key];command=[command]")
-		winset(src, "[setname]-say", "parent=[setname];name=T;command=[say]")
-		winset(src, "[setname]-me", "parent=[setname];name=M;command=[me]")
-		winset(src, "[setname]-ooc", "parent=[setname];name=O;command=[ooc]")
-		if(use_tgui_say)
-			winset(src, "[setname]-radio", "parent=[setname];name=Y;command=[radio]")
-			winset(src, "[setname]-looc", "parent=[setname];name=L;command=[looc]") // NSV13 - Moves LOOC keybind to L from U
-			winset(src, "[setname]-close-tgui-say", "parent=[setname];name=Escape;command=[tgui_say_create_close_command()]")
+		// If we bind these, we're going to break the default command bar input relay behaviour.
+		// This *does* mean we outright ignore the tgui-say pref, but I doubt players who want to use this mode care. -Francinum
+		if(!using_chat_relay)
+			winset(src, "[setname]-say", "parent=[setname];name=T;command=[say]")
+			winset(src, "[setname]-me", "parent=[setname];name=M;command=[me]")
+			winset(src, "[setname]-ooc", "parent=[setname];name=O;command=[ooc]")
+			if(use_tgui_say)
+				winset(src, "[setname]-radio", "parent=[setname];name=Y;command=[radio]")
+				winset(src, "[setname]-looc", "parent=[setname];name=L;command=[looc]") // NSV13 - Moves LOOC keybind to L from U
+				winset(src, "[setname]-close-tgui-say", "parent=[setname];name=Escape;command=[tgui_say_create_close_command()]")
 
 	if(prefs.toggles2 & PREFTOGGLE_2_HOTKEYS)
 		winset(src, null, "input.focus=true input.background-color=[COLOR_INPUT_ENABLED] mainwindow.macro=default")

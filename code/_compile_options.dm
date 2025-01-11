@@ -31,6 +31,9 @@
 //#define VISUALIZE_ACTIVE_TURFS	//Highlights atmos active turfs in green
 #endif //ifdef TESTING
 
+// Enables a few verbs to help track down skin-related issues. Not production safe.
+//#define MACROTEST
+
 /// If this is uncommented, will profile mapload atom initializations
 // #define PROFILE_MAPLOAD_INIT_ATOM
 
