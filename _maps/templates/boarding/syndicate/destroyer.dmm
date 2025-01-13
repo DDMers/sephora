@@ -112,7 +112,9 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/boarding_interior)
 "da" = (
-/obj/machinery/computer/iff_console/boarding,
+/obj/structure/closet/secure_closet/freezer/money,
+/obj/item/coin/gold,
+/obj/effect/spawner/lootdrop/armory_contraband,
 /turf/open/floor/plasteel/grid,
 /area/ruin/unpowered/boarding_interior)
 "dg" = (
@@ -156,6 +158,10 @@
 /obj/item/storage/toolbox/mechanical,
 /obj/item/multitool,
 /turf/open/floor/carpet/red,
+/area/ruin/unpowered/boarding_interior)
+"dN" = (
+/obj/structure/sign/warning/securearea,
+/turf/closed/wall/r_wall,
 /area/ruin/unpowered/boarding_interior)
 "dP" = (
 /obj/machinery/door/airlock/ship/maintenance,
@@ -229,6 +235,10 @@
 	dir = 4
 	},
 /turf/closed/wall/r_wall,
+/area/ruin/unpowered/boarding_interior)
+"gI" = (
+/obj/machinery/portable_atmospherics/canister/water_vapor,
+/turf/open/floor/plating,
 /area/ruin/unpowered/boarding_interior)
 "hb" = (
 /obj/structure/chair,
@@ -342,6 +352,7 @@
 	name = "CIC";
 	req_one_access_txt = "150"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/stairs/medium{
 	dir = 4;
 	icon_state = "stairs-m"
@@ -375,6 +386,16 @@
 	},
 /turf/open/floor/monotile/dark,
 /area/ruin/unpowered/boarding_interior)
+"jp" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/machinery/telecomms/relay/preset/station,
+/obj/effect/turf_decal/tile/ship/half/bar{
+	dir = 4
+	},
+/turf/open/floor/monotile/dark,
+/area/ruin/unpowered/boarding_interior)
 "jv" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -395,6 +416,10 @@
 	dir = 10
 	},
 /turf/open/floor/engine,
+/area/ruin/unpowered/boarding_interior)
+"kl" = (
+/obj/structure/closet/emcloset,
+/turf/open/floor/plating,
 /area/ruin/unpowered/boarding_interior)
 "kG" = (
 /obj/structure/cable/yellow{
@@ -534,6 +559,10 @@
 /obj/item/ammo_box/magazine/nsv/light_cannon,
 /turf/open/floor/engine,
 /area/ruin/unpowered/boarding_interior)
+"mN" = (
+/obj/machinery/space_heater,
+/turf/open/floor/plating,
+/area/ruin/unpowered/boarding_interior)
 "nq" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -609,6 +638,14 @@
 	dir = 4
 	},
 /turf/open/floor/engine,
+/area/ruin/unpowered/boarding_interior)
+"oV" = (
+/obj/machinery/door/airlock/highsecurity/ship{
+	name = "Vault";
+	req_one_access_txt = "151"
+	},
+/obj/machinery/door/firedoor/heavy,
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/boarding_interior)
 "pt" = (
 /obj/machinery/light{
@@ -690,6 +727,15 @@
 "qC" = (
 /turf/open/floor/carpet/red,
 /area/ruin/unpowered/boarding_interior)
+"qF" = (
+/obj/effect/landmark/iff_console_spawner{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/ship/half/bar{
+	dir = 8
+	},
+/turf/open/floor/monotile/dark,
+/area/ruin/unpowered/boarding_interior)
 "qG" = (
 /obj/structure/hull_plate/end,
 /turf/open/floor/engine/airless/light,
@@ -726,10 +772,6 @@
 "rN" = (
 /obj/structure/chair{
 	dir = 8
-	},
-/obj/machinery/light{
-	brightness = 5;
-	dir = 4
 	},
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space{
 	name = "Syndicate Marine Captain"
@@ -828,6 +870,10 @@
 "tt" = (
 /obj/effect/turf_decal/tile/ship/half/bar,
 /turf/open/floor/plasteel/tech/grid,
+/area/ruin/unpowered/boarding_interior)
+"tu" = (
+/obj/structure/closet/firecloset,
+/turf/open/floor/plating,
 /area/ruin/unpowered/boarding_interior)
 "tv" = (
 /obj/machinery/computer/ship/viewscreen,
@@ -928,6 +974,12 @@
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/unpowered/boarding_interior)
+"uZ" = (
+/obj/structure/fluff/bleepypanel{
+	dir = 4
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/unpowered/boarding_interior)
 "vj" = (
 /obj/structure/hull_plate,
 /obj/machinery/door/firedoor/border_only{
@@ -1000,6 +1052,10 @@
 /obj/structure/peacekeeper_barricade/metal{
 	dir = 1
 	},
+/obj/machinery/light{
+	brightness = 5;
+	dir = 4
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/unpowered/boarding_interior)
 "xy" = (
@@ -1055,8 +1111,9 @@
 /turf/open/floor/engine,
 /area/ruin/unpowered/boarding_interior)
 "zg" = (
+/obj/structure/chair,
 /obj/machinery/light{
-	dir = 8
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/boarding_interior)
@@ -1209,6 +1266,10 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/unpowered/boarding_interior)
+"Bz" = (
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plating,
+/area/ruin/unpowered/boarding_interior)
 "BB" = (
 /obj/structure/rack,
 /obj/item/storage/toolbox/mechanical,
@@ -1266,6 +1327,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/structure/table,
 /turf/open/floor/plating,
 /area/ruin/unpowered/boarding_interior)
 "Co" = (
@@ -1298,6 +1361,21 @@
 	},
 /turf/open/floor/monotile/dark,
 /area/ruin/unpowered/boarding_interior)
+"CF" = (
+/obj/structure/closet/crate/engineering,
+/obj/effect/turf_decal/tile/ship/half/bar{
+	dir = 4
+	},
+/obj/item/stack/telecrystal,
+/obj/item/stock_parts/subspace/amplifier,
+/obj/item/stock_parts/subspace/analyzer,
+/obj/item/stock_parts/subspace/filter,
+/obj/item/stock_parts/subspace/filter,
+/obj/item/stock_parts/subspace/treatment,
+/obj/item/stock_parts/subspace/crystal,
+/obj/item/stock_parts/subspace/ansible,
+/turf/open/floor/monotile/dark,
+/area/ruin/unpowered/boarding_interior)
 "CO" = (
 /turf/open/floor/engine,
 /area/ruin/unpowered/boarding_interior)
@@ -1310,6 +1388,10 @@
 /area/ruin/unpowered/boarding_interior)
 "Dj" = (
 /obj/structure/munitions_trolley,
+/turf/open/floor/plating,
+/area/ruin/unpowered/boarding_interior)
+"Dk" = (
+/obj/structure/closet/toolcloset,
 /turf/open/floor/plating,
 /area/ruin/unpowered/boarding_interior)
 "Dv" = (
@@ -1436,6 +1518,8 @@
 /area/ruin/unpowered/boarding_interior)
 "Gd" = (
 /obj/machinery/light/small,
+/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/structure/table,
 /turf/open/floor/plating,
 /area/ruin/unpowered/boarding_interior)
 "Gp" = (
@@ -1479,9 +1563,8 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/boarding_interior)
 "GQ" = (
-/obj/structure/closet/secure_closet/freezer/money,
-/obj/item/coin/gold,
 /obj/machinery/computer/ship/viewscreen,
+/obj/effect/landmark/iff_console_spawner,
 /turf/open/floor/plasteel/grid,
 /area/ruin/unpowered/boarding_interior)
 "Hj" = (
@@ -1494,6 +1577,13 @@
 /area/ruin/unpowered/boarding_interior)
 "Hk" = (
 /turf/closed/wall/r_wall,
+/area/ruin/unpowered/boarding_interior)
+"Hn" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/machinery/light,
+/turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/boarding_interior)
 "Hp" = (
 /obj/machinery/telecomms/relay/preset/station,
@@ -1636,6 +1726,11 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/boarding_interior)
+"Lj" = (
+/obj/effect/spawner/lootdrop/maintenance/four,
+/obj/structure/closet/crate,
+/turf/open/floor/plating,
+/area/ruin/unpowered/boarding_interior)
 "Lt" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
@@ -1688,6 +1783,9 @@
 "Nd" = (
 /obj/machinery/computer/ship/ftl_computer/syndicate{
 	req_access = list()
+	},
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/boarding_interior)
@@ -1743,6 +1841,13 @@
 /obj/structure/fans/tiny,
 /turf/open/floor/engine,
 /area/ruin/unpowered/boarding_interior)
+"Pr" = (
+/obj/machinery/syndicatebomb/empty,
+/obj/effect/turf_decal/tile/ship/half/bar{
+	dir = 8
+	},
+/turf/open/floor/monotile/dark,
+/area/ruin/unpowered/boarding_interior)
 "Pu" = (
 /turf/open/space/basic,
 /area/space)
@@ -1756,6 +1861,7 @@
 	name = "Bridge frame";
 	req_one_access_txt = "150"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/unpowered/boarding_interior)
 "PK" = (
@@ -1763,6 +1869,10 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/yellow,
+/turf/open/floor/monotile/dark,
+/area/ruin/unpowered/boarding_interior)
+"PO" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/space,
 /turf/open/floor/monotile/dark,
 /area/ruin/unpowered/boarding_interior)
 "PW" = (
@@ -1779,6 +1889,10 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
 /obj/machinery/meter/atmos,
 /turf/closed/wall/r_wall,
+/area/ruin/unpowered/boarding_interior)
+"Ql" = (
+/obj/structure/chair/office/light,
+/turf/open/floor/carpet/red,
 /area/ruin/unpowered/boarding_interior)
 "Qm" = (
 /obj/machinery/atmospherics/components/binary/magnetic_constrictor{
@@ -1884,6 +1998,12 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
+/area/ruin/unpowered/boarding_interior)
+"Uf" = (
+/obj/structure/fluff/bleepypanel{
+	dir = 8
+	},
+/turf/closed/wall/r_wall,
 /area/ruin/unpowered/boarding_interior)
 "Uh" = (
 /obj/effect/spawner/structure/window/reinforced/ship,
@@ -30126,7 +30246,7 @@ id
 Ab
 id
 Qc
-Yn
+PO
 Hk
 Lx
 bV
@@ -36020,7 +36140,7 @@ DD
 kc
 Hk
 an
-Pf
+Dk
 Hk
 hg
 Mk
@@ -36265,7 +36385,7 @@ Hk
 Pf
 an
 Hk
-BV
+zg
 hb
 qC
 HY
@@ -36273,10 +36393,10 @@ nC
 HY
 qC
 AQ
-xy
+Hn
 Hk
 an
-Pf
+kl
 Hk
 XM
 Mk
@@ -36532,7 +36652,7 @@ AO
 xy
 Hk
 an
-Pf
+tu
 Hk
 XM
 Mk
@@ -37300,7 +37420,7 @@ AQ
 xy
 Hk
 Pf
-Pf
+Lj
 Hk
 XM
 Mk
@@ -37810,7 +37930,7 @@ hU
 tB
 zW
 Hk
-Pf
+mN
 Pf
 Hk
 ba
@@ -38066,7 +38186,7 @@ hU
 tB
 zW
 Hk
-Pf
+eA
 Pf
 Hk
 ba
@@ -38323,7 +38443,7 @@ tB
 zW
 Hk
 Pf
-Pf
+qi
 Hk
 ba
 XM
@@ -38578,7 +38698,7 @@ hU
 tB
 zZ
 Hk
-Pf
+yc
 Hk
 Hk
 ba
@@ -38834,7 +38954,7 @@ hU
 tB
 zW
 Hk
-Pf
+qY
 Hk
 ba
 ba
@@ -39090,7 +39210,7 @@ hU
 tB
 zW
 Hk
-Pf
+Bz
 Hk
 Hk
 ba
@@ -39334,7 +39454,7 @@ Mk
 XM
 Xk
 hU
-qC
+wo
 qC
 qC
 Hk
@@ -39347,7 +39467,7 @@ if
 Hk
 Hk
 Pf
-Pf
+gI
 Hk
 ba
 XM
@@ -39591,19 +39711,19 @@ XM
 Xk
 hU
 qC
-hw
+qC
 mA
 YA
 kc
 bu
 kc
-zg
+kc
 Nd
 bu
 kc
 Hk
-Pf
-Pf
+uZ
+uZ
 Hk
 ba
 XM
@@ -39846,7 +39966,7 @@ Vw
 mu
 pA
 hU
-wo
+Ql
 sO
 qC
 YA
@@ -39858,8 +39978,8 @@ dW
 dW
 kc
 Hk
-eA
-Pf
+jp
+CF
 Hk
 ba
 Km
@@ -40103,7 +40223,7 @@ Hk
 Hk
 Hk
 YA
-qC
+hw
 qC
 ry
 kc
@@ -40113,9 +40233,9 @@ Nz
 YF
 dW
 kc
-Hk
-yc
-Pf
+oV
+kc
+kc
 Hk
 Hk
 Hk
@@ -40369,9 +40489,9 @@ XG
 IO
 dW
 kc
-Hk
-qY
-qi
+dN
+Pr
+qF
 Hk
 Hk
 Hk
@@ -40626,8 +40746,8 @@ dW
 dW
 kc
 Hk
-Hk
-Hk
+Uf
+Uf
 Hk
 SO
 SO

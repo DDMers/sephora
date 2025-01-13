@@ -178,6 +178,9 @@
 	color = "#5e5e5c";
 	dir = 1
 	},
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen/red,
 /turf/open/floor/engine,
 /area/ruin/powered/nsv13/boarding_interior)
 "gB" = (
@@ -205,7 +208,7 @@
 /turf/open/floor/engine,
 /area/ruin/powered/nsv13/boarding_interior)
 "hg" = (
-/obj/machinery/computer/iff_console/boarding{
+/obj/effect/landmark/iff_console_spawner{
 	dir = 8
 	},
 /turf/open/floor/engine,
@@ -447,6 +450,11 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered/nsv13/boarding_interior)
+"oq" = (
+/obj/structure/table/reinforced,
+/obj/item/kitchen/knife/combat,
+/turf/open/floor/monotile/dark,
+/area/ruin/powered/nsv13/boarding_interior)
 "ov" = (
 /obj/machinery/light{
 	dir = 4
@@ -501,6 +509,14 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
+/area/ruin/powered/nsv13/boarding_interior)
+"qQ" = (
+/obj/structure/fluff/support_beam{
+	color = "#5e5e5c";
+	dir = 1
+	},
+/obj/structure/filingcabinet/chestdrawer,
+/turf/open/floor/engine,
 /area/ruin/powered/nsv13/boarding_interior)
 "rk" = (
 /obj/structure/chair{
@@ -709,7 +725,9 @@
 /turf/open/floor/plating/airless,
 /area/ruin/powered/nsv13/boarding_interior)
 "yt" = (
-/obj/machinery/power/smes,
+/obj/machinery/computer/telecomms/monitor{
+	dir = 1
+	},
 /turf/open/floor/circuit/red/anim,
 /area/ruin/powered/nsv13/boarding_interior)
 "yI" = (
@@ -902,6 +920,11 @@
 	dir = 4
 	},
 /turf/open/floor/engine,
+/area/ruin/powered/nsv13/boarding_interior)
+"GJ" = (
+/obj/structure/table/reinforced,
+/obj/structure/bedsheetbin,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/nsv13/boarding_interior)
 "GO" = (
 /obj/machinery/computer/ship/helm{
@@ -1437,9 +1460,14 @@
 /turf/open/space/basic,
 /area/ruin/powered/nsv13/boarding_interior)
 "WT" = (
-/obj/machinery/power/smes,
-/obj/machinery/computer/ship/viewscreen,
+/obj/effect/landmark/iff_console_spawner,
 /turf/open/floor/circuit/red/anim,
+/area/ruin/powered/nsv13/boarding_interior)
+"Xa" = (
+/obj/effect/landmark/iff_console_spawner{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/nsv13/boarding_interior)
 "Xb" = (
 /obj/effect/turf_decal/box/red,
@@ -19347,7 +19375,7 @@ rw
 rX
 rX
 rw
-cr
+Pq
 cr
 Qg
 RS
@@ -29842,7 +29870,7 @@ IY
 mJ
 mJ
 mJ
-IY
+GJ
 rw
 Tf
 xM
@@ -30091,8 +30119,8 @@ rX
 BV
 rw
 Wy
-Wy
-cr
+oq
+Xa
 rw
 rw
 rw
@@ -33426,7 +33454,7 @@ Jw
 Jw
 xz
 rw
-fX
+qQ
 cr
 cr
 PK

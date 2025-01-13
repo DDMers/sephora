@@ -217,10 +217,11 @@
 	//Boarding
 	var/interior_status = INTERIOR_NOT_LOADED
 	var/datum/turf_reservation/roomReservation = null
-	var/datum/map_template/dropship/boarding_interior = null
+	var/datum/map_template/boarding_interior = null
 	var/list/possible_interior_maps = null
 	var/interior_mode = NO_INTERIOR
 	var/list/interior_entry_points = list()
+	var/list/ifflocs = list() // List of potential IFF console locations
 	var/boarding_reservation_z = null //Do we have a reserved Z-level for boarding? This is set up on instance_overmap. Ships being boarded copy this value from the boarder.
 	var/obj/structure/overmap/active_boarding_target = null
 	var/static/next_boarding_time = 0 // This is stupid and lazy but it's 5am and I don't care anymore

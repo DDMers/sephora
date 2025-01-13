@@ -6,7 +6,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/nsv13/boarding_interior)
 "aF" = (
 /obj/machinery/door/airlock/ship{
@@ -36,6 +36,12 @@
 /obj/effect/spawner/lootdrop/maintenance/six,
 /turf/open/floor/plating,
 /area/ruin/powered/nsv13/boarding_interior)
+"ba" = (
+/obj/effect/landmark/iff_console_spawner{
+	dir = 1
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/powered/nsv13/boarding_interior)
 "bm" = (
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun,
 /obj/structure/hull_plate,
@@ -58,6 +64,13 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered/nsv13/boarding_interior)
+"cb" = (
+/obj/machinery/door/airlock/ship{
+	name = "Engineering Vault";
+	req_one_access_txt = "151"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered/nsv13/boarding_interior)
 "de" = (
 /obj/effect/landmark/patrol_node{
 	id = "destroyer_cic";
@@ -68,6 +81,11 @@
 	req_one_access = list()
 	},
 /turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered/nsv13/boarding_interior)
+"dv" = (
+/obj/structure/table,
+/obj/item/relic,
+/turf/open/floor/plating,
 /area/ruin/powered/nsv13/boarding_interior)
 "dz" = (
 /obj/structure/hull_plate/end{
@@ -105,6 +123,12 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/powered/nsv13/boarding_interior)
+"eR" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/ruin/powered/nsv13/boarding_interior)
 "fC" = (
 /turf/open/space/basic,
 /area/space)
@@ -133,12 +157,17 @@
 	icon_state = "5-8"
 	},
 /obj/structure/chair/stool,
-/turf/open/floor/plating,
+/mob/living/simple_animal/hostile/syndicate/melee,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/nsv13/boarding_interior)
 "gH" = (
 /obj/structure/closet/firecloset,
 /obj/effect/turf_decal/box,
 /turf/open/floor/mineral/plastitanium,
+/area/ruin/powered/nsv13/boarding_interior)
+"gN" = (
+/obj/structure/grille,
+/turf/open/floor/plating,
 /area/ruin/powered/nsv13/boarding_interior)
 "gR" = (
 /obj/effect/turf_decal/ship/delivery/yellow,
@@ -169,6 +198,10 @@
 "il" = (
 /obj/structure/hull_plate,
 /obj/machinery/light,
+/turf/open/floor/engine,
+/area/ruin/powered/nsv13/boarding_interior)
+"in" = (
+/obj/effect/landmark/iff_console_spawner,
 /turf/open/floor/engine,
 /area/ruin/powered/nsv13/boarding_interior)
 "iV" = (
@@ -295,6 +328,11 @@
 /obj/item/fighter_component/battery,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/nsv13/boarding_interior)
+"nC" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/maintenance/three,
+/turf/open/floor/plating,
+/area/ruin/powered/nsv13/boarding_interior)
 "nR" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -304,6 +342,11 @@
 	next_id = "destroyer_aft"
 	},
 /turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered/nsv13/boarding_interior)
+"ol" = (
+/obj/structure/girder,
+/obj/structure/grille/broken,
+/turf/open/floor/plating,
 /area/ruin/powered/nsv13/boarding_interior)
 "ou" = (
 /obj/structure/sign/ship/shock,
@@ -361,6 +404,10 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/nsv13/boarding_interior)
+"rp" = (
+/obj/machinery/light,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/powered/nsv13/boarding_interior)
 "rq" = (
 /obj/machinery/turnstile{
 	dir = 4;
@@ -369,6 +416,12 @@
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
+/area/ruin/powered/nsv13/boarding_interior)
+"rC" = (
+/obj/effect/landmark/iff_console_spawner{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/nsv13/boarding_interior)
 "rN" = (
 /obj/structure/lattice/catwalk/over/ship,
@@ -381,6 +434,11 @@
 /obj/machinery/vending/boozeomat/syndicate_access,
 /turf/closed/wall/r_wall,
 /area/ruin/powered/nsv13/boarding_interior)
+"su" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/maintenance/two,
+/turf/open/floor/plating,
+/area/ruin/powered/nsv13/boarding_interior)
 "sv" = (
 /obj/machinery/computer/communications{
 	dir = 8;
@@ -391,6 +449,10 @@
 /area/ruin/powered/nsv13/boarding_interior)
 "sE" = (
 /turf/open/floor/carpet/red,
+/area/ruin/powered/nsv13/boarding_interior)
+"sW" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/plating,
 /area/ruin/powered/nsv13/boarding_interior)
 "sZ" = (
 /obj/structure/closet/secure_closet/engineering_welding{
@@ -511,7 +573,7 @@
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/nsv13/boarding_interior)
 "xv" = (
 /obj/machinery/genpop_interface{
@@ -534,7 +596,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/nsv13/boarding_interior)
 "yq" = (
 /obj/structure/peacekeeper_barricade/metal{
@@ -657,6 +719,11 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/powered/nsv13/boarding_interior)
+"El" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/gloves,
+/turf/open/floor/plating,
+/area/ruin/powered/nsv13/boarding_interior)
 "Fx" = (
 /obj/machinery/computer/ship/tactical{
 	dir = 8
@@ -686,12 +753,23 @@
 /turf/closed/wall/r_wall,
 /area/ruin/powered/nsv13/boarding_interior)
 "Hb" = (
-/obj/machinery/computer/iff_console/boarding,
 /obj/machinery/door/firedoor/border_only/directional/west,
+/obj/effect/landmark/iff_console_spawner,
 /turf/open/floor/plasteel/tech/grid,
+/area/ruin/powered/nsv13/boarding_interior)
+"HM" = (
+/obj/structure/chair/stool/bar{
+	dir = 1
+	},
+/turf/open/floor/plating,
 /area/ruin/powered/nsv13/boarding_interior)
 "HN" = (
 /turf/open/floor/engine,
+/area/ruin/powered/nsv13/boarding_interior)
+"IF" = (
+/obj/structure/girder,
+/obj/structure/grille,
+/turf/open/floor/plating,
 /area/ruin/powered/nsv13/boarding_interior)
 "IG" = (
 /obj/structure/peacekeeper_barricade/metal{
@@ -745,7 +823,19 @@
 /area/ruin/powered/nsv13/boarding_interior)
 "JR" = (
 /obj/machinery/power/smes,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/powered/nsv13/boarding_interior)
+"Ko" = (
+/obj/structure/closet/firecloset,
 /turf/open/floor/plating,
+/area/ruin/powered/nsv13/boarding_interior)
+"KY" = (
+/obj/structure/fluff/empty_cryostasis_sleeper,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered/nsv13/boarding_interior)
+"LG" = (
+/obj/structure/grille,
+/turf/open/floor/engine,
 /area/ruin/powered/nsv13/boarding_interior)
 "LW" = (
 /obj/structure/sign/poster/contraband/c20r{
@@ -767,6 +857,10 @@
 /obj/structure/peacekeeper_barricade/metal,
 /turf/open/floor/plating,
 /area/ruin/powered/nsv13/boarding_interior)
+"Na" = (
+/mob/living/simple_animal/hostile/syndicate/civilian,
+/turf/open/floor/carpet/red,
+/area/ruin/powered/nsv13/boarding_interior)
 "NH" = (
 /obj/structure/table/reinforced,
 /obj/item/folder/syndicate{
@@ -783,6 +877,12 @@
 /obj/structure/peacekeeper_barricade/metal,
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun,
 /turf/open/floor/plating,
+/area/ruin/powered/nsv13/boarding_interior)
+"Oz" = (
+/mob/living/simple_animal/hostile/syndicate/melee/space/stormtrooper{
+	name = "Syndicate Chief Engineer"
+	},
+/turf/open/floor/engine,
 /area/ruin/powered/nsv13/boarding_interior)
 "OX" = (
 /obj/structure/lattice/catwalk/over/ship,
@@ -831,6 +931,13 @@
 /obj/item/stack/spacecash/c100,
 /obj/item/stack/spacecash/c10,
 /turf/open/floor/carpet/red,
+/area/ruin/powered/nsv13/boarding_interior)
+"Sn" = (
+/obj/machinery/door/airlock/ship{
+	name = "Engineering";
+	req_one_access_txt = "150"
+	},
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/nsv13/boarding_interior)
 "SB" = (
 /obj/effect/turf_decal/box,
@@ -894,7 +1001,7 @@
 	dir = 4;
 	req_access = list()
 	},
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/nsv13/boarding_interior)
 "UZ" = (
 /obj/effect/mob_spawn/human/alive{
@@ -920,19 +1027,33 @@
 /area/ruin/powered/nsv13/boarding_interior)
 "VL" = (
 /obj/structure/table/wood,
+/obj/item/paper_bin,
+/obj/item/pen/fountain/captain,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/powered/nsv13/boarding_interior)
 "VT" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/pdc,
-/obj/item/multitool,
-/turf/open/floor/plasteel/tech/grid,
+/mob/living/simple_animal/hostile/bear,
+/obj/machinery/light/small,
+/turf/open/floor/engine,
+/area/ruin/powered/nsv13/boarding_interior)
+"VW" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-17"
+	},
+/turf/open/floor/carpet/red,
 /area/ruin/powered/nsv13/boarding_interior)
 "Wd" = (
 /obj/structure/chair{
 	dir = 1
 	},
 /turf/open/floor/carpet/red,
+/area/ruin/powered/nsv13/boarding_interior)
+"Wj" = (
+/mob/living/simple_animal/hostile/bear/Hudson,
+/turf/open/floor/engine,
 /area/ruin/powered/nsv13/boarding_interior)
 "Wn" = (
 /obj/structure/bed,
@@ -979,7 +1100,7 @@
 /area/ruin/powered/nsv13/boarding_interior)
 "Zw" = (
 /obj/machinery/telecomms/relay/preset/station,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/nsv13/boarding_interior)
 "ZX" = (
 /obj/machinery/microwave,
@@ -29273,19 +29394,19 @@ gh
 gh
 gh
 fG
-vx
-vx
+KY
+KY
 fG
 FO
 HN
 Ym
 fG
-Ca
-Ca
-Ca
-Ca
-Ca
-Ca
+LG
+LG
+LG
+fG
+LG
+LG
 fG
 oT
 oT
@@ -29529,19 +29650,19 @@ PG
 PG
 PG
 fG
-Ca
-Ca
+HN
+HN
 By
 UZ
 HN
 bq
 fG
-Ca
-Ca
-Ca
-Ca
-Ca
-Ca
+LG
+in
+eR
+cb
+HN
+LG
 fG
 oT
 oT
@@ -29781,12 +29902,12 @@ fC
 fC
 fC
 fG
-Ca
-Ca
-Ca
-Ca
-Ca
-Ca
+vx
+vx
+Ko
+IF
+HN
+VT
 fG
 hC
 rq
@@ -29796,8 +29917,8 @@ fG
 Ro
 fG
 fG
-Ca
-Ca
+cb
+fG
 fG
 oT
 oT
@@ -30040,9 +30161,9 @@ fG
 Ca
 Ca
 Ca
-Ca
-Ca
-Ca
+ol
+Wj
+HN
 xv
 Cb
 OX
@@ -30050,10 +30171,10 @@ IW
 fG
 Zw
 JR
-Ca
+rC
 fG
-Ca
-Ca
+Oz
+LG
 fG
 oT
 oT
@@ -30303,13 +30424,13 @@ fG
 JM
 Jc
 Cb
-lT
-Ca
+Sn
+nc
 ax
-Ca
-fG
-Ca
-Ca
+nc
+cb
+HN
+LG
 fG
 oT
 oT
@@ -30549,8 +30670,8 @@ fC
 fC
 fC
 fG
-Ca
-Ca
+gN
+sW
 fG
 fG
 Wp
@@ -30560,12 +30681,12 @@ Cb
 hS
 Cb
 ou
-Ca
+Mf
 gw
-Ca
+rp
 fG
-Ca
-Ca
+eR
+LG
 fG
 oT
 oT
@@ -30805,7 +30926,7 @@ fC
 fC
 fC
 fG
-Ca
+su
 Ca
 lT
 sE
@@ -30820,8 +30941,8 @@ wy
 xO
 UX
 fG
-Ca
-Ca
+fG
+fG
 fG
 oT
 BN
@@ -31061,12 +31182,12 @@ fC
 fC
 fC
 fG
-Ca
-Ca
+dv
+HM
 fG
 DS
 sE
-sE
+Na
 hC
 Cb
 hS
@@ -31317,8 +31438,8 @@ fC
 fC
 fC
 fG
-Ca
-Ca
+nC
+El
 fG
 qZ
 kE
@@ -31833,7 +31954,7 @@ fG
 gR
 mW
 mW
-VT
+mW
 Cb
 hC
 Cb
@@ -37466,7 +37587,7 @@ fG
 fG
 hb
 VL
-sE
+VW
 hC
 Cb
 rN
@@ -37977,7 +38098,7 @@ Ca
 fG
 rQ
 sE
-VL
+ba
 sE
 hC
 Cb

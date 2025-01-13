@@ -9,6 +9,8 @@
 
 /obj/effect/landmark/nuclear_waste_spawner //Clean way of spawning nuclear gunk after a reactor core meltdown.
 	name = "nuclear waste spawner"
+	icon = 'nsv13/icons/obj/landmark.dmi'
+	icon_state = "nuclear"
 	var/range = PLUTONIUM_SLUDGE_RANGE //tile radius to spawn goop
 	var/center_sludge = TRUE // Whether or not the center turf should spawn sludge or not.
 	var/static/list/avoid_objs = typecacheof(list( // List of objs that the waste does not spawn on
@@ -64,9 +66,11 @@
 	return TRUE
 
 /obj/effect/landmark/nuclear_waste_spawner/strong
+	icon_state = "nuclear_strong"
 	range = PLUTONIUM_SLUDGE_RANGE_STRONG
 
 /obj/effect/landmark/nuclear_waste_spawner/weak
+	icon_state = "nuclear_weak"
 	range = PLUTONIUM_SLUDGE_RANGE_WEAK
 	center_sludge = FALSE
 
@@ -74,3 +78,13 @@
 #undef PLUTONIUM_SLUDGE_RANGE_STRONG
 #undef PLUTONIUM_SLUDGE_RANGE_WEAK
 #undef PLUTONIUM_SLUDGE_CHANCE
+
+/obj/effect/landmark/iff_console_spawner
+	name = "IFF console spawn location"
+	icon = 'nsv13/icons/obj/landmark.dmi'
+	icon_state = "iff"
+
+/obj/effect/landmark/iff_console_spawner/Initialize(mapload)
+	..()
+	get_overmap().ifflocs[get_turf(src)] = dir //Note that you can turn this one to choose which way the console faces
+	return INITIALIZE_HINT_QDEL

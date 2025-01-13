@@ -167,6 +167,14 @@
 	icon_state = "platingdmg1"
 	},
 /area/ruin/powered/nsv13/boarding_interior)
+"do" = (
+/obj/effect/landmark/iff_console_spawner{
+	dir = 8;
+	req_one_access_txt = "151"
+	},
+/obj/machinery/door/window/brigdoor/westleft,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered/nsv13/boarding_interior)
 "du" = (
 /obj/item/ammo_casing/spent,
 /turf/open/floor/plating{
@@ -2257,6 +2265,9 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/effect/landmark/iff_console_spawner{
+	dir = 4
+	},
 /turf/open/floor/monotile/dark,
 /area/ruin/powered/nsv13/boarding_interior)
 "IU" = (
@@ -2662,10 +2673,10 @@
 /turf/open/floor/monotile/dark,
 /area/ruin/powered/nsv13/boarding_interior)
 "Pq" = (
-/obj/machinery/computer/iff_console/boarding{
+/obj/machinery/light,
+/obj/effect/landmark/iff_console_spawner{
 	dir = 1
 	},
-/obj/machinery/light,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/nsv13/boarding_interior)
 "Pw" = (
@@ -2895,7 +2906,7 @@
 /area/ruin/powered/nsv13/boarding_interior)
 "St" = (
 /obj/machinery/computer/operating{
-	dir = 1
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/nsv13/boarding_interior)
@@ -2932,6 +2943,17 @@
 /obj/structure/hull_plate/end,
 /turf/open/floor/engine/airless,
 /area/space/nearstation)
+"Tl" = (
+/obj/structure/window/reinforced/spawner/north,
+/obj/machinery/door/window/brigdoor/westright{
+	req_one_access_txt = "151"
+	},
+/obj/structure/table/reinforced{
+	color = "#aaaaaa"
+	},
+/obj/item/reagent_containers/food/snacks/store/cake/cheese,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered/nsv13/boarding_interior)
 "Tp" = (
 /obj/structure/chair/fancy/sofa/corp{
 	dir = 8
@@ -36276,7 +36298,7 @@ nm
 nm
 nm
 UV
-FR
+Cu
 Cu
 Cu
 Cu
@@ -36308,7 +36330,7 @@ PQ
 Cu
 Cu
 Cu
-FR
+Cu
 Tf
 nm
 nm
@@ -43967,8 +43989,8 @@ mn
 AB
 XX
 XX
-XX
-XX
+Tl
+do
 AB
 jn
 XX
@@ -44468,7 +44490,7 @@ nm
 nm
 nm
 UV
-FR
+Cu
 AB
 dy
 MZ
@@ -44500,7 +44522,7 @@ AB
 MZ
 xx
 AB
-FR
+Cu
 Tf
 nm
 nm
@@ -48318,7 +48340,7 @@ nm
 nm
 nm
 Ei
-FR
+Cu
 Cu
 Cu
 AB
@@ -48330,7 +48352,7 @@ Zg
 AB
 Cu
 Cu
-FR
+Cu
 SR
 nm
 nm

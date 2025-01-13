@@ -22,12 +22,14 @@ If someone hacks it, you can always rebuild it.
 	var/radio_channel = RADIO_CHANNEL_COMMON
 	var/minimum_time_between_warnings = 400
 
-/obj/machinery/computer/iff_console/Initialize(mapload, obj/item/circuitboard/C)
+/obj/machinery/computer/iff_console/Initialize(mapload, obj/item/circuitboard/C, direction)
 	..()
 	radio = new(src)
 	radio.subspace_transmission = TRUE
 	radio.canhear_range = 0
 	radio.recalculateChannels()
+	if(direction)
+		dir = direction
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/machinery/computer/iff_console/LateInitialize()

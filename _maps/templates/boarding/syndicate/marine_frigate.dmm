@@ -1,4 +1,10 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ao" = (
+/obj/effect/landmark/iff_console_spawner{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/ruin/powered/nsv13/boarding_interior)
 "aC" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
@@ -338,7 +344,6 @@
 /obj/item/storage/backpack/duffelbag/med/surgery{
 	icon_state = "duffel-syndiemed"
 	},
-/obj/item/reagent_containers/glass/beaker/cryoxadone,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/nsv13/boarding_interior)
 "hV" = (
@@ -352,11 +357,11 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/nsv13/boarding_interior)
 "hZ" = (
-/obj/machinery/computer/ship/navigation{
-	dir = 8
-	},
 /obj/machinery/door/firedoor/border_only/directional/east,
 /obj/machinery/door/firedoor/border_only/directional/north,
+/obj/machinery/computer/ship/dradis{
+	dir = 8
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/nsv13/boarding_interior)
 "ib" = (
@@ -607,6 +612,10 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/nsv13/boarding_interior)
+"no" = (
+/obj/machinery/suit_storage_unit/open,
+/turf/open/floor/engine/airless,
+/area/ruin/powered/nsv13/boarding_interior)
 "nz" = (
 /obj/machinery/door/airlock/ship/maintenance{
 	req_access_txt = "151"
@@ -616,8 +625,8 @@
 /turf/open/floor/plating,
 /area/ruin/powered/nsv13/boarding_interior)
 "nT" = (
-/obj/machinery/defibrillator_mount{
-	pixel_y = 28
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = 26
 	},
 /turf/open/floor/mineral/titanium,
 /area/ruin/powered/nsv13/boarding_interior)
@@ -651,6 +660,13 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/turf/open/floor/plating,
+/area/ruin/powered/nsv13/boarding_interior)
+"oH" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/table,
 /turf/open/floor/plating,
 /area/ruin/powered/nsv13/boarding_interior)
 "oL" = (
@@ -714,6 +730,14 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/nsv13/boarding_interior)
+"pI" = (
+/obj/structure/closet/crate/science,
+/obj/item/flashlight/flashdark,
+/obj/item/radio,
+/obj/item/survivalcapsule/party,
+/obj/machinery/computer/ship/viewscreen,
+/turf/open/floor/engine,
+/area/ruin/powered/nsv13/boarding_interior)
 "pJ" = (
 /mob/living/simple_animal/hostile/syndicate/ranged{
 	access_card = 150;
@@ -749,6 +773,9 @@
 "qA" = (
 /obj/structure/reagent_dispensers/foamtank/hull_repair_juice,
 /turf/open/floor/plating,
+/area/ruin/powered/nsv13/boarding_interior)
+"qD" = (
+/turf/open/floor/engine,
 /area/ruin/powered/nsv13/boarding_interior)
 "qL" = (
 /obj/machinery/light/small{
@@ -813,10 +840,10 @@
 /turf/open/floor/engine/airless,
 /area/ruin/powered/nsv13/boarding_interior)
 "rD" = (
-/obj/machinery/computer/iff_console/boarding{
+/obj/machinery/door/firedoor/border_only/directional/east,
+/obj/machinery/computer/ship/navigation{
 	dir = 8
 	},
-/obj/machinery/door/firedoor/border_only/directional/east,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/nsv13/boarding_interior)
 "rK" = (
@@ -884,6 +911,12 @@
 "sL" = (
 /obj/structure/chair/office,
 /turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered/nsv13/boarding_interior)
+"sO" = (
+/obj/effect/landmark/iff_console_spawner{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/nsv13/boarding_interior)
 "td" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -1173,6 +1206,15 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/nsv13/boarding_interior)
+"yR" = (
+/obj/item/fuel_rod,
+/obj/item/fuel_rod,
+/obj/item/fuel_rod,
+/obj/item/geiger_counter,
+/obj/item/geiger_counter,
+/obj/structure/closet/crate/radiation,
+/turf/open/floor/engine,
+/area/ruin/powered/nsv13/boarding_interior)
 "yS" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
@@ -1297,6 +1339,14 @@
 /obj/item/folder/syndicate,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/nsv13/boarding_interior)
+"Bk" = (
+/obj/machinery/door/airlock/vault/ship{
+	req_one_access_txt = "151"
+	},
+/obj/machinery/door/firedoor/border_only/directional/north,
+/obj/machinery/door/firedoor/border_only/directional/south,
+/turf/open/floor/engine,
+/area/ruin/powered/nsv13/boarding_interior)
 "BC" = (
 /turf/open/floor/mineral/plastitanium/red/airless,
 /area/ruin/powered/nsv13/boarding_interior)
@@ -1329,6 +1379,14 @@
 "CC" = (
 /obj/structure/hull_plate/end,
 /turf/open/floor/engine/airless,
+/area/ruin/powered/nsv13/boarding_interior)
+"CJ" = (
+/obj/effect/spawner/lootdrop/teratoma/robot,
+/obj/structure/closet/crate/freezer{
+	anchored = 1
+	},
+/obj/effect/spawner/lootdrop/teratoma/minor,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/nsv13/boarding_interior)
 "CP" = (
 /obj/machinery/door/airlock/ship/security{
@@ -1529,6 +1587,11 @@
 /obj/structure/bookcase/manuals,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/nsv13/boarding_interior)
+"GL" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/glowstick,
+/turf/open/floor/plating,
+/area/ruin/powered/nsv13/boarding_interior)
 "GQ" = (
 /obj/structure/table/wood,
 /obj/item/taperecorder,
@@ -1588,7 +1651,7 @@
 /area/ruin/powered/nsv13/boarding_interior)
 "IN" = (
 /obj/structure/table/glass,
-/obj/effect/spawner/lootdrop/teratoma/minor,
+/obj/item/reagent_containers/glass/beaker/cryoxadone,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/nsv13/boarding_interior)
 "Jh" = (
@@ -1847,6 +1910,10 @@
 /obj/machinery/door/firedoor/border_only/directional/south,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/nsv13/boarding_interior)
+"PM" = (
+/obj/structure/filingcabinet,
+/turf/open/floor/carpet/red,
+/area/ruin/powered/nsv13/boarding_interior)
 "PZ" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -1964,7 +2031,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/nsv13/boarding_interior)
 "SL" = (
-/obj/machinery/computer/secondary_ship_id_console/syndicate{
+/obj/effect/landmark/iff_console_spawner{
 	dir = 8
 	},
 /turf/open/floor/carpet/red,
@@ -2233,6 +2300,12 @@
 /obj/machinery/door/firedoor/border_only/directional/west,
 /obj/machinery/door/firedoor/border_only/directional/east,
 /turf/open/floor/plating,
+/area/ruin/powered/nsv13/boarding_interior)
+"Zk" = (
+/obj/item/shard/plasma,
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/gambling,
+/turf/open/floor/engine,
 /area/ruin/powered/nsv13/boarding_interior)
 
 (1,1,1) = {"
@@ -28724,7 +28797,7 @@ mr
 mr
 mr
 zR
-Mp
+CJ
 wC
 bx
 Mp
@@ -35899,7 +35972,7 @@ zR
 zR
 mr
 Pk
-bd
+WL
 ma
 bd
 Pk
@@ -36155,7 +36228,7 @@ zR
 zR
 mr
 Pk
-bd
+WL
 ma
 bd
 Pk
@@ -36921,7 +36994,7 @@ jS
 jS
 lI
 zR
-mr
+qd
 Pk
 bd
 ma
@@ -37171,10 +37244,10 @@ jS
 jS
 jS
 jS
-zE
-cq
-cq
-dg
+jS
+jS
+jS
+jS
 jS
 zR
 mr
@@ -37426,14 +37499,14 @@ nh
 jS
 jS
 jS
-jS
-PZ
-BC
-oo
-fy
+zE
+cq
+cq
+dg
 jS
 zR
-mr
+zR
+pJ
 Pk
 Ur
 ma
@@ -37682,16 +37755,16 @@ nh
 jS
 jS
 jS
-jS
-Th
-Ga
-Ga
-Es
+PZ
+BC
+oo
+fy
 jS
 zR
+GL
 mr
 Pk
-bd
+Tt
 ma
 bd
 Pk
@@ -37938,13 +38011,13 @@ nh
 jS
 jS
 jS
-jS
-jS
-jS
-jS
-jS
+Th
+Ga
+Ga
+Es
 jS
 zR
+oH
 mr
 Pk
 bd
@@ -38199,11 +38272,11 @@ jS
 jS
 jS
 jS
-jS
 zR
-dP
-Pk
-Tt
+oL
+mr
+kS
+bd
 ma
 bd
 Pk
@@ -38450,14 +38523,14 @@ nh
 jS
 jS
 jS
-jS
 zE
 cq
 Sm
 dg
 jS
 zR
-pJ
+zR
+hm
 Pk
 bd
 ma
@@ -38706,16 +38779,16 @@ nh
 jS
 jS
 jS
-jS
 PZ
 BC
 Qd
 fy
 lI
 zR
-mr
-Pk
-bd
+zR
+zR
+zR
+WL
 ma
 bd
 Pk
@@ -38962,15 +39035,15 @@ nh
 jS
 jS
 jS
-jS
 Th
 Ga
 Ga
 Es
 jS
 zR
-mr
-kS
+pI
+yR
+zR
 bd
 ma
 bd
@@ -39223,10 +39296,10 @@ jS
 jS
 jS
 jS
-jS
 zR
-hm
-Pk
+qD
+qD
+Bk
 bd
 ma
 bd
@@ -39480,9 +39553,9 @@ zR
 zR
 zR
 zR
+ao
+Zk
 zR
-zR
-Pk
 bd
 ma
 bd
@@ -41783,17 +41856,17 @@ rs
 ch
 sf
 zR
-sf
-sf
-sf
+no
+no
+no
 td
 bd
 ma
 bd
 td
-sf
-sf
-sf
+no
+no
+no
 zR
 sf
 vd
@@ -47163,9 +47236,9 @@ hG
 kN
 ma
 ma
-ma
-ma
-ma
+bd
+sO
+bd
 ma
 ma
 CP
@@ -48182,7 +48255,7 @@ aM
 aM
 zR
 zR
-SL
+PM
 za
 Ig
 bd
