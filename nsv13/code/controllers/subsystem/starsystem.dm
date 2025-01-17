@@ -491,9 +491,11 @@ Returns a faction datum by its name (case insensitive!)
 			return
 		if("STARTUP_PROC_TYPE_DOLOS")
 			addtimer(CALLBACK(src, PROC_REF(register_dolos_achievement)), 5 SECONDS)
+			return
 		if("STARTUP_PROC_TYPE_ABASSI")
 			addtimer(CALLBACK(src, PROC_REF(register_abassi_achievement)), 5 SECONDS)
-	message_admins("WARNING: Invalid startup_proc declared for [name]! Review your defines (~L438, starsystem.dm), please.")
+			return
+	message_admins("WARNING: Invalid startup_proc declared for [name]! Review your defines (~L498, starsystem.dm), please.")
 	return 1
 
 /datum/star_system/vv_edit_var(var_name, var_value)
