@@ -1,0 +1,154 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plasteel,
+/area/shuttle/supply)
+"k" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/supply)
+"o" = (
+/obj/machinery/door/poddoor{
+	id = "QMLoaddoor2";
+	name = "supply dock loading door"
+	},
+/obj/structure/fans/tiny,
+/obj/docking_port/mobile/supply{
+	dir = 2;
+	height = 6;
+	width = 6
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/supply)
+"q" = (
+/obj/structure/shuttle/engine/heater{
+	dir = 1
+	},
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/supply)
+"u" = (
+/turf/open/floor/plasteel/yellowsiding/corner,
+/area/shuttle/supply)
+"A" = (
+/turf/open/floor/plasteel/yellowsiding{
+	dir = 6
+	},
+/area/shuttle/supply)
+"B" = (
+/obj/structure/shuttle/engine/propulsion{
+	dir = 1;
+	name = "reaction control engine"
+	},
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/supply)
+"F" = (
+/turf/open/floor/plasteel/yellowsiding{
+	dir = 10
+	},
+/area/shuttle/supply)
+"G" = (
+/turf/template_noop,
+/area/shuttle/supply)
+"I" = (
+/turf/open/floor/plasteel/yellowsiding{
+	dir = 8
+	},
+/area/shuttle/supply)
+"J" = (
+/obj/machinery/door/poddoor{
+	id = "QMLoaddoor2";
+	name = "supply dock loading door"
+	},
+/obj/structure/fans/tiny,
+/obj/machinery/button/door{
+	id = "QMLoaddoor2";
+	name = "Loading Doors";
+	pixel_x = 25
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/supply)
+"M" = (
+/turf/open/floor/plasteel/yellowsiding{
+	dir = 1
+	},
+/area/shuttle/supply)
+"N" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/yellowsiding{
+	dir = 9
+	},
+/area/shuttle/supply)
+"O" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/yellowsiding{
+	dir = 5
+	},
+/area/shuttle/supply)
+"S" = (
+/turf/open/floor/plasteel,
+/area/shuttle/supply)
+"V" = (
+/turf/open/floor/plasteel/yellowsiding{
+	dir = 4
+	},
+/area/shuttle/supply)
+"X" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/supply)
+"Z" = (
+/turf/open/floor/plasteel/yellowsiding/corner{
+	dir = 8
+	},
+/area/shuttle/supply)
+
+(1,1,1) = {"
+B
+q
+a
+a
+k
+G
+"}
+(2,1,1) = {"
+k
+N
+I
+F
+X
+k
+"}
+(3,1,1) = {"
+o
+M
+S
+Z
+F
+a
+"}
+(4,1,1) = {"
+J
+M
+S
+u
+A
+a
+"}
+(5,1,1) = {"
+k
+O
+V
+A
+X
+k
+"}
+(6,1,1) = {"
+B
+q
+a
+a
+k
+G
+"}

@@ -1,0 +1,35 @@
+{
+	"map_name": "SGV Von Neumann Mark III",
+	"map_link": "vonneumann",
+    "map_path": "map_files/vonneumann",
+    "map_file": ["vnmk3.dmm"],
+	"traits": [{"Linkage": "Self"}],
+	"space_ruin_levels": -1,
+	"space_empty_levels": 0,
+	"shuttles": {
+		"cargo": "cargo_aiship",
+		"ferry": "ferry_fancy",
+		"emergency": "emergency_void"},
+	"mine_disable": 1,
+	"ship_type": "/obj/structure/overmap/nanotrasen/solgov/vnc/starter",
+	"faction": "solgov",
+	"starmap_path": "config/starmap/starmap.json",
+
+    "map_description": "The Von Neumann class Mark III civilian point defense frigate is the latest in a line of frigates produced by solgov, based on an older decommissioned blueprint, featuring a conventional drive system, civilian grade hull, and a disproportionately large civilian grade defensive armament, this ship has only one job, to de-kesslerize earth, and clear out particularly threatening asteroid fields.",
+    "manufacturer": "SolGov Research and Development",
+	"mapper": "Truncated-Cake",
+    "commission_date": "May 19, 2264",
+    "strengths": ["Legal energy shields", "Energy weapons", "Compact and easy to repair", "Highly Manuverable", "Rapidly regenerating armor", "Smallest ship to ever mount a Thirring drive"],
+    "weaknesses": ["Fragile", "Extremely Power-hungry", "Higher crew requirements", "Rather small", "Single reactor must be pushed to see any real functionality" ],
+	"equipment": [
+		"SolGov shield generator",
+		"twin burst phaser MK2",
+		"Quad Laser Anti Missile System",
+		"Heavy Point Defense Laser Battery",
+		"Missile Array",
+		"2 light fighters",
+		"Advanced Gas Cooled Nuclear Reactor",
+		"Thirring Drive",
+		"Thermoelectric Generator"
+	]
+}

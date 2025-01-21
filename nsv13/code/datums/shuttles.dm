@@ -28,6 +28,10 @@
 	suffix = "serendipity"
 	name = "\[NSV\] cargo ferry (Serendipity)"
 
+/datum/map_template/shuttle/cargo/aiship
+	suffix = "aiship"
+	name = "\[NSV\] cargo ferry (Von Neumann)"
+
 //Arrivals
 
 /datum/map_template/shuttle/arrival/aetherwhisp

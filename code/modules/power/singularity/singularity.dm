@@ -255,7 +255,7 @@
 			if(STAGE_ONE)
 				steps = 1
 			if(STAGE_TWO)
-				steps = 3//Yes this is right
+				steps = 2//Yes this is right
 			if(STAGE_THREE)
 				steps = 3
 			if(STAGE_FOUR)

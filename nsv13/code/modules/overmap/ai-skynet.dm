@@ -963,7 +963,7 @@ Adding tasks is easy! Just define a datum for it.
 /datum/fleet/solgov
 	name = "\improper Solgov light exploratory fleet"
 	fighter_types = list(/obj/structure/overmap/nanotrasen/solgov/ai/fighter)
-	destroyer_types = list(/obj/structure/overmap/nanotrasen/solgov/ai)
+	destroyer_types = list(/obj/structure/overmap/nanotrasen/solgov/ai, /obj/structure/overmap/nanotrasen/solgov/vnc/ai)
 	battleship_types = list(/obj/structure/overmap/nanotrasen/solgov/aetherwhisp/ai)
 	supply_types = list(/obj/structure/overmap/nanotrasen/solgov/carrier/ai)
 	alignment = "solgov"
