@@ -129,10 +129,10 @@
 	message_admins("[key_name(src)] made a vocal announcement with the following message: [message].")
 
 	for(var/word in words)
-		play_vox_word(word, src.get_virtual_z_level(), null)
+		play_vox_word(word, src.get_virtual_z_level(), null, src.get_overmap()) //NSV13
 
 
-/proc/play_vox_word(word, z_level, mob/only_listener)
+/proc/play_vox_word(word, z_level, mob/only_listener, obj/structure/overmap/OM) //NSV13 lets announcements be heard by the entire ship
 
 	word = lowertext(word)
 
@@ -144,12 +144,17 @@
 
  		// If there is no single listener, broadcast to everyone in the same z level
 		if(!only_listener)
-			// Play voice for all mobs in the z level
-			for(var/mob/M in GLOB.player_list)
-				if(M.client && M.can_hear() && (M.client.prefs.toggles & PREFTOGGLE_SOUND_ANNOUNCEMENTS))
-					var/turf/T = get_turf(M)
-					if(T.get_virtual_z_level() == z_level)
-						SEND_SOUND(M, voice)
+			if(!OM) //NSV13 START
+				// Play voice for all mobs in the z level
+				for(var/mob/M in GLOB.player_list)
+					if(M.client && M.can_hear() && (M.client.prefs.toggles & PREFTOGGLE_SOUND_ANNOUNCEMENTS))
+						var/turf/T = get_turf(M)
+						if(T.get_virtual_z_level() == z_level)
+							SEND_SOUND(M, voice)
+			else
+				for(var/mob/M as() in OM.mobs_in_ship)
+					if(M.client && M.can_hear() && (M.client.prefs.toggles & PREFTOGGLE_SOUND_ANNOUNCEMENTS))
+						SEND_SOUND(M, voice) //NSV13 END
 		else
 			SEND_SOUND(only_listener, voice)
 		return 1
